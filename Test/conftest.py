@@ -5,9 +5,9 @@ from Util.screenshot import Screenshot
 
 @pytest.fixture(scope="session")
 def browser():
-    # return webdriver.Chrome()
-    yield webdriver.Chrome()
-    print("Browser is closed")
+    return webdriver.Chrome()
+    # yield webdriver.Chrome()
+    # print("Browser is closed")
 
 
 @pytest.fixture(scope="session")
@@ -18,6 +18,11 @@ def picture(browser):
 @pytest.fixture(scope="session")
 def homepage_url():
     return "https://www.goibibo.com/"
+
+
+@pytest.fixture(scope="session")
+def amazonpage_url():
+    return "https://www.amazon.in/"
 
 
 @pytest.fixture(params=[{"brand": "Sony", "size": "34inch"},

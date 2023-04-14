@@ -1,11 +1,15 @@
+import inspect
 import logging
 
 
-logging.basicConfig(#filename='C:\\Users\\jayti.gupta\\Documents\\Automation\\Logs\\Test.log',
-                    format='%(asctime)s  - %(levelname)s - %(message)s',
-    level=logging.DEBUG)
-logging.debug("This is a Debug message")
-logging.info("This is a Info message")
-logging.warning("This is a Warning message")
-logging.error("This is a Error message")
-logging.critical("This is a Critical message")
+def getLogger():
+    logger_name = inspect.stack()[1][3]
+    logger = logging.getLogger(logger_name)
+    formatter = logging.Formatter("%(asctime)s :%(levelname)s : %(name)s :%(message)s")
+    file_handler = logging.FileHandler("C:\\Users\\jayti.gupta\\PycharmProjects\\Goibibo\\Test Files\\Logs\\"
+                                      + 'logfile.log')
+    file_handler.setFormatter(formatter)
+    logger.addHandler(file_handler)  # filehandler object
+    logger.setLevel(logging.DEBUG)
+    return logger
+

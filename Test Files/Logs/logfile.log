@@ -1,0 +1,6 @@
+2023-04-05 17:10:37,349 :INFO : fun1 :Clicked on Menu
+2023-04-05 17:10:37,349 :INFO : fun1 :Clicked on search button
+2023-04-06 15:54:09,062 :INFO : <module> :Item searched in Amazon
+2023-04-06 15:54:09,062 :INFO : <module> :Asserting if the text contains the searched item name
+2023-04-06 15:54:11,825 :INFO : <module> :Price range set for the item
+2023-04-06 15:54:15,124 :INFO : <module> :Verifying the items listed fall in the set price range
