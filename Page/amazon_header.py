@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 
 
-class AmazonHome(BasePage):
+class AmazonHeader(BasePage):
 
     def search_item(self, item):
         search_box_elm = BaseElement(self.driver, By.XPATH, '//input[@id="twotabsearchtextbox"]')
@@ -16,3 +16,5 @@ class AmazonHome(BasePage):
         elm = BaseElement(self.driver, By.XPATH, '//select[@id="searchDropdownBox"]')
         Select(elm).select_by_visible_text(value)
 
+    def go_to_cart(self):
+        BaseElement(self.driver, By.XPATH, '//span[@id="nav-cart-count"]').click_element()

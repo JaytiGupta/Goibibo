@@ -1,6 +1,6 @@
 import pytest
 from Util.logs import getLogger
-from Page.amazon_home import AmazonHome
+from Page.amazon_header import AmazonHeader
 from Page.amazon_searchresults import AmazonSearchResult
 
 log = getLogger()
@@ -9,7 +9,7 @@ log = getLogger()
 class AmazonPriceRangeTests:
 
     def test_search_result_text(self, browser, amazonpage_url):
-        page = AmazonHome(browser, amazonpage_url)
+        page = AmazonHeader(browser, amazonpage_url)
         page.go()
         # page.search_dropbox("Furniture")
         item = 'Flower Vase'

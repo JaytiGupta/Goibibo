@@ -49,3 +49,4 @@ class AmazonSearchResult(BasePage):
 
     def verify_added_elm(self):
         return BaseElement(self.driver, By.XPATH, "//span[contains(text(),'Added to Cart')]").elm_is_displayed()
+
