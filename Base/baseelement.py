@@ -14,10 +14,10 @@ class BaseElement:
         self.element = self.get_element()
 
     def get_element(self):
-        try:
-            return WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located((self.locator, self.locator_value)))
-        except:
-            print("Element is not found.")
+        # try:
+        return WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located((self.locator, self.locator_value)))
+        # except:
+            # return "Element is not found."
 
     def get_elements(self):
         return WebDriverWait(self.driver, 20).\

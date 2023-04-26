@@ -38,8 +38,13 @@ class AmazonSearchResult(BasePage):
     def add_to_cart(self):
         self.first_search_elm().click_element()
         p = self.driver.current_window_handle  #will be used to check if p equals parent
-        parent = self.driver.window_handles[0]
-        chld = self.driver.window_handles[1]
+        window = self.driver.window_handles[0]
+        if window == p:
+            parent = self.driver.window_handles[0]
+            chld = self.driver.window_handles[1]
+        else:
+            chld = self.driver.window_handles[0]
+            parent = self.driver.window_handles[1]
         self.driver.switch_to.window(chld)
         add_to_cart_btn = BaseElement(self.driver, By.XPATH, '//input[@id="add-to-cart-button"]')
         add_to_cart_btn.click_element()
