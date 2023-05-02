@@ -239,3 +239,93 @@
 2023-05-02 17:23:30,894 :INFO : AmazonSearchResult :Switching to the main window
 2023-05-02 17:23:33,271 :INFO : AmazonHeader :Navigating to the cart
 2023-05-02 17:23:33,496 :INFO : CartTests :Verifying the cart total is equal to the sum of all item prices
+2023-05-02 19:25:14,377 :INFO : AmazonHeader :Navigating to the cart
+2023-05-02 19:25:14,446 :INFO : CartTests :Verifying if the cart is empty
+2023-05-02 19:25:14,582 :INFO : AmazonHeader :Fountain Pen is searched
+2023-05-02 19:25:17,036 :INFO : AmazonSearchResult :Clicked on the first search result displayed
+2023-05-02 19:25:17,057 :INFO : AmazonSearchResult :Switching to the window of the searched item
+2023-05-02 19:25:22,166 :INFO : AmazonSearchResult :Item is added to the cart
+2023-05-02 19:25:22,235 :INFO : AmazonSearchResult :Switching to the main window
+2023-05-02 19:25:24,334 :INFO : AmazonHeader :Navigating to the cart
+2023-05-02 19:25:44,746 :DEBUG : BaseElement :No such element found
+2023-05-02 19:25:44,746 :INFO : CartTests :Verifying the cart is not empty
+2023-05-02 19:25:46,593 :INFO : AmazonHeader :Lunch Box is searched
+2023-05-02 19:25:49,424 :INFO : AmazonSearchResult :Clicked on the first search result displayed
+2023-05-02 19:25:49,446 :INFO : AmazonSearchResult :Switching to the window of the searched item
+2023-05-02 19:25:54,639 :INFO : AmazonSearchResult :Item is added to the cart
+2023-05-02 19:25:54,714 :INFO : AmazonSearchResult :Switching to the main window
+2023-05-02 19:25:54,994 :INFO : AmazonHeader :Flower Vase is searched
+2023-05-02 19:25:57,563 :INFO : AmazonSearchResult :Clicked on the first search result displayed
+2023-05-02 19:25:57,687 :INFO : AmazonSearchResult :Switching to the window of the searched item
+2023-05-02 19:26:02,970 :INFO : AmazonSearchResult :Item is added to the cart
+2023-05-02 19:26:03,048 :INFO : AmazonSearchResult :Switching to the main window
+2023-05-02 19:26:05,169 :INFO : AmazonHeader :Navigating to the cart
+2023-05-02 19:26:05,332 :INFO : CartTests :Verifying the cart total is equal to the sum of all item prices
+2023-05-02 20:11:56,125 :INFO : AmazonHeader :Navigating to the cart
+2023-05-02 20:11:56,257 :INFO : CartTests :Verifying if the cart is empty
+2023-05-02 20:11:56,424 :INFO : AmazonHeader :Fountain Pen is searched
+2023-05-02 20:11:58,888 :INFO : AmazonSearchResult :Clicked on the first search result displayed
+2023-05-02 20:11:58,915 :INFO : AmazonSearchResult :Switching to the window of the searched item
+2023-05-02 20:12:03,892 :INFO : AmazonSearchResult :Item is added to the cart
+2023-05-02 20:12:03,964 :INFO : AmazonSearchResult :Switching to the main window
+2023-05-02 20:12:06,054 :INFO : AmazonHeader :Navigating to the cart
+2023-05-02 20:12:26,537 :DEBUG : BaseElement :No such element found
+2023-05-02 20:12:26,537 :INFO : CartTests :Verifying the cart is not empty
+2023-05-02 20:12:28,329 :INFO : AmazonHeader :Lunch Box is searched
+2023-05-02 20:12:31,057 :INFO : AmazonSearchResult :Clicked on the first search result displayed
+2023-05-02 20:12:31,089 :INFO : AmazonSearchResult :Switching to the window of the searched item
+2023-05-02 20:12:37,373 :INFO : AmazonSearchResult :Item is added to the cart
+2023-05-02 20:12:37,460 :INFO : AmazonSearchResult :Switching to the main window
+2023-05-02 20:12:37,771 :INFO : AmazonHeader :Flower Vase is searched
+2023-05-02 20:12:40,522 :INFO : AmazonSearchResult :Clicked on the first search result displayed
+2023-05-02 20:12:40,548 :INFO : AmazonSearchResult :Switching to the window of the searched item
+2023-05-02 20:12:45,755 :INFO : AmazonSearchResult :Item is added to the cart
+2023-05-02 20:12:45,815 :INFO : AmazonSearchResult :Switching to the main window
+2023-05-02 20:12:48,101 :INFO : AmazonHeader :Navigating to the cart
+2023-05-02 20:12:48,274 :INFO : CartTests :Verifying the cart total is equal to the sum of all item prices
+2023-05-02 20:12:50,016 :INFO : AmazonHeader :Flower Vase is searched
+2023-05-02 20:12:52,187 :INFO : <module> :Asserting if the text contains the searched item name
+2023-05-02 20:12:54,657 :INFO : AmazonSearchResult :Price range for the searched item is set between 1500 and 3000
+2023-05-02 20:12:56,604 :INFO : <module> :Verifying the items listed fall in the set price range
+2023-05-02 20:13:44,144 :INFO : AmazonHeader :Navigating to the cart
+2023-05-02 20:13:44,210 :INFO : CartTests :Verifying if the cart is empty
+2023-05-02 20:13:44,394 :INFO : AmazonHeader :Fountain Pen is searched
+2023-05-02 20:13:46,903 :INFO : AmazonSearchResult :Clicked on the first search result displayed
+2023-05-02 20:13:46,954 :INFO : AmazonSearchResult :Switching to the window of the searched item
+2023-05-02 20:13:51,843 :INFO : AmazonSearchResult :Item is added to the cart
+2023-05-02 20:13:51,916 :INFO : AmazonSearchResult :Switching to the main window
+2023-05-02 20:13:53,931 :INFO : AmazonHeader :Navigating to the cart
+2023-05-02 20:14:14,226 :DEBUG : BaseElement :No such element found
+2023-05-02 20:14:14,226 :INFO : CartTests :Verifying the cart is not empty
+2023-05-02 20:14:15,864 :INFO : AmazonHeader :Lunch Box is searched
+2023-05-02 20:14:18,322 :INFO : AmazonSearchResult :Clicked on the first search result displayed
+2023-05-02 20:14:18,339 :INFO : AmazonSearchResult :Switching to the window of the searched item
+2023-05-02 20:14:23,901 :INFO : AmazonSearchResult :Item is added to the cart
+2023-05-02 20:14:23,969 :INFO : AmazonSearchResult :Switching to the main window
+2023-05-02 20:14:24,159 :INFO : AmazonHeader :Flower Vase is searched
+2023-05-02 20:14:26,510 :INFO : AmazonSearchResult :Clicked on the first search result displayed
+2023-05-02 20:14:26,528 :INFO : AmazonSearchResult :Switching to the window of the searched item
+2023-05-02 20:14:31,327 :INFO : AmazonSearchResult :Item is added to the cart
+2023-05-02 20:14:31,393 :INFO : AmazonSearchResult :Switching to the main window
+2023-05-02 20:14:33,315 :INFO : AmazonHeader :Navigating to the cart
+2023-05-02 20:14:33,431 :INFO : CartTests :Verifying the cart total is equal to the sum of all item prices
+2023-05-02 20:14:34,941 :INFO : AmazonHeader :Flower Vase is searched
+2023-05-02 20:14:36,622 :INFO : <module> :Asserting if the text contains the searched item name
+2023-05-02 20:14:39,127 :INFO : AmazonSearchResult :Price range for the searched item is set between 1500 and 3000
+2023-05-02 20:14:40,178 :INFO : <module> :Verifying the items listed fall in the set price range
+2023-05-02 20:20:28,162 :INFO : AmazonHeader :Flower Vase is searched
+2023-05-02 20:20:31,109 :INFO : <module> :Asserting if the text contains the searched item name
+2023-05-02 20:20:33,379 :INFO : AmazonSearchResult :Price range for the searched item is set between 1500 and 3000
+2023-05-02 20:20:34,530 :INFO : <module> :Verifying the items listed fall in the set price range
+2023-05-02 20:23:35,096 :INFO : AmazonHeader :Flower Vase is searched
+2023-05-02 20:23:38,351 :INFO : <module> :Asserting if the text contains the searched item name
+2023-05-02 20:23:40,334 :INFO : AmazonSearchResult :Price range for the searched item is set between 1500 and 3000
+2023-05-02 20:23:41,592 :INFO : <module> :Verifying the items listed fall in the set price range
+2023-05-02 20:24:03,595 :INFO : AmazonHeader :Flower Vase is searched
+2023-05-02 20:24:05,614 :INFO : <module> :Asserting if the text contains the searched item name
+2023-05-02 20:24:07,838 :INFO : AmazonSearchResult :Price range for the searched item is set between 1500 and 3000
+2023-05-02 20:24:08,977 :INFO : <module> :Verifying the items listed fall in the set price range
+2023-05-02 20:27:17,618 :INFO : AmazonHeader :Flower Vase is searched
+2023-05-02 20:27:22,923 :INFO : <module> :Asserting if the text contains the searched item name
+2023-05-02 20:27:25,085 :INFO : AmazonSearchResult :Price range for the searched item is set between 1500 and 3000
+2023-05-02 20:27:26,046 :INFO : <module> :Verifying the items listed fall in the set price range
