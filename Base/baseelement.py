@@ -1,11 +1,16 @@
+import logging
+
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import ElementClickInterceptedException
 from selenium.webdriver.common.by import By
+from Util.logs import getLogger
 
 
 class BaseElement:
+
+    log = getLogger()
 
     def __init__(self, driver, locator, locator_value):
         self.locator = locator
@@ -14,10 +19,11 @@ class BaseElement:
         self.element = self.get_element()
 
     def get_element(self):
-        # try:
-        return WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located((self.locator, self.locator_value)))
-        # except:
-            # return "Element is not found."
+        try:
+            return WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located((self.locator, self.locator_value)))
+        except:
+            self.log.debug("No such element found")
+            return "Element is not found."
 
     def get_elements(self):
         return WebDriverWait(self.driver, 20).\
@@ -34,7 +40,7 @@ class BaseElement:
         try:
             self.element.click()
         except ElementClickInterceptedException:
-            print("Element is not clickable.")
+            self.log.debug("Element is not clickable.")
 
     def enter_text(self, text):
         self.element.clear()

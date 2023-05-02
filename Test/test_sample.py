@@ -9,6 +9,8 @@ from pytest import mark
 #     tvsize = tv_brand["size"]
 #     print(f"{brandname} is of size {tvsize}")
 
-def test_sample1():
-    assert True
+
+class SampleTests():
+    def test_sample1():
+        assert True
 

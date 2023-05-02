@@ -21,19 +21,11 @@ class AmazonCart(BasePage):
 
     def cart_total_amt(self):
         xpath = '//span[@id="sc-subtotal-amount-activecart"]'
-        cart_total = float(BaseElement(self.driver, By.XPATH, xpath).get_text())
-        return cart_total
+        cart_total = BaseElement(self.driver, By.XPATH, xpath).get_text()
+        cart_total_int = float(sub(r'[^\d.]', '', cart_total))
+        return cart_total_int
 
     def verify_cart_not_empty(self):
-        # element2 = BaseElement(self.driver, By.XPATH,
-        #                    '//div[@class="a-row sc-your-amazon-cart-is-empty"]/h2')
-        # if element2 == "Element is not found.":
-        #     return True
-        # else:
-        #     return False
-        try:
-            BaseElement(self.driver, By.XPATH,
-                           '//div[@class="a-row sc-your-amazon-cart-is-empty"]/h2')
-            return False
-        except:
-            return True
+        element = BaseElement(self.driver, By.XPATH,
+                           '//div[@class="a-row sc-your-amazon-cart-is-empty"]/h2').element
+        return element == 'Element is not found.'

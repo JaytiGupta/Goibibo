@@ -1,11 +1,15 @@
-from datetime import datetime
+# from datetime import datetime
+#
+# input_datetime_str = '18,September 2023'
+# input_datetime_obj = datetime.strptime(input_datetime_str, '%d,%B %Y')
+#
+# if input_datetime_obj < datetime.today():
+#     print('The input date is in the past. Please enter valid date.')
+#
+# class IncorrectSelection(KeyError):
+#     pass
 
-input_datetime_str = '18,September 2023'
-input_datetime_obj = datetime.strptime(input_datetime_str, '%d,%B %Y')
+from Util.logs import getLogger
 
-if input_datetime_obj < datetime.today():
-    print('The input date is in the past. Please enter valid date.')
-
-class IncorrectSelection(KeyError):
-    pass
-
+log = getLogger()
+log.info("test123")

@@ -1,13 +1,12 @@
-from Page.amazon_searchresults import AmazonSearchResult
-from Base import baseelement
+from Page.Amazon.amazon_searchresults import AmazonSearchResult
 from Util.logs import getLogger
-from Page.amazon_header import AmazonHeader
-from Page.amazon_cart import AmazonCart
-
-log = getLogger()
+from Page.Amazon.amazon_header import AmazonHeader
+from Page.Amazon.amazon_cart import AmazonCart
+from pytest import mark
 
 
 class CartTests:
+    log = getLogger()
 
     def test_empty_cart(self, browser, amazonpage_url):
         page = AmazonHeader(browser, amazonpage_url)
@@ -16,6 +15,7 @@ class CartTests:
         page3 = AmazonCart(browser, amazonpage_url)
         text = page3.empty_cart_text()
         assert text == 'Your Amazon Cart is empty'
+        self.log.info("Verifying if the cart is empty")
 
     def test_cart_not_empty(self, browser, amazonpage_url):
         page = AmazonHeader(browser, amazonpage_url)
@@ -25,6 +25,7 @@ class CartTests:
         page.go_to_cart()
         page3 = AmazonCart(browser, amazonpage_url)
         assert page3.verify_cart_not_empty()
+        self.log.info("Verifying the cart is not empty")
 
     def test_cart_total(self, browser, amazonpage_url):
         page = AmazonHeader(browser, amazonpage_url)
@@ -42,4 +43,5 @@ class CartTests:
         for item in price_list:
             cart_sum = cart_sum + item
         assert cart_sum == page3.cart_total_amt()
+        self.log.info("Verifying the cart total is equal to the sum of all item prices")
 

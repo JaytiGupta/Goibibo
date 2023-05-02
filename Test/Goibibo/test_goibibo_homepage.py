@@ -1,14 +1,9 @@
-import pytest
-from Page.homepage import HomePage
+from Page.Goibibo.homepage import HomePage
 from pytest import mark
 
 
-@mark.case1
 class GoibiboHomeTests:
 
-    @mark.skip
-    @mark.testcase1
-    @mark.testcase2
     def test_page_header(self, browser, picture, homepage_url):
         page = HomePage(browser, homepage_url)
         page.go()
@@ -21,7 +16,6 @@ class GoibiboHomeTests:
         picture.capture()
 
 
-    @mark.testcase2
     def test_title(self, browser, picture, homepage_url):
         page = HomePage(browser, homepage_url)
         page.go()
