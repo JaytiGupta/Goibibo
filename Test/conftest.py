@@ -1,6 +1,6 @@
 import pytest
 from selenium import webdriver
-from Util.screenshot import Screenshot
+# from Util.screenshot import Screenshot
 
 
 @pytest.fixture(scope="session")
@@ -10,9 +10,9 @@ def browser():
     # print("Browser is closed")
 
 
-@pytest.fixture(scope="session")
-def picture(browser):
-    return Screenshot(browser)
+# @pytest.fixture(scope="session")
+# def picture(browser):
+#     return Screenshot(browser)
 
 
 @pytest.fixture(scope="session")
