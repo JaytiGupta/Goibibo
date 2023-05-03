@@ -5,9 +5,10 @@ from selenium import webdriver
 
 @pytest.fixture(scope="session")
 def browser():
-    return webdriver.Chrome()
-    # yield webdriver.Chrome()
-    # print("Browser is closed")
+    # return webdriver.Chrome()
+    print("Setup")
+    yield webdriver.Chrome()
+    print("Teardown")
 
 
 # @pytest.fixture(scope="session")

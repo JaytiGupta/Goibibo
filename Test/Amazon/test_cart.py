@@ -5,9 +5,11 @@ from Page.Amazon.amazon_cart import AmazonCart
 from pytest import mark
 
 
+@mark.cart
 class CartTests:
     log = getLogger()
 
+    @mark.smoke
     def test_empty_cart(self, browser, amazonpage_url):
         page = AmazonHeader(browser, amazonpage_url)
         page.go()
@@ -17,6 +19,7 @@ class CartTests:
         assert text == 'Your Amazon Cart is empty'
         self.log.info("Verifying if the cart is empty")
 
+    @mark.negative
     def test_cart_not_empty(self, browser, amazonpage_url):
         page = AmazonHeader(browser, amazonpage_url)
         page.search_item("Fountain Pen")

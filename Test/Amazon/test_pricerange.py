@@ -1,27 +1,30 @@
 from Util.logs import getLogger
 from Page.Amazon.amazon_header import AmazonHeader
 from Page.Amazon.amazon_searchresults import AmazonSearchResult
+from pytest import mark
 
-log = getLogger()
 
-
+@mark.pricerange
 class AmazonPriceRangeTests:
 
+    log = getLogger()
+
+    @mark.smoke
     def test_search_result_text(self, browser, amazonpage_url):
         page = AmazonHeader(browser, amazonpage_url)
         page.go()
         # page.search_dropbox("Furniture")
         item = 'Flower Vase'
         page.search_item(item)
-        searchpage = AmazonSearchResult(browser, amazonpage_url)
-        log.info("Asserting if the text contains the searched item name")
-        assert item in searchpage.search_result_text()
+        search_page = AmazonSearchResult(browser, amazonpage_url)
+        self.log.info("Asserting if the text contains the searched item name")
+        assert item in search_page.search_result_text()
 
     def test_pricerange(self, browser, amazonpage_url):
-        searchpage = AmazonSearchResult(browser, amazonpage_url)
+        search_page = AmazonSearchResult(browser, amazonpage_url)
         min_price = 1500
         max_price = 3000
-        searchpage.set_price_range(min_price, max_price)
-        price_list = searchpage.all_item_price_list()
-        log.info("Verifying the items listed fall in the set price range")
+        search_page.set_price_range(min_price, max_price)
+        price_list = search_page.all_item_price_list()
+        self.log.info("Verifying the items listed fall in the set price range")
         assert price_list[0] >= min_price and price_list[-1] <= max_price

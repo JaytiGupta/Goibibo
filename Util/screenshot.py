@@ -17,5 +17,5 @@ class Screenshot:
     def capture(self):
         current_datetime = datetime.datetime.now()
         image_name = current_datetime.strftime("capture" + "%Y_%m_%d-%H_%M_%S%f" + ".png")
-        self.driver.save_screenshot(ROOT_DIR + f"\\Test Files\\screenshots\\{save_path}\\{image_name}")
+        self.driver.save_screenshot(ROOT_DIR + f"\\ResultFiles\\screenshots\\{save_path}\\{image_name}")
 
