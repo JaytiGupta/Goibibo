@@ -41,12 +41,4 @@ def test_total_amt():
     assert expected_rate == actual_rate
     time.sleep(5)
 """
-#
-# exception handling ------- 2
-# reporting --------- 3
-# logs --------- 5
-# add 8-10 test cases with lists/collections etc...   ----- 1 with each feature
-# parallel/linear execution ------- 6
-# pass URL as parameter  ------ 1 (create config file for URL)
-#  github (try this first) /gitlab ------ 4
 
