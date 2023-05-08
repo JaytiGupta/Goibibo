@@ -1,21 +1,14 @@
-import os
 import datetime
-from definitions import ROOT_DIR
+from definitions import ROOT_DIR, global_dict
 
 
-# To create unique folder names along with time stamp for storing screenshots
-current_datetime = datetime.datetime.now()
-save_path = current_datetime.strftime("%Y_%m_%d-%H_%M_%S")
-os.mkdir(ROOT_DIR + f"\\Test Files\\screenshots\\{save_path}")
+def take_screenshot(driver, base_element=None):
+    current_datetime = datetime.datetime.now()
+    image_name = current_datetime.strftime("capture" + "-%H%M%S%f" + ".png")
+    if not base_element is None:
+        base_element.scroll_to_element()
+    driver.save_screenshot(ROOT_DIR +
+                           f"\\ResultFiles\\screenshots\\{global_dict['screenshot_folder']}\\{image_name}")
 
 
-class Screenshot:
-
-    def __init__(self, driver):
-        self.driver = driver
-
-    def capture(self):
-        current_datetime = datetime.datetime.now()
-        image_name = current_datetime.strftime("capture" + "%Y_%m_%d-%H_%M_%S%f" + ".png")
-        self.driver.save_screenshot(ROOT_DIR + f"\\ResultFiles\\screenshots\\{save_path}\\{image_name}")
 

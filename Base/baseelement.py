@@ -1,11 +1,10 @@
-import logging
-
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import ElementClickInterceptedException
 from selenium.webdriver.common.by import By
 from Util.logs import getLogger
+from selenium.webdriver.common.action_chains import ActionChains
 
 
 class BaseElement:
@@ -55,5 +54,9 @@ class BaseElement:
     def elm_is_displayed(self):
         return self.element.is_displayed()
 
-
+    def scroll_to_element(self):
+        actions = ActionChains(self.driver)
+        actions.move_to_element(self.element).perform()
+        # Or we can use
+        # driver.execute_script("arguments[0].scrollIntoView();", self.element)
 

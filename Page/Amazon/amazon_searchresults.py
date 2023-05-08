@@ -12,10 +12,11 @@ class AmazonSearchResult(BasePage):
     def set_price_range(self, min_amt, max_amt):
         min_price_elm = BaseElement(self.driver, By.XPATH, '//input[@name="low-price"]')
         max_price_elm = BaseElement(self.driver, By.XPATH, '//input[@name="high-price"]')
-        go = BaseElement(self.driver, By.XPATH, '//li[contains(@id,"price-range")]//input[@type="submit"]')
+        go_button = BaseElement(self.driver, By.XPATH,
+                                  '//li[contains(@id,"price-range")]//input[@type="submit"]')
         min_price_elm.enter_text(min_amt)
         max_price_elm.enter_text(max_amt)
-        go.click_element()
+        go_button.click_element()
         self.log.info(f"Price range for the searched item is set between {min_amt} and {max_amt}")
 
     def all_item_price_list(self):

@@ -11,6 +11,7 @@ from pytest import mark
 
 
 class SampleTests():
-    def test_sample1():
+
+    def test_sample1(self):
         assert True
 
