@@ -1,31 +1,33 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import ElementClickInterceptedException
-from selenium.webdriver.common.by import By
 from Util.logs import getLogger
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
+import inspect
 
 
 class BaseElement:
 
     log = getLogger()
 
-    def __init__(self, driver, locator, locator_value):
-        self.locator = locator
-        self.locator_value = locator_value
+    def __init__(self, driver, locator):
+        self.locator = locator[0]
+        self.locator_value = locator[1]
         self.driver = driver
         self.element = self.get_element()
 
     def get_element(self):
         try:
-            return WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located((self.locator, self.locator_value)))
+            return WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((self.locator, self.locator_value)))
         except:
-            self.log.debug("No such element found")
+            caller_file = inspect.stack()[2][1].split("\\")[-1]
+            caller_function = inspect.stack()[2][3]
+            self.log.debug(f" {caller_file} - {caller_function}() - An element is not found.")
             return "Element is not found."
 
     def get_elements(self):
-        return WebDriverWait(self.driver, 20).\
+        return WebDriverWait(self.driver, 10).\
             until(EC.visibility_of_all_elements_located((self.locator, self.locator_value)))
 
     def get_elements_text(self):
@@ -60,3 +62,5 @@ class BaseElement:
         # Or we can use
         # driver.execute_script("arguments[0].scrollIntoView();", self.element)
 
+    def press_enter_key(self):
+        self.element.send_keys(Keys.ENTER)
