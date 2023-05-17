@@ -3,6 +3,7 @@ from selenium import webdriver
 # from Util.screenshot import Screenshot
 from Util.logs import getLogger
 from definitions import set_value, ROOT_DIR, global_dict, create_screenshot_folder
+from Util.csv_data_converter import csv_to_ipdate
 import os
 
 
@@ -26,5 +27,14 @@ def homepage_url():
 @pytest.fixture(scope="session")
 def amazonpage_url():
     return "https://www.amazon.in/"
+
+
+#GWPC test data
+
+test_data = csv_to_ipdate(ROOT_DIR + "\\account_creation_data.csv")
+
+@pytest.fixture(params=test_data)
+def data(request):
+    yield request.param
 
 
