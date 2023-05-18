@@ -1,9 +1,12 @@
+from selenium.common import TimeoutException, NoAlertPresentException
 from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-
+from Util.logs import getLogger
 
 class BasePage:
+
+    log = getLogger()
 
     def __init__(self, driver, url):
         self.driver = driver
@@ -18,13 +21,13 @@ class BasePage:
     def get_title(self):
         return self.driver.title
 
+    def get_alert(self):
+        return WebDriverWait(self.driver, 5).until(EC.alert_is_present())
+
     def accept_alert(self):
         try:
-            WebDriverWait(self.driver, 3).until(EC.alert_is_present())
-            alert = self.driver.switch_to.alert
-            alert.accept()
-            alert.accept()
+            self.get_alert().accept()
+            self.log.info("alert accepted")
         except:
-            pass
-
+            self.log.info("no alert")
 

@@ -9,6 +9,7 @@ URL = {
     "test": "http://localhost:8180/pc/PolicyCenter.do",
     "dev" : "somthing dev"
        }[definitions.global_dict["env"]]
+TITLE = "[DEV mode - 10.2.2.1786] Guidewire PolicyCenter"
 
 
 class GWPC(BasePage):
@@ -17,6 +18,7 @@ class GWPC(BasePage):
 
     def __init__(self, driver):
         self.url = URL
+        self.expected_title = TITLE
         super().__init__(driver=driver, url=self.url)
         self.locator_user_name = (By.XPATH, '//input[@name="Login-LoginScreen-LoginDV-username"]')
         self.locator_password = (By.XPATH, '//input[@name="Login-LoginScreen-LoginDV-password"]')

@@ -7,14 +7,14 @@ from Page.guidewire.create_account import CreateAccount
 
 class HomeTests:
 
-    # def test_home(self, browser):
-    #     page = GWPC(browser)
-    #     page.go()
-    #     page.login(username='su', password='gw')
+    def test_home(self, browser):
+        page = GWPC(browser)
+        page.go()
+        assert page.get_title() == page.expected_title
 
     def test_home2(self, browser, data):
         page = GWPC(browser)
-        page.go()
+        # page.go()
         page.login(username='su', password='gw')
         tab_bar = TabBar(browser)
         tab_bar.create_new_account_btn()
@@ -26,5 +26,5 @@ class HomeTests:
         time.sleep(1)
 
         tab_bar.log_out_user()
-        acct_page.accept_alert()
+        page.accept_alert()
         # time.sleep(3)
