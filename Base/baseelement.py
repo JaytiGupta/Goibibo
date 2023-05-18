@@ -1,6 +1,6 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import ElementClickInterceptedException
+from selenium.common.exceptions import ElementClickInterceptedException, TimeoutException
 from Util.logs import getLogger
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
@@ -20,7 +20,7 @@ class BaseElement:
     def get_element(self):
         try:
             return WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((self.locator, self.locator_value)))
-        except:
+        except TimeoutException:
             caller_file = inspect.stack()[2][1].split("\\")[-1]
             caller_function = inspect.stack()[2][3]
             self.log.debug(f" {caller_file} - {caller_function}() - An element is not found.")
