@@ -65,8 +65,10 @@ class CreateAccount(BasePage):
         if zero_results == "The search returned zero results.":
             pass
     #         TODO log info for no matching account found
-        else
+        else:
+            pass
     #         TODO click on the first search result
+
 
     def create_new_account(self, type):
         new_account_btn = BaseElement(self.driver, self.locator_new_account_btn)

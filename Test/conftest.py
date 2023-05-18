@@ -29,12 +29,16 @@ def amazonpage_url():
     return "https://www.amazon.in/"
 
 
-#GWPC test data
-
+# GWPC test data
 test_data = csv_to_ipdate(ROOT_DIR + "\\account_creation_data.csv")
+
 
 @pytest.fixture(params=test_data)
 def data(request):
     yield request.param
+
+
+if __name__ == "__main__":
+    pass
 
 
