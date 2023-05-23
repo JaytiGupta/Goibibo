@@ -1,7 +1,7 @@
-company_name,first_name,last_name,office_Phone,primary_email,address_1,city,state,zip_code,address_type,orgnization,producer
-new_company_1,NA,NA,(650) 604-5387,primary_test_email1@test.com,Po Box 70,Unionville,Virginia(VA),22567,Billing,Armstrong and Company,100-002541 Armstrong (Premier)
-new_company_2,NA,NA,(787) 204-0687,primary_test_email2@test.com,7328 Poplar Ct,Falls Church,Virginia(VA),22042,Business,Armstrong and Company,100-002541 Armstrong (Premier)
-new_company_3,NA,NA,(703) 204-0879,primary_test_email3@test.com,8230 Stonewall Dr,Vienna,Virginia(VA),22180,Home,Armstrong and Company,100-002541 Armstrong (Premier)
-new_company_4,NA,NA,(703) 204-1283,primary_test_email4@test.com,1416 Desale St SW,Vienna,Virginia(VA),22180,Other,Armstrong and Company,100-002541 Armstrong (Premier)
-new_company_5,NA,NA,(703) 204-2045,primary_test_email5@test.com,8105 Timber Valley Ct,Dunn Loring,Virginia(VA),22027,Billing,Armstrong and Company,100-002541 Armstrong (Premier)
-new_company_6,NA,NA,(703) 207-0883,primary_test_email6@test.com,226 Cedar Ln,Vienna,Virginia(VA),22180,Business,Armstrong and Company,100-002541 Armstrong (Premier)
+company_name,first_name,last_name,account_type,office_Phone,primary_email,address_1,city,state,zip_code,address_type,orgnization,producer
+new_company_1,NA,NA,company,(650) 604-5387,primary_test_email1@test.com,Po Box 70,Unionville,Virginia,22567,Billing,Armstrong and Company,100-002541 Armstrong (Premier)
+new_company_2,NA,NA,company,(787) 204-0687,primary_test_email2@test.com,7328 Poplar Ct,Falls Church,Virginia,22042,Business,Armstrong and Company,100-002541 Armstrong (Premier)
+new_company_3,NA,NA,company,(703) 204-0879,primary_test_email3@test.com,8230 Stonewall Dr,Vienna,Virginia,22180,Home,Armstrong and Company,100-002541 Armstrong (Premier)
+new_company_4,NA,NA,company,(703) 204-1283,primary_test_email4@test.com,1416 Desale St SW,Vienna,Virginia,22180,Other,Armstrong and Company,100-002541 Armstrong (Premier)
+new_company_5,NA,NA,company,(703) 204-2045,primary_test_email5@test.com,8105 Timber Valley Ct,Dunn Loring,Virginia,22027,Billing,Armstrong and Company,100-002541 Armstrong (Premier)
+new_company_6,NA,NA,company,(703) 207-0883,primary_test_email6@test.com,226 Cedar Ln,Vienna,Virginia,22180,Business,Armstrong and Company,100-002541 Armstrong (Premier)

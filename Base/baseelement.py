@@ -4,6 +4,7 @@ from selenium.common.exceptions import ElementClickInterceptedException, Timeout
 from Util.logs import getLogger
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.select import Select
 import inspect
 
 
@@ -64,3 +65,12 @@ class BaseElement:
 
     def press_enter_key(self):
         self.element.send_keys(Keys.ENTER)
+
+    def select_option(self, **kwargs):
+        elm = Select(self.element)
+        if kwargs.get("index") is not None:
+            elm.select_by_index(kwargs.get("index"))
+        elif kwargs.get("text") is not None:
+            elm.select_by_visible_text(kwargs.get("text"))
+        elif kwargs.get("value") is not None:
+            elm.select_by_value(kwargs.get("value"))

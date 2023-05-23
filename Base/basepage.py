@@ -4,6 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from Util.logs import getLogger
 
+
 class BasePage:
 
     log = getLogger()

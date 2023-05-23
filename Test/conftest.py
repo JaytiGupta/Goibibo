@@ -30,7 +30,7 @@ def amazonpage_url():
 
 
 # GWPC test data
-test_data = csv_to_ipdate(ROOT_DIR + "\\account_creation_data.csv")
+test_data = csv_to_ipdate(ROOT_DIR + "\\account_creation_data.csv", 3)
 
 
 @pytest.fixture(params=test_data)
@@ -39,6 +39,6 @@ def data(request):
 
 
 if __name__ == "__main__":
-    pass
+    print(test_data)
 
 
