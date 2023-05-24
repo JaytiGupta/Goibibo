@@ -13,7 +13,6 @@ class CreateAccount(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
-        # self.log = getLogger()
         self.locator_input_company_name = (By.XPATH,
                                            '//input[@name="NewAccount-NewAccountScreen-NewAccountSearchDV-'
                                            'GlobalContactNameInputSet-Name"]')
@@ -64,16 +63,16 @@ class CreateAccount(BasePage):
     def input_company_name(self, name):
         company_name = BaseElement(self.driver, self.locator_input_company_name)
         company_name.enter_text(name)
-        self.log.info(f"Page: Enter Account Information - Company Name: {name} updated.")
+        self.log.info(f"Page: Enter Account Information - Company Name '{name}' value entered.")
 
     def input_name(self, first_name, last_name):
         first_name_elm = BaseElement(self.driver, self.locator_input_first_name)
         first_name_elm.enter_text(first_name)
-        self.log.info(f"Page: Enter Account Information - First Name: {first_name} updated.")
+        self.log.info(f"Page: Enter Account Information - First Name: '{first_name}' value entered.")
 
         last_name_elm = BaseElement(self.driver, self.locator_input_last_name)
         last_name_elm.enter_text(last_name)
-        self.log.info(f"Page: Enter Account Information - Last Name: {last_name} updated.")
+        self.log.info(f"Page: Enter Account Information - Last Name: '{last_name}' value entered.")
 
     def click_search_btn(self):
         search_btn = BaseElement(self.driver, self.locator_search_btn)
@@ -107,12 +106,12 @@ class CreateAccount(BasePage):
     def input_office_phone(self, number):
         office_phn = BaseElement(self.driver, self.locator_office_phone)
         office_phn.enter_text(number)
-        self.log.info(f"Page: Create account - Office Phone: {number} updated.")
+        self.log.info(f"Page: Create account - Office Phone: '{number}' value entered.")
 
     def input_primary_email(self, text):
         primary_email = BaseElement(self.driver, self.locator_primary_email)
         primary_email.enter_text(text)
-        self.log.info(f"Page: Create account - Primary Email: {text} updated.")
+        self.log.info(f"Page: Create account - Primary Email: '{text}' value entered.")
 
     def input_address(self, address1, city, state, zip_code, address_type, address2=None, address3=None):
         address1_elm = BaseElement(self.driver, self.locator_address1)
@@ -132,7 +131,7 @@ class CreateAccount(BasePage):
         state_elm.select_option(text=state)
         zip_elm.enter_text(zip_code)
         address_type_elm.select_option(text=address_type)
-        self.log.info(f"Page: Create account - address updated.")
+        self.log.info(f"Page: Create account - address entered.")
 
     def select_producer(self, organization, producer_code):
         input_organization_elm = BaseElement(self.driver, self.locator_producer_input_org)
@@ -143,7 +142,7 @@ class CreateAccount(BasePage):
         # hence searching it after clicking on search button
         select_producer_code_elm = BaseElement(self.driver, self.locator_select_producer_code)
         select_producer_code_elm.select_option(text=producer_code)
-        self.log.info(f"Page: Create account - Section: Select Producer - Organization & Producer Code updated.")
+        self.log.info(f"Page: Create account - Section: Select Producer - Organization & Producer Code selected.")
 
     def click_btn_update(self):
         update_btn = BaseElement(self.driver, self.locator_update_btn)
