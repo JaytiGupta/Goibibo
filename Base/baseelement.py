@@ -67,6 +67,9 @@ class BaseElement:
     def press_enter_key(self):
         self.element.send_keys(Keys.ENTER)
 
+    def press_tab_key(self):
+        self.element.send_keys(Keys.TAB)
+
     def select_option(self, **kwargs):
         elm = Select(self.element)
         if kwargs.get("index") is not None:
@@ -76,15 +79,8 @@ class BaseElement:
         elif kwargs.get("value") is not None:
             elm.select_by_value(kwargs.get("value"))
 
-    def hover_and_click(self):
-        # element = self.element
-        # action = ActionChains(self.driver)
-        # action.double_click(element).perform()
-        a = ActionChains(self.driver)
-        element = self.element
-        a.move_to_element(element).click().perform()
-
-    def elm_clickable(self):
-        elm = self.element
-        return EC.element_to_be_clickable((self.locator, self.locator_value))
-
+    def is_element_present(self):
+        """
+        :return: True or False
+        """
+        return not self.element == "Element is not found."

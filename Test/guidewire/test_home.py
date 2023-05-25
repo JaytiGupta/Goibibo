@@ -18,19 +18,15 @@ class HomeTests:
         page = GWPC(browser)
         page.login(username='su', password='gw')
         tab_bar = TabBar(browser)
-        tab_bar.search_account("9519613281")
-        # page1 = CreateAccount(browser)
-        # page1.create_default_new_account('Company')
-        time.sleep(3)
+        tab_bar.search_account("3415781253")
 
     def test_new_submission(self, browser):
         page = AccountSummary(browser)
         page.click_new_submission()
         page1 = NewSubmission(browser)
-        page1.enter_eff_date("05/05/2023")
         page1.select_base_state("Virginia")
-        time.sleep(5)
+        page1.enter_eff_date("05/05/2023")
         page1.select_lob_btn("Workers' Compensation")
+        time.sleep(3)
         assert page1.draft_sub()
-        time.sleep(10)
 
