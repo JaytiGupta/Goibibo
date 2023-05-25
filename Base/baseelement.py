@@ -20,7 +20,8 @@ class BaseElement:
 
     def get_element(self):
         try:
-            return WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((self.locator, self.locator_value)))
+            return WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located(
+                (self.locator, self.locator_value)))
         except TimeoutException:
             caller_file = inspect.stack()[2][1].split("\\")[-1]
             caller_function = inspect.stack()[2][3]
@@ -28,7 +29,7 @@ class BaseElement:
             return "Element is not found."
 
     def get_elements(self):
-        return WebDriverWait(self.driver, 10).\
+        return WebDriverWait(self.driver, 20).\
             until(EC.visibility_of_all_elements_located((self.locator, self.locator_value)))
 
     def get_elements_text(self):
@@ -74,3 +75,16 @@ class BaseElement:
             elm.select_by_visible_text(kwargs.get("text"))
         elif kwargs.get("value") is not None:
             elm.select_by_value(kwargs.get("value"))
+
+    def hover_and_click(self):
+        # element = self.element
+        # action = ActionChains(self.driver)
+        # action.double_click(element).perform()
+        a = ActionChains(self.driver)
+        element = self.element
+        a.move_to_element(element).click().perform()
+
+    def elm_clickable(self):
+        elm = self.element
+        return EC.element_to_be_clickable((self.locator, self.locator_value))
+

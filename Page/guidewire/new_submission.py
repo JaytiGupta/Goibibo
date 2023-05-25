@@ -29,11 +29,16 @@ class NewSubmission(BasePage):
         base_state.select_option(text=state)
 
     def select_lob_btn(self, lob):
-        elm = ''
+        # elm = ''
         if lob == "Workers' Compensation":
             elm = BaseElement(self.driver, self.locator_select_work_comp_btn)
         elif lob == "Business Owners":
             elm = BaseElement(self.driver, self.locator_select_business_owners_btn)
         else:
             raise ValueError(f"No such LOB {lob}")
-        elm.click_element()
+        elm.elm_clickable()
+        elm.hover_and_click()
+
+    def draft_sub(self):
+        draft_sub_text = BaseElement(self.driver, (By.XPATH, '//div[text()="Submission (Draft)"]'))
+        return not draft_sub_text.element == "Element is not found."

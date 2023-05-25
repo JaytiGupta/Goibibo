@@ -4,6 +4,7 @@ from Page.guidewire.tab_bar import TabBar
 from Page.guidewire.gwpc import GWPC
 from Page.guidewire.create_account import CreateAccount
 from Page.guidewire.account_summary import AccountSummary
+from Page.guidewire.new_submission import NewSubmission
 
 
 class HomeTests:
@@ -17,58 +18,19 @@ class HomeTests:
         page = GWPC(browser)
         page.login(username='su', password='gw')
         tab_bar = TabBar(browser)
-        tab_bar.search_account(1342104490)
-
-        page_act_summary = AccountSummary(browser)
-        print(page_act_summary.get_account_number())
-        print(page_act_summary.get_account_holder_name())
-        page_act_summary.click_new_submission()
+        tab_bar.search_account("9519613281")
+        # page1 = CreateAccount(browser)
+        # page1.create_default_new_account('Company')
         time.sleep(3)
 
+    def test_new_submission(self, browser):
+        page = AccountSummary(browser)
+        page.click_new_submission()
+        page1 = NewSubmission(browser)
+        page1.enter_eff_date("05/05/2023")
+        page1.select_base_state("Virginia")
+        time.sleep(5)
+        page1.select_lob_btn("Workers' Compensation")
+        assert page1.draft_sub()
+        time.sleep(10)
 
-    # def test_create_random_account(self, browser):
-    #     page = GWPC(browser)
-    #     page.login(username='su', password='gw')
-    #     tab_bar = TabBar(browser)
-    #     tab_bar.create_new_account_btn()
-    #
-    #     acct_page = CreateAccount(browser)
-    #     # acct_page.create_default_new_account("person")
-    #     acct_page.create_default_new_account("company")
-    #     time.sleep(15)
-        # acct_page.click_btn_cancel()
-        # tab_bar.log_out_user()
-
-    # @mark.skip
-    # def test_home2(self, browser, data):
-    #     page = GWPC(browser)
-    #     # page.go()
-    #     page.login(username='su', password='gw')
-    #     tab_bar = TabBar(browser)
-    #     tab_bar.create_new_account_btn()
-    #
-    #     acct_page = CreateAccount(browser)
-    #     acct_page.input_company_name(data["company_name"])
-    #     acct_page.click_search_btn()
-    #     acct_page.create_new_account(data["account_type"])
-    #
-    #     acct_page.input_office_phone(data["office_Phone"])
-    #     acct_page.input_primary_email(data["primary_email"])
-    #     acct_page.input_address(address1=data["address_1"],
-    #                             city=data["city"],
-    #                             state=data["state"],
-    #                             zip=data["zip_code"],
-    #                             address_type=data["address_type"])
-    #
-    #     # acct_page.input_address_1(data["address_1"])
-    #     # acct_page.input_city(data["city"])
-    #     # acct_page.input_state(data["state"])
-    #     # acct_page.input_zip(data["zip_code"])
-    #     # acct_page.select_address_type(data["address_type"])
-    #
-    #     time.sleep(3)
-    #     acct_page.cancel_btn()
-    #     tab_bar.log_out_user()
-    #
-    #     page.accept_alert()
-    #     # time.sleep(3)
