@@ -1,4 +1,3 @@
-from pytest import fixture
 import pandas
 
 
@@ -27,4 +26,4 @@ def update_csv(file_path, **kwargs):
 
 
 if __name__ == "__main__":
-    update_csv("../output_data.csv", account_name="NewAccount_3", account_number="565303533")
+    pass
