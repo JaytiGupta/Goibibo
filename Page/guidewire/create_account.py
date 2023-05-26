@@ -5,6 +5,7 @@ from Base.basepage import BasePage
 from Base.baseelement import BaseElement
 from selenium.webdriver.common.by import By
 from Util.logs import getLogger
+from Util import random_address
 
 
 class CreateAccount(BasePage):
@@ -156,20 +157,6 @@ class CreateAccount(BasePage):
 
     # ---------------------
 
-    def get_address(self):
-        # TODO: update list values
-        address_list = [
-            "Po Box 70,Unionville,Virginia,22567",
-            "Po Box 70,Unionville,Virginia,22567",
-            "Po Box 70,Unionville,Virginia,22567",
-            "Po Box 70,Unionville,Virginia,22567",
-            "Po Box 70,Unionville,Virginia,22567",
-            "Po Box 70,Unionville,Virginia,22567",
-            "Po Box 70,Unionville,Virginia,22567",
-            "Po Box 70,Unionville,Virginia,22567",
-        ]
-        return choice(address_list)
-
     def create_default_new_account(self, account_type):
         """
         :param account_type: company or person
@@ -183,6 +170,11 @@ class CreateAccount(BasePage):
         last_name = "last-" + unique_string
         phone_number = f"(650) {randint(101, 999)}-{randint(1001, 9999)}"
         email_address = f"my_email{unique_string}@test.com"
+        address = random_address.get_one_address("VA")
+        address1 = address["Address_1"]
+        city = address["City"]
+        state = address["State"]
+        zip_code = address["Zip_Code"]
 
         if account_type.lower() == "company":
             self.input_company_name(company_name)
@@ -190,15 +182,9 @@ class CreateAccount(BasePage):
             self.input_name(first_name,last_name)
         self.click_search_btn()
         self.create_new_account_btn(account_type)
-
         if account_type.lower() == "company":
             self.input_office_phone(phone_number)
         self.input_primary_email(email_address)
-        split_address = self.get_address().split(",")
-        address1 = split_address[0]
-        city = split_address[1]
-        state = split_address[2]
-        zip_code = split_address[3]
         address_type = choice(["Billing", "Business", "Home", "Other"])
         self.input_address(address1, city, state, zip_code, address_type)
         self.select_producer("Armstrong and Company", "100-002541 Armstrong (Premier)")
