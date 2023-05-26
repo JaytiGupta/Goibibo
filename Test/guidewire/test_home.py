@@ -18,6 +18,10 @@ class HomeTests:
         page = GWPC(browser)
         page.login(username='su', password='gw')
         tab_bar = TabBar(browser)
+        # tab_bar.create_new_account_btn()
+        # create_act_page = CreateAccount(browser)
+        # create_act_page.create_default_new_account("Company")
+        # time.sleep(14)
         tab_bar.search_account("3415781253")
 
     def test_new_submission(self, browser):
