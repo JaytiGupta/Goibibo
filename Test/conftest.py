@@ -39,6 +39,7 @@ def data(request):
 
 
 if __name__ == "__main__":
-    print(test_data)
+    # print(test_data)
+    print(type(webdriver.Chrome()))
 
 

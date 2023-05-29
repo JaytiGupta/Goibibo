@@ -1,5 +1,4 @@
-from selenium.common import TimeoutException, NoAlertPresentException
-from selenium.webdriver.common.alert import Alert
+from selenium.common import NoAlertPresentException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from Util.logs import getLogger
@@ -29,6 +28,6 @@ class BasePage:
         try:
             self.get_alert().accept()
             self.log.info("alert accepted")
-        except:
+        except NoAlertPresentException:
             self.log.info("no alert")
 
