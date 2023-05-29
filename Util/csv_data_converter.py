@@ -18,12 +18,22 @@ def csv_to_ipdate(file_path, number_of_rows=None):
         return converted_data[:number_of_rows]
 
 
-def update_csv(file_path, **kwargs):
-    new_dict = {key: [value] for (key, value) in kwargs.items()}
-    print(new_dict)
-    new_data = pandas.DataFrame(new_dict)
-    new_data.to_csv(file_path, mode="a", index=False, header=False)
+def update_csv(file_path, by_column, by_value, to_column, to_value):
+    """
+    :param file_path: file with its path that needs to be updated
+    :param by_column: column name which we are referring to update desired column in file
+    :param by_value: Value of by_column which we are referring to update desired column in file
+    :param to_column: column to update
+    :param to_value: value to update
+    :return: update the value of desired data field
+    """
+    # Read the CSV file
+    data = pandas.read_csv(file_path)
+    # Modify the data in dataframe
+    data.loc[data[by_column].astype(str) == by_value, to_column] = to_value
+    # Write the updated Dataframe back to CSV file
+    data.to_csv(file_path, index=False)
 
 
 if __name__ == "__main__":
-    pass
+    update_csv("../Data/output_data.csv", "account_name", "NewAccount_3", "account_number", 565538)
