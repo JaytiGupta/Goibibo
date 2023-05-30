@@ -28,17 +28,6 @@ class BaseElement:
             self.log.debug(f" {caller_file} - {caller_function}() - An element is not found.")
             return "Element is not found."
 
-    def get_elements(self):
-        return WebDriverWait(self.driver, 20).\
-            until(EC.visibility_of_all_elements_located((self.locator, self.locator_value)))
-
-    def get_elements_text(self):
-        elm_list = self.get_elements()
-        txt_list = []
-        for i in elm_list:
-            txt_list.append(i.text)
-        return txt_list
-
     def click_element(self):
         try:
             self.element.click()
@@ -84,3 +73,27 @@ class BaseElement:
         :return: True or False
         """
         return not self.element == "Element is not found."
+
+    # methods for multiple elements returned
+    def get_all_elements(self) -> list:
+        return WebDriverWait(self.driver, 20). \
+            until(EC.visibility_of_all_elements_located((self.locator, self.locator_value)))
+
+    def get_all_elements_text(self) -> list:
+        elm_list = self.get_all_elements()
+        txt_list = []
+        for elm in elm_list:
+            txt_list.append(elm.text)
+        return txt_list
+        # Or we can do this
+        # elm_list = self.get_all_elements()
+        # return [elm.text for elm in elm_list]
+
+    def click_all_elements(self):
+        elm_list = self.get_all_elements()
+        if len(elm_list) > 0:
+            for elm in elm_list:
+                elm.click()
+        else:
+            self.log.debug("No element to click.")
+

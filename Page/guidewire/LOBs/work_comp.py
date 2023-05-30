@@ -1,9 +1,11 @@
 from Base.basepage import BasePage
 from Base.baseelement import BaseElement
 from selenium.webdriver.common.by import By
+from Page.guidewire.LOBs import common
 
 
-class NewSubmission(BasePage):
+#0000008751
+class WorkersCompensation(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
@@ -35,40 +37,22 @@ class NewSubmission(BasePage):
         self.locator_if_any_check_box = (By.XPATH, '//div[contains(@id, "WorkersCompClassesInputSet-0")]//tr[2]/td[7]//input')
         self.locator_basis_input_box = (By.XPATH, '//div[contains(@id, "WorkersCompClassesInputSet-0")]//tr[2]/td[8]//input')
 
-        # Supplemental
-
-    # Dynamic Locator - Qualification
-    def locator_dynamic_qualification_radio_btn(self, question, answer):
-        if answer.lower() == "yes":
-            x_path = f'//div[contains(text(),"{question}")]/ancestor::tr//input[@type="radio"][@value="true"]'
-        else:
-            x_path = f'//div[contains(text(),"{question}")]/ancestor::tr//input[@type="radio"][@value="false"]'
-        return (By.XPATH, x_path)
-
-    def locator_dynamic_qualification_input_box(self, question):
-        x_path = f'//div[contains(text(),"{question}")]/ancestor::tr//input[@value="true"]'
-        return (By.XPATH, x_path)
-
-    # Dynamic Locator - Supplemental
-    def locator_dynamic_supplemental_radio_btn(self, question, answer):
-        if answer.lower() == "yes":
-            x_path = f'//div[contains(text(),"{question}")]/ancestor::tr//input[@type="radio"][@value="true"]'
-        else:
-            x_path = f'//div[contains(text(),"{question}")]/ancestor::tr//input[@type="radio"][@value="false"]'
-        return (By.XPATH, x_path)
-
     # Qualification
     def select_qualification_radio_btn_option(self, question, answer):
-        radio_btn = BaseElement(self.driver, self.locator_dynamic_qualification_radio_btn(question, answer))
+        radio_btn = BaseElement(self.driver, common.locator_dynamic_radio_btn(question=question, answer=answer))
         radio_btn.click_element()
 
     def enter_qualification_input_box(self, question, answer):
-        input_box = BaseElement(self.driver, self.locator_dynamic_qualification_input_box(question))
+        input_box = BaseElement(self.driver, common.locator_dynamic_input_box(question=question))
         input_box.enter_text(answer)
+
+    def select_qualification_all_radio_btn_as_yes(self):
+        all_radio_btn_elm = BaseElement(self.driver, common.locator_dynamic_radio_btn(question="all", answer="yes"))
+        all_radio_btn_elm.click_all_elements()
 
     # Supplemental
     def select_supplemental_radio_btn_option(self, question, answer):
-        radio_btn = BaseElement(self.driver, self.locator_dynamic_qualification_radio_btn(question, answer))
+        radio_btn = BaseElement(self.driver, common.locator_dynamic_radio_btn(question=question, answer=answer))
         radio_btn.click_element()
 
 
