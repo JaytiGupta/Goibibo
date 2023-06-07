@@ -46,16 +46,6 @@ class CreateAccount(BasePage):
         self.locator_producer_org_search_btn = (By.XPATH, '//div[text()="Organization"]/following-sibling::div'
                                                           '//span[@aria-label="gw-search-icon"]')
         self.locator_select_producer_code = (By.XPATH, '//div[text()="Producer Code"]/following-sibling::div//select')
-
-        # self.locator_input_org = (By.XPATH,
-        # '//div[contains(text(),"Organization Type")]/following-sibling::div//select')
-        # self.locator_input_producer_org_name = (By.XPATH, '//input[@name="OrganizationSearchPopup-'
-        #                                                   'OrganizationSearchPopupScreen-OrganizationSearchDV-'
-        #                                                   'GlobalContactNameInputSet-Name"]')
-        # self.locator_input_producer_org_search_btn2 = (By.XPATH, '//div[@id="OrganizationSearchPopup-'
-        #                                                          'OrganizationSearchPopupScreen-OrganizationSearchDV-'
-        #                                                          'SearchAndResetInputSet-SearchLinksInputSet-Search"]')
-
         self.locator_update_btn = (By.XPATH, '//div[@aria-label="Update"]')
         self.locator_cancel_btn = (By.XPATH, '//div[@aria-label="Cancel"]')
 
@@ -116,22 +106,28 @@ class CreateAccount(BasePage):
 
     def input_address(self, address1, city, state, zip_code, address_type, address2=None, address3=None):
         address1_elm = BaseElement(self.driver, self.locator_address1)
-        address2_elm = BaseElement(self.driver, self.locator_address2)
-        address3_elm = BaseElement(self.driver, self.locator_address3)
-        city_elm = BaseElement(self.driver, self.locator_input_city)
-        state_elm = BaseElement(self.driver, self.locator_select_state)
-        zip_elm = BaseElement(self.driver, self.locator_input_zip)
-        address_type_elm = BaseElement(self.driver, self.locator_select_address_type)
-
         address1_elm.enter_text(address1)
+
         if address2 is not None:
+            address2_elm = BaseElement(self.driver, self.locator_address2)
             address2_elm.enter_text(address2)
+
         if address3 is not None:
+            address3_elm = BaseElement(self.driver, self.locator_address3)
             address3_elm.enter_text(address3)
+
+        city_elm = BaseElement(self.driver, self.locator_input_city)
         city_elm.enter_text(city)
+
+        state_elm = BaseElement(self.driver, self.locator_select_state)
         state_elm.select_option(text=state)
+
+        zip_elm = BaseElement(self.driver, self.locator_input_zip)
         zip_elm.enter_text(zip_code)
+
+        address_type_elm = BaseElement(self.driver, self.locator_select_address_type)
         address_type_elm.select_option(text=address_type)
+
         self.log.info(f"Page: Create account - address entered.")
 
     def select_producer(self, organization, producer_code):

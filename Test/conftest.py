@@ -3,7 +3,7 @@ from selenium import webdriver
 # from Util.screenshot import Screenshot
 from Util.logs import getLogger
 from definitions import set_value, ROOT_DIR, global_dict, create_screenshot_folder
-from Util.csv_data_converter import csv_to_ipdate
+from Util.csv_data_converter import list_of_dicts
 import os
 
 
@@ -30,7 +30,7 @@ def amazonpage_url():
 
 
 # GWPC test data
-test_data = csv_to_ipdate(ROOT_DIR + "\\Data\\account_creation_data.csv",3)
+test_data = list_of_dicts(ROOT_DIR + "\\Data\\account_creation_data.csv", 3)
 
 
 @pytest.fixture(params=test_data)

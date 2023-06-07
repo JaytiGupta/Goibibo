@@ -1,14 +1,15 @@
 import pandas
+import definitions
 
 
-def csv_to_ipdate(file_path, number_of_rows=None):
+def list_of_dicts(csv_file, number_of_rows=None):
     """
-    :param file_path: A csv file for input data
+    :param csv_file: A csv file for input data
     :param number_of_rows: Optional parameter return number of data rows required from data sheet
     :return: A list of dictionary in which each dict has its key as input csv data header
     and values as row data of input csv file.
     """
-    data = pandas.read_csv(file_path)
+    data = pandas.read_csv(csv_file)
     # variables_list = data.columns.tolist()
     # converted_data = [{variable: row[variable] for variable in variables_list} for (index, row) in data.iterrows()]
     converted_data = data.to_dict(orient="records")
@@ -18,22 +19,26 @@ def csv_to_ipdate(file_path, number_of_rows=None):
         return converted_data[:number_of_rows]
 
 
-def update_csv(file_path, by_column, by_value, to_column, to_value):
+def update_csv(file, reference_column, reference_column_value, column, value):
     """
-    :param file_path: file with its path that needs to be updated
-    :param by_column: column name which we are referring to update desired column in file
-    :param by_value: Value of by_column which we are referring to update desired column in file
-    :param to_column: column to update
-    :param to_value: value to update
+    :param file: csv file with its path that needs to be updated
+    :param reference_column: column name which we are referring to update desired column in file
+    :param reference_column_value: Value of by_column which we are referring to update desired column in file
+    :param column: column to update
+    :param value: value to update
     :return: update the value of desired data field
     """
-    # Read the CSV file
-    data = pandas.read_csv(file_path)
+    data = pandas.read_csv(file)
     # Modify the data in dataframe
-    data.loc[data[by_column].astype(str) == by_value, to_column] = to_value
+    data.loc[data[reference_column].astype(str) == reference_column_value, column] = value
     # Write the updated Dataframe back to CSV file
-    data.to_csv(file_path, index=False)
+    data.to_csv(file, index=False)
 
 
 if __name__ == "__main__":
-    update_csv("../Data/output_data.csv", "account_name", "NewAccount_3", "account_number", 565538)
+    update_csv(definitions.ROOT_DIR + "/Data/account_creation_data.csv", "company_name", "new_company_1", "account_type", "person")
+    l = list_of_dicts(definitions.ROOT_DIR + "/Data/account_creation_data.csv")
+    print(l)
+    for item in l:
+        print(item)
+    print(l[0]["company_name"])

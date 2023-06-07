@@ -1,4 +1,4 @@
-from Util.csv_data_converter import csv_to_ipdate
+from Util.csv_data_converter import list_of_dicts
 import random
 from definitions import ROOT_DIR
 
@@ -11,16 +11,15 @@ state_codes = {
 def get_address_list(*states):
     """
     :param states: states for which list of address required.
-    :return: list of address where each list is a dictionary
-    includes key - Address_1,Address_2,City,County,State_Code,Zip_Code,Phone_Number.
+    :return: list of address where each address is a dictionary
+    includes key - Address_1, Address_2, City, County, State, State_Code, Zip_Code, Phone_Number.
     """
-    addresses = csv_to_ipdate(ROOT_DIR + "/Data/Address.csv")
+    addresses = list_of_dicts(ROOT_DIR + "/Data/Address.csv")
     return_address_list = []
     for address in addresses:
         state_code = address["State_Code"]
         address["State"] = state_codes[state_code]
         try:
-            # state = state_codes[state_code]
             if states[0].lower() == "all":
                 return_address_list.append(address)
             elif state_code.lower() in (s.lower() for s in states):

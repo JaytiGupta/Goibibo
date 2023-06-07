@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 
 
 def locator_dynamic_radio_btn(question, answer):
-
     if question.lower() == "all":
         question = ""
 

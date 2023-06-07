@@ -1,6 +1,6 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import ElementClickInterceptedException, TimeoutException
+from selenium.common.exceptions import ElementClickInterceptedException, TimeoutException, NoSuchElementException
 from Util.logs import getLogger
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
@@ -37,6 +37,7 @@ class BaseElement:
     def enter_text(self, text):
         self.element.clear()
         self.element.send_keys(text)
+        # self.press_tab_key()
 
     def get_text(self):
         return self.element.text
@@ -60,19 +61,31 @@ class BaseElement:
         self.element.send_keys(Keys.TAB)
 
     def select_option(self, **kwargs):
+        """
+        :param kwargs: index or text or value (only one required)
+        """
         elm = Select(self.element)
-        if kwargs.get("index") is not None:
-            elm.select_by_index(kwargs.get("index"))
-        elif kwargs.get("text") is not None:
-            elm.select_by_visible_text(kwargs.get("text"))
-        elif kwargs.get("value") is not None:
-            elm.select_by_value(kwargs.get("value"))
+        try:
+            if kwargs.get("index") is not None:
+                elm.select_by_index(kwargs.get("index"))
+            elif kwargs.get("text") is not None:
+                elm.select_by_visible_text(kwargs.get("text"))
+            elif kwargs.get("value") is not None:
+                elm.select_by_value(kwargs.get("value"))
+        except NoSuchElementException:
+            self.log.debug(f"- No option present for which dropdown {list(kwargs.keys())[0]} "
+                           f"is \"{list(kwargs.values())[0]}\"")
+            raise ValueError(f"No option present for which dropdown {list(kwargs.keys())[0]} is \"{list(kwargs.values())[0]}\"")
 
     def is_element_present(self):
         """
         :return: True or False
         """
         return not self.element == "Element is not found."
+
+    def double_click(self):
+        action_chains = ActionChains(self.driver)
+        action_chains.double_click(self.element).perform()
 
     # methods for multiple elements returned
     def get_all_elements(self) -> list:

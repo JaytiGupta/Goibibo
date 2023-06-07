@@ -31,6 +31,6 @@ class GoibiboHomeTests:
         page.set_traveller(2, 1, 1)
         page.search_flight_btn()
         picture.capture()
-        assert page.get_title() == "Book Cheap Flights, Air Tickets, Hotels, Bus & Holiday Package at Goibibo"
+        assert page.get_title() == "Book Cheap Flights, Air Tickets, Hotels, Bus & Holiday Package at Automation_selenium_python"
         browser.save_screenshot("C:\\Users\\jayti.gupta\\Documents\\Automation Screenshots\\Folder1\\page_title.png")
         picture.capture()

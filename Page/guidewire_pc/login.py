@@ -6,21 +6,12 @@ from Util.logs import getLogger
 from Util.screenshot import take_screenshot
 
 
-URL = {
-    "test": "http://localhost:8180/pc/PolicyCenter.do",
-    "dev" : "somthing dev"
-       }[definitions.global_dict["env"]]
-TITLE = "[DEV mode - 10.2.2.1786] Guidewire PolicyCenter"
-
-
-class GWPC(BasePage):
+class Login(BasePage):
 
     log = getLogger()
 
     def __init__(self, driver):
-        self.url = URL
-        self.expected_title = TITLE
-        super().__init__(driver=driver, url=self.url)
+        super().__init__(driver=driver, url=None)
         self.locator_user_name = (By.XPATH, '//input[@name="Login-LoginScreen-LoginDV-username"]')
         self.locator_password = (By.XPATH, '//input[@name="Login-LoginScreen-LoginDV-password"]')
         self.locator_btn_login = (By.XPATH, '//div[@aria-label="Log In"]')
@@ -39,8 +30,8 @@ class GWPC(BasePage):
         btn_login.click_element()
 
     def is_login_successful(self):
-        my_summary = BaseElement(self.driver, self.locator_txt_my_summary)
-        return not (my_summary.element == "Element is not found.")
+        my_summary_elm = BaseElement(self.driver, self.locator_txt_my_summary)
+        return my_summary_elm.is_element_present()
 
     def login(self, username, password):
         self.input_user_name(username)

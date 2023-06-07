@@ -21,12 +21,12 @@ class BasePage:
     def get_title(self):
         return self.driver.title
 
-    def get_alert(self):
-        return WebDriverWait(self.driver, 5).until(EC.alert_is_present())
-
     def accept_alert(self):
         try:
-            self.get_alert().accept()
+            # wait = WebDriverWait(self.driver, 10)
+            # alert = wait.until(EC.alert_is_present())
+            alert = self.driver.switch_to.alert
+            alert.accept()
             self.log.info("alert accepted")
         except NoAlertPresentException:
             self.log.info("no alert")
