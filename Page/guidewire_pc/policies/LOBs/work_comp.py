@@ -58,7 +58,7 @@ class WorkersCompensation(BasePage):
                 self.log.info(f"Clicked Next button at {old_title[61:]} screen. Navigated to {new_title[61:]} screen.")
                 break
 
-    def quote(self):
+    def quote(self, _max_depth=2):
         quote_btn = BaseElement(self.driver, self._locator_Quote_btn)
         quote_btn.click_element()
         self.log.info(f"Clicked Quote button.")
@@ -72,10 +72,14 @@ class WorkersCompensation(BasePage):
             quote_btn.click_element()
 
         if self.screen_title() == "Pre-Quote Issues":
-            details_btn = BaseElement(self.driver, self._locator_details_btn)
-            details_btn.click_element()
-            self.risk_analysis_screen.approve_all_uw_issues()
-
+            if _max_depth > 1:
+                details_btn = BaseElement(self.driver, self._locator_details_btn)
+                details_btn.click_element()
+                self.risk_analysis_screen.approve_all_uw_issues()
+                self.quote(_max_depth - 1)
+            else:
+                self.log.debug("Unable to resolve Pre-Quote Issues")
+                raise Exception("Unable to resolve Pre-Quote Issues")
 
     def screen_title(self):
         screen_title = BaseElement(self.driver, self._locator_screen_title)
