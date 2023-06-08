@@ -24,9 +24,12 @@ class WorkersCompensation(BasePage):
         self._locator_BindOptions_btn = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[@aria-label="Bind Options"]')
         self._locator_BindOptions_BindOnly_btn = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[@aria-label="Bind Only"]')
         self._locator_BindOptions_IssuePolicy_btn = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[@aria-label="Issue Policy"]')
+        self._locator_details_btn = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[text()="Details"]')
 
         # Workspace
         self._locator_validation_results = (By.XPATH, '//div[text()="Validation Results"]')
+        self._locator_error = (By.XPATH, '//div[@id="gw-south-panel"]//div[contains(text(),"Error")]')
+        self._locator_warning = (By.XPATH, '//div[@id="gw-south-panel"]//div[contains(text(),"Warning")]')
         # screens
         self.qualification_screen = Qualification(self.driver)
         self.policy_info_screen = PolicyInfo(self.driver)
@@ -59,9 +62,20 @@ class WorkersCompensation(BasePage):
         quote_btn = BaseElement(self.driver, self._locator_Quote_btn)
         quote_btn.click_element()
         self.log.info(f"Clicked Quote button.")
-        workspace = BaseElement(self.driver, self._locator_validation_results)
-        if workspace.is_element_present():
+        workspace_error = BaseElement(self.driver, self._locator_error)
+        workspace_warning = BaseElement(self.driver, self._locator_warning)
+        if workspace_error.is_element_present():
+            self.log.debug("Getting error and unable to quote")
+            raise Exception("Getting error and unable to quote")
+        elif workspace_warning.is_element_present():
+            self.log.info("Getting warnings")
             quote_btn.click_element()
+
+        if self.screen_title() == "Pre-Quote Issues":
+            details_btn = BaseElement(self.driver, self._locator_details_btn)
+            details_btn.click_element()
+            self.risk_analysis_screen.approve_all_uw_issues()
+
 
     def screen_title(self):
         screen_title = BaseElement(self.driver, self._locator_screen_title)
@@ -73,9 +87,6 @@ class WorkersCompensation(BasePage):
         bind_only_btn_elm = BaseElement(self.driver, self._locator_BindOptions_BindOnly_btn)
         bind_only_btn_elm.click_element()
         self.log.info(f"Clicked Bind Only button.")
-        workspace = BaseElement(self.driver, self._locator_validation_results)
-        if workspace.is_element_present():
-            bind_only_btn_elm.click_element()
 
     def issue_policy(self):
         bind_option_btn_elm = BaseElement(self.driver, self._locator_BindOptions_btn)
@@ -291,6 +302,35 @@ class WCOptions(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
+        self._locator_add_option_btn = (By.XPATH, '//div[contains(text(),"Add Option")]')
+        self._locator_add_federal_class = (By.XPATH, '//div[@aria-label="Add"]')
+        self._locator_federal_location_dropdown = (By.XPATH, '//select[contains(@name,"WCLine_WCCovEmpLV-0-Loc")]')
+        self._locator_federal_class_code_input_box = (By.XPATH, '//input[contains(@name,"ClassCode")]')
+        self._locator_federal_no_of_emp_input_box = (By.XPATH, '//input[contains(@name,"NumEmployees")]')
+        self._locator_federal_basis_input_box = (By.XPATH, '//input[contains(@name,"AnnualRenum")]')
+    @staticmethod
+    def _locator_dynamic_wc_options_selection(wc_option_name):
+        xpath = f'//div[contains(text(),"Add Option")]' \
+                f'/parent::div/following-sibling::div[2]//div[contains(text(),{wc_option_name})]'
+        return By.XPATH, xpath
+
+    def add_wc_option(self, option):
+        add_option_btn = BaseElement(self.driver, self._locator_add_option_btn)
+        add_option_btn.click_element()
+        select_option = BaseElement(self.driver, self._locator_dynamic_wc_options_selection(option))
+        select_option.click_element()
+
+    def add_federal_class(self, location_index, class_code, emp_no, basis_value):
+        add_class_btn = BaseElement(self.driver, self._locator_add_federal_class)
+        add_class_btn.click_element()
+        location = BaseElement(self.driver, self._locator_federal_location_dropdown)
+        location.select_option(index=location_index)
+        class_code_elm = BaseElement(self.driver, self._locator_federal_class_code_input_box)
+        class_code_elm.enter_text(class_code)
+        emp = BaseElement(self.driver, self._locator_federal_no_of_emp_input_box)
+        emp.enter_text(emp_no)
+        basis = BaseElement(self.driver, self._locator_federal_basis_input_box)
+        basis.enter_text(basis_value)
 
 
 class RiskAnalysis(BasePage):
@@ -298,24 +338,31 @@ class RiskAnalysis(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
-        self._locator_all_check_box = (By.XPATH, '//input[@type="checkbox"]')
-        self._locator_approve_btn_for_all = (By.XPATH, '//div[@class="gw-ListView--UI-left"]//div[text()="Approve"]')
+        self._locator_all_pending_approval_check_box = (
+            By.XPATH, '//div[text()="Approve"]/ancestor::td[not(contains(@colspan,"1"))]'
+                      '/preceding-sibling::td[4]//input[@type="checkbox"]')
+        self._locator_header_approve_btn = (By.XPATH, '//div[@class="gw-ListView--UI-left"]'
+                                                       '//div[text()="Approve"]')
 
         # Screen: Risk Approval Details
         self._locator_ok_btn = (By.XPATH, '//div[@role="button"]//div[@aria-label="OK"]')
 
+    # //div[@id="gw-south-panel"]//div[contains(text(),"Error")]
     # TODO: select only the required check boxes
     def approve_all_uw_issues(self):
-        all_check_box = BaseElement(self.driver, self._locator_all_check_box)
+        all_check_box = BaseElement(self.driver, self._locator_all_pending_approval_check_box)
         all_check_box.click_all_elements()
-        approve_btn_for_all = BaseElement(self.driver, self._locator_approve_btn_for_all)
-        approve_btn_for_all.click_element()
-        self.click_ok_btn_risk_approval()
+        header_approve_btn = BaseElement(self.driver, self._locator_header_approve_btn)
+        header_approve_btn.click_element()
 
-    # Screen: Risk Approval Details
-    def click_ok_btn_risk_approval(self):
-        ok_btn = BaseElement(self.driver, self._locator_ok_btn)
-        ok_btn.click_element()
+        risk_approval_screen_ok_btn = BaseElement(self.driver, self._locator_ok_btn)
+        risk_approval_screen_ok_btn.click_element()
+
+        self.accept_alert()
+        if all_check_box.is_element_present():
+            self.log.debug("All UW Issues are not approved yet.")
+        else:
+            self.log.info("All UW Issues are approved.")
 
 
 class PolicyReview(BasePage):
@@ -330,7 +377,8 @@ class Quote(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
-        self._locator_total_premium_amt = (By.XPATH, '//div[text()="Total Premium"]/following-sibling::div//div[contains(text(), "$")]')
+        self._locator_total_premium_amt = (By.XPATH, '//div[text()="Total Premium"]'
+                                                     '/following-sibling::div//div[contains(text(), "$")]')
 
     def total_premium_amt(self):
         elm = BaseElement(self.driver, self._locator_total_premium_amt)
