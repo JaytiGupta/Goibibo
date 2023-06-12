@@ -1,6 +1,5 @@
 import time
 from re import sub
-
 from Base.basepage import BasePage
 from Base.baseelement import BaseElement
 from selenium.webdriver.common.by import By
@@ -34,7 +33,7 @@ class WorkersCompensation(BasePage):
         self.qualification_screen = Qualification(self.driver)
         self.policy_info_screen = PolicyInfo(self.driver)
         self.location_screen = Location(self.driver)
-        self.wc_coverages_screen = WCCOverages(self.driver)
+        self.wc_coverages_screen = WCCoverages(self.driver)
         self.supplement_screen = Supplemental(self.driver)
         self.wc_options_screen = WCOptions(self.driver)
         self.risk_analysis_screen = RiskAnalysis(self.driver)
@@ -44,46 +43,61 @@ class WorkersCompensation(BasePage):
 
     # Title Toolbar
     def next(self):
-        old_title = self.get_title()
+        # old_title = self.get_title()
 
         next_btn = BaseElement(self.driver, self._locator_Next_btn)
         next_btn.click_element()
 
         # waiting till next screen load
-        max_wait_time = 10
-        t_end = time.time() + max_wait_time
-        while time.time() < t_end:
-            new_title = self.get_title()
-            if old_title != new_title:
-                self.log.info(f"Clicked Next button at {old_title[61:]} screen. Navigated to {new_title[61:]} screen.")
-                break
+        # max_wait_time = 10
+        # t_end = time.time() + max_wait_time
+        # while time.time() < t_end:
+        #     new_title = self.get_title()
+        #     if old_title != new_title:
+        #         self.log.info(f"Clicked Next button at {old_title[61:]} screen. "
+        #                       f"Navigated to {new_title[61:]} screen.")
+        #         break
 
-    def quote(self, _max_depth=2):
+    def quote(self): # TODO needs to update max depth for recursion
+        initial_screen_title = self.screen_title()
+
+        self.log.info(f"{initial_screen_title} screen")
         quote_btn = BaseElement(self.driver, self._locator_Quote_btn)
         quote_btn.click_element()
-        self.log.info(f"Clicked Quote button.")
-        workspace_error = BaseElement(self.driver, self._locator_error)
-        workspace_warning = BaseElement(self.driver, self._locator_warning)
-        if workspace_error.is_element_present():
-            self.log.debug("Getting error and unable to quote")
-            raise Exception("Getting error and unable to quote")
-        elif workspace_warning.is_element_present():
-            self.log.info("Getting warnings")
-            quote_btn.click_element()
+        self.log.info("Clicked Quote button.")
 
-        if self.screen_title() == "Pre-Quote Issues":
-            if _max_depth > 1:
-                details_btn = BaseElement(self.driver, self._locator_details_btn)
-                details_btn.click_element()
-                self.risk_analysis_screen.approve_all_uw_issues()
-                self.quote(_max_depth - 1)
-            else:
-                self.log.debug("Unable to resolve Pre-Quote Issues")
-                raise Exception("Unable to resolve Pre-Quote Issues")
+        # TODO: update need to wait for page after click, screen can be same, pre_quote or quote
+        time.sleep(5)
+
+        if self.screen_title() == self.quote_screen.SCREEN_TITLE:
+            self.log.info("Quoted successfully")
+        elif self.screen_title() == "Pre-Quote Issues":
+            self.log.info("Pre-Quote Issues screen")
+            details_btn = BaseElement(self.driver, self._locator_details_btn)
+            details_btn.click_element()
+            self.log.debug("Navigate to Underwriter issues tab at Risk Analysis screen.")
+            self.risk_analysis_screen.approve_all_uw_issues()
+            self.log.debug("All underwriter issues approved.")
+            self.wait_for_screen("Risk Analysis")
+            self.quote()
+        elif self.screen_title() == initial_screen_title:
+            self.log.info(f"{initial_screen_title} screen")
+            workspace_error = BaseElement(self.driver, self._locator_error)
+            workspace_warning = BaseElement(self.driver, self._locator_warning)
+            if workspace_error.is_element_present():
+                self.log.debug("Getting error and unable to quote")
+                raise Exception("Getting error and unable to quote")
+            elif workspace_warning.is_element_present():
+                self.log.info("Getting warnings")
+            self.quote()
 
     def screen_title(self):
-        screen_title = BaseElement(self.driver, self._locator_screen_title)
-        return screen_title.get_text()
+        screen_title_elm = BaseElement(self.driver, self._locator_screen_title)
+        return screen_title_elm.get_text()
+
+    def wait_for_screen(self, screen_title_text):
+        screen_title_elm = BaseElement(self.driver, self._locator_screen_title)
+        screen_title_elm.wait_till_text_to_be_present_in_element(screen_title_text)
 
     def bind_policy(self):
         bind_option_btn_elm = BaseElement(self.driver, self._locator_BindOptions_btn)
@@ -110,6 +124,7 @@ class Qualification(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
+        self.SCREEN_TITLE = "Qualification"
 
     def select_radio_btn_option(self, question, answer):
         radio_btn = BaseElement(self.driver, common.locator_dynamic_radio_btn(question=question, answer=answer))
@@ -137,6 +152,7 @@ class PolicyInfo(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
+        self.SCREEN_TITLE = "Policy Info"
         self._locator_FEIN_input_box = (By.XPATH, '//div[text()="FEIN"]/parent::div//input')
         self._locator_industry_code_input_box = (By.XPATH, '//div[text()="Industry Code"]/parent::div//input')
         self._locator_year_business_started_input_box = (
@@ -182,6 +198,7 @@ class Location(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
+        self.SCREEN_TITLE = "Locations"
         self._locator_add_new_location_btn = (By.XPATH, '//div[contains(text(), "New Loc")]')
         self._locator_address1 = (By.XPATH, '//div[contains(text(),"Address 1")]/following-sibling::div//input')
         self._locator_address2 = (By.XPATH, '//div[contains(text(),"Address 2")]/following-sibling::div//input')
@@ -221,11 +238,12 @@ class Location(BasePage):
         ok_btn.click_element()
 
 
-class WCCOverages(BasePage):
+class WCCoverages(BasePage):
     log = getLogger()
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
+        self.SCREEN_TITLE = "WC Coverages"
         self._locator_NCCI_interstate_id_input_box = (
             By.XPATH, '//div[contains(text(),"NCCI Interstate ID")]/parent::div//input')
         self._locator_AddClass_btn = (By.XPATH, '//div[@aria-label="Add Class"]')
@@ -284,6 +302,7 @@ class Supplemental(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
+        self.SCREEN_TITLE = "Supplemental"
 
     def select_radio_btn_option(self, question, answer):
         radio_btn = BaseElement(self.driver, common.locator_dynamic_radio_btn(question=question, answer=answer))
@@ -306,6 +325,7 @@ class WCOptions(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
+        self.SCREEN_TITLE = "WC Options"
         self._locator_add_option_btn = (By.XPATH, '//div[contains(text(),"Add Option")]')
         self._locator_add_federal_class = (By.XPATH, '//div[@aria-label="Add"]')
         self._locator_federal_location_dropdown = (By.XPATH, '//select[contains(@name,"WCLine_WCCovEmpLV-0-Loc")]')
@@ -342,6 +362,7 @@ class RiskAnalysis(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
+        self.SCREEN_TITLE = "Risk Analysis"
         self._locator_all_pending_approval_check_box = (
             By.XPATH, '//div[text()="Approve"]/ancestor::td[not(contains(@colspan,"1"))]'
                       '/preceding-sibling::td[4]//input[@type="checkbox"]')
@@ -374,6 +395,7 @@ class PolicyReview(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
+        self.SCREEN_TITLE = "Policy Review"
 
 
 class Quote(BasePage):
@@ -381,6 +403,7 @@ class Quote(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
+        self.SCREEN_TITLE = "Quote"
         self._locator_total_premium_amt = (By.XPATH, '//div[text()="Total Premium"]'
                                                      '/following-sibling::div//div[contains(text(), "$")]')
 
@@ -397,7 +420,17 @@ class Forms(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
-        self._locator_s = (By.XPATH, '//div[text()="Form #"]/ancestor::tr/following-sibling::tr')
+        # self._locator_s = (By.XPATH, '//div[text()="Form #"]/ancestor::tr/following-sibling::tr')
+        self._locator_ph_notice = (By.XPATH, '//div[contains(text(),"Notice to Policyholders")]')
+
+    def ph_notice(self):
+        ph_notice = BaseElement(self.driver, self._locator_ph_notice)
+        if ph_notice.get_text() == "Notice to Policyholders":
+            print("Notice to Policyholders form is generated")
+            self.log.info("Policy Forms are generated")
+        else:
+            print("PH Notice is not generated for the quote")
+            self.log.info("Forms are not generated correctly")
 
 
 class Payment(BasePage):

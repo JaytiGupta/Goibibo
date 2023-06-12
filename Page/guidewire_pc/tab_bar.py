@@ -29,9 +29,13 @@ class TabBar(BasePage):
     def options_btn(self):
         return BaseElement(self.driver, self._locator_options_btn)
 
+    @property
+    def account_dropdown_btn(self):
+        return BaseElement(self.driver, self._locator_account_dropdown)
+
     def search_account(self, account_num):
-        account_dropdown_btn = BaseElement(self.driver, self._locator_account_dropdown)
-        account_dropdown_btn.click_element()
+        # account_dropdown_btn = BaseElement(self.driver, self._locator_account_dropdown)
+        self.account_dropdown_btn.click_element()
         input_box = BaseElement(self.driver, self._locator_account_input_box)
         input_box.enter_text(account_num)
         search_button = BaseElement(self.driver, self._locator_account_search_btn)

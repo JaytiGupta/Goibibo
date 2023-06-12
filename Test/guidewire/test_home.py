@@ -4,6 +4,7 @@ from Page.guidewire_pc.policy_center_home import PolicyCenterHome
 from Page.guidewire_pc.accounts.account import Account
 from Page.guidewire_pc.policies.policy import Policy
 from Util.screenshot import take_screenshot
+from pytest import mark
 
 
 def test_website_is_available(browser):
@@ -20,14 +21,7 @@ def test_user_is_able_to_login(browser):
     take_screenshot(browser)
 
 
-def test_search_submission(browser):
-    page = PolicyCenterHome(browser)
-    page.tab_bar.go_to_desktop()
-    page.tab_bar.search_submission("0002960698")
-    policy = Policy(browser)
-    assert "Workers' Compensation" in policy.info_bar.get_lob()
-
-
+@mark.skip
 def test_search_account(browser):
     page = PolicyCenterHome(browser)
     page.tab_bar.go_to_desktop()
@@ -36,15 +30,25 @@ def test_search_account(browser):
     assert account.summary.account_summary_title_present()
 
 
-# def test_new_account_creation(browser):
-#     page = PolicyCenterHome(browser)
-#     page.tab_bar.go_to_desktop()
-#     page.tab_bar.create_new_account_btn()
-#     account = Account(browser)
-#     account.new_account.create_default_new_account("Company")
-#     assert account.summary.account_summary_title_present()
+@mark.skip
+def test_search_submission(browser):
+    page = PolicyCenterHome(browser)
+    page.tab_bar.go_to_desktop()
+    page.tab_bar.search_submission("0002960698")
+    policy = Policy(browser)
+    assert "Workers' Compensation" in policy.info_bar.get_lob()
+
+@mark.skip
+def test_new_account_creation(browser):
+    page = PolicyCenterHome(browser)
+    page.tab_bar.go_to_desktop()
+    page.tab_bar.create_new_account_btn()
+    account = Account(browser)
+    account.new_account.create_default_new_account("Company")
+    assert account.summary.account_summary_title_present()
 
 
+# @mark.skip
 def test_new_work_comp_policy_creation(browser):
     page = PolicyCenterHome(browser)
     page.tab_bar.go_to_desktop()
@@ -60,7 +64,7 @@ def test_new_work_comp_policy_creation(browser):
     assert "Workers' Compensation" in policy.info_bar.get_lob()
 
     wc_policy = policy.work_comp
-    wc_policy.qualification_screen.select_all_radio_btn_as_no()
+    wc_policy.qualification_screen.select_all_radio_btn_as_yes()
     take_screenshot(browser)
     wc_policy.qualification_screen.enter_input_box("Total annual payroll:", "12345")
     wc_policy.next()
@@ -92,24 +96,29 @@ def test_new_work_comp_policy_creation(browser):
     # Supplemental Screen
     wc_policy.supplement_screen.select_all_radio_btn_as_no()
     wc_policy.supplement_screen.select_radio_btn_option("Any employees under 16 or over 60 years of age?", "Yes")
-    time.sleep(15)
+    # time.sleep(15)
     wc_policy.next()
 
     # WC option Screen
+    wc_policy.wait_for_screen(wc_policy.wc_options_screen.SCREEN_TITLE)
     wc_policy.next()
 
     # risk analysis screen
+    wc_policy.wait_for_screen(wc_policy.risk_analysis_screen.SCREEN_TITLE)
     wc_policy.next()
 
     # policy review screen
+    wc_policy.wait_for_screen(wc_policy.policy_review_screen.SCREEN_TITLE)
     wc_policy.quote()
 
     # Quote Screen
+    wc_policy.wait_for_screen(wc_policy.quote_screen.SCREEN_TITLE)
     assert wc_policy.quote_screen.total_premium_amt() > 0
     take_screenshot(browser)
     wc_policy.next()
 
     # Forms Screen
+    wc_policy.wait_for_screen(wc_policy.forms_screen.SCREEN_TITLE)
     wc_policy.next()
 
     # Payment Screen

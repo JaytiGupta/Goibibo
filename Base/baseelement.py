@@ -7,64 +7,79 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.select import Select
 import inspect
 
+MAX_WAIT_TIME = 10
+
 
 class BaseElement:
 
     log = getLogger()
 
     def __init__(self, driver, locator):
-        self.locator = locator[0]
-        self.locator_value = locator[1]
+        self.locator = locator
         self.driver = driver
-        self.element = self.get_element()
+        self.web_element = None
+        self.find()
 
-    def get_element(self):
+    def find(self):
+        is_element_found = True
         try:
-            return WebDriverWait(self.driver, 20).until(EC.visibility_of_element_located(
-                (self.locator, self.locator_value)))
+            element = WebDriverWait(self.driver, MAX_WAIT_TIME).until(
+                EC.visibility_of_element_located(self.locator))
         except TimeoutException:
-            caller_file = inspect.stack()[2][1].split("\\")[-1]
-            caller_function = inspect.stack()[2][3]
-            self.log.debug(f" {caller_file} - {caller_function}() - An element is not found.")
-            return "Element is not found."
+            is_element_found = False
+        else:
+            self.web_element = element
+        finally:
+            if not is_element_found:
+                caller_file = inspect.stack()[2][1].split("\\")[-1]
+                caller_function = inspect.stack()[2][3]
+                self.log.debug(f" {caller_file} - {caller_function}() - An element is not found.")
+                # raise Exception(f"Unable to find web element in {caller_file} file {caller_function}() function")
+            return None
 
     def click_element(self):
         try:
-            self.element.click()
+            element = WebDriverWait(self.driver, MAX_WAIT_TIME).until(
+                EC.element_to_be_clickable(self.locator))
+            element.click()
         except ElementClickInterceptedException:
             self.log.debug("Element is not clickable.")
 
     def enter_text(self, text):
-        self.element.clear()
-        self.element.send_keys(text)
-        # self.press_tab_key()
+        # calling_object = inspect.currentframe().f_back.f_locals.get('self', None)
+        # object_name = calling_object.__class__.__name__ if calling_object else "Unknown Object"
+        # function_name = inspect.currentframe().f_back.f_code.co_name
+        # self.log.info(f"{function_name} - {object_name} - Sending text: {text}")
+        self.web_element.clear()
+        self.web_element.send_keys(text)
 
     def get_text(self):
-        return self.element.text
+        text = self.web_element.text
+        return text
 
     def is_elm_selected(self):
-        return self.element.is_selected()
+        return self.web_element.is_selected()
 
     def elm_is_displayed(self):
-        return self.element.is_displayed()
+        return self.web_element.is_displayed()
 
     def scroll_to_element(self):
         actions = ActionChains(self.driver)
-        actions.move_to_element(self.element).perform()
+        actions.move_to_element(self.web_element).perform()
         # Or we can use
         # driver.execute_script("arguments[0].scrollIntoView();", self.element)
 
     def press_enter_key(self):
-        self.element.send_keys(Keys.ENTER)
+        self.web_element.send_keys(Keys.ENTER)
 
     def press_tab_key(self):
-        self.element.send_keys(Keys.TAB)
+        self.web_element.send_keys(Keys.TAB)
 
     def select_option(self, **kwargs):
         """
         :param kwargs: index or text or value (only one required)
         """
-        elm = Select(self.element)
+        elm = Select(self.web_element)
         try:
             if kwargs.get("index") is not None:
                 elm.select_by_index(kwargs.get("index"))
@@ -81,26 +96,34 @@ class BaseElement:
         """
         :return: True or False
         """
-        return not self.element == "Element is not found."
+        return self.web_element is not None
 
     def double_click(self):
         action_chains = ActionChains(self.driver)
-        action_chains.double_click(self.element).perform()
+        action_chains.double_click(self.web_element).perform()
+
+    def wait_till_text_to_be_present_in_element(self, text):
+        WebDriverWait(self.driver, MAX_WAIT_TIME).\
+            until(EC.text_to_be_present_in_element(self.locator, text))
+
+    def wait_till_element_not_present(self):
+        WebDriverWait(self.driver, MAX_WAIT_TIME).\
+            until(EC.invisibility_of_element_located(self.locator))
 
     # methods for multiple elements returned
     def get_all_elements(self) -> list:
-        return WebDriverWait(self.driver, 20). \
-            until(EC.visibility_of_all_elements_located((self.locator, self.locator_value)))
+        return WebDriverWait(self.driver, MAX_WAIT_TIME). \
+            until(EC.visibility_of_all_elements_located(self.locator))
 
     def get_all_elements_text(self) -> list:
-        elm_list = self.get_all_elements()
-        txt_list = []
-        for elm in elm_list:
-            txt_list.append(elm.text)
-        return txt_list
-        # Or we can do this
         # elm_list = self.get_all_elements()
-        # return [elm.text for elm in elm_list]
+        # txt_list = []
+        # for elm in elm_list:
+        #     txt_list.append(elm.text)
+        # return txt_list
+        # Or we can do this
+        elm_list = self.get_all_elements()
+        return [elm.text for elm in elm_list]
 
     def click_all_elements(self):
         elm_list = self.get_all_elements()
@@ -109,4 +132,3 @@ class BaseElement:
                 elm.click()
         else:
             self.log.debug("No element to click.")
-
