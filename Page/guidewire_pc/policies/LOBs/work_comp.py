@@ -12,24 +12,6 @@ class WorkersCompensation(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
-
-        # Title Toolbar locators
-        # self._locator_screen_title = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[@role="heading"]')
-        # self._locator_Next_btn = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[text()="Next"]')
-        # self._locator_Back_btn = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[text()="Back"]')
-        # self._locator_Quote_btn = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[@aria-label="Quote"]')
-        # self._locator_SaveDraft_btn = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[@aria-label="Save Draft"]')
-        # self._locator_CloseOption_btn = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[@aria-label="Close Options"]')
-        # self._locator_BindOptions_btn = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[@aria-label="Bind Options"]')
-        # self._locator_BindOptions_BindOnly_btn = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[@aria-label="Bind Only"]')
-        # self._locator_BindOptions_IssuePolicy_btn = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[@aria-label="Issue Policy"]')
-        # self._locator_details_btn = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[text()="Details"]')
-
-        # Workspace
-        # self._locator_validation_results = (By.XPATH, '//div[text()="Validation Results"]')
-        # self._locator_error = (By.XPATH, '//div[@id="gw-south-panel"]//div[contains(text(),"Error")]')
-        # self._locator_warning = (By.XPATH, '//div[@id="gw-south-panel"]//div[contains(text(),"Warning")]')
-        # screens
         self.title_toolbar = common.TitleToolbar(self.driver)
         self.qualification_screen = Qualification(self.driver)
         self.policy_info_screen = PolicyInfo(self.driver)
@@ -43,98 +25,6 @@ class WorkersCompensation(BasePage):
         self.forms_screen = common.Forms(self.driver)
         self.payment_screen = Payment(self.driver)
         self.workspace_screen = common.Workspace(self.driver)
-
-    # Title Toolbar
-    # def next(self):
-    #     # old_title = self.get_title()
-    #
-    #     next_btn = BaseElement(self.driver, self._locator_Next_btn)
-    #     next_btn.click_element()
-    #
-        # waiting till next screen load
-        # max_wait_time = 10
-        # t_end = time.time() + max_wait_time
-        # while time.time() < t_end:
-        #     new_title = self.get_title()
-        #     if old_title != new_title:
-        #         self.log.info(f"Clicked Next button at {old_title[61:]} screen. "
-        #                       f"Navigated to {new_title[61:]} screen.")
-        #         break
-    #
-    # def quote(self): # TODO needs to update max depth for recursion
-    #     initial_screen_title = self.screen_title()
-    #
-    #     self.log.info(f"{initial_screen_title} screen")
-    #     quote_btn = BaseElement(self.driver, self._locator_Quote_btn)
-    #     quote_btn.click_element()
-    #     self.log.info("Clicked Quote button.")
-    #
-    #     # TODO: update need to wait for page after click, screen can be same, pre_quote or quote
-    #     time.sleep(5)
-    #
-    #     if self.screen_title() == self.quote_screen.SCREEN_TITLE:
-    #         self.log.info("Quoted successfully")
-    #     elif self.screen_title() == "Pre-Quote Issues":
-    #         self.log.info("Pre-Quote Issues screen")
-    #         details_btn = BaseElement(self.driver, self._locator_details_btn)
-    #         details_btn.click_element()
-    #         self.log.debug("Navigate to Underwriter issues tab at Risk Analysis screen.")
-    #         self.risk_analysis_screen.approve_all_uw_issues()
-    #         self.log.debug("All underwriter issues approved.")
-    #         self.wait_for_screen("Risk Analysis")
-    #         self.quote()
-    #     elif self.screen_title() == initial_screen_title:
-    #         self.log.info(f"{initial_screen_title} screen")
-    #         workspace_error = BaseElement(self.driver, self._locator_error)
-    #         workspace_warning = BaseElement(self.driver, self._locator_warning)
-    #         if workspace_error.is_element_present():
-    #             self.log.debug("Getting error and unable to quote")
-    #             raise Exception("Getting error and unable to quote")
-    #         elif workspace_warning.is_element_present():
-    #             self.log.info("Getting warnings")
-    #         # TODO elif Information
-    #         self.quote()
-    #
-    # def screen_title(self):
-    #     screen_title_elm = BaseElement(self.driver, self._locator_screen_title)
-    #     return screen_title_elm.get_text()
-    #
-    # def wait_for_screen(self, screen_title_text):
-    #     screen_title_elm = BaseElement(self.driver, self._locator_screen_title)
-    #     screen_title_elm.wait_till_text_to_be_present_in_element(screen_title_text)
-    #
-    # def bind_policy(self):
-    #     bind_option_btn_elm = BaseElement(self.driver, self._locator_BindOptions_btn)
-    #     bind_option_btn_elm.click_element()
-    #     bind_only_btn_elm = BaseElement(self.driver, self._locator_BindOptions_BindOnly_btn)
-    #     bind_only_btn_elm.click_element()
-    #     self.log.info(f"Clicked Bind Only button.")
-    #
-    # def issue_policy(self):
-    #     initial_screen_title = self.screen_title()
-    #
-    #     bind_option_btn_elm = BaseElement(self.driver, self._locator_BindOptions_btn)
-    #     bind_option_btn_elm.click_element()
-    #     issue_policy_elm = BaseElement(self.driver, self._locator_BindOptions_IssuePolicy_btn)
-    #     issue_policy_elm.click_element()
-    #     self.log.info(f"Clicked Issue Policy button.")
-    #     self.accept_alert()
-    #
-    #     # TODO: update need to wait for page after click, screen can be same, pre_quote or quote
-    #     time.sleep(5)
-    #
-    #     if self.screen_title() == "Submission Bound":
-    #         self.log.info("Your Submission has been bound")
-    #     elif self.screen_title() == initial_screen_title:
-    #         self.log.info(f"{initial_screen_title} screen")
-    #         workspace_error = BaseElement(self.driver, self._locator_error)
-    #         workspace_warning = BaseElement(self.driver, self._locator_warning)
-    #         if workspace_error.is_element_present():
-    #             self.log.debug("Getting error and unable to quote")
-    #             raise Exception("Getting error and unable to quote")
-    #         elif workspace_warning.is_element_present():
-    #             self.log.info("Getting warnings")
-    #         self.issue_policy()
 
 
 class Qualification:
@@ -339,83 +229,6 @@ class WCOptions(BasePage):
         emp.enter_text(emp_no)
         basis = BaseElement(self.driver, self._locator_federal_basis_input_box)
         basis.enter_text(basis_value)
-
-
-# class RiskAnalysis(BasePage):
-#     log = getLogger()
-#
-#     def __init__(self, driver):
-#         super().__init__(driver=driver, url=None)
-#         self.SCREEN_TITLE = "Risk Analysis"
-#         self._locator_all_pending_approval_check_box = (
-#             By.XPATH, '//div[text()="Approve"]/ancestor::td[not(contains(@colspan,"1"))]'
-#                       '/preceding-sibling::td[4]//input[@type="checkbox"]')
-#         self._locator_header_approve_btn = (By.XPATH, '//div[@class="gw-ListView--UI-left"]'
-#                                                        '//div[text()="Approve"]')
-#
-#         # Screen: Risk Approval Details
-#         self._locator_ok_btn = (By.XPATH, '//div[@role="button"]//div[@aria-label="OK"]')
-#
-#     # //div[@id="gw-south-panel"]//div[contains(text(),"Error")]
-#     # TODO: select only the required check boxes
-#     def approve_all_uw_issues(self):
-#         all_check_box = BaseElement(self.driver, self._locator_all_pending_approval_check_box)
-#         all_check_box.click_all_elements()
-#         header_approve_btn = BaseElement(self.driver, self._locator_header_approve_btn)
-#         header_approve_btn.click_element()
-#
-#         risk_approval_screen_ok_btn = BaseElement(self.driver, self._locator_ok_btn)
-#         risk_approval_screen_ok_btn.click_element()
-#
-#         self.accept_alert()
-#         if all_check_box.is_element_present():
-#             self.log.debug("All UW Issues are not approved yet.")
-#         else:
-#             self.log.info("All UW Issues are approved.")
-#
-#
-# class PolicyReview(BasePage):
-#     log = getLogger()
-#
-#     def __init__(self, driver):
-#         super().__init__(driver=driver, url=None)
-#         self.SCREEN_TITLE = "Policy Review"
-#
-#
-# class Quote(BasePage):
-#     log = getLogger()
-#
-#     def __init__(self, driver):
-#         super().__init__(driver=driver, url=None)
-#         self.SCREEN_TITLE = "Quote"
-#         self._locator_total_premium_amt = (By.XPATH, '//div[text()="Total Premium"]'
-#                                                      '/following-sibling::div//div[contains(text(), "$")]')
-#
-#     def total_premium_amt(self):
-#         elm = BaseElement(self.driver, self._locator_total_premium_amt)
-#         premium_txt =  elm.get_text()
-#         premium = float(sub(r'[^\d.]', '', premium_txt))
-#         self.log.info(f"Total Premium is {premium_txt}")
-#         return premium
-#
-#
-# class Forms(BasePage):
-#     log = getLogger()
-#
-#     def __init__(self, driver):
-#         super().__init__(driver=driver, url=None)
-#         self.SCREEN_TITLE = "Forms"
-#         # self._locator_s = (By.XPATH, '//div[text()="Form #"]/ancestor::tr/following-sibling::tr')
-#         self._locator_ph_notice = (By.XPATH, '//div[contains(text(),"Notice to Policyholders")]')
-#
-#     def ph_notice(self):
-#         ph_notice = BaseElement(self.driver, self._locator_ph_notice)
-#         if ph_notice.get_text() == "Notice to Policyholders":
-#             print("Notice to Policyholders form is generated")
-#             self.log.info("Policy Forms are generated")
-#         else:
-#             print("PH Notice is not generated for the quote")
-#             self.log.info("Forms are not generated correctly")
 
 
 class Payment(BasePage):

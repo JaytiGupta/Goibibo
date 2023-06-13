@@ -6,18 +6,6 @@ from Base.basepage import BasePage
 from Util.logs import getLogger
 
 
-class Common:
-
-    def __init__(self, driver):
-        self.driver = driver
-        self.title_toolbar = TitleToolbar(self.driver)
-        self.workspace_screen = Workspace(self.driver)
-        self.risk_analysis_screen = RiskAnalysis(self.driver)
-        self.policy_review_screen = PolicyReview(self.driver)
-        self.quote_screen = Quote(self.driver)
-        self.forms_screen = Forms(self.driver)
-
-
 class TableQuestionnaires:
     log = getLogger()
 

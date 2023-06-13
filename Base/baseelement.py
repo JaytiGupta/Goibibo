@@ -33,6 +33,7 @@ class BaseElement:
             if not is_element_found:
                 caller_file = inspect.stack()[2][1].split("\\")[-1]
                 caller_function = inspect.stack()[2][3]
+                line = inspect.getframeinfo(inspect.stack()[1][0]).lineno
                 self.log.debug(f" {caller_file} - {caller_function}() - An element is not found.")
                 # raise Exception(f"Unable to find web element in {caller_file} file {caller_function}() function")
             return None
