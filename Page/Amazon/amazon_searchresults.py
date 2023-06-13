@@ -22,7 +22,7 @@ class AmazonSearchResult(BasePage):
     def all_item_price_list(self):
         price_xpath = '//div[@data-component-type="s-search-result"]//span[@class="a-price-whole"]'
         price_list_str = BaseElement(self.driver, By.XPATH, price_xpath)
-        price_list = price_list_str.get_elements_text()
+        price_list = price_list_str.get_all_elements_text()
         # print(price_list)
         final_price_list = []
         for i in price_list:

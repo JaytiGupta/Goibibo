@@ -25,9 +25,11 @@ class ExcelFunctions:
 
 
 if __name__ == "__main__":
-    a = ExcelFunctions(os.environ['USERPROFILE']+'\\Documents\\Automation\\Excel_Python\\Python.xlsx')
-    a.write(3, 4, 'abc')
-    a.write(3, 8, 25)
-    print(a.read(3, 8))
-    print(a.read(3, 4))
+    # a = ExcelFunctions(os.environ['USERPROFILE']+'\\Documents\\Automation\\Excel_Python\\Python.xlsx')
+    # a.write(3, 4, 'abc')
+    # a.write(3, 8, 25)
+    # print(a.read(3, 8))
+    # print(a.read(3, 4))
+    # print(os.environ['USERPROFILE']
+    print(os.path.dirname(os.path.abspath(__file__)))
 
