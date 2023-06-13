@@ -36,50 +36,50 @@ class Qualification:
         self.table_questionnaires = common.TableQuestionnaires(self.driver)
 
 
-class PolicyInfo(BasePage):
-    log = getLogger()
-
-    def __init__(self, driver):
-        super().__init__(driver=driver, url=None)
-        self.SCREEN_TITLE = "Policy Info"
-        self._locator_FEIN_input_box = (By.XPATH, '//div[text()="FEIN"]/parent::div//input')
-        self._locator_industry_code_input_box = (By.XPATH, '//div[text()="Industry Code"]/parent::div//input')
-        self._locator_year_business_started_input_box = (
-            By.XPATH, '//div[text()="Year Business Started"]/parent::div//input')
-        self._locator_organization_type_dropdown = (By.XPATH, '//div[text()="Organization Type"]/parent::div//select')
-        self._locator_term_type_dropdown = (By.XPATH, '//div[text()="Term Type"]/parent::div//select')
-        self._locator_effective_date_input_box = (By.XPATH, '//div[text()="Effective Date"]/parent::div//input')
-        self._locator_underwriter_companies_dropdown = (By.XPATH, '//select[contains(@name, "UWCompanyInputSet")]')
-
-    def input_FEIN(self, text):
-        fein = BaseElement(self.driver, self._locator_FEIN_input_box)
-        fein.enter_text(text)  # text must be 9-digit no.
-        self.log.info(f"Enter FEIN - {text}")
-
-    def industry_code_input(self, industry_code):
-        industry_code_elm = BaseElement(self.driver, self._locator_industry_code_input_box)
-        industry_code_elm.enter_text(industry_code)
-        self.log.info(f"Enter Industry Code - {industry_code}")
-
-    def select_org_type(self, type_of_org):
-        org_type_elm = BaseElement(self.driver, self._locator_organization_type_dropdown)
-        org_type_elm.select_option(text=type_of_org)
-        self.log.info(f"Select Organisation Type - {type_of_org}")
-
-    def term_type(self, pol_term):
-        term_type_elm = BaseElement(self.driver, self._locator_term_type_dropdown)
-        term_type_elm.select_option(text=pol_term)
-        self.log.info(f"Select Policy Term Type - {pol_term}")
-
-    def policy_effective_date(self, policy_date):
-        eff_date_elm = BaseElement(self.driver, self._locator_effective_date_input_box)
-        eff_date_elm.enter_text(policy_date)
-        self.log.info(f"Enter Policy Effective Date - {policy_date}")
-
-    def uw_companies(self, uw_company):
-        uw_company_elm = BaseElement(self.driver, self._locator_underwriter_companies_dropdown)
-        uw_company_elm.select_option(text=uw_company)
-        self.log.info(f"Select Underwriting company - {uw_company}")
+# class PolicyInfo(BasePage):
+#     log = getLogger()
+#
+#     def __init__(self, driver):
+#         super().__init__(driver=driver, url=None)
+#         self.SCREEN_TITLE = "Policy Info"
+#         self._locator_FEIN_input_box = (By.XPATH, '//div[text()="FEIN"]/parent::div//input')
+#         self._locator_industry_code_input_box = (By.XPATH, '//div[text()="Industry Code"]/parent::div//input')
+#         self._locator_year_business_started_input_box = (
+#             By.XPATH, '//div[text()="Year Business Started"]/parent::div//input')
+#         self._locator_organization_type_dropdown = (By.XPATH, '//div[text()="Organization Type"]/parent::div//select')
+#         self._locator_term_type_dropdown = (By.XPATH, '//div[text()="Term Type"]/parent::div//select')
+#         self._locator_effective_date_input_box = (By.XPATH, '//div[text()="Effective Date"]/parent::div//input')
+#         self._locator_underwriter_companies_dropdown = (By.XPATH, '//select[contains(@name, "UWCompanyInputSet")]')
+#
+#     def input_FEIN(self, text):
+#         fein = BaseElement(self.driver, self._locator_FEIN_input_box)
+#         fein.enter_text(text)  # text must be 9-digit no.
+#         self.log.info(f"Enter FEIN - {text}")
+#
+#     def industry_code_input(self, industry_code):
+#         industry_code_elm = BaseElement(self.driver, self._locator_industry_code_input_box)
+#         industry_code_elm.enter_text(industry_code)
+#         self.log.info(f"Enter Industry Code - {industry_code}")
+#
+#     def select_org_type(self, type_of_org):
+#         org_type_elm = BaseElement(self.driver, self._locator_organization_type_dropdown)
+#         org_type_elm.select_option(text=type_of_org)
+#         self.log.info(f"Select Organisation Type - {type_of_org}")
+#
+#     def term_type(self, pol_term):
+#         term_type_elm = BaseElement(self.driver, self._locator_term_type_dropdown)
+#         term_type_elm.select_option(text=pol_term)
+#         self.log.info(f"Select Policy Term Type - {pol_term}")
+#
+#     def policy_effective_date(self, policy_date):
+#         eff_date_elm = BaseElement(self.driver, self._locator_effective_date_input_box)
+#         eff_date_elm.enter_text(policy_date)
+#         self.log.info(f"Enter Policy Effective Date - {policy_date}")
+#
+#     def uw_companies(self, uw_company):
+#         uw_company_elm = BaseElement(self.driver, self._locator_underwriter_companies_dropdown)
+#         uw_company_elm.select_option(text=uw_company)
+#         self.log.info(f"Select Underwriting company - {uw_company}")
 
 
 class Location(BasePage):
