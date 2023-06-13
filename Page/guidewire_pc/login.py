@@ -12,33 +12,33 @@ class Login(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
-        self.locator_user_name = (By.XPATH, '//input[@name="Login-LoginScreen-LoginDV-username"]')
-        self.locator_password = (By.XPATH, '//input[@name="Login-LoginScreen-LoginDV-password"]')
-        self.locator_btn_login = (By.XPATH, '//div[@aria-label="Log In"]')
-        self.locator_txt_my_summary = (By.XPATH, '//div[@class="gw-TitleBar--title"]')
 
-    def input_user_name(self, text):
-        username_input_elm = BaseElement(self.driver, self.locator_user_name)
-        username_input_elm.enter_text(text)
+    @property
+    def _user_name_input_box(self):
+        locator = (By.XPATH, '//input[@name="Login-LoginScreen-LoginDV-username"]')
+        return BaseElement(self.driver, locator)
 
-    def input_password(self, text):
-        pass_input_elm = BaseElement(self.driver, self.locator_password)
-        pass_input_elm.enter_text(text)
+    @property
+    def _password_input_box(self):
+        locator = (By.XPATH, '//input[@name="Login-LoginScreen-LoginDV-password"]')
+        return BaseElement(self.driver, locator)
 
-    def click_log_in_button(self):
-        btn_login = BaseElement(self.driver, self.locator_btn_login)
-        btn_login.click_element()
+    @property
+    def _login_button(self):
+        locator = (By.XPATH, '//div[@aria-label="Log In"]')
+        return BaseElement(self.driver, locator)
 
-    def is_login_successful(self):
-        my_summary_elm = BaseElement(self.driver, self.locator_txt_my_summary)
-        return my_summary_elm.is_element_present()
+    @property
+    def _home_screen_title(self):
+        locator = (By.XPATH, '//div[@class="gw-TitleBar--title"]')
+        return BaseElement(self.driver, locator)
 
     def login(self, username, password):
-        self.input_user_name(username)
-        self.input_password(password)
-        self.click_log_in_button()
+        self._user_name_input_box.enter_text(username)
+        self._password_input_box.enter_text(password)
+        self._login_button.click_element()
 
-        if self.is_login_successful():
+        if self._home_screen_title.is_element_present():
             take_screenshot(self.driver)
             self.log.info("Login Successful")
         else:
