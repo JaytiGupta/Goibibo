@@ -121,12 +121,6 @@ class BaseElement:
             until(EC.visibility_of_all_elements_located(self.locator))
 
     def get_all_elements_text(self) -> list:
-        # elm_list = self.get_all_elements()
-        # txt_list = []
-        # for elm in elm_list:
-        #     txt_list.append(elm.text)
-        # return txt_list
-        # Or we can do this
         elm_list = self.get_all_elements()
         return [elm.text for elm in elm_list]
 
@@ -136,4 +130,26 @@ class BaseElement:
             for elm in elm_list:
                 elm.click()
         else:
-            self.log.debug("No element to click.")
+            self.log.debug("No element found to click.")
+
+
+class NestedElement:
+
+    log = getLogger()
+
+    def __init__(self, parent_web_element, locator):
+        self.parent_web_element = parent_web_element
+        self.locator = locator
+        self.web_element = None
+        self.find()
+
+    def find(self):
+        by = self.locator[0]
+        value = self.locator[1]
+        element = self.parent_web_element.find_element(by=by, value=value)
+        self.web_element = element
+        return None
+
+    def get_text(self):
+        text = self.web_element.text
+        return text
