@@ -64,17 +64,17 @@ def test_new_work_comp_policy_creation(browser):
     assert "Workers' Compensation" in policy.info_bar.get_lob()
 
     wc_policy = policy.work_comp
-    wc_policy.qualification_screen.select_all_radio_btn_as_yes()
+    wc_policy.qualification_screen.table_questionnaires.select_all_radio_btn("yes")
     take_screenshot(browser)
-    wc_policy.qualification_screen.enter_input_box("Total annual payroll:", "12345")
-    wc_policy.next()
+    wc_policy.qualification_screen.table_questionnaires.input_box("Total annual payroll:", "12345")
+    wc_policy.title_toolbar.next()
 
     # "Policy Info"
     wc_policy.policy_info_screen.input_FEIN("456545654")
     wc_policy.policy_info_screen.industry_code_input("0782")
     wc_policy.policy_info_screen.select_org_type(type_of_org="LLC")
     wc_policy.policy_info_screen.policy_effective_date("08/01/2023")
-    wc_policy.next()
+    wc_policy.title_toolbar.next()
 
     # "Locations"
     address = random_address.get_one_address("VA")
@@ -82,7 +82,7 @@ def test_new_work_comp_policy_creation(browser):
                                                city= address["City"],
                                                state=address["State"],
                                                zip_code=address["Zip_Code"])
-    wc_policy.next()
+    wc_policy.title_toolbar.next()
 
     #  "WC Coverages"
     wc_policy.wc_coverages_screen.add_class(row_number=1,
@@ -91,40 +91,41 @@ def test_new_work_comp_policy_creation(browser):
                                             code= "0044",
                                             employees=36,
                                             basis_value=12246)
-    wc_policy.next()
+    wc_policy.title_toolbar.next()
 
     # Supplemental Screen
-    wc_policy.supplement_screen.select_all_radio_btn_as_no()
-    wc_policy.supplement_screen.select_radio_btn_option("Any employees under 16 or over 60 years of age?", "Yes")
-    # time.sleep(15)
-    wc_policy.next()
+    wc_policy.supplement_screen.table_questionnaires.select_all_radio_btn("no")
+    wc_policy.supplement_screen.table_questionnaires.radio_btn("Any employees under 16 or over 60 years of age?", "Yes")
+    wc_policy.title_toolbar.next()
 
     # WC option Screen
-    wc_policy.wait_for_screen(wc_policy.wc_options_screen.SCREEN_TITLE)
-    wc_policy.next()
+    # wc_policy.title_toolbar.wait_for_screen(wc_policy.wc_options_screen.SCREEN_TITLE)
+    wc_policy.title_toolbar.next()
 
     # risk analysis screen
-    wc_policy.wait_for_screen(wc_policy.risk_analysis_screen.SCREEN_TITLE)
-    wc_policy.next()
+    # wc_policy.title_toolbar.wait_for_screen(wc_policy.risk_analysis_screen.SCREEN_TITLE)
+    wc_policy.title_toolbar.next()
 
     # policy review screen
-    wc_policy.wait_for_screen(wc_policy.policy_review_screen.SCREEN_TITLE)
-    wc_policy.quote()
+    # wc_policy.title_toolbar.wait_for_screen(wc_policy.policy_review_screen.SCREEN_TITLE)
+    wc_policy.title_toolbar.quote()
 
     # Quote Screen
-    wc_policy.wait_for_screen(wc_policy.quote_screen.SCREEN_TITLE)
+    # wc_policy.title_toolbar.wait_for_screen(wc_policy.quote_screen.SCREEN_TITLE)
     assert wc_policy.quote_screen.total_premium_amt() > 0
     take_screenshot(browser)
-    wc_policy.next()
+    wc_policy.title_toolbar.next()
 
     # Forms Screen
-    wc_policy.wait_for_screen(wc_policy.forms_screen.SCREEN_TITLE)
-    wc_policy.next()
+    # wc_policy.title_toolbar.wait_for_screen(wc_policy.forms_screen.SCREEN_TITLE)
+    wc_policy.title_toolbar.next()
 
     # Payment Screen
-    # wc_policy.issue_policy()
+    # wc_policy.title_toolbar.wait_for_screen(wc_policy.payment_screen.SCREEN_TITLE)
+    wc_policy.title_toolbar.issue_policy()
+
+    time.sleep(20)
     take_screenshot(browser)
-    time.sleep(10)
 
     # wc_policy.accept_alert()
 
