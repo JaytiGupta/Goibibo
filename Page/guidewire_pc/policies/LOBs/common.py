@@ -302,7 +302,8 @@ class RiskAnalysis(BasePage):
 
     @property
     def _all_pending_approval_check_box(self):
-        locator = (By.XPATH, '//div[text()="Approve"]/ancestor::td[not(contains(@colspan,"1"))]/preceding-sibling::td[4]//input[@type="checkbox"]')
+        locator = (By.XPATH, '//div[text()="Approve"]/ancestor::td[not(contains(@colspan,"1"))]/preceding-sibling::td[4]'
+                             '//input[@type="checkbox"]')
         return BaseElement(self.driver, locator)
 
     @property
@@ -353,6 +354,58 @@ class Quote(BasePage):
         premium = float(sub(r'[^\d.]', '', premium_amount_text))
         self.log.info(f"Total Premium is {premium_amount_text}")
         return premium
+
+
+class Location(BasePage):
+    log = getLogger()
+
+    def __init__(self, driver):
+        super().__init__(driver=driver, url=None)
+        self.SCREEN_TITLE = "Locations"
+        self._locator_add_new_location_btn = (By.XPATH, '//div[contains(text(), "New Loc")]')
+        self._locator_address1 = (By.XPATH, '//div[contains(text(),"Address 1")]/following-sibling::div//input')
+        self._locator_address2 = (By.XPATH, '//div[contains(text(),"Address 2")]/following-sibling::div//input')
+        self._locator_address3 = (By.XPATH, '//div[contains(text(),"Address 3")]/following-sibling::div//input')
+        self._locator_input_city = (By.XPATH, '//div[contains(text(),"City")]/following-sibling::div//input')
+        self._locator_select_state = (By.XPATH, '//div[contains(text(),"State")]/following-sibling::div//select')
+        self._locator_input_zip = (By.XPATH, '//div[contains(text(),"ZIP Code")]/following-sibling::div//input')
+        self._locator_ok_btn = (By.XPATH, '//div[@id="LocationPopup-LocationScreen-Update"]')
+        self._locator_add_existing_location_btn = (By.XPATH, '//div[text()="Add Existing Location"]')
+
+    def add_new_location(self, address1, city, state, zip_code, address2=None, address3=None):
+        add_new_location_btn = BaseElement(self.driver, self._locator_add_new_location_btn)
+        add_new_location_btn.click_element()
+
+        address1_elm = BaseElement(self.driver, self._locator_address1)
+        address1_elm.enter_text(address1)
+
+        if address2 is not None:
+            address2_elm = BaseElement(self.driver, self._locator_address2)
+            address2_elm.enter_text(address2)
+
+        if address3 is not None:
+            address3_elm = BaseElement(self.driver, self._locator_address3)
+            address3_elm.enter_text(address3)
+
+        city_elm = BaseElement(self.driver, self._locator_input_city)
+        city_elm.enter_text(city)
+
+        state_elm = BaseElement(self.driver, self._locator_select_state)
+        state_elm.select_option(text=state)
+
+        zip_elm = BaseElement(self.driver, self._locator_input_zip)
+        zip_elm.enter_text(zip_code)
+
+        self.log.info(f"Page: Locations - new location added. {address1}, {city}, {state}, {zip_code}.")
+
+        ok_btn = BaseElement(self.driver, self._locator_ok_btn)
+        ok_btn.click_element()
+
+    def add_existing_location(self, index):
+        existing_loc_list = BaseElement(self.driver, self._locator_add_existing_location_btn)
+        existing_loc_list.select_option(index=index)
+        ok_btn = BaseElement(self.driver, self._locator_ok_btn)
+        ok_btn.click_element()
 
 
 class Forms(BasePage):

@@ -15,7 +15,7 @@ class WorkersCompensation(BasePage):
         self.title_toolbar = common.TitleToolbar(self.driver)
         self.qualification_screen = Qualification(self.driver)
         self.policy_info_screen = common.PolicyInfo(self.driver)
-        self.location_screen = Location(self.driver)
+        self.location_screen = common.Location(self.driver)
         self.wc_coverages_screen = WCCoverages(self.driver)
         self.supplement_screen = Supplemental(self.driver)
         self.wc_options_screen = WCOptions(self.driver)
@@ -36,50 +36,6 @@ class Qualification:
         self.questionnaires = common.TableQuestionnaires(self.driver)
 
 
-class Location(BasePage):
-    log = getLogger()
-
-    def __init__(self, driver):
-        super().__init__(driver=driver, url=None)
-        self.SCREEN_TITLE = "Locations"
-        self._locator_add_new_location_btn = (By.XPATH, '//div[contains(text(), "New Loc")]')
-        self._locator_address1 = (By.XPATH, '//div[contains(text(),"Address 1")]/following-sibling::div//input')
-        self._locator_address2 = (By.XPATH, '//div[contains(text(),"Address 2")]/following-sibling::div//input')
-        self._locator_address3 = (By.XPATH, '//div[contains(text(),"Address 3")]/following-sibling::div//input')
-        self._locator_input_city = (By.XPATH, '//div[contains(text(),"City")]/following-sibling::div//input')
-        self._locator_select_state = (By.XPATH, '//div[contains(text(),"State")]/following-sibling::div//select')
-        self._locator_input_zip = (By.XPATH, '//div[contains(text(),"ZIP Code")]/following-sibling::div//input')
-        self._locator_ok_btn = (By.XPATH, '//div[@id="LocationPopup-LocationScreen-Update"]')
-
-    def add_new_location(self, address1, city, state, zip_code, address2=None, address3=None):
-        add_new_location_btn = BaseElement(self.driver, self._locator_add_new_location_btn)
-        add_new_location_btn.click_element()
-
-        address1_elm = BaseElement(self.driver, self._locator_address1)
-        address1_elm.enter_text(address1)
-
-        if address2 is not None:
-            address2_elm = BaseElement(self.driver, self._locator_address2)
-            address2_elm.enter_text(address2)
-
-        if address3 is not None:
-            address3_elm = BaseElement(self.driver, self._locator_address3)
-            address3_elm.enter_text(address3)
-
-        city_elm = BaseElement(self.driver, self._locator_input_city)
-        city_elm.enter_text(city)
-
-        state_elm = BaseElement(self.driver, self._locator_select_state)
-        state_elm.select_option(text=state)
-
-        zip_elm = BaseElement(self.driver, self._locator_input_zip)
-        zip_elm.enter_text(zip_code)
-
-        self.log.info(f"Page: Locations - new location added. {address1}, {city}, {state}, {zip_code}.")
-
-        ok_btn = BaseElement(self.driver, self._locator_ok_btn)
-        ok_btn.click_element()
-
 
 class WCCoverages(BasePage):
     log = getLogger()
@@ -91,7 +47,6 @@ class WCCoverages(BasePage):
             By.XPATH, '//div[contains(text(),"NCCI Interstate ID")]/parent::div//input')
         self._locator_AddClass_btn = (By.XPATH, '//div[@aria-label="Add Class"]')
         self._locator_covered_employee_txt = (By.XPATH, '//div[text()="Covered Employees"]')
-
 
     @staticmethod
     def _locator_dynamic_wc_coverages_screen_add_class(row_number):
