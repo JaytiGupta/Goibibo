@@ -5,6 +5,7 @@ from Base.baseelement import BaseElement
 from Base.baseelement import NestedElement
 from Base.basepage import BasePage
 from Util.logs import getLogger
+from Page.guidewire_pc.policies.info_bar import InfoBar
 
 
 class TableQuestionnaires:
@@ -59,6 +60,7 @@ class TitleToolbar(BasePage):
         super().__init__(driver=driver, url=None)
         self.risk_analysis_screen = RiskAnalysis(self.driver)
         self.workspace = Workspace(self.driver)
+        self.info_bar = InfoBar(self.driver)
 
     @property
     def screen_title(self):
@@ -185,7 +187,10 @@ class TitleToolbar(BasePage):
     def issue_policy(self): # TODO needs to update max depth for recursion
         initial_screen_title = self.screen_title_text()
 
-        self.bind_options_btn.click_element()
+        # bind option is not present for change policy transaction. Issue policy btn is on title toolbar.
+        if "Policy Change" not in self.info_bar.get_current_job():
+            self.bind_options_btn.click_element()
+
         self.issue_policy_btn.click_element()
         self.log.info(f"Clicked Issue Policy button.")
         self.accept_alert()
@@ -194,7 +199,9 @@ class TitleToolbar(BasePage):
         time.sleep(5)
 
         if self.screen_title_text() == "Submission Bound":
-            self.log.info("Your Submission has been bound")
+            self.log.info("Your Submission has been bound.")
+        elif self.screen_title_text() == "Policy Change Bound":
+            self.log.info("Your Policy Change has been bound.")
         elif self.screen_title_text() == initial_screen_title:
             self.log.info(f"{initial_screen_title} screen")
             if self.workspace.error().is_element_present():
