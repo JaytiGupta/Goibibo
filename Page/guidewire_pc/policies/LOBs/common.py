@@ -91,6 +91,11 @@ class TitleToolbar(BasePage):
         return BaseElement(self.driver, locator)
 
     @property
+    def reinstate_btn(self):
+        locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[@aria-label="Reinstate"]')
+        return BaseElement(self.driver, locator)
+
+    @property
     def bind_options_btn(self):
         locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[@aria-label="Bind Options"]')
         return BaseElement(self.driver, locator)
@@ -103,6 +108,26 @@ class TitleToolbar(BasePage):
     @property
     def issue_policy_btn(self):
         locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[@aria-label="Issue Policy"]')
+        return BaseElement(self.driver, locator)
+
+    # def select_bind_option(self, bind_option_text):
+    #     locator = (By.XPATH, f'//div[@id="gw-center-title-toolbar"]//'
+    #                          f'div[contains(@id,"BindOptions")]//'
+    #                          f'div[@aria-label="{bind_option_text}"]')
+    #     return BaseElement(self.driver, locator)
+
+    @property
+    def cancel_now_btn(self):
+        locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//'
+                             'div[contains(@id,"BindOptions")]//'
+                             'div[@aria-label="Cancel Now"]')
+        return BaseElement(self.driver, locator)
+
+    @property
+    def schedule_cancellation_btn(self):
+        locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//'
+                             'div[contains(@id,"BindOptions")]//'
+                             'div[@aria-label="Schedule Cancellation"]')
         return BaseElement(self.driver, locator)
 
     @property
@@ -179,6 +204,20 @@ class TitleToolbar(BasePage):
                 self.log.info("Getting warnings")
             # TODO elif Information
             self.issue_policy()
+
+    def schedule_cancellation(self):
+        pass
+
+    def cancel_now(self):
+        self.bind_options_btn.click_element()
+        self.cancel_now_btn.click_element()
+        self.log.info(f"Clicked Cancel Now button.")
+        self.accept_alert()
+        if self.screen_title_text() == "Cancellation Bound":
+            self.log.info("Your Cancellation has been bound.")
+
+    def reinstate(self):
+        self.reinstate_btn.click_element()
 
 
 class Workspace:
