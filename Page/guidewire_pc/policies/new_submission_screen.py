@@ -2,6 +2,7 @@ from Base.basepage import BasePage
 from Base.baseelement import BaseElement
 from selenium.webdriver.common.by import By
 from Util.logs import getLogger
+from Page.guidewire_pc.policies.LOBs.common import TitleToolbar
 
 
 class NewSubmissionScreen(BasePage):
@@ -13,6 +14,7 @@ class NewSubmissionScreen(BasePage):
         self._locator_base_state_dropdown = (
         By.XPATH, '//select[@name="NewSubmission-NewSubmissionScreen-ProductSettingsDV-DefaultBaseState"]')
         self._locator_effective_date_text = (By.XPATH, '//div[text()="Default Effective Date"]')
+        self.title_toolbar = TitleToolbar(self.driver)
 
     @staticmethod
     def _locator_dynamic_lob_select_btn(lob):
@@ -35,9 +37,13 @@ class NewSubmissionScreen(BasePage):
         :param lob: (options) - Workers' Compensation | Inland Marine | General Liability | Commercial Property |
         Commercial Package | Commercial Auto | Businessowners
         """
-        BaseElement(self.driver, self._locator_effective_date_text).click_element()  # clicking outside with no impact
-        BaseElement(self.driver, self._locator_effective_date_text).click_element()  # clicking outside with no impact
 
+        title = self.title_toolbar.screen_title_text()
+
+        BaseElement(self.driver, self._locator_effective_date_text).click_element()  # clicking outside with no impact
+        BaseElement(self.driver, self._locator_effective_date_text).click_element()  # clicking outside with no impact
         lob_btn_elm = BaseElement(self.driver, self._locator_dynamic_lob_select_btn(lob))
         lob_btn_elm.click_element()
         self.log.info(f"Select LOB - {lob}")
+
+        self.title_toolbar.screen_title_element.wait_till_text_to_be_not_present_in_element(title)

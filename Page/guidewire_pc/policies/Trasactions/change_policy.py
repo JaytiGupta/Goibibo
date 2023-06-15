@@ -12,16 +12,9 @@ class ChangePolicy(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
+        self.info_bar = InfoBar(self.driver)
         self.title_toolbar = common.TitleToolbar(self.driver)
         self.start_policy_change_screen = StartPolicyChange(self.driver)
-        self.info_bar = InfoBar(self.driver)
-        self.policy = None
-        self.set_policy()
-
-    def set_policy(self):
-        policy_type = self.info_bar.get_lob()
-        if policy_type == "Workers' Compensation":
-            self.policy = WorkersCompensation(self.driver)
 
 
 class StartPolicyChange(BasePage):
@@ -41,11 +34,12 @@ class StartPolicyChange(BasePage):
         return BaseElement(self.driver, locator)
 
     def fill_all_details(self, effective_date, description=None):
-        self.log(f"Start Policy Change Screen.")
-        self.effective_date_input_box.enter_text(effective_date)
-        self.log.info(f"Effective Date: {effective_date}.")
-
+        self.log.info(f"Start Policy Change Screen.")
+        self.effective_date_input_box.click_element()
         if description is not None:
             self.description_input_box.enter_text(description)
             self.log.info(f"Description: {description}.")
+
+        self.effective_date_input_box.enter_text(effective_date)
+        self.log.info(f"Effective Date: {effective_date}.")
 

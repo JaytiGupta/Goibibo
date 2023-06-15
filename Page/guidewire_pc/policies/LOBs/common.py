@@ -27,7 +27,7 @@ class TableQuestionnaires:
         locator = (By.XPATH, x_path)
         return locator
 
-    def radio_btn(self, question, answer):
+    def select_radio_btn(self, question, answer):
         locator = self.radio_btn_locator(question, answer)
         radio_btn = BaseElement(self.driver, locator)
         radio_btn.click_element()
@@ -63,13 +63,13 @@ class TitleToolbar(BasePage):
         self.info_bar = InfoBar(self.driver)
 
     @property
-    def screen_title(self):
+    def screen_title_element(self):
         locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[@role="heading"]')
         return BaseElement(self.driver, locator)
 
     @property
     def next_btn(self):
-        locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[text()="Next"]')
+        locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[contains(@aria-label, "Next")]')
         return BaseElement(self.driver, locator)
 
     @property
@@ -112,12 +112,6 @@ class TitleToolbar(BasePage):
         locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[@aria-label="Issue Policy"]')
         return BaseElement(self.driver, locator)
 
-    # def select_bind_option(self, bind_option_text):
-    #     locator = (By.XPATH, f'//div[@id="gw-center-title-toolbar"]//'
-    #                          f'div[contains(@id,"BindOptions")]//'
-    #                          f'div[@aria-label="{bind_option_text}"]')
-    #     return BaseElement(self.driver, locator)
-
     @property
     def cancel_now_btn(self):
         locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//'
@@ -138,13 +132,13 @@ class TitleToolbar(BasePage):
         return BaseElement(self.driver, locator)
 
     def screen_title_text(self):
-        text = self.screen_title.get_text()
+        text = self.screen_title_element.get_text()
         return text
 
     def next(self):
         title = self.screen_title_text()
         self.next_btn.click_element()
-        self.screen_title.wait_till_text_to_be_not_present_in_element(title)
+        self.screen_title_element.wait_till_text_to_be_not_present_in_element(title)
 
     def quote(self):  # TODO needs to update max depth for recursion
         initial_screen_title = self.screen_title_text()
@@ -177,7 +171,7 @@ class TitleToolbar(BasePage):
             self.quote()
 
     def wait_for_screen(self, screen_title_text):
-        self.screen_title.wait_till_text_to_be_present_in_element(screen_title_text)
+        self.screen_title_element.wait_till_text_to_be_present_in_element(screen_title_text)
 
     def bind_policy(self):
         self.bind_options_btn.click_element()
@@ -188,7 +182,7 @@ class TitleToolbar(BasePage):
         initial_screen_title = self.screen_title_text()
 
         # bind option is not present for change policy transaction. Issue policy btn is on title toolbar.
-        if "Policy Change" not in self.info_bar.get_current_job():
+        if self.bind_options_btn.is_element_present():
             self.bind_options_btn.click_element()
 
         self.issue_policy_btn.click_element()

@@ -1,3 +1,4 @@
+import random
 import time
 from re import sub
 from Base.basepage import BasePage
@@ -26,6 +27,13 @@ class WorkersCompensation(BasePage):
         self.payment_screen = Payment(self.driver)
         self.workspace_screen = common.Workspace(self.driver)
 
+    def navigate_till_screen(self, screen_title):
+        actual_screen_title = self.title_toolbar.screen_title_text()
+
+        while screen_title != actual_screen_title:
+            self.title_toolbar.next()
+            actual_screen_title = self.title_toolbar.screen_title_text()
+
 
 class Qualification:
     log = getLogger()
@@ -33,8 +41,7 @@ class Qualification:
     def __init__(self, driver):
         self.driver = driver
         self.SCREEN_TITLE = "Qualification"
-        self.questionnaires = common.TableQuestionnaires(self.driver)
-
+        self.table_questionnaires = common.TableQuestionnaires(self.driver)
 
 
 class WCCoverages(BasePage):
@@ -119,8 +126,24 @@ class WCOptions(BasePage):
     @staticmethod
     def _locator_dynamic_wc_options_selection(wc_option_name):
         xpath = f'//div[contains(text(),"Add Option")]' \
-                f'/parent::div/following-sibling::div[2]//div[contains(text(),{wc_option_name})]'
+                f'/parent::div/following-sibling::div[2]//' \
+                f'div[contains(text(),"{wc_option_name}")]'
         return By.XPATH, xpath
+
+    @property
+    def random_text_element(self):
+        locator = (By.XPATH, '//div[contains(text(),"Federal Liability Classes")]')
+        return BaseElement(self.driver, locator)
+
+    @property
+    def class_code_search_option(self):
+        locator = (By.XPATH, '//div[contains(@id,"ClassCode")]//span[@aria-label="gw-search-icon"]')
+        return BaseElement(self.driver, locator)
+
+    @property
+    def class_code_select_button(self):
+        locator = (By.XPATH, '//div[text()="Select"]')
+        return BaseElement(self.driver, locator)
 
     def add_wc_option(self, option):
         add_option_btn = BaseElement(self.driver, self._locator_add_option_btn)
@@ -128,15 +151,26 @@ class WCOptions(BasePage):
         select_option = BaseElement(self.driver, self._locator_dynamic_wc_options_selection(option))
         select_option.click_element()
 
-    def add_federal_class(self, location_index, class_code, emp_no, basis_value):
+    def select_random_federal_class_code(self):
+        self.class_code_search_option.click_element()
+        all_select_btns = self.class_code_select_button.get_all_elements()
+        random.choice(all_select_btns).click()
+
+    def add_federal_class(self, location_index, emp_no, basis_value, class_code=None):
         add_class_btn = BaseElement(self.driver, self._locator_add_federal_class)
         add_class_btn.click_element()
+
         location = BaseElement(self.driver, self._locator_federal_location_dropdown)
         location.select_option(index=location_index)
-        class_code_elm = BaseElement(self.driver, self._locator_federal_class_code_input_box)
-        class_code_elm.enter_text(class_code)
+        # self.random_text_element.click_element()
+
         emp = BaseElement(self.driver, self._locator_federal_no_of_emp_input_box)
         emp.enter_text(emp_no)
+        # self.random_text_element.click_element()
+
+        self.select_random_federal_class_code()
+        # self.random_text_element.click_element()
+
         basis = BaseElement(self.driver, self._locator_federal_basis_input_box)
         basis.enter_text(basis_value)
 
