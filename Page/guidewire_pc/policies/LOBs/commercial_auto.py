@@ -30,7 +30,7 @@ class CommercialAuto(BasePage):
         self.policy_review_screen = common.PolicyReview(self.driver)
         self.quote_screen = common.Quote(self.driver)
         self.forms_screen = common.Forms(self.driver)
-        # self.payment_screen = PaymentCA(self.driver)
+        # self.payment_screen = Payment(self.driver)
         self.workspace_screen = common.Workspace(self.driver)
 
 
@@ -128,23 +128,23 @@ class Vehicles:
                                                            '"VehicleClassCodeSearchResultsLV-0-1")]')
         self._locator_vehicle_ok_btn = (By.XPATH, '//div[@aria-label = "OK"]')
 
-    def add_vehicle(self, index, text, vin):
+    def add_vehicle(self, index, text, vin): #TODO random vin enteries
         add_vehicle_btn = BaseElement(self.driver, self._locator_create_vehicle_btn)
         add_vehicle_btn.click_element()
         garaged_location = BaseElement(self.driver, self._locator_garaged_location)
         garaged_location.select_option(index=index)
         vehicle_type = BaseElement(self.driver, self._locator_vehicle_type)
         vehicle_type.select_option(text=text)
-        vin = BaseElement(self.driver, self._locator_vin)
-        vin.enter_text(vin) #TODO random vin enteries
+        vin_elm = BaseElement(self.driver, self._locator_vin)
+        vin_elm.enter_text(vin)
 
-    def vehicle_class_code(self,exp, rad):
+    def vehicle_class_code(self, years_of_experience, radius):
         search_class_code = BaseElement(self.driver, self._locator_class_code_search_btn)
         search_class_code.click_element()
-        years_of_exp = BaseElement(self.driver, self._locator_class_code_experience)
-        years_of_exp.select_option(text=exp)
-        radius = BaseElement(self.driver, self._locator_class_code_radius)
-        radius.select_option(text=rad)
+        years_of_experience_elm = BaseElement(self.driver, self._locator_class_code_experience)
+        years_of_experience_elm.select_option(text=years_of_experience)
+        radius_elm = BaseElement(self.driver, self._locator_class_code_radius)
+        radius_elm.select_option(text=radius)
         screen_search_btn = BaseElement(self.driver, self._locator_class_code_screen_search)
         screen_search_btn.click_element()
         result = BaseElement(self.driver, self._locator_class_code_first_result)

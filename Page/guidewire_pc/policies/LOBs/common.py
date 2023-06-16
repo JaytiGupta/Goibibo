@@ -50,7 +50,7 @@ class TableQuestionnaires:
     def dropdown(self, question, dropdown_text):
         x_path = f'//div[contains(text(),"{question}")]/ancestor::tr//select'
         locator = (By.XPATH, x_path)
-        dropdown_elm = BaseElement(self.driver,locator)
+        dropdown_elm = BaseElement(self.driver, locator)
         dropdown_elm.select_option(text=dropdown_text)
 
 
@@ -163,12 +163,11 @@ class TitleToolbar(BasePage):
             self.quote()
         elif self.screen_title_text() == initial_screen_title:
             self.log.info(f"{initial_screen_title} screen")
-            if self.workspace.error().is_element_present():
+            if self.workspace.error.is_element_present():
                 self.log.debug("Getting error and unable to quote")
                 raise Exception("Getting error and unable to quote")
-            elif self.workspace.warning().is_element_present():
-                self.log.info("Getting warnings")
-            # TODO elif Information
+            elif self.workspace.warning.is_element_present() or self.workspace.information.is_element_present():
+                self.log.info("Getting warnings or information")
             self.quote()
 
     def wait_for_screen(self, screen_title_text):
@@ -229,16 +228,24 @@ class Workspace:
         self.driver = driver
         self.risk_analysis_screen = RiskAnalysis(self.driver)
 
+    @property
     def validation_results(self):
         locator = (By.XPATH, '//div[text()="Validation Results"]')
         return BaseElement(self.driver, locator)
 
+    @property
     def error(self):
         locator = (By.XPATH, '//div[@id="gw-south-panel"]//div[contains(text(),"Error")]')
         return BaseElement(self.driver, locator)
 
+    @property
     def warning(self):
         locator = (By.XPATH, '//div[@id="gw-south-panel"]//div[contains(text(),"Warning")]')
+        return BaseElement(self.driver, locator)
+
+    @property
+    def information(self):
+        locator = (By.XPATH, '//div[@id="gw-south-panel"]//div[contains(text(),"Information")]')
         return BaseElement(self.driver, locator)
 
 
@@ -292,7 +299,8 @@ class PolicyInfo(BasePage):
 
     # select only from first page
     def select_random_industry_code(self):
-        locator_industry_code_search_icon = (By.XPATH, '//div[text()="Industry Code"]/parent::div//span[@aria-label="gw-search-icon"]')
+        locator_industry_code_search_icon = (By.XPATH, '//div[text()="Industry Code"]/parent::div//'
+                                                       'span[@aria-label="gw-search-icon"]')
         industry_code_search_btn = BaseElement(self.driver, locator_industry_code_search_icon)
         industry_code_search_btn.click_element()
 
@@ -319,7 +327,8 @@ class RiskAnalysis(BasePage):
 
     @property
     def _all_pending_approval_check_box(self):
-        locator = (By.XPATH, '//div[text()="Approve"]/ancestor::td[not(contains(@colspan,"1"))]/preceding-sibling::td[4]'
+        locator = (By.XPATH, '//div[text()="Approve"]/ancestor::td[not(contains(@colspan,"1"))]'
+                             '/preceding-sibling::td[4]'
                              '//input[@type="checkbox"]')
         return BaseElement(self.driver, locator)
 

@@ -4,7 +4,6 @@ from selenium.webdriver.common.by import By
 from Util.logs import getLogger
 from Page.guidewire_pc.policies.LOBs import common
 from Page.guidewire_pc.policies.info_bar import InfoBar
-from Page.guidewire_pc.policies.LOBs.work_comp import WorkersCompensation
 
 
 class ChangePolicy(BasePage):

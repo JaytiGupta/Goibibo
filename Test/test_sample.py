@@ -1,17 +1,7 @@
-from pytest import mark
+from faker import Faker
 
+fake = Faker()
 
-# @mark.parametrize("tv_brand", ["Samsung",
-#                                "Sony",
-#                                "Panasonic"])
-# def test_television_turnson(tv_brand):
-#     brandname = tv_brand["brand"]
-#     tvsize = tv_brand["size"]
-#     print(f"{brandname} is of size {tvsize}")
+print(fake.name())
 
-
-class SampleTests():
-
-    def test_sample1(self):
-        assert True
 

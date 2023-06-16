@@ -19,7 +19,8 @@ class NewSubmissionScreen(BasePage):
 
     @property
     def _base_state_dropdown(self):
-        locator = (By.XPATH, '//select[@name="NewSubmission-NewSubmissionScreen-ProductSettingsDV-DefaultBaseState"]')
+        locator = (By.XPATH, '//select[@name="NewSubmission-NewSubmissionScreen-ProductSettingsDV-'
+                             'DefaultBaseState"]')
         return BaseElement(self.driver, locator)
 
     def enter_effective_date(self, date):

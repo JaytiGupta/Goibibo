@@ -50,7 +50,8 @@ class StartCancellationForPolicy(BasePage):
 
     @property
     def cancellation_effective_date_text_elm_for_flat_cancel(self):
-        locator = (By.XPATH, '//div[text()="Cancellation Effective Date"]/following-sibling::div//div[@class="gw-value-readonly-wrapper"]')
+        locator = (By.XPATH, '//div[text()="Cancellation Effective Date"]/following-sibling::div'
+                             '//div[@class="gw-value-readonly-wrapper"]')
         return BaseElement(self.driver, locator)
 
     @property

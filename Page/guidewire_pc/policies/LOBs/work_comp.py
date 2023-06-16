@@ -1,6 +1,4 @@
 import random
-import time
-from re import sub
 from Base.basepage import BasePage
 from Base.baseelement import BaseElement
 from selenium.webdriver.common.by import By
@@ -57,11 +55,16 @@ class WCCoverages(BasePage):
 
     @staticmethod
     def _locator_dynamic_wc_coverages_screen_add_class(row_number):
-        governing_law_xpath = f'//div[text()="Class Code"]/ancestor::tr/following-sibling::tr[{row_number}]/td[2]//select'  # Govering law
-        location_xpath = f'//div[text()="Class Code"]/ancestor::tr/following-sibling::tr[{row_number}]/td[3]//select'  # Location
-        class_code_xpath = f'//div[text()="Class Code"]/ancestor::tr/following-sibling::tr[{row_number}]/td[4]//input'  # class code
-        employees_xpath = f'//div[text()="Class Code"]/ancestor::tr/following-sibling::tr[{row_number}]/td[6]//input'  # Employees
-        basis_xpath = f'//div[text()="Class Code"]/ancestor::tr/following-sibling::tr[{row_number}]/td[8]//input'  # Basis
+        governing_law_xpath = f'//div[text()="Class Code"]/ancestor::tr/following-sibling::' \
+                              f'tr[{row_number}]/td[2]//select'  # Govering law
+        location_xpath = f'//div[text()="Class Code"]/ancestor::tr/following-sibling::tr[{row_number}]' \
+                         f'/td[3]//select'  # Location
+        class_code_xpath = f'//div[text()="Class Code"]/ancestor::tr/following-sibling::tr[{row_number}]' \
+                           f'/td[4]//input'  # class code
+        employees_xpath = f'//div[text()="Class Code"]/ancestor::tr/following-sibling::tr[{row_number}]' \
+                          f'/td[6]//input'  # Employees
+        basis_xpath = f'//div[text()="Class Code"]/ancestor::tr/following-sibling::tr[{row_number}]' \
+                      f'/td[8]//input'  # Basis
 
         return {
             "Governing Law": (By.XPATH, governing_law_xpath),
@@ -162,14 +165,12 @@ class WCOptions(BasePage):
 
         location = BaseElement(self.driver, self._locator_federal_location_dropdown)
         location.select_option(index=location_index)
-        # self.random_text_element.click_element()
+        self.random_text_element.click_element()
 
         emp = BaseElement(self.driver, self._locator_federal_no_of_emp_input_box)
         emp.enter_text(emp_no)
-        # self.random_text_element.click_element()
 
         self.select_random_federal_class_code()
-        # self.random_text_element.click_element()
 
         basis = BaseElement(self.driver, self._locator_federal_basis_input_box)
         basis.enter_text(basis_value)
@@ -181,9 +182,11 @@ class Payment(BasePage):
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
         self.SCREEN_TITLE = "Payment"
-        self._locator_billing_method_dropdown = (By.XPATH, '//div[text()="Billing Method"]/following-sibling::div//select')
+        self._locator_billing_method_dropdown = (By.XPATH, '//div[text()="Billing Method"]/following-sibling'
+                                                           '::div//select')
         self._locator_plan_type_dropdown = (By.XPATH, '//div[text()="Plan Type"]/following-sibling::div//select')
-        self._locator_premium_reporting_plan_dropdown = (By.XPATH, '//div[text()="Premium Reporting Plan"]/following-sibling::div//select')
+        self._locator_premium_reporting_plan_dropdown = (By.XPATH, '//div[text()="Premium Reporting Plan"]'
+                                                                   '/following-sibling::div//select')
 
     def select_billing_method(self, text):
         elm = BaseElement(self.driver, self._locator_billing_method_dropdown)

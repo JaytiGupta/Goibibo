@@ -1,4 +1,9 @@
-x = {"2": "4",
-     "3": "9",
-     "4": "16"}
+from faker import Faker
 
+fake = Faker()
+
+# print(fake.name())
+
+print(fake.phone_number())
+
+print(fake.country())

@@ -10,6 +10,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.select import Select
 import inspect
+from selenium import webdriver
 
 MAX_WAIT_TIME = 10
 
@@ -18,7 +19,7 @@ class BaseElement:
 
     log = getLogger()
 
-    def __init__(self, driver, locator):
+    def __init__(self, driver: webdriver.Chrome, locator):
         self.locator = locator
         self.driver = driver
         self.web_element = None
@@ -98,8 +99,11 @@ class BaseElement:
             raise ValueError(f"No option present for which dropdown {list(kwargs.keys())[0]} is \"{list(kwargs.values())[0]}\"")
 
     def select_random_dropdown_option(self, *options_to_remove: str):
-        # find all dropdown option elements
-        all_dropdown_option_locator = (By.XPATH, ".//option") # All dropdown elements are in option tags
+        """
+        Used to select any random value from the dropdown while excluding
+        any given no. of values that are passed as parameters (optional)
+        """
+        all_dropdown_option_locator = (By.XPATH, ".//option") # All dropdown elements are always in option tags
         nested_element_list = NestedElement(self.web_element, all_dropdown_option_locator).get_all_elements()
         all_dropdown_option_text = [element.text for element in nested_element_list]
 
@@ -157,6 +161,9 @@ class BaseElement:
 
 class NestedElement:
 
+    """
+    Used to find an element inside another element
+    """
     log = getLogger()
 
     def __init__(self, parent_web_element, locator):

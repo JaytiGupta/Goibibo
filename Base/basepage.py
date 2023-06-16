@@ -2,15 +2,16 @@ from selenium.common import NoAlertPresentException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from Util.logs import getLogger
+from selenium import webdriver
 
 
 class BasePage:
 
     log = getLogger()
 
-    def __init__(self, driver, url):
+    def __init__(self, driver: webdriver.Chrome, url):
         self.driver = driver
-        self.driver.set_page_load_timeout(5)
+        # self.driver.set_page_load_timeout(5)  --- not of use for now
         self.url = url
 
     def go(self):

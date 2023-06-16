@@ -20,11 +20,11 @@ class NewAccount(BasePage):
     def create_default_new_account(self, account_type):
         """
         :param account_type: company or person
-        :param address: address1,city,state,zip (All 4 mandatory address fields separated by coma and no space
         :return: create a new default account
         """
         current_datetime = datetime.now()
         unique_string = current_datetime.strftime("%y%m%d%H%M%S")
+        # TODO use faker
         company_name = "company-" + unique_string
         first_name = "first-" + unique_string
         last_name = "last-" + unique_string
@@ -122,12 +122,9 @@ class EnterAccountInformation(BasePage):
 
     def validate_zero_results(self):
         if self.zero_results_information_tag == "The search returned zero results.":
-            pass
-        #         TODO log info for no matching account found
+            self.log.info("No matching records found")
         else:
-            pass
-
-    #         TODO click on the first search result
+            self.log.info("Account Search results found for the entered information")
 
     def create_new_account_btn(self, account_type):
         self.new_account_btn.click_element()
