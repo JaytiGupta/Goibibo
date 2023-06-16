@@ -10,40 +10,80 @@ class NewSubmissionScreen(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
-        self._locator_eff_date_input = (By.XPATH, '//input[@class="gw-min-visible gw-DateValueWidget--dateInput"]')
-        self._locator_base_state_dropdown = (
-        By.XPATH, '//select[@name="NewSubmission-NewSubmissionScreen-ProductSettingsDV-DefaultBaseState"]')
-        self._locator_effective_date_text = (By.XPATH, '//div[text()="Default Effective Date"]')
-        self.title_toolbar = TitleToolbar(self.driver)
+        self.select_lob = SelectLOB(self.driver)
 
-    @staticmethod
-    def _locator_dynamic_lob_select_btn(lob):
-        x_path = f'//div[text()="{lob}"]//ancestor::tr[1]//div[text()="Select"]'
-        return By.XPATH, x_path
+    @property
+    def _effective_date_input_box(self):
+        locator = (By.XPATH, '//input[@class="gw-min-visible gw-DateValueWidget--dateInput"]')
+        return BaseElement(self.driver, locator)
 
-    def enter_eff_date(self, date):
-        eff_date = BaseElement(self.driver, self._locator_eff_date_input)
-        eff_date.enter_text(date)
-        eff_date.press_tab_key()
+    @property
+    def _base_state_dropdown(self):
+        locator = (By.XPATH, '//select[@name="NewSubmission-NewSubmissionScreen-ProductSettingsDV-DefaultBaseState"]')
+        return BaseElement(self.driver, locator)
+
+    def enter_effective_date(self, date):
+        self._effective_date_input_box.enter_text(date)
+        self._effective_date_input_box.press_tab_key()
         self.log.info(f"Enter effective Date - {date}")
 
     def select_base_state(self, state):
-        base_state = BaseElement(self.driver, self._locator_base_state_dropdown)
-        base_state.select_option(text=state)
+        self._base_state_dropdown.select_option(text=state)
         self.log.info(f"Select Base State - {state}")
 
-    def select_lob_btn(self, lob):
-        """
-        :param lob: (options) - Workers' Compensation | Inland Marine | General Liability | Commercial Property |
-        Commercial Package | Commercial Auto | Businessowners
-        """
 
-        title = self.title_toolbar.screen_title_text()
+class SelectLOB:
+    log = getLogger()
 
-        BaseElement(self.driver, self._locator_effective_date_text).click_element()  # clicking outside with no impact
-        BaseElement(self.driver, self._locator_effective_date_text).click_element()  # clicking outside with no impact
-        lob_btn_elm = BaseElement(self.driver, self._locator_dynamic_lob_select_btn(lob))
-        lob_btn_elm.click_element()
-        self.log.info(f"Select LOB - {lob}")
+    def __init__(self, driver):
+        self._driver = driver
+        self._title_toolbar = TitleToolbar(self._driver)
 
-        self.title_toolbar.screen_title_element.wait_till_text_to_be_not_present_in_element(title)
+    @property
+    def _random_text_element_at_screen(self):
+        locator = (By.XPATH, '//div[text()="Default Effective Date"]')
+        return BaseElement(self._driver, locator)
+
+    def _dynamic_lob_select_button_element(self, lob):
+        locator = (By.XPATH, f'//div[text()="{lob}"]//ancestor::tr[1]//div[text()="Select"]')
+        return BaseElement(self._driver, locator)
+
+    def _select_lob(self, lob):
+        title = self._title_toolbar.screen_title_text()
+
+        self._random_text_element_at_screen.click_element() # clicking outside with no impact
+        self._random_text_element_at_screen.click_element() # clicking outside with no impact
+
+        self._dynamic_lob_select_button_element(lob).click_element()
+        self.log.info(f"Select LOB: {lob}")
+
+        self._title_toolbar.screen_title_element.wait_till_text_to_be_not_present_in_element(title)
+        return None
+
+    def business_owners(self):
+        self._select_lob("Businessowners")
+        return None
+
+    def commercial_auto(self):
+        self._select_lob("Commercial Auto")
+        return None
+
+    def commercial_package(self):
+        self._select_lob("Commercial Package")
+        return None
+
+    def commercial_property(self):
+        self._select_lob("Commercial Property")
+        return None
+
+    def general_liability(self):
+        self._select_lob("General Liability")
+        return None
+
+    def inland_marine(self):
+        self._select_lob("Inland Marine")
+        return None
+
+    def workers_compensation(self):
+        self._select_lob("Workers' Compensation")
+        return None

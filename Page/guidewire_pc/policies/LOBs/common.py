@@ -6,6 +6,7 @@ from Base.baseelement import NestedElement
 from Base.basepage import BasePage
 from Util.logs import getLogger
 from Page.guidewire_pc.policies.info_bar import InfoBar
+import random
 
 
 class TableQuestionnaires:
@@ -251,10 +252,14 @@ class PolicyInfo(BasePage):
         self._locator_industry_code_input_box = (By.XPATH, '//div[text()="Industry Code"]/parent::div//input')
         self._locator_year_business_started_input_box = (
             By.XPATH, '//div[text()="Year Business Started"]/parent::div//input')
-        self._locator_organization_type_dropdown = (By.XPATH, '//div[text()="Organization Type"]/parent::div//select')
         self._locator_term_type_dropdown = (By.XPATH, '//div[text()="Term Type"]/parent::div//select')
         self._locator_effective_date_input_box = (By.XPATH, '//div[text()="Effective Date"]/parent::div//input')
         self._locator_underwriter_companies_dropdown = (By.XPATH, '//select[contains(@name, "UWCompanyInputSet")]')
+
+    @property
+    def organization_type_dropdown(self):
+        locator = (By.XPATH, '//div[text()="Organization Type"]/parent::div//select')
+        return BaseElement(self.driver, locator)
 
     def input_FEIN(self, text):
         fein = BaseElement(self.driver, self._locator_FEIN_input_box)
@@ -266,9 +271,8 @@ class PolicyInfo(BasePage):
         industry_code_elm.enter_text(industry_code)
         self.log.info(f"Enter Industry Code - {industry_code}")
 
-    def select_org_type(self, type_of_org):
-        org_type_elm = BaseElement(self.driver, self._locator_organization_type_dropdown)
-        org_type_elm.select_option(text=type_of_org)
+    def select_organization_type(self, type_of_org):
+        self.organization_type_dropdown.select_option(text=type_of_org)
         self.log.info(f"Select Organisation Type - {type_of_org}")
 
     def term_type(self, pol_term):
@@ -285,6 +289,25 @@ class PolicyInfo(BasePage):
         uw_company_elm = BaseElement(self.driver, self._locator_underwriter_companies_dropdown)
         uw_company_elm.select_option(text=uw_company)
         self.log.info(f"Select Underwriting company - {uw_company}")
+
+    # select only from first page
+    def select_random_industry_code(self):
+        locator_industry_code_search_icon = (By.XPATH, '//div[text()="Industry Code"]/parent::div//span[@aria-label="gw-search-icon"]')
+        industry_code_search_btn = BaseElement(self.driver, locator_industry_code_search_icon)
+        industry_code_search_btn.click_element()
+
+        locator_industry_code_page_all_select_btn = (By.XPATH, '//div[text()="Select"]')
+        industry_code_page_all_select_btn = BaseElement(self.driver, locator_industry_code_page_all_select_btn)
+
+        random_select_button = random.choice(industry_code_page_all_select_btn.get_all_elements())
+        random_select_button.click()
+
+    def fill_random_details(self):
+        fein = random.randint(10**8, (10**9-1))
+        self.input_FEIN(fein)
+        self.select_random_industry_code()
+        self.organization_type_dropdown.select_random_dropdown_option('<none>')
+        return None
 
 
 class RiskAnalysis(BasePage):

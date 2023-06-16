@@ -1,5 +1,7 @@
+import random
 import time
 
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import ElementClickInterceptedException, TimeoutException, NoSuchElementException
@@ -95,6 +97,24 @@ class BaseElement:
                            f"is \"{list(kwargs.values())[0]}\"")
             raise ValueError(f"No option present for which dropdown {list(kwargs.keys())[0]} is \"{list(kwargs.values())[0]}\"")
 
+    def select_random_dropdown_option(self, *options_to_remove: str):
+        # find all dropdown option elements
+        all_dropdown_option_locator = (By.XPATH, ".//option") # All dropdown elements are in option tags
+        nested_element_list = NestedElement(self.web_element, all_dropdown_option_locator).get_all_elements()
+        all_dropdown_option_text = [element.text for element in nested_element_list]
+
+        for option in options_to_remove:
+            all_dropdown_option_text.remove(option)
+
+        print("-------", all_dropdown_option_text)
+
+        random_element_text = random.choice(all_dropdown_option_text)
+
+        self.select_option(text=random_element_text)
+        self.log.info(f"Select {random_element_text} from dropdown option")
+
+        return None
+
     def is_element_present(self):
         """
         :return: True or False
@@ -155,3 +175,10 @@ class NestedElement:
     def get_text(self):
         text = self.web_element.text
         return text
+
+    def get_all_elements(self) -> list:
+        by = self.locator[0]
+        value = self.locator[1]
+        elements = self.parent_web_element.find_elements(by=by, value=value)
+        return elements
+
