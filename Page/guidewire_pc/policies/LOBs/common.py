@@ -5,6 +5,8 @@ from Base.baseelement import BaseElement
 from Base.baseelement import NestedElement
 from Base.basepage import BasePage
 from Util.logs import getLogger
+from Page.guidewire_pc.policies.info_bar import InfoBar
+import random
 
 
 class TableQuestionnaires:
@@ -26,7 +28,7 @@ class TableQuestionnaires:
         locator = (By.XPATH, x_path)
         return locator
 
-    def radio_btn(self, question, answer):
+    def select_radio_btn(self, question, answer):
         locator = self.radio_btn_locator(question, answer)
         radio_btn = BaseElement(self.driver, locator)
         radio_btn.click_element()
@@ -59,15 +61,16 @@ class TitleToolbar(BasePage):
         super().__init__(driver=driver, url=None)
         self.risk_analysis_screen = RiskAnalysis(self.driver)
         self.workspace = Workspace(self.driver)
+        self.info_bar = InfoBar(self.driver)
 
     @property
-    def screen_title(self):
+    def screen_title_element(self):
         locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[@role="heading"]')
         return BaseElement(self.driver, locator)
 
     @property
     def next_btn(self):
-        locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[text()="Next"]')
+        locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[contains(@aria-label, "Next")]')
         return BaseElement(self.driver, locator)
 
     @property
@@ -110,12 +113,6 @@ class TitleToolbar(BasePage):
         locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[@aria-label="Issue Policy"]')
         return BaseElement(self.driver, locator)
 
-    # def select_bind_option(self, bind_option_text):
-    #     locator = (By.XPATH, f'//div[@id="gw-center-title-toolbar"]//'
-    #                          f'div[contains(@id,"BindOptions")]//'
-    #                          f'div[@aria-label="{bind_option_text}"]')
-    #     return BaseElement(self.driver, locator)
-
     @property
     def cancel_now_btn(self):
         locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//'
@@ -136,13 +133,13 @@ class TitleToolbar(BasePage):
         return BaseElement(self.driver, locator)
 
     def screen_title_text(self):
-        text = self.screen_title.get_text()
+        text = self.screen_title_element.get_text()
         return text
 
     def next(self):
         title = self.screen_title_text()
         self.next_btn.click_element()
-        self.screen_title.wait_till_text_to_be_not_present_in_element(title)
+        self.screen_title_element.wait_till_text_to_be_not_present_in_element(title)
 
     def quote(self):  # TODO needs to update max depth for recursion
         initial_screen_title = self.screen_title_text()
@@ -175,7 +172,7 @@ class TitleToolbar(BasePage):
             self.quote()
 
     def wait_for_screen(self, screen_title_text):
-        self.screen_title.wait_till_text_to_be_present_in_element(screen_title_text)
+        self.screen_title_element.wait_till_text_to_be_present_in_element(screen_title_text)
 
     def bind_policy(self):
         self.bind_options_btn.click_element()
@@ -185,7 +182,10 @@ class TitleToolbar(BasePage):
     def issue_policy(self): # TODO needs to update max depth for recursion
         initial_screen_title = self.screen_title_text()
 
-        self.bind_options_btn.click_element()
+        # bind option is not present for change policy transaction. Issue policy btn is on title toolbar.
+        if self.bind_options_btn.is_element_present():
+            self.bind_options_btn.click_element()
+
         self.issue_policy_btn.click_element()
         self.log.info(f"Clicked Issue Policy button.")
         self.accept_alert()
@@ -194,7 +194,9 @@ class TitleToolbar(BasePage):
         time.sleep(5)
 
         if self.screen_title_text() == "Submission Bound":
-            self.log.info("Your Submission has been bound")
+            self.log.info("Your Submission has been bound.")
+        elif self.screen_title_text() == "Policy Change Bound":
+            self.log.info("Your Policy Change has been bound.")
         elif self.screen_title_text() == initial_screen_title:
             self.log.info(f"{initial_screen_title} screen")
             if self.workspace.error().is_element_present():
@@ -250,10 +252,14 @@ class PolicyInfo(BasePage):
         self._locator_industry_code_input_box = (By.XPATH, '//div[text()="Industry Code"]/parent::div//input')
         self._locator_year_business_started_input_box = (
             By.XPATH, '//div[text()="Year Business Started"]/parent::div//input')
-        self._locator_organization_type_dropdown = (By.XPATH, '//div[text()="Organization Type"]/parent::div//select')
         self._locator_term_type_dropdown = (By.XPATH, '//div[text()="Term Type"]/parent::div//select')
         self._locator_effective_date_input_box = (By.XPATH, '//div[text()="Effective Date"]/parent::div//input')
         self._locator_underwriter_companies_dropdown = (By.XPATH, '//select[contains(@name, "UWCompanyInputSet")]')
+
+    @property
+    def organization_type_dropdown(self):
+        locator = (By.XPATH, '//div[text()="Organization Type"]/parent::div//select')
+        return BaseElement(self.driver, locator)
 
     def input_FEIN(self, text):
         fein = BaseElement(self.driver, self._locator_FEIN_input_box)
@@ -265,9 +271,8 @@ class PolicyInfo(BasePage):
         industry_code_elm.enter_text(industry_code)
         self.log.info(f"Enter Industry Code - {industry_code}")
 
-    def select_org_type(self, type_of_org):
-        org_type_elm = BaseElement(self.driver, self._locator_organization_type_dropdown)
-        org_type_elm.select_option(text=type_of_org)
+    def select_organization_type(self, type_of_org):
+        self.organization_type_dropdown.select_option(text=type_of_org)
         self.log.info(f"Select Organisation Type - {type_of_org}")
 
     def term_type(self, pol_term):
@@ -284,6 +289,25 @@ class PolicyInfo(BasePage):
         uw_company_elm = BaseElement(self.driver, self._locator_underwriter_companies_dropdown)
         uw_company_elm.select_option(text=uw_company)
         self.log.info(f"Select Underwriting company - {uw_company}")
+
+    # select only from first page
+    def select_random_industry_code(self):
+        locator_industry_code_search_icon = (By.XPATH, '//div[text()="Industry Code"]/parent::div//span[@aria-label="gw-search-icon"]')
+        industry_code_search_btn = BaseElement(self.driver, locator_industry_code_search_icon)
+        industry_code_search_btn.click_element()
+
+        locator_industry_code_page_all_select_btn = (By.XPATH, '//div[text()="Select"]')
+        industry_code_page_all_select_btn = BaseElement(self.driver, locator_industry_code_page_all_select_btn)
+
+        random_select_button = random.choice(industry_code_page_all_select_btn.get_all_elements())
+        random_select_button.click()
+
+    def fill_random_details(self):
+        fein = random.randint(10**8, (10**9-1))
+        self.input_FEIN(fein)
+        self.select_random_industry_code()
+        self.organization_type_dropdown.select_random_dropdown_option('<none>')
+        return None
 
 
 class RiskAnalysis(BasePage):

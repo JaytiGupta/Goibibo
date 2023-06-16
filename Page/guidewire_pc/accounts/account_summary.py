@@ -20,7 +20,7 @@ class AccountSummary(BasePage):
         elm = BaseElement(self.driver, self._locator_account_holder_name)
         return elm.get_text()
 
-    def click_new_submission(self):
+    def click_new_submission_btn(self):
         elm = BaseElement(self.driver, self._locator_new_submission_btn)
         elm.click_element()
 
