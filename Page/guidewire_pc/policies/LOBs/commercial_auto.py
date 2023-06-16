@@ -18,12 +18,14 @@ class CommercialAuto(BasePage):
 
         # screens
         self.title_toolbar = common.TitleToolbar(self.driver)
-        self.offerings_screen = OfferingsCA(self.driver)
-        self.qualification_screen = QualificationCA(self.driver)
+        self.offerings_screen = Offerings(self.driver)
+        self.qualification_screen = Qualification(self.driver)
         self.policy_info_screen = common.PolicyInfo(self.driver)
         self.comm_auto_line_screen = CommercialAutoLine(self.driver)
         self.location_screen = common.Location(self.driver)
         self.vehicles_screen = Vehicles(self.driver)
+        self.state_info_screen = StateInfo(self.driver)
+        self.drivers_screen = Drivers(self.driver)
         self.risk_analysis_screen = common.RiskAnalysis(self.driver)
         self.policy_review_screen = common.PolicyReview(self.driver)
         self.quote_screen = common.Quote(self.driver)
@@ -32,7 +34,7 @@ class CommercialAuto(BasePage):
         self.workspace_screen = common.Workspace(self.driver)
 
 
-class OfferingsCA:
+class Offerings:
     log = getLogger()
 
     def __init__(self, driver):
@@ -46,7 +48,7 @@ class OfferingsCA:
         offering.select_option(text=text)
 
 
-class QualificationCA:
+class Qualification:
     log = getLogger()
 
     def __init__(self, driver):
@@ -100,6 +102,7 @@ class CommercialAutoLine:
         total_volunteers = BaseElement(self.driver, self._locator_non_owned_auto_state_total_volunteers)
         total_volunteers.enter_text(volunteers)
 
+
 class Vehicles:
 
     log = getLogger()
@@ -148,4 +151,36 @@ class Vehicles:
         result.click_element()
         ok_btn = BaseElement(self.driver, self._locator_vehicle_ok_btn)
         ok_btn.click_element()
+
+
+class StateInfo:
+
+    log = getLogger()
+
+    def __init__(self, driver):
+        self.driver = driver
+        self._locator_uninsured_bodily_injury = (By.XPATH, '//select[contains(@name,"BAStateInfoScreen-'
+                                                           'BAStateCoveragesPanelSet-BAPVehicleStateGrp'
+                                                           'Iterator-0")]')
+        self._locator_uninsured_prop_damage = (By.XPATH, '//select[contains(@name,"BAStateInfoScreen-'
+                                                         'BAStateCoveragesPanelSet-BAPVehicleStateGrp'
+                                                         'Iterator-1")]')
+
+    def uninsured_motorist_bodily_injury(self, value):
+        bodily_injury = BaseElement(self.driver, self._locator_uninsured_bodily_injury)
+        bodily_injury.select_option(value=value)
+
+    def uninsured_motorist_property_damage(self, value):
+        property_damage = BaseElement(self.driver, self._locator_uninsured_prop_damage)
+        property_damage.select_option(value=value)
+
+
+class Drivers:
+
+    log = getLogger()
+
+    def __init__(self, driver):
+        self.driver = driver
+
+
 

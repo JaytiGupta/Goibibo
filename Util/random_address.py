@@ -39,7 +39,8 @@ def get_one_address(*state):
 
 
 if __name__ == "__main__":
-    print(get_address_list("virGinia", 'AK'))
-    print(get_one_address("va", "Ak"))
+    # print(get_address_list("virGinia", 'AK'))
+    add1 = get_one_address("va")
+    print(add1["Address_1"])
 
 
