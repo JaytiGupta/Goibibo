@@ -8,6 +8,8 @@ from Base.baseelement import BaseElement
 from selenium.webdriver.common.by import By
 from Page.guidewire_pc.policies.LOBs import common
 from Util.logs import getLogger
+from Util import random_vin
+from Util import random_license
 
 
 class CommercialAuto(BasePage):
@@ -128,7 +130,7 @@ class Vehicles:
                                                            '"VehicleClassCodeSearchResultsLV-0-1")]')
         self._locator_vehicle_ok_btn = (By.XPATH, '//div[@aria-label = "OK"]')
 
-    def add_vehicle(self, index, text, vin): #TODO random vin enteries
+    def add_vehicle(self, index, text, vin):
         add_vehicle_btn = BaseElement(self.driver, self._locator_create_vehicle_btn)
         add_vehicle_btn.click_element()
         garaged_location = BaseElement(self.driver, self._locator_garaged_location)
@@ -136,7 +138,7 @@ class Vehicles:
         vehicle_type = BaseElement(self.driver, self._locator_vehicle_type)
         vehicle_type.select_option(text=text)
         vin_elm = BaseElement(self.driver, self._locator_vin)
-        vin_elm.enter_text(vin)
+        vin_elm.enter_text(random_vin.get_one_vin())
 
     def vehicle_class_code(self, years_of_experience, radius):
         search_class_code = BaseElement(self.driver, self._locator_class_code_search_btn)
@@ -181,6 +183,35 @@ class Drivers:
 
     def __init__(self, driver):
         self.driver = driver
+        self._locator_add_driver_btn = (By.XPATH, '//div[text()="Add Driver"]')
+        self._locator_driver_first_name = (By.XPATH, '//input[contains(@name, "BADriversDV-'
+                                                     'GlobalPersonNameInputSet-FirstName")]')
+        self._locator_driver_last_name = (By.XPATH, '//input[contains(@name, "BADriversDV-'
+                                                    'GlobalPersonNameInputSet-LastName")]')
+        self._locator_driver_gender = (By.XPATH, '//select[contains(@name, "BADriversDV-Gender")]')
+        self._locator_driver_dob = (By.XPATH, '//div[@id="BADriverPopup-BADriverScreen-BADriversDV-'
+                                              'DateOfBirth"]')
+        self._locator_driver_license_number = (By.XPATH, '//input[contains(@name, "BADriversDV-LicenseNumber")]')
+        self._locator_driver_license_state = (By.XPATH, '//select[contains(@name, "BADriversDV-LicenseState")]')
+        self._locator_driver_details_ok_btn = (By.XPATH, '//div[@aria-label = "OK"]')
+
+    def driver_details(self, fn, ln, value, dob, text):
+        first_name = BaseElement(self.driver, self._locator_driver_first_name)
+        first_name.enter_text(fn)
+        last_name = BaseElement(self.driver, self._locator_driver_last_name)
+        last_name.enter_text(ln)
+        gender = BaseElement(self.driver, self._locator_driver_gender)
+        gender.select_option(value=value)
+        birth_date = BaseElement(self.driver, self._locator_driver_dob)
+        birth_date.enter_text(dob)
+        license_number_elm = BaseElement(self.driver, self._locator_driver_dob)
+        license_number_elm.enter_text(random_license.get_one_license())
+        license_state_elm = BaseElement(self.driver, self._locator_driver_license_state)
+        license_state_elm.select_option(text=text)
+        ok_btn = BaseElement(self.driver, self._locator_driver_details_ok_btn)
+        ok_btn.click_element()
+
+
 
 
 
