@@ -25,7 +25,7 @@ class NewSubmissionScreen(BasePage):
 
     def enter_effective_date(self, date):
         self._effective_date_input_box.enter_text(date)
-        self._effective_date_input_box.press_tab_key()
+        # self._effective_date_input_box.press_tab_key()
         self.log.info(f"Enter effective Date - {date}")
 
     def select_base_state(self, state):
@@ -38,7 +38,7 @@ class SelectLOB:
 
     def __init__(self, driver):
         self._driver = driver
-        self._title_toolbar = TitleToolbar(self._driver)
+        self.title_toolbar = TitleToolbar(self._driver)
 
     @property
     def _random_text_element_at_screen(self):
@@ -50,7 +50,7 @@ class SelectLOB:
         return BaseElement(self._driver, locator)
 
     def _select_lob(self, lob):
-        title = self._title_toolbar.screen_title_text()
+        title = self.title_toolbar.screen_title_text()
 
         self._random_text_element_at_screen.click_element() # clicking outside with no impact
         self._random_text_element_at_screen.click_element() # clicking outside with no impact
@@ -58,7 +58,7 @@ class SelectLOB:
         self._dynamic_lob_select_button_element(lob).click_element()
         self.log.info(f"Select LOB: {lob}")
 
-        self._title_toolbar.screen_title_element.wait_till_text_to_be_not_present_in_element(title)
+        self.title_toolbar.screen_title_element.wait_till_text_to_be_not_present_in_element(title)
         return None
 
     def business_owners(self):

@@ -1,16 +1,17 @@
-import random
-import time
-
+from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import ElementClickInterceptedException, TimeoutException, NoSuchElementException
-from Util.logs import getLogger
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.select import Select
+
 import inspect
-from selenium import webdriver
+import random
+
+from Util.logs import getLogger
+
 
 MAX_WAIT_TIME = 10
 
@@ -107,15 +108,18 @@ class BaseElement:
         nested_element_list = NestedElement(self.web_element, all_dropdown_option_locator).get_all_elements()
         all_dropdown_option_text = [element.text for element in nested_element_list]
 
-        for option in options_to_remove:
-            all_dropdown_option_text.remove(option)
-
         print("-------", all_dropdown_option_text)
+
+        for option in options_to_remove:
+            if option in all_dropdown_option_text:
+                all_dropdown_option_text.remove(option)
+            else:
+                self.log.info(f"Option {option} is not in the dropdown options to be removed for selection.")
 
         random_element_text = random.choice(all_dropdown_option_text)
 
         self.select_option(text=random_element_text)
-        self.log.info(f"Select {random_element_text} from dropdown option")
+        self.log.info(f"Select {random_element_text} from dropdown option.")
 
         return None
 
@@ -129,6 +133,7 @@ class BaseElement:
         action_chains = ActionChains(self.driver)
         action_chains.double_click(self.web_element).perform()
 
+    # methods for waiting
     def wait_till_text_to_be_present_in_element(self, text):
         WebDriverWait(self.driver, MAX_WAIT_TIME).\
             until(EC.text_to_be_present_in_element(self.locator, text))

@@ -198,10 +198,10 @@ class TitleToolbar(BasePage):
             self.log.info("Your Policy Change has been bound.")
         elif self.screen_title_text() == initial_screen_title:
             self.log.info(f"{initial_screen_title} screen")
-            if self.workspace.error().is_element_present():
+            if self.workspace.error.is_element_present():
                 self.log.debug("Getting error and unable to quote")
                 raise Exception("Getting error and unable to quote")
-            elif self.workspace.warning().is_element_present():
+            elif self.workspace.warning.is_element_present():
                 self.log.info("Getting warnings")
             # TODO elif Information
             self.issue_policy()
@@ -210,15 +210,22 @@ class TitleToolbar(BasePage):
         pass
 
     def cancel_now(self):
+        initial_screen_title = self.screen_title_text()
         self.bind_options_btn.click_element()
         self.cancel_now_btn.click_element()
         self.log.info(f"Clicked Cancel Now button.")
         self.accept_alert()
+        self.screen_title_element.wait_till_text_to_be_not_present_in_element(initial_screen_title)
         if self.screen_title_text() == "Cancellation Bound":
             self.log.info("Your Cancellation has been bound.")
 
     def reinstate(self):
+        initial_screen_title = self.screen_title_text()
         self.reinstate_btn.click_element()
+        self.accept_alert()
+        self.screen_title_element.wait_till_text_to_be_not_present_in_element(initial_screen_title)
+        if self.screen_title_text() == "Reinstatement Bound":
+            self.log.info("Your Reinstatement has been bound.")
 
 
 class Workspace:

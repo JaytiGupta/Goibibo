@@ -33,8 +33,8 @@ class StartReinstatement(BasePage):
         locator = (By.XPATH, '//div[text()="Reason Description"]/following-sibling::div//textarea')
         return BaseElement(self.driver, locator)
 
-    def start_reinstatement(self, reason, reason_description=None):
-        self.log(f"Start Reinstatement Screen.")
+    def fill_details(self, reason, reason_description=None):
+        self.log.info(f"Start Reinstatement Screen.")
         self.reason_dropdown.select_option(text=reason)
         self.log.info(f"Reason: {reason}.")
 

@@ -30,17 +30,6 @@ def test_search_account(browser):
     assert account.summary.account_summary_title_present()
 
 
-# @mark.skip
-def test_new_transaction(browser):
-    pc = PolicyCenterHome(browser)
-    pc.tab_bar.search_policy("1933106343")
-    policy= Policy(browser)
-    # policy.summary.transaction.change_policy()
-    # policy_summary.select_transaction("Change Policy")
-    policy.summary.new_transaction.renew_policy()
-    time.sleep(20)
-
-
 @mark.skip
 def test_search_submission(browser):
     page = PolicyCenterHome(browser)

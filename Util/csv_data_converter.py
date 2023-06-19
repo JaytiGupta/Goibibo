@@ -1,5 +1,6 @@
 import pandas
 import definitions
+from dataclasses import dataclass
 
 
 def list_of_dicts(csv_file, number_of_rows=None):
