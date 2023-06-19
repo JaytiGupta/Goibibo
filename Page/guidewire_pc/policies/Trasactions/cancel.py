@@ -1,3 +1,5 @@
+import time
+
 from Base.basepage import BasePage
 from Base.baseelement import BaseElement
 from selenium.webdriver.common.by import By
@@ -64,28 +66,35 @@ class StartCancellationForPolicy(BasePage):
         locator = (By.XPATH, '//div[@role="button"]//div[@aria-label="Cancel"]')
         return BaseElement(self.driver, locator)
 
-    def start_cancellation_for_policy(self, source, reason, reason_description=None, effective_date=None):
-        self.log(f"Start Cancellation For Policy Screen.")
+    def fill_details(self, source, reason, reason_description=None, effective_date=None):
+        self.log.info(f"'Start Cancellation For Policy' Screen.")
         self.source_dropdown.select_option(text=source)
+        # reason_dropdown element is not intractable just after source_dropdown selection
+        # and getting stale_element, hence clicking it before selecting option
+        self.reason_dropdown.click_element()
         self.reason_dropdown.select_option(text=reason)
         self.log.info(f"Source: {source}.")
         self.log.info(f"Reason: {reason}.")
+        time.sleep(100)
 
         if reason_description is not None:
             self.reason_description_input_box.enter_text(reason_description)
             self.log.info(f"Reason description: {reason_description}.")
 
         self.refund_method = self.refund_method_text_elm.get_text()
-        self.log(f"Refund method is {self.refund_method}")
+        self.log.info(f"Refund method is {self.refund_method}")
 
         if (self.refund_method == "Flat") and (effective_date is not None):
             flat_cancellation_effective_date = self.cancellation_effective_date_text_elm_for_flat_cancel
             self.log.info(f"Cancellation Effective Date is not editable for Flat cancellation. "
                      f"Cancellation Effective Date is {flat_cancellation_effective_date} ")
             self.cancellation_effective_date.enter_text(effective_date)
-            self.start_cancellation_button.click_element()
 
+    def click_start_cancellation_button(self):
         self.start_cancellation_button.click_element()
+        self.start_cancellation_button.wait_till_element_not_present()
+        self.log.info("click 'start cancellation' button.")
+        self.log.info("Navigate to 'Confirmation' screen")
 
 
 class Confirmation(BasePage):
