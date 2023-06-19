@@ -42,8 +42,8 @@ class Offerings:
     def __init__(self, driver):
         self.driver = driver
         self.SCREEN_TITLE = "Offerings"
-        self._locator_offering_selection = (By.XPATH, '//div[contains(text(),"Offering Selection")]'
-                                                      '/following-sibling::div')
+        self._locator_offering_selection = (By.XPATH, '//select[@name="SubmissionWizard-OfferingScreen'
+                                                      '-OfferingSelection"]')
 
     def select_offering(self, text):
         offering = BaseElement(self.driver, self._locator_offering_selection)
@@ -65,8 +65,8 @@ class CommercialAutoLine:
     def __init__(self, driver):
         self.driver = driver
         self.SCREEN_TITLE = "Commercial Auto Line"
-        self._locator_product = (By.XPATH, '//div[text()="Product"]/following-sibling::div')
-        self._locator_fleet = (By.XPATH, '//div[text()="Fleet"]/following-sibling::div')
+        self._locator_product = (By.XPATH, '//select[contains(@name,"BALineDV-PolicyType")]')
+        self._locator_fleet = (By.XPATH, '//select[contains(@name,"BALineDV-Fleet")]')
         self._locator_hired_auto_select_state = (By.XPATH, '//select[contains(@name,"SelectStateHiredAuto")]')
         self._locator_hired_auto_add_state_btn = (By.XPATH, '//div[text() = "dd State")]')
         self._locator_hired_auto_cost_of_hire = (By.XPATH, '//input[contains(@name,"CostHire")]')
@@ -77,14 +77,22 @@ class CommercialAutoLine:
         self._locator_non_owned_auto_state_total_volunteers = (By.XPATH, '//input[contains(@name,"TotalVolunteers")]')
         self._locator_non_owned_auto_checkbox = (By.XPATH, '//input[contains(@aria-label,"Non-Owned")]')
 
+    def ca_coverages(self, text, text1):
+        product = BaseElement(self.driver, self._locator_product)
+        product.select_option(text=text)
+        fleet = BaseElement(self.driver, self._locator_fleet)
+        fleet.select_option(text=text1)
+
     def hired_auto_coverages(self, coverage):
         _locator_hired_auto_covg = (By.XPATH, f'//input[contains(@aria-label,f{coverage})]')
         coverage = BaseElement(self.driver, _locator_hired_auto_covg)
         return coverage
 
-    def hired_auto_state(self, text, cost_of_hire):
+    def hired_auto_state(self, cost_of_hire, state):
         hired_state = BaseElement(self.driver, self._locator_hired_auto_select_state)
-        hired_state.enter_text(text)
+        hired_state.select_option(text=state)
+        add_state = BaseElement(self.driver, self._locator_hired_auto_add_state_btn)
+        add_state.click_element()
         cost_of_hire_elm = BaseElement(self.driver, self._locator_hired_auto_cost_of_hire)
         cost_of_hire_elm.enter_text(cost_of_hire)
 
@@ -92,7 +100,7 @@ class CommercialAutoLine:
         non_owned = BaseElement(self.driver, self._locator_non_owned_auto_checkbox)
         non_owned.click_element()
 
-    def non_owned_auto_state(self, text, emp_no, partners, volunteers):
+    def non_owned_auto_state(self, emp_no, partners, volunteers, text):
         non_owned_state = BaseElement(self.driver, self._locator_non_owned_auto_select_state)
         non_owned_state.select_option(text=text)
         add_state = BaseElement(self.driver, self._locator_non_owned_auto_add_state_btn)
