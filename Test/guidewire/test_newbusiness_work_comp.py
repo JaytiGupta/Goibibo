@@ -35,7 +35,7 @@ def test_new_work_comp_policy_creation(browser):
     wc_policy.title_toolbar.next()
 
     # Policy Info Screen
-    wc_policy.policy_info_screen.fill_random_details()
+    # wc_policy.policy_info_screen.fill_random_details()
     wc_policy.policy_info_screen.input_FEIN("456545654")
     wc_policy.policy_info_screen.industry_code_input("0782")
     wc_policy.policy_info_screen.select_organization_type(type_of_org="LLC")
