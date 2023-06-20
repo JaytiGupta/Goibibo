@@ -69,13 +69,10 @@ class StartCancellationForPolicy(BasePage):
     def fill_details(self, source, reason, reason_description=None, effective_date=None):
         self.log.info(f"'Start Cancellation For Policy' Screen.")
         self.source_dropdown.select_option(text=source)
-        # reason_dropdown element is not intractable just after source_dropdown selection
-        # and getting stale_element, hence clicking it before selecting option
-        self.reason_dropdown.click_element()
+        time.sleep(1)
         self.reason_dropdown.select_option(text=reason)
         self.log.info(f"Source: {source}.")
         self.log.info(f"Reason: {reason}.")
-        time.sleep(100)
 
         if reason_description is not None:
             self.reason_description_input_box.enter_text(reason_description)

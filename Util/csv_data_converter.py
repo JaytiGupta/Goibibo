@@ -1,6 +1,6 @@
+import random
 import pandas
 import definitions
-from dataclasses import dataclass
 
 
 def list_of_dicts(csv_file, number_of_rows=None):
@@ -20,6 +20,28 @@ def list_of_dicts(csv_file, number_of_rows=None):
         return converted_data[:number_of_rows]
 
 
+def get_row(file_path, reference_column, reference_column_value) -> dict:
+    """
+    return the first matching row. reference_column, reference_column_value should be unique.
+    """
+    data_list = list_of_dicts(file_path)
+    key = reference_column
+    value = reference_column_value
+    matching_dict = [d for d in data_list if d[key] == value]
+    return matching_dict[0]
+
+
+def get_rows(file_path, reference_column, *reference_column_value) -> list:
+    """
+    reference_column, reference_column_value should be unique.
+    """
+    data_list = list_of_dicts(file_path)
+    key = reference_column
+    value = reference_column_value
+    matching_dict = [d for d in data_list if d[key] in value]
+    return matching_dict
+
+
 def update_csv(file, reference_column, reference_column_value, column, value):
     """
     :param file: csv file with its path that needs to be updated
@@ -37,9 +59,13 @@ def update_csv(file, reference_column, reference_column_value, column, value):
 
 
 if __name__ == "__main__":
-    update_csv(definitions.ROOT_DIR + "/Data/account_creation_data.csv", "company_name", "new_company_1", "account_type", "person")
-    l = list_of_dicts(definitions.ROOT_DIR + "/Data/account_creation_data.csv")
-    print(l)
-    for item in l:
-        print(item)
-    print(l[0]["company_name"])
+    # file_path = definitions.ROOT_DIR + "/Data/data_policy_change_work_comp.csv"
+    # # row = get_row(file_path, "Test#", 1)
+    # # print(row)
+    #
+    # r = get_rows(file_path, "Test#", 1, 2)
+    # print(r)
+    # for item in r:
+    #     print(item)
+
+    file_path = definitions.ROOT_DIR + "/Data/output_data.csv"
