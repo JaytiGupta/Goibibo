@@ -1,13 +1,16 @@
-import pytest
 from selenium import webdriver
+from pytest import fixture
 # from Util.screenshot import Screenshot
+import definitions
+from Util import csv_data_converter
 from Util.logs import getLogger
 from definitions import set_value, ROOT_DIR, global_dict, create_screenshot_folder
 from Util.csv_data_converter import list_of_dicts
+from Test.config import Config
 import os
 
 
-@pytest.fixture(scope="session")
+@fixture(scope="session")
 def browser():
     # return webdriver.Chrome()
     log = getLogger()
@@ -18,22 +21,43 @@ def browser():
     yield webdriver.Chrome()
     log.info("************* Execution complete *************")
 
-
-@pytest.fixture(scope="session")
-def homepage_url():
-    return "https://www.goibibo.com/"
+# -----------------------------
 
 
-@pytest.fixture(scope="session")
-def amazonpage_url():
-    return "https://www.amazon.in/"
+def pytest_addoption(parser):
+    parser.addoption(
+        "--env",
+        action="store",
+        help="Environment to run tests against"
+    )
 
 
-# GWPC test data
-test_data = list_of_dicts(ROOT_DIR + "\\Data\\account_creation_data.csv", 3)
+@fixture(scope='session')
+def env(request):
+    return request.config.getoption("--env")
 
 
-@pytest.fixture(params=test_data)
+@fixture(scope='session')
+def app_config(env):
+    cfg = Config(env)
+    return cfg
+
+
+# -----------------------------
+file_path = definitions.ROOT_DIR + ""
+test_data = csv_data_converter.get_rows(file_path, "user", "su")
+
+
+@fixture(params=test_data)
+def login_data(request):
+    yield request.param
+
+
+file_path = definitions.ROOT_DIR + "/Data/data_policy_change_work_comp.csv"
+test_data = csv_data_converter.get_rows(file_path, "Test#", 1, 2)
+
+
+@fixture(params=test_data)
 def data(request):
     yield request.param
 
