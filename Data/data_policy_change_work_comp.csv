@@ -1,3 +1,3 @@
-Test#,username,password,policy_number,cancellation_source,cancellation_reason,cancellation_reason_description,reinstate_reason,reinstate_reason_description
-1,su,gw,4422699884,Insured,Policy not-taken,Test,Payment received,Test
-2,su,gw,4422699884,Insured,Policy not-taken,Test,Other,Test
+Test#,policy_number,cancellation_source,cancellation_reason,cancellation_reason_description,reinstate_reason,reinstate_reason_description
+1,4422699884,Insured,Policy not-taken,Test,Payment received,Test
+2,4422699884,Insured,Policy not-taken,Test,Other,Test
