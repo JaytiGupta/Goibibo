@@ -6,10 +6,12 @@ from Util.screenshot import take_screenshot
 from pytest import mark
 
 
-def test_login(browser):
+def test_login(browser, login_data):
     home_page = PolicyCenterHome(browser)
     home_page.go()
-    home_page.login_page.login(username='su', password='gw')
+    home_page.login_page.login(username=login_data["username"],
+                               password=login_data["password"])
+
 
 
 @mark.skip

@@ -1,3 +1,3 @@
-Test#,policy_number,cancellation_source,cancellation_reason,cancellation_reason_description,reinstate_reason,reinstate_reason_description
+TestCase,policy_number,cancellation_source,cancellation_reason,cancellation_reason_description,reinstate_reason,reinstate_reason_description
 1,4422699884,Insured,Policy not-taken,Test,Payment received,Test
 2,4422699884,Insured,Policy not-taken,Test,Other,Test

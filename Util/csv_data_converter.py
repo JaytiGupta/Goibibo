@@ -10,7 +10,9 @@ def list_of_dicts(csv_file, number_of_rows=None):
     :return: A list of dictionary in which each dict has its key as input csv data header
     and values as row data of input csv file.
     """
-    data = pandas.read_csv(csv_file)
+
+    data = pandas.read_csv(csv_file, dtype=str)
+
     # variables_list = data.columns.tolist()
     # converted_data = [{variable: row[variable] for variable in variables_list} for (index, row) in data.iterrows()]
     converted_data = data.to_dict(orient="records")
@@ -68,4 +70,5 @@ if __name__ == "__main__":
     # for item in r:
     #     print(item)
 
-    file_path = definitions.ROOT_DIR + "/Data/output_data.csv"
+    file_path = definitions.ROOT_DIR + "/Data/data_newbusiness_work_comp.csv"
+    data = list_of_dicts(file_path)
