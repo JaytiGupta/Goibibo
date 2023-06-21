@@ -4,9 +4,11 @@ import random
 from definitions import ROOT_DIR
 from dataclasses import dataclass
 
+
 ADDRESS_DATA_FILE_PATH = ROOT_DIR + "/Data/Address.csv"
 VIN_FILE_PATH = ROOT_DIR + "/Data/VIN.csv"
 LICENSE_FILE_PATH = ROOT_DIR + "/Data/License.csv"
+
 
 def get_address_list(*states):
     """
@@ -46,6 +48,7 @@ def get_address_list(*states):
     return return_address_list
 
 
+# TODO - Need to update random_addrees() in place of get_one_address() then delete it.
 def get_one_address(*state):
     address_list = get_address_list(*state)
     return random.choice(address_list)
