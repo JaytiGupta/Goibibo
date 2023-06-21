@@ -1,5 +1,6 @@
 from selenium import webdriver
 from pytest import fixture
+# from Util.screenshot import Screenshot
 import definitions
 from Util import csv_data_converter
 from Util.logs import getLogger
@@ -43,12 +44,24 @@ def app_config(env):
 
 
 # -----------------------------
-file_path = definitions.ROOT_DIR + "/Data/login_data.csv"
-login_test_data = [csv_data_converter.get_row(file_path, "username", "su")]
+file_path = definitions.ROOT_DIR + ""
+test_data = csv_data_converter.get_rows(file_path, "user", "su")
 
 
-@fixture(params=login_test_data)
+@fixture(params=test_data)
 def login_data(request):
+    yield request.param
+
+
+file_path = definitions.ROOT_DIR + "/Data/data_policy_change_work_comp.csv"
+test_data = csv_data_converter.get_rows(file_path, "Test#", 1, 2)
+
+file_path_ca = definitions.ROOT_DIR + "/Data/data_new_submission_comm_auto.csv"
+test_data_ca = csv_data_converter.get_rows(file_path_ca, "Test", 1)
+
+
+@fixture(params=test_data_ca)
+def data(request):
     yield request.param
 
 
