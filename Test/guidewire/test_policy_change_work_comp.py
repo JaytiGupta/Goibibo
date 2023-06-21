@@ -3,7 +3,18 @@ from Page.guidewire_pc.policy_center_home import PolicyCenterHome
 from Page.guidewire_pc.policies.policy import Policy
 from Page.guidewire_pc.policies.Trasactions.change_policy import ChangePolicy
 from Util.screenshot import take_screenshot
-from pytest import mark
+from pytest import mark, fixture
+import definitions
+from Util import csv_data_converter
+
+
+file_path = definitions.ROOT_DIR + "/Data/data_policy_change_work_comp.csv"
+test_data = csv_data_converter.get_rows(file_path, "TestCase", "1")
+
+
+@fixture(params=test_data)
+def data(request):
+    yield request.param
 
 
 def test_login(browser, login_data):
@@ -13,28 +24,29 @@ def test_login(browser, login_data):
                                password=login_data["password"])
 
 
-
-@mark.skip
-def test_work_comp_change_policy_transaction(browser):
+# @mark.skip
+def test_work_comp_change_policy_transaction(browser, data):
     PC = PolicyCenterHome(browser)
     PC.tab_bar.go_to_desktop()
-    PC.tab_bar.search_policy("2488493129")
+    PC.tab_bar.search_policy(data["policy_number"])
 
     policy = Policy(browser)
     policy.summary.new_transaction.change_policy()
 
     amendment = ChangePolicy(browser)
-    amendment.start_policy_change_screen.fill_all_details("06/15/2023", "test")
+    amendment.start_policy_change_screen.fill_all_details(effective_date=data["change_effective_date"],
+                                                          description=data["description"])
     amendment.title_toolbar.next()
 
     # Policy Info Screen
     wc_policy = policy.work_comp
-    wc_policy.navigate_till_screen("WC Options")
-    wc_policy.wc_options_screen.add_wc_option("Federal Liability")
-    wc_policy.wc_options_screen.add_federal_class(location_index=1,
-                                                  class_code=7333,
-                                                  emp_no=15,
-                                                  basis_value=5000)
+    wc_policy.navigate_till_screen("WC Coverages")
+    wc_policy.wc_coverages_screen.add_class(row_number=data["wc_coverages_screen_class_rows#"],
+                                            gov_law=data["wc_coverages_screen_gov_law"],
+                                            location=data["wc_coverages_screen_location"],
+                                            code=data["wc_coverages_screen_class_code"],
+                                            employees=data["wc_coverages_screen_employee"],
+                                            basis_value=data["wc_coverages_screen_basis_value"])
 
     wc_policy.navigate_till_screen("Policy Review")
 

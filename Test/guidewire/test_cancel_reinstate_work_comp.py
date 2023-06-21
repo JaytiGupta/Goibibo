@@ -8,7 +8,7 @@ from Util import csv_data_converter
 from Util.screenshot import take_screenshot
 
 
-file_path = definitions.ROOT_DIR + "/Data/data_policy_change_work_comp.csv"
+file_path = definitions.ROOT_DIR + "/Data/data_cancel_reinstate_work_comp.csv"
 test_data = csv_data_converter.get_rows(file_path, "TestCase", "1")
 
 

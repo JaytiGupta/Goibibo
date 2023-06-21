@@ -77,6 +77,11 @@ def test_new_work_comp_policy_creation(browser, data):
     wc_policy.title_toolbar.next()
 
     # WC option Screen
+    wc_policy.wc_options_screen.add_wc_option("Federal Liability")
+    wc_policy.wc_options_screen.add_federal_class(location_index=1,
+                                                  class_code=7333,
+                                                  emp_no=15,
+                                                  basis_value=5000)
     wc_policy.title_toolbar.next()
 
     # risk analysis screen
