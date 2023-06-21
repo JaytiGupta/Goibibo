@@ -1,10 +1,12 @@
 from Util.csv_data_converter import list_of_dicts
+from Util import csv_data_converter
 import random
 from definitions import ROOT_DIR
 from dataclasses import dataclass
 
 ADDRESS_DATA_FILE_PATH = ROOT_DIR + "/Data/Address.csv"
-
+VIN_FILE_PATH = ROOT_DIR + "/Data/VIN.csv"
+LICENSE_FILE_PATH = ROOT_DIR + "/Data/License.csv"
 
 def get_address_list(*states):
     """
@@ -68,6 +70,17 @@ def random_address(*state):
     return address_object
 
 
+def random_VIN():
+    vin_list = csv_data_converter.get_column_data(VIN_FILE_PATH, "VIN")
+    return random.choice(vin_list)
+
+
+def random_license():
+    license_list =csv_data_converter.get_column_data(LICENSE_FILE_PATH, "License")
+    return random.choice(license_list)
+
+
 if __name__ == "__main__":
     print(random_address("VA").Address_1)
-
+    print(random_license())
+    print(random_VIN())
