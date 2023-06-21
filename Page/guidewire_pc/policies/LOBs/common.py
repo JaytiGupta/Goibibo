@@ -404,6 +404,7 @@ class Location(BasePage):
         self._locator_input_zip = (By.XPATH, '//div[contains(text(),"ZIP Code")]/following-sibling::div//input')
         self._locator_ok_btn = (By.XPATH, '//div[@id="LocationPopup-LocationScreen-Update"]')
         self._locator_add_existing_location_btn = (By.XPATH, '//div[text()="Add Existing Location"]')
+        self._locator_autofill_territory_code_btn = (By.XPATH, '//div[text() = "Autofill Territory Codes"]')
 
     def add_new_location(self, address1, city, state, zip_code, address2=None, address3=None):
         add_new_location_btn = BaseElement(self.driver, self._locator_add_new_location_btn)
@@ -429,6 +430,12 @@ class Location(BasePage):
         zip_elm = BaseElement(self.driver, self._locator_input_zip)
         zip_elm.enter_text(zip_code)
 
+        territory_code_btn = BaseElement(self.driver, self._locator_autofill_territory_code_btn)
+        if territory_code_btn.is_element_present():
+            territory_code_btn.click_element()
+            time.sleep(5)
+        else:
+            pass
         self.log.info(f"Page: Locations - new location added. {address1}, {city}, {state}, {zip_code}.")
 
         ok_btn = BaseElement(self.driver, self._locator_ok_btn)

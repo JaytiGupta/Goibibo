@@ -6,7 +6,8 @@ from definitions import ROOT_DIR
 def get_one_license():
     license_list = list_of_dicts(ROOT_DIR + "/Data/License.csv")
     license_no = random.choice(license_list)
-    return license_no
+    return license_no["License"]
+
 
 
 

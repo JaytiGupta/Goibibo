@@ -12,6 +12,7 @@ def test_login(browser, login_data):
     home_page.login_page.login(username=login_data["username"],
                                password=login_data["password"])
 
+
 def test_search_account(browser, data):
     page = PolicyCenterHome(browser)
     page.tab_bar.go_to_desktop()
@@ -69,11 +70,12 @@ def test_new_commercial_auto_creation(browser, data):
                                                city= address["City"],
                                                state=address["State"],
                                                zip_code=address["Zip_Code"])
+    ca_policy.title_toolbar.next()
 
     # Vehicles screen
     ca_policy.vehicles_screen.add_vehicle(garage_location=data["garage_loc"], type_of_vehicle=data["vehicle_type"],
                                           vehicle_cost=data["vehicle_cost"])
-    ca_policy.vehicles_screen.vehicle_class_code(radius=data["radius"], years_of_experience=data["exp_yrs"])
+    ca_policy.vehicles_screen.vehicle_class_code(radius=data["radius"])
     ca_policy.title_toolbar.next()
 
     # State Info screen

@@ -137,8 +137,7 @@ class Vehicles:
                                                          '-SelectClassCode")]')
         self._locator_class_code_experience = (By.XPATH, '//select[contains(@name,"VehicleClassCodeSearchDV'
                                                          '-YearsExperience")]')
-        self._locator_class_code_radius = (By.XPATH, '//select[contains(@name,"VehicleClassCodeSearchDV'
-                                                     '-Radius")]')
+        self._locator_class_code_radius = (By.XPATH, '//div[text()="Radius"]/following-sibling::div//select')
         self._locator_class_code_screen_search = (By.XPATH, '//div[contains(@id,"VehicleClassCodeSearchDV'
                                                             '-SearchAndResetInputSet-SearchLinksInputSet-Search")]')
         self._locator_class_code_first_result = (By.XPATH, '//tr[contains(@id,"VehicleClassCodeSearch'
@@ -153,18 +152,19 @@ class Vehicles:
         garaged_location.select_option(index=garage_location)
         vehicle_type = BaseElement(self.driver, self._locator_vehicle_type)
         vehicle_type.select_option(text=type_of_vehicle)
-        vin_elm = BaseElement(self.driver, self._locator_vin)
-        vin_elm.enter_text(random_vin.get_one_vin())
         cost = BaseElement(self.driver, self._locator_cost)
         cost.enter_text(vehicle_cost)
+        vin_elm = BaseElement(self.driver, self._locator_vin)
+        vin = random_vin.get_one_vin()
+        vin_elm.enter_text(vin)
         self.log.info(f"Vehicle type {type_of_vehicle} added on the Vehicles screen "
                       f"for the Location {garage_location}")
 
-    def vehicle_class_code(self, radius, years_of_experience=None):
+    def vehicle_class_code(self, radius):
         search_class_code = BaseElement(self.driver, self._locator_class_code_search_btn)
         search_class_code.click_element()
-        years_of_experience_elm = BaseElement(self.driver, self._locator_class_code_experience)
-        years_of_experience_elm.select_option(text=years_of_experience)
+        # years_of_experience_elm = BaseElement(self.driver, self._locator_class_code_experience)
+        # years_of_experience_elm.select_option(text=years_of_experience)
         radius_elm = BaseElement(self.driver, self._locator_class_code_radius)
         radius_elm.select_option(text=radius)
         screen_search_btn = BaseElement(self.driver, self._locator_class_code_screen_search)
@@ -215,22 +215,26 @@ class Drivers:
                                                     'GlobalPersonNameInputSet-LastName")]')
         self._locator_driver_gender = (By.XPATH, '//select[contains(@name, "BADriversDV-Gender")]')
         self._locator_driver_dob = (By.XPATH, '//div[@id="BADriverPopup-BADriverScreen-BADriversDV-'
-                                              'DateOfBirth"]')
+                                              'DateOfBirth"]//input')
         self._locator_driver_license_number = (By.XPATH, '//input[contains(@name, "BADriversDV-LicenseNumber")]')
         self._locator_driver_license_state = (By.XPATH, '//select[contains(@name, "BADriversDV-LicenseState")]')
         self._locator_driver_details_ok_btn = (By.XPATH, '//div[@aria-label = "OK"]')
 
     def driver_details(self, fn, ln, driver_gender, dob, license_state):
+        add_driver_btn = BaseElement(self.driver, self._locator_add_driver_btn)
+        add_driver_btn.click_element()
         first_name = BaseElement(self.driver, self._locator_driver_first_name)
         first_name.enter_text(fn)
         last_name = BaseElement(self.driver, self._locator_driver_last_name)
         last_name.enter_text(ln)
         gender = BaseElement(self.driver, self._locator_driver_gender)
-        gender.select_option(value=driver_gender)
+        gender.select_option(text=driver_gender)
+        license_number_elm = BaseElement(self.driver, self._locator_driver_license_number)
+        lic = random_license.get_one_license()
+        license_number_elm.enter_text(lic)
         birth_date = BaseElement(self.driver, self._locator_driver_dob)
+        birth_date.click_element()
         birth_date.enter_text(dob)
-        license_number_elm = BaseElement(self.driver, self._locator_driver_dob)
-        license_number_elm.enter_text(random_license.get_one_license())
         license_state_elm = BaseElement(self.driver, self._locator_driver_license_state)
         license_state_elm.select_option(text=license_state)
         ok_btn = BaseElement(self.driver, self._locator_driver_details_ok_btn)
