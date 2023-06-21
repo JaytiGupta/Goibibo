@@ -6,12 +6,11 @@ from Page.guidewire_pc.policies.policy import Policy
 from Util.screenshot import take_screenshot
 
 
-def test_login(browser, data):
+def test_login(browser, login_data):
     home_page = PolicyCenterHome(browser)
     home_page.go()
-    home_page.login_page.login(username=data["username"],
-                               password=data["password"])
-
+    home_page.login_page.login(username=login_data["username"],
+                               password=login_data["password"])
 
 def test_search_account(browser, data):
     page = PolicyCenterHome(browser)

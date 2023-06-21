@@ -44,8 +44,8 @@ def app_config(env):
 
 
 # -----------------------------
-file_path = definitions.ROOT_DIR + ""
-test_data = csv_data_converter.get_rows(file_path, "user", "su")
+file_path = definitions.ROOT_DIR + "/Data/login_data.csv"
+test_data = csv_data_converter.get_rows(file_path, "username", "su")
 
 
 @fixture(params=test_data)
@@ -54,7 +54,7 @@ def login_data(request):
 
 
 file_path_ca = definitions.ROOT_DIR + "/Data/data_new_submission_comm_auto.csv"
-test_data_ca = csv_data_converter.get_rows(file_path_ca, "Test", 1)
+test_data_ca = csv_data_converter.get_rows(file_path_ca, "TestCase", "1")
 
 
 @fixture(params=test_data_ca)
