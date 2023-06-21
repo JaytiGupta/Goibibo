@@ -28,6 +28,7 @@ class CommercialAuto(BasePage):
         self.vehicles_screen = Vehicles(self.driver)
         self.state_info_screen = StateInfo(self.driver)
         self.drivers_screen = Drivers(self.driver)
+        self.covered_vehicles_screen = CoveredVehicles(self.driver)
         self.risk_analysis_screen = common.RiskAnalysis(self.driver)
         self.policy_review_screen = common.PolicyReview(self.driver)
         self.quote_screen = common.Quote(self.driver)
@@ -48,6 +49,7 @@ class Offerings:
     def select_offering(self, text):
         offering = BaseElement(self.driver, self._locator_offering_selection)
         offering.select_option(text=text)
+        self.log.info("Offering selected")
 
 
 class Qualification:
@@ -68,25 +70,27 @@ class CommercialAutoLine:
         self._locator_product = (By.XPATH, '//select[contains(@name,"BALineDV-PolicyType")]')
         self._locator_fleet = (By.XPATH, '//select[contains(@name,"BALineDV-Fleet")]')
         self._locator_hired_auto_select_state = (By.XPATH, '//select[contains(@name,"SelectStateHiredAuto")]')
-        self._locator_hired_auto_add_state_btn = (By.XPATH, '//div[text() = "dd State")]')
+        self._locator_hired_auto_add_state_btn = (By.XPATH, '//div[text() = "dd State"]')
         self._locator_hired_auto_cost_of_hire = (By.XPATH, '//input[contains(@name,"CostHire")]')
         self._locator_non_owned_auto_select_state = (By.XPATH, '//select[contains(@name,"SelectStateNonowned")]')
-        self._locator_non_owned_auto_add_state_btn = (By.XPATH, '//div[text() = "Add State")]')
+        self._locator_non_owned_auto_add_state_btn = (By.XPATH, '//div[text() = "Add State"]')
         self._locator_non_owned_auto_state_no_of_emp = (By.XPATH, '//input[contains(@name,"NumEmployees")]')
         self._locator_non_owned_auto_state_total_partners = (By.XPATH, '//input[contains(@name,"TotalPartners")]')
         self._locator_non_owned_auto_state_total_volunteers = (By.XPATH, '//input[contains(@name,"TotalVolunteers")]')
         self._locator_non_owned_auto_checkbox = (By.XPATH, '//input[contains(@aria-label,"Non-Owned")]')
 
-    def ca_coverages(self, text, text1):
-        product = BaseElement(self.driver, self._locator_product)
-        product.select_option(text=text)
-        fleet = BaseElement(self.driver, self._locator_fleet)
-        fleet.select_option(text=text1)
+    def ca_coverages(self, product, fleet):
+        product_elm = BaseElement(self.driver, self._locator_product)
+        product_elm.select_option(text=product)
+        fleet_elm = BaseElement(self.driver, self._locator_fleet)
+        fleet_elm.select_option(text=fleet)
 
     def hired_auto_coverages(self, coverage):
-        _locator_hired_auto_covg = (By.XPATH, f'//input[contains(@aria-label,f{coverage})]')
+        _locator_hired_auto_covg = (By.XPATH, f'//input[contains(@aria-label,"{coverage}")]')
         coverage = BaseElement(self.driver, _locator_hired_auto_covg)
-        return coverage
+        coverage.click_element()
+        self.log.info(f"{coverage} selected under the Hired Auto coverage section")
+        return None
 
     def hired_auto_state(self, cost_of_hire, state):
         hired_state = BaseElement(self.driver, self._locator_hired_auto_select_state)
@@ -95,14 +99,17 @@ class CommercialAutoLine:
         add_state.click_element()
         cost_of_hire_elm = BaseElement(self.driver, self._locator_hired_auto_cost_of_hire)
         cost_of_hire_elm.enter_text(cost_of_hire)
+        self.log.info(f"Details for the selected state {state} entered - under the Hired Auto coverage section")
 
     def non_owned_auto_covg(self):
         non_owned = BaseElement(self.driver, self._locator_non_owned_auto_checkbox)
         non_owned.click_element()
+        self.log.info("Non Owned Auto coverage selected")
+        return None
 
-    def non_owned_auto_state(self, emp_no, partners, volunteers, text):
+    def non_owned_auto_state(self, emp_no, partners, volunteers, state):
         non_owned_state = BaseElement(self.driver, self._locator_non_owned_auto_select_state)
-        non_owned_state.select_option(text=text)
+        non_owned_state.select_option(text=state)
         add_state = BaseElement(self.driver, self._locator_non_owned_auto_add_state_btn)
         add_state.click_element()
         no_of_emp = BaseElement(self.driver, self._locator_non_owned_auto_state_no_of_emp)
@@ -111,6 +118,7 @@ class CommercialAutoLine:
         total_partners.enter_text(partners)
         total_volunteers = BaseElement(self.driver, self._locator_non_owned_auto_state_total_volunteers)
         total_volunteers.enter_text(volunteers)
+        self.log.info(f"Details for the selected state {state} entered - under the Non Owned Auto coverage section")
 
 
 class Vehicles:
@@ -138,17 +146,21 @@ class Vehicles:
                                                            '"VehicleClassCodeSearchResultsLV-0-1")]')
         self._locator_vehicle_ok_btn = (By.XPATH, '//div[@aria-label = "OK"]')
 
-    def add_vehicle(self, index, text, vin):
+    def add_vehicle(self, garage_location, type_of_vehicle, vehicle_cost):
         add_vehicle_btn = BaseElement(self.driver, self._locator_create_vehicle_btn)
         add_vehicle_btn.click_element()
         garaged_location = BaseElement(self.driver, self._locator_garaged_location)
-        garaged_location.select_option(index=index)
+        garaged_location.select_option(index=garage_location)
         vehicle_type = BaseElement(self.driver, self._locator_vehicle_type)
-        vehicle_type.select_option(text=text)
+        vehicle_type.select_option(text=type_of_vehicle)
         vin_elm = BaseElement(self.driver, self._locator_vin)
         vin_elm.enter_text(random_vin.get_one_vin())
+        cost = BaseElement(self.driver, self._locator_cost)
+        cost.enter_text(vehicle_cost)
+        self.log.info(f"Vehicle type {type_of_vehicle} added on the Vehicles screen "
+                      f"for the Location {garage_location}")
 
-    def vehicle_class_code(self, years_of_experience, radius):
+    def vehicle_class_code(self, radius, years_of_experience=None):
         search_class_code = BaseElement(self.driver, self._locator_class_code_search_btn)
         search_class_code.click_element()
         years_of_experience_elm = BaseElement(self.driver, self._locator_class_code_experience)
@@ -161,6 +173,7 @@ class Vehicles:
         result.click_element()
         ok_btn = BaseElement(self.driver, self._locator_vehicle_ok_btn)
         ok_btn.click_element()
+        self.log.info("Class code for the entered vehicle is selected")
 
 
 class StateInfo:
@@ -176,13 +189,17 @@ class StateInfo:
                                                          'BAStateCoveragesPanelSet-BAPVehicleStateGrp'
                                                          'Iterator-1")]')
 
-    def uninsured_motorist_bodily_injury(self, value):
+    def uninsured_motorist_bodily_injury(self, bodily_injury_package):
         bodily_injury = BaseElement(self.driver, self._locator_uninsured_bodily_injury)
-        bodily_injury.select_option(value=value)
+        bodily_injury.select_option(value=bodily_injury_package)
+        self.log.info(f"Bodily Injury package {bodily_injury_package} is selected for the "
+                      f"Uninsured Motorist coverage")
 
-    def uninsured_motorist_property_damage(self, value):
+    def uninsured_motorist_property_damage(self, property_damage_limit):
         property_damage = BaseElement(self.driver, self._locator_uninsured_prop_damage)
-        property_damage.select_option(value=value)
+        property_damage.select_option(value=property_damage_limit)
+        self.log.info(f"Property Damage Limit {property_damage_limit} is selected for the "
+                      f"Uninsured Motorist coverage")
 
 
 class Drivers:
@@ -203,23 +220,34 @@ class Drivers:
         self._locator_driver_license_state = (By.XPATH, '//select[contains(@name, "BADriversDV-LicenseState")]')
         self._locator_driver_details_ok_btn = (By.XPATH, '//div[@aria-label = "OK"]')
 
-    def driver_details(self, fn, ln, value, dob, text):
+    def driver_details(self, fn, ln, driver_gender, dob, license_state):
         first_name = BaseElement(self.driver, self._locator_driver_first_name)
         first_name.enter_text(fn)
         last_name = BaseElement(self.driver, self._locator_driver_last_name)
         last_name.enter_text(ln)
         gender = BaseElement(self.driver, self._locator_driver_gender)
-        gender.select_option(value=value)
+        gender.select_option(value=driver_gender)
         birth_date = BaseElement(self.driver, self._locator_driver_dob)
         birth_date.enter_text(dob)
         license_number_elm = BaseElement(self.driver, self._locator_driver_dob)
         license_number_elm.enter_text(random_license.get_one_license())
         license_state_elm = BaseElement(self.driver, self._locator_driver_license_state)
-        license_state_elm.select_option(text=text)
+        license_state_elm.select_option(text=license_state)
         ok_btn = BaseElement(self.driver, self._locator_driver_details_ok_btn)
         ok_btn.click_element()
+        self.log.info("Driver details are entered")
 
 
+class CoveredVehicles:
+
+    log = getLogger()
+
+    def __init__(self, driver):
+        self.driver = driver
+
+    def edit_covered_vehicles(self):
+        self.log.info("Details of the Covered Vehicle are not updated")
+        return None
 
 
 

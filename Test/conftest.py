@@ -56,8 +56,11 @@ def login_data(request):
 file_path = definitions.ROOT_DIR + "/Data/data_policy_change_work_comp.csv"
 test_data = csv_data_converter.get_rows(file_path, "Test#", 1, 2)
 
+file_path_ca = definitions.ROOT_DIR + "/Data/data_new_submission_comm_auto.csv"
+test_data_ca = csv_data_converter.get_rows(file_path_ca, "Test", 1)
 
-@fixture(params=test_data)
+
+@fixture(params=test_data_ca)
 def data(request):
     yield request.param
 
