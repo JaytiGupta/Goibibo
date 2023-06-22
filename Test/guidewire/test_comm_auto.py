@@ -55,6 +55,7 @@ def test_new_commercial_auto_creation(browser, data):
 
     # Commercial Auto Line screen
     ca_policy.comm_auto_line_screen.ca_coverages(product=data["product"], fleet=data["fleet"])
+    ca_policy.comm_auto_line_screen.wait_liability_covg()
     ca_policy.comm_auto_line_screen.hired_auto_coverages(data["hired_auto_cvg1"])
     ca_policy.comm_auto_line_screen.hired_auto_coverages(data["hired_auto_cvg2"])
     ca_policy.comm_auto_line_screen.hired_auto_coverages(data["hired_auto_cvg3"])
@@ -90,11 +91,11 @@ def test_new_commercial_auto_creation(browser, data):
 
     # Covered Vehicles screen
     # Not required for a smoke run
-    ca_policy.title_toolbar.next()
+    # ca_policy.title_toolbar.next()
 
     # Modifiers screen
     # Not required for a smoke run
-    ca_policy.title_toolbar.next()
+    # ca_policy.title_toolbar.next()
 
     # Risk Analysis screen
     ca_policy.title_toolbar.quote()

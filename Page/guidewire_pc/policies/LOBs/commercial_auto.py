@@ -69,11 +69,13 @@ class CommercialAutoLine:
         self.SCREEN_TITLE = "Commercial Auto Line"
         self._locator_product = (By.XPATH, '//select[contains(@name,"BALineDV-PolicyType")]')
         self._locator_fleet = (By.XPATH, '//select[contains(@name,"BALineDV-Fleet")]')
+        self._locator_liability_covg_text = (By.XPATH, '//div[@aria-label="Liability"]//div[text()="Liability"]')
         self._locator_hired_auto_select_state = (By.XPATH, '//select[contains(@name,"SelectStateHiredAuto")]')
         self._locator_hired_auto_add_state_btn = (By.XPATH, '//div[text() = "dd State"]')
         self._locator_hired_auto_cost_of_hire = (By.XPATH, '//input[contains(@name,"CostHire")]')
         self._locator_non_owned_auto_select_state = (By.XPATH, '//select[contains(@name,"SelectStateNonowned")]')
-        self._locator_non_owned_auto_add_state_btn = (By.XPATH, '//div[text() = "Add State"]')
+        self._locator_non_owned_auto_add_state_btn = (By.XPATH, '//div[text()="Non-owned Liability States"]'
+                                                                '/following-sibling::div//div[text()="Add State"]')
         self._locator_non_owned_auto_state_no_of_emp = (By.XPATH, '//input[contains(@name,"NumEmployees")]')
         self._locator_non_owned_auto_state_total_partners = (By.XPATH, '//input[contains(@name,"TotalPartners")]')
         self._locator_non_owned_auto_state_total_volunteers = (By.XPATH, '//input[contains(@name,"TotalVolunteers")]')
@@ -84,6 +86,10 @@ class CommercialAutoLine:
         product_elm.select_option(text=product)
         fleet_elm = BaseElement(self.driver, self._locator_fleet)
         fleet_elm.select_option(text=fleet)
+
+    def wait_liability_covg(self):
+        liability_text = BaseElement(self.driver, self._locator_liability_covg_text)
+        liability_text.wait_till_text_to_be_present_in_element("Liability")
 
     def hired_auto_coverages(self, coverage):
         _locator_hired_auto_covg = (By.XPATH, f'//input[contains(@aria-label,"{coverage}")]')
