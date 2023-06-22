@@ -8,16 +8,7 @@ from dataclasses import dataclass
 ADDRESS_DATA_FILE_PATH = ROOT_DIR + "/Data/Address.csv"
 VIN_FILE_PATH = ROOT_DIR + "/Data/VIN.csv"
 LICENSE_FILE_PATH = ROOT_DIR + "/Data/License.csv"
-
-
-def get_address_list(*states):
-    """
-    :param states: states (or state code) for which list of address required.
-    :return: list of address where each address is a dictionary
-    includes key - Address_1, Address_2, City, County, State, State_Code, Zip_Code, Phone_Number.
-    """
-
-    state_codes = {
+STATE_CODES = {
         "AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas", "CA": "California", "CO": "Colorado",
         "CT": "Connecticut", "DE": "Delaware", "DC": "District of Columbia", "FL": "Florida", "GA": "Georgia",
         "HI": "Hawaii", "ID": "Idaho", "IL": "Illinois", "IN": "Indiana", "IA": "Iowa", "KS": "Kansas",
@@ -30,17 +21,23 @@ def get_address_list(*states):
         "WA": "Washington", "WV": "West Virginia", "WI": "Wisconsin", "WY": "Wyoming",
     }
 
+def get_address_list(*states):
+    """
+    :param states: states (or state code) for which list of address required.
+    :return: list of address where each address is a dictionary
+    includes key - Address_1, Address_2, City, County, State, State_Code, Zip_Code, Phone_Number.
+    """
     addresses = list_of_dicts(ADDRESS_DATA_FILE_PATH)
     return_address_list = []
     for address in addresses:
         state_code = address["State_Code"]
-        address["State"] = state_codes[state_code]
+        address["State"] = STATE_CODES[state_code]
         try:
             if states[0].lower() == "all":
                 return_address_list.append(address)
             elif state_code.lower() in (s.lower() for s in states):
                 return_address_list.append(address)
-            elif state_codes[state_code].lower() in (s.lower() for s in states):
+            elif STATE_CODES[state_code].lower() in (s.lower() for s in states):
                 return_address_list.append(address)
         except KeyError:
             pass

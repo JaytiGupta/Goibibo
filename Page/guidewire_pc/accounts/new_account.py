@@ -17,40 +17,53 @@ class NewAccount(BasePage):
         self.enter_account_information_screen = EnterAccountInformation(self.driver)
         self.create_account_screen = CreateAccountPage(self.driver)
 
+        # random input data
+        current_datetime = datetime.now()
+        unique_string = current_datetime.strftime("%y%m%d%H%M%S")
+        self.random_company_name = "company-" + unique_string
+        self.random_first_name = "first-" + unique_string
+        self.random_last_name = "last-" + unique_string
+        self.random_phone_number = f"(650) {randint(101, 999)}-{randint(1001, 9999)}"
+        self.random_email_address = f"my_email{unique_string}@test.com"
+        address = random_address.random_address("VA")
+        self.random_address1 = address.Address_1,
+        self.random_city = address.City,
+        self.random_state = address.State,
+        self.random_zip_code = address.Zip_Code,
+        self.random_address_type = choice(["Billing", "Business", "Home", "Other"])
+        self.random_organization = "Armstrong and Company",
+        self.random_producer_code = "100-002541 Armstrong (Premier)"
+
     def create_default_new_account(self, account_type):
         """
         :param account_type: company or person
-        :return: create a new default account
+        Creates a new account with all mandatory fields filled as random values.
         """
-        current_datetime = datetime.now()
-        unique_string = current_datetime.strftime("%y%m%d%H%M%S")
-        # TODO use faker
-        company_name = "company-" + unique_string
-        first_name = "first-" + unique_string
-        last_name = "last-" + unique_string
-        phone_number = f"(650) {randint(101, 999)}-{randint(1001, 9999)}"
-        email_address = f"my_email{unique_string}@test.com"
-        address = random_address.get_one_address("VA")
-        address1 = address["Address_1"]
-        city = address["City"]
-        state = address["State"]
-        zip_code = address["Zip_Code"]
 
+        # Enter Account Information Page
         if account_type.lower() == "company":
-            my_box = self.enter_account_information_screen.company_name_input_box
-            my_box.enter_text(company_name)
+            self.enter_account_information_screen.input_company_name(self.random_company_name)
+
         if account_type.lower() == "person":
-            self.enter_account_information_screen.first_name_input_box.enter_text(first_name)
-            self.enter_account_information_screen.last_name_input_box.enter_text(last_name)
+            self.enter_account_information_screen.input_name(self.random_first_name, self.random_last_name)
+
         self.enter_account_information_screen.search_btn.click_element()
-        self.enter_account_information_screen.create_new_account_btn(account_type)
+        self.enter_account_information_screen.select_new_account_type(account_type)
+
+        # Create account Page
         if account_type.lower() == "company":
-            self.create_account_screen.input_office_phone(phone_number)
-        self.create_account_screen.input_primary_email(email_address)
-        address_type = choice(["Billing", "Business", "Home", "Other"])
-        self.create_account_screen.input_address(address1, city, state, zip_code, address_type)
-        self.create_account_screen.select_producer("Armstrong and Company", "100-002541 Armstrong (Premier)")
-        # self.create_account_screen.click_btn_update()
+            self.create_account_screen.input_office_phone(self.random_phone_number)
+
+        self.create_account_screen.input_primary_email(self.random_email_address)
+        self.create_account_screen.input_address(address1=self.random_address1,
+                                                 city=self.random_city,
+                                                 state=self.random_state,
+                                                 zip_code=self.random_zip_code,
+                                                 address_type=self.random_address_type)
+
+        self.create_account_screen.select_producer(organization=self.random_organization,
+                                                   producer_code=self.random_producer_code)
+        self.create_account_screen.click_btn_update()
 
 
 class EnterAccountInformation(BasePage):
@@ -126,7 +139,7 @@ class EnterAccountInformation(BasePage):
         else:
             self.log.info("Account Search results found for the entered information")
 
-    def create_new_account_btn(self, account_type):
+    def select_new_account_type(self, account_type):
         self.new_account_btn.click_element()
         if account_type.lower() == "company":
             self.company_dropdown.click_element()

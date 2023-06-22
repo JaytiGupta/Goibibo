@@ -44,14 +44,6 @@ def test_search_submission(browser):
     print(a)
 
 
-@mark.skip
-def test_new_account_creation(browser):
-    page = PolicyCenterHome(browser)
-    page.tab_bar.go_to_desktop()
-    page.tab_bar.create_new_account_btn()
-    account = Account(browser)
-    account.new_account.create_default_new_account("Company")
-    assert account.summary.account_summary_title_present()
 
 
 
