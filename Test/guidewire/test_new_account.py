@@ -1,17 +1,13 @@
-import random
-import time
-
 import definitions
 from Util import random_address, csv_data_converter
 from Page.guidewire_pc.policy_center_home import PolicyCenterHome
 from Page.guidewire_pc.accounts.account import Account
-from Page.guidewire_pc.policies.policy import Policy
 from Util.screenshot import take_screenshot
 from pytest import mark, fixture
 
 
 file_path = definitions.ROOT_DIR + "/Data/data_new_account.csv"
-test_data = csv_data_converter.get_rows(file_path, "TestCase", "2")
+test_data = csv_data_converter.get_rows(file_path, "TestCase", "1",  "2")
 
 
 @fixture(params=test_data)
