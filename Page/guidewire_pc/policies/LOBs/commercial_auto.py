@@ -8,7 +8,7 @@ from Base.baseelement import BaseElement
 from selenium.webdriver.common.by import By
 from Page.guidewire_pc.policies.LOBs import common
 from Util.logs import getLogger
-from Util import random_vin
+from Util import random_data
 from Util import random_license
 
 
@@ -161,7 +161,7 @@ class Vehicles:
         cost = BaseElement(self.driver, self._locator_cost)
         cost.enter_text(vehicle_cost)
         vin_elm = BaseElement(self.driver, self._locator_vin)
-        vin = random_vin.get_one_vin()
+        vin = random_data.random_VIN()
         vin_elm.enter_text(vin)
         self.log.info(f"Vehicle type {type_of_vehicle} added on the Vehicles screen "
                       f"for the Location {garage_location}")
@@ -236,7 +236,7 @@ class Drivers:
         gender = BaseElement(self.driver, self._locator_driver_gender)
         gender.select_option(text=driver_gender)
         license_number_elm = BaseElement(self.driver, self._locator_driver_license_number)
-        lic = random_license.get_one_license()
+        lic = random_data.random_license()
         license_number_elm.enter_text(lic)
         birth_date = BaseElement(self.driver, self._locator_driver_dob)
         birth_date.click_element()

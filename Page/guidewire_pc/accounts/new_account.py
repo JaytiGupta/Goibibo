@@ -5,7 +5,7 @@ from Base.basepage import BasePage
 from Base.baseelement import BaseElement
 from selenium.webdriver.common.by import By
 from Util.logs import getLogger
-from Util import random_address
+from Util import random_data
 
 
 class NewAccount(BasePage):

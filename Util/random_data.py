@@ -76,7 +76,7 @@ def random_VIN():
 
 
 def random_license():
-    license_list =csv_data_converter.get_column_data(LICENSE_FILE_PATH, "License")
+    license_list = csv_data_converter.get_column_data(LICENSE_FILE_PATH, "License")
     return random.choice(license_list)
 
 
