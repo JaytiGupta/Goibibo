@@ -1,6 +1,8 @@
 import random
+import time
+
 from Base.basepage import BasePage
-from Base.baseelement import BaseElement
+from Base.baseelement import BaseElement, NestedElement
 from selenium.webdriver.common.by import By
 from Page.guidewire_pc.policies.LOBs import common
 from Util.logs import getLogger
@@ -12,6 +14,7 @@ class WorkersCompensation(BasePage):
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
         self.title_toolbar = common.TitleToolbar(self.driver)
+        self.sidebar = common.Sidebar(self.driver)
         self.qualification_screen = Qualification(self.driver)
         self.policy_info_screen = common.PolicyInfo(self.driver)
         self.location_screen = common.Location(self.driver)
@@ -24,6 +27,7 @@ class WorkersCompensation(BasePage):
         self.forms_screen = common.Forms(self.driver)
         self.payment_screen = Payment(self.driver)
         self.workspace_screen = common.Workspace(self.driver)
+        self.transaction_bound_screen = common.TransactionBoundScreen(self.driver)
 
     def navigate_till_screen(self, screen_title):
         actual_screen_title = self.title_toolbar.screen_title_text()

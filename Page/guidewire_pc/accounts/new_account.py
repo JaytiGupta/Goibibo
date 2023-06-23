@@ -25,7 +25,7 @@ class NewAccount(BasePage):
         self.random_last_name = "last-" + unique_string
         self.random_phone_number = f"(650) {randint(101, 999)}-{randint(1001, 9999)}"
         self.random_email_address = f"my_email{unique_string}@test.com"
-        address = random_address.random_address("VA")
+        address = random_data.random_address("VA")
         self.random_address1 = address.Address_1,
         self.random_city = address.City,
         self.random_state = address.State,

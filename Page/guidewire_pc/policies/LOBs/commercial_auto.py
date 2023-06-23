@@ -9,7 +9,6 @@ from selenium.webdriver.common.by import By
 from Page.guidewire_pc.policies.LOBs import common
 from Util.logs import getLogger
 from Util import random_data
-from Util import random_license
 
 
 class CommercialAuto(BasePage):
@@ -258,6 +257,4 @@ class CoveredVehicles:
     def edit_covered_vehicles(self):
         self.log.info("Details of the Covered Vehicle are not updated")
         return None
-
-
 

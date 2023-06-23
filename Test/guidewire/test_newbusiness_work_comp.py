@@ -1,7 +1,7 @@
 import time
 
 import definitions
-from Util import random_data, csv_data_converter
+from Util import csv_data_converter
 from Page.guidewire_pc.policy_center_home import PolicyCenterHome
 from Page.guidewire_pc.accounts.account import Account
 from Page.guidewire_pc.policies.policy import Policy
@@ -10,7 +10,7 @@ from pytest import mark, fixture
 
 
 file_path = definitions.ROOT_DIR + "/Data/data_newbusiness_work_comp.csv"
-test_data = csv_data_converter.get_rows(file_path, "TestCase", "1")
+test_data = csv_data_converter.get_rows(file_path, "TestCase", "2")
 
 
 @fixture(params=test_data)
@@ -63,7 +63,7 @@ def test_new_work_comp_policy_creation(browser, data):
     wc_policy.title_toolbar.next()
 
     # WC Coverages Screen
-    wc_policy.wc_coverages_screen.add_class(row_number=data["wc_coverages_screen_class_row"],
+    wc_policy.wc_coverages_screen.add_class(row_number=data["wc_coverages_screen_class_row#"],
                                             gov_law= data["wc_coverages_screen_gov_law"],
                                             location=data["wc_coverages_screen_location"],
                                             code= data["wc_coverages_screen_class_code"],
@@ -98,7 +98,10 @@ def test_new_work_comp_policy_creation(browser, data):
     wc_policy.title_toolbar.next()
 
     # Payment Screen
+    submission_number: str = wc_policy.sidebar.transaction_number()
     wc_policy.title_toolbar.issue_policy()
 
-    time.sleep(20)
+    # wc_policy.title_toolbar.screen_title_element.wait_till_text_to_be_present_in_element(Subm)
     take_screenshot(browser)
+    csv_data_converter.update_csv(file_path,"TestCase", data["TestCase"], "submission_number", submission_number)
+

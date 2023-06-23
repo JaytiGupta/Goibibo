@@ -56,6 +56,8 @@ def test_work_comp_change_policy_transaction(browser, data):
     # Forms Screen
     wc_policy.title_toolbar.next()
     # Payment Screen
+    submission_number: str = wc_policy.sidebar.transaction_number()
     wc_policy.title_toolbar.issue_policy()
+    take_screenshot(browser)
+    csv_data_converter.update_csv(file_path, "TestCase", data["TestCase"], "policy_change_number", submission_number)
 
-    time.sleep(10)

@@ -194,3 +194,26 @@ class NestedElement:
         elements = self.parent_web_element.find_elements(by=by, value=value)
         return elements
 
+    def click_element(self):
+        self.web_element.click()
+
+    def enter_text(self, text):
+        self.web_element.clear()
+        self.web_element.send_keys(text)
+
+    def select_option(self, **kwargs):
+        """
+        :param kwargs: index or text or value (only one required)
+        """
+        elm = Select(self.web_element)
+        try:
+            if kwargs.get("index") is not None:
+                elm.select_by_index(kwargs.get("index"))
+            elif kwargs.get("text") is not None:
+                elm.select_by_visible_text(kwargs.get("text"))
+            elif kwargs.get("value") is not None:
+                elm.select_by_value(kwargs.get("value"))
+        except NoSuchElementException:
+            self.log.debug(f"- No option present for which dropdown {list(kwargs.keys())[0]} "
+                           f"is \"{list(kwargs.values())[0]}\"")
+            raise ValueError(f"No option present for which dropdown {list(kwargs.keys())[0]} is \"{list(kwargs.values())[0]}\"")

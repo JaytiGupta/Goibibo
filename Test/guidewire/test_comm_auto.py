@@ -13,18 +13,10 @@ def test_login(browser, login_data):
                                password=login_data["password"])
 
 
-def test_search_account(browser, data):
-    page = PolicyCenterHome(browser)
-    page.tab_bar.go_to_desktop()
-    page.tab_bar.search_account(data["Account#"])
-    account = Account(browser)
-    assert account.summary.account_summary_title_present()
-
-
 def test_new_commercial_auto_creation(browser, data):
     PC = PolicyCenterHome(browser)
     PC.tab_bar.go_to_desktop()
-    PC.tab_bar.search_account(data["Account#"])
+    PC.tab_bar.search_account("1342104490") #data["Account#"])
 
     account = Account(browser)
     account.summary.click_new_submission_btn()
