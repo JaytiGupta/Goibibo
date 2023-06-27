@@ -34,19 +34,16 @@ def test_work_comp_change_policy_transaction(browser, data):
     policy.summary.new_transaction.change_policy()
 
     amendment = ChangePolicy(browser)
-    amendment.start_policy_change_screen.fill_all_details(effective_date=data["change_effective_date"],
-                                                          description=data["description"])
+    amendment.start_policy_change_screen.fill_all_details(data["change_effective_date"],
+                                                          data["description"])
     amendment.title_toolbar.next()
 
     # Policy Info Screen
     wc_policy = policy.work_comp
     wc_policy.navigate_till_screen("WC Coverages")
-    wc_policy.wc_coverages_screen.add_class(row_number=data["wc_coverages_screen_class_rows#"],
-                                            gov_law=data["wc_coverages_screen_gov_law"],
-                                            location=data["wc_coverages_screen_location"],
-                                            code=data["wc_coverages_screen_class_code"],
-                                            employees=data["wc_coverages_screen_employee"],
-                                            basis_value=data["wc_coverages_screen_basis_value"])
+    wc_policy.wc_coverages_screen.update_class(row_number=data["wc_coverages_screen_class_rows#"],
+                                               gov_law=data["wc_coverages_screen_gov_law"],
+                                               basis_value=data["wc_coverages_screen_basis_value"])
 
     wc_policy.navigate_till_screen("Policy Review")
 

@@ -64,6 +64,10 @@ class BaseElement:
         text = self.web_element.text
         return text
 
+    def attribute(self, attr_name):
+        attribute = self.web_element.get_attribute(attr_name)
+        return attribute
+
     def is_elm_selected(self):
         return self.web_element.is_selected()
 
@@ -146,6 +150,10 @@ class BaseElement:
         WebDriverWait(self.driver, MAX_WAIT_TIME).\
             until(EC.invisibility_of_element_located(self.locator))
 
+    def wait_till_staleness_of_element(self):
+        WebDriverWait(self.driver, MAX_WAIT_TIME).\
+            until(EC.staleness_of(self.web_element))
+
     # methods for multiple elements returned
     def get_all_elements(self) -> list:
         return WebDriverWait(self.driver, MAX_WAIT_TIME). \
@@ -154,6 +162,10 @@ class BaseElement:
     def get_all_elements_text(self) -> list:
         elm_list = self.get_all_elements()
         return [elm.text for elm in elm_list]
+
+    def get_all_elements_attribute(self, attr_name) -> list:
+        elm_list = self.get_all_elements()
+        return [elm.get_attribute(attr_name) for elm in elm_list]
 
     def click_all_elements(self):
         elm_list = self.get_all_elements()

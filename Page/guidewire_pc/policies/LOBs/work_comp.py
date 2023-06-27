@@ -108,6 +108,39 @@ class WCCoverages(BasePage):
 
         self.log.info(f"Covered Employees section - New Class Added. Row Number - {row_number}")
 
+    def update_class(self, row_number, gov_law=None, location=None, code=None,
+                     employees=None, basis_value=None):
+        outside_elm = BaseElement(self.driver, self._locator_covered_employee_txt)
+
+        locator_dict_add_class = self._locator_dynamic_wc_coverages_screen_add_class(row_number)
+
+        if gov_law is not None:
+            governing_law = BaseElement(self.driver, locator_dict_add_class["Governing Law"])
+            governing_law.select_option(text=gov_law)
+
+        if location is not None:
+            loc = BaseElement(self.driver, locator_dict_add_class["Location"])
+            loc.select_option(index=location)
+            outside_elm.click_element()
+
+        if code is not None:
+            class_code = BaseElement(self.driver, locator_dict_add_class["Class Code"])
+            class_code.enter_text(code)
+            outside_elm.click_element()
+            # class_code.press_tab_key() # text not updating in basis field without pressing tab
+
+        if employees is not None:
+            emp_number = BaseElement(self.driver, locator_dict_add_class["Employees"])
+            emp_number.enter_text(employees)
+            outside_elm.click_element()
+            # emp_number.press_tab_key()  # text not updating in basis field without pressing tab
+
+        if basis_value is not None:
+            basis = BaseElement(self.driver, locator_dict_add_class["Basis"])
+            basis.enter_text(basis_value)
+
+        self.log.info(f"Covered Employees section - New Class Added. Row Number - {row_number}")
+
 
 class Supplemental(BasePage):
     log = getLogger()

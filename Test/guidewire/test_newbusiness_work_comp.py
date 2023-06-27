@@ -10,7 +10,7 @@ from pytest import mark, fixture
 
 
 file_path = definitions.ROOT_DIR + "/Data/data_newbusiness_work_comp.csv"
-test_data = csv_data_converter.get_rows(file_path, "TestCase", "2")
+test_data = csv_data_converter.get_rows(file_path, "TestCase", "1", "2")
 
 
 @fixture(params=test_data)
@@ -55,7 +55,6 @@ def test_new_work_comp_policy_creation(browser, data):
 
     # Locations Screen
     if data["location_screen_add_new_location"]:
-    # address = random_address.get_one_address("VA")
         wc_policy.location_screen.add_new_location(address1=data["location_screen_address1"],
                                                    city= data["location_screen_city"],
                                                    state=data["location_screen_state"],
@@ -63,7 +62,7 @@ def test_new_work_comp_policy_creation(browser, data):
     wc_policy.title_toolbar.next()
 
     # WC Coverages Screen
-    wc_policy.wc_coverages_screen.add_class(row_number=data["wc_coverages_screen_class_row#"],
+    wc_policy.wc_coverages_screen.add_class(row_number=data["wc_coverages_screen_class_row"],
                                             gov_law= data["wc_coverages_screen_gov_law"],
                                             location=data["wc_coverages_screen_location"],
                                             code= data["wc_coverages_screen_class_code"],
@@ -88,7 +87,7 @@ def test_new_work_comp_policy_creation(browser, data):
     wc_policy.title_toolbar.next()
 
     # policy review screen
-    wc_policy.title_toolbar.quote()
+    wc_policy.title_toolbar.quote2()
 
     # Quote Screen
     assert wc_policy.quote_screen.total_premium_amount() > 0

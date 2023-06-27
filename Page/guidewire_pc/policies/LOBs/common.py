@@ -1,5 +1,7 @@
 import time
 from re import sub
+
+from selenium.common import WebDriverException
 from selenium.webdriver.common.by import By
 from Base.baseelement import BaseElement
 from Base.baseelement import NestedElement
@@ -7,6 +9,9 @@ from Base.basepage import BasePage
 from Util.logs import getLogger
 from Page.guidewire_pc.policies.info_bar import InfoBar
 import random
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from Page.guidewire_pc.policies.common.workspace import Workspace
 
 
 class TableQuestionnaires:
@@ -62,6 +67,7 @@ class TitleToolbar(BasePage):
         self.risk_analysis_screen = RiskAnalysis(self.driver)
         self.workspace = Workspace(self.driver)
         self.info_bar = InfoBar(self.driver)
+        self.quote_screen = Quote(self.driver)
 
     @property
     def screen_title_element(self):
@@ -70,7 +76,7 @@ class TitleToolbar(BasePage):
 
     @property
     def next_btn(self):
-        locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[contains(@aria-label, "Next")]')
+        locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[contains(@aria-label, "Next")]/parent::div')
         return BaseElement(self.driver, locator)
 
     @property
@@ -137,9 +143,46 @@ class TitleToolbar(BasePage):
         return text
 
     def next(self):
+        # self.next_btn.click_element()
+        # self.next_btn.wait_till_staleness_of_element() # wait for page change
+        # OR
+        # title = self.screen_title_text()
+        # self.next_btn.click_element()
+        # self.screen_title_element.wait_till_text_to_be_not_present_in_element(title)
+        # OR
         title = self.screen_title_text()
         self.next_btn.click_element()
-        self.screen_title_element.wait_till_text_to_be_not_present_in_element(title)
+        try:
+            self.next_btn.wait_till_staleness_of_element()
+        except WebDriverException:
+            self.screen_title_element.wait_till_text_to_be_not_present_in_element(title)
+
+    def quote2(self):
+        initial_screen_title = self.screen_title_text()
+        self.log.info(f"{initial_screen_title} screen")
+
+        self.quote_btn.click_element()
+        self.log.info("Clicked Quote button.")
+        time.sleep(3)
+
+        if self.screen_title_text() == "Quote":
+            self.log.info("Quoted successfully")
+        elif self.screen_title_text() == "Pre-Quote Issues":
+            self.log.info("Pre-Quote Issues screen")
+            self.details_btn.click_element()
+            self.log.debug("Navigate to Underwriter issues tab at Risk Analysis screen.")
+            self.risk_analysis_screen.approve_all_uw_issues()
+            self.log.debug("All underwriter issues approved.")
+            self.wait_for_screen("Risk Analysis")
+            self.quote2()
+        elif self.workspace.is_workspace_present():
+            message_types = self.workspace.get_all_message_types()
+            self.log.info(f"Getting messages(types) - {', '.join(message_types)}")
+            if any("error" in message_type.lower() for message_type in message_types):
+                self.log.debug("Getting error and unable to quote")
+                raise Exception("Getting error and unable to quote")
+            else:
+                self.quote2()
 
     def quote(self):  # TODO needs to update max depth for recursion
         initial_screen_title = self.screen_title_text()
@@ -190,21 +233,20 @@ class TitleToolbar(BasePage):
         self.accept_alert()
 
         # TODO: update need to wait for page after click, screen can be same, pre_quote or quote
-        time.sleep(5)
+        time.sleep(3)
 
         if self.screen_title_text() == "Submission Bound":
             self.log.info("Your Submission has been bound.")
         elif self.screen_title_text() == "Policy Change Bound":
             self.log.info("Your Policy Change has been bound.")
-        elif self.screen_title_text() == initial_screen_title:
-            self.log.info(f"{initial_screen_title} screen")
-            if self.workspace.error.is_element_present():
+        elif self.workspace.is_workspace_present():
+            message_types = self.workspace.get_all_message_types()
+            self.log.info(f"Getting messages(types) - {', '.join(message_types)}")
+            if any("error" in message_type.lower() for message_type in message_types):
                 self.log.debug("Getting error and unable to quote")
                 raise Exception("Getting error and unable to quote")
-            elif self.workspace.warning.is_element_present():
-                self.log.info("Getting warnings")
-            # TODO elif Information
-            self.issue_policy()
+            else:
+                self.issue_policy()
 
     def schedule_cancellation(self):
         pass
@@ -257,7 +299,8 @@ class Sidebar(BasePage):
         return transaction_number
 
 
-class Workspace:
+# now importing from other module
+class Workspace_old:
     log = getLogger()
 
     def __init__(self, driver):
@@ -282,7 +325,7 @@ class Workspace:
     @property
     def information(self):
         locator = (By.XPATH, '//div[@id="gw-south-panel"]//div[contains(text(),"Information")]')
-        return BaseElement(self.driver, locator)
+        return BaseElement(self.driver, locator) #
 
 
 class PolicyInfo(BasePage):

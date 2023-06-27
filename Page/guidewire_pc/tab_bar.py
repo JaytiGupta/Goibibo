@@ -23,9 +23,11 @@ class TabBar(BasePage):
         self._locator_options_logout = (By.XPATH, '//div[@id="TabBar"]//div[contains(text(), "Log Out")]')
         self._locator_logo = (By.XPATH, '//div[@aria-label="company logo"]')
 
+    @property
     def policy_dropdown(self):
         return BaseElement(self.driver, self._locator_policy_dropdown)
 
+    @property
     def options_btn(self):
         return BaseElement(self.driver, self._locator_options_btn)
 
@@ -47,20 +49,23 @@ class TabBar(BasePage):
         account_dropdown_btn.click_element()
         new_account_btn = BaseElement(self.driver, self._locator_new_Account_btn)
         new_account_btn.click_element()
+        new_account_btn.wait_till_staleness_of_element()
         self.log.info(f"Click New Account button from Account dropdown.")
 
     def search_submission(self, submission_num):
-        self.policy_dropdown().click_element()
+        self.policy_dropdown.click_element()
         input_box = BaseElement(self.driver, self._locator_submission_input_box)
         input_box.enter_text(submission_num)
         input_box.press_enter_key()
+        input_box.wait_till_staleness_of_element()
         self.log.info(f"Search submission {submission_num}")
 
     def search_policy(self, policy_num):
-        self.policy_dropdown().click_element()
+        self.policy_dropdown.click_element()
         input_box = BaseElement(self.driver, self._locator_policy_input_box)
         input_box.enter_text(policy_num)
         input_box.press_enter_key()
+        input_box.wait_till_staleness_of_element()
         self.log.info(f"Search policy {policy_num}")
 
     def go_to_admin(self):
@@ -69,9 +74,10 @@ class TabBar(BasePage):
         self.log.info(f"Navigate to admin tab.")
 
     def log_out_user(self):
-        self.options_btn().click_element()
+        self.options_btn.click_element()
         sign_out_btn = BaseElement(self.driver, self._locator_options_logout)
         sign_out_btn.click_element()
+        sign_out_btn.wait_till_staleness_of_element()
         self.log.info(f"Logged out.")
 
     def go_to_desktop(self):

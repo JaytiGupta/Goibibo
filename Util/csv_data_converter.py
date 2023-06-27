@@ -48,7 +48,7 @@ def update_csv(file_path, reference_column, reference_column_value, column, valu
     :param value: value to update
     :return: update the value of desired data field
     """
-    data = pandas.read_csv(file_path)
+    data = pandas.read_csv(file_path, dtype=str)
     # Modify the data in dataframe
     data.loc[data[reference_column].astype(str) == reference_column_value, column] = value
     # Write the updated Dataframe back to CSV file
