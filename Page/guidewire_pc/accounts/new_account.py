@@ -1,6 +1,9 @@
 import time
 from datetime import datetime
 from random import randint, choice
+
+from selenium.common import WebDriverException
+
 from Base.basepage import BasePage
 from Base.baseelement import BaseElement
 from selenium.webdriver.common.by import By
@@ -132,6 +135,7 @@ class EnterAccountInformation(BasePage):
     def click_search_btn(self):
         self.search_btn.click_element()
         self.log.info(f"Clicked Search button.")
+        self.new_account_btn.wait_till_visibility_of_element()
 
     def validate_zero_results(self):
         if self.zero_results_information_tag == "The search returned zero results.":
@@ -150,6 +154,10 @@ class EnterAccountInformation(BasePage):
         elif account_type.lower() == "from address book":
             self.address_book_dropdown.click_element()
             self.log.info(f"Clicked Create New Account 'From Address Book'.")
+        try:
+            self.search_btn.wait_till_staleness_of_element()
+        except WebDriverException:
+            pass
 
 
 class CreateAccountPage(BasePage):
@@ -250,13 +258,18 @@ class CreateAccountPage(BasePage):
 
     def select_producer(self, organization, producer_code):
         self.organization_input_box.enter_text(organization)
-        self.organization_search_btn.click_element()
+        self.organization_input_box.press_tab_key()
+        # self.organization_search_btn.click_element()
         self.producer_code_dropdown.select_option(text=producer_code)
         self.log.info(f"Section: Select Producer - Organization & Producer Code selected.")
 
     def click_btn_update(self):
         self.update_btn.click_element()
         self.log.info(f"Clicked Update button.")
+        try:
+            self.update_btn.wait_till_staleness_of_element()
+        except WebDriverException:
+            pass
 
     def click_btn_cancel(self):
         self.cancel_btn.click_element()

@@ -1,5 +1,3 @@
-import time
-
 import definitions
 from Util import csv_data_converter
 from Page.guidewire_pc.policy_center_home import PolicyCenterHome
@@ -26,9 +24,9 @@ def test_login(browser, login_data):
 
 # @mark.skip
 def test_new_work_comp_policy_creation(browser, data):
-    PC = PolicyCenterHome(browser)
-    PC.tab_bar.go_to_desktop()
-    PC.tab_bar.search_account(data["Account_number"])
+    pc = PolicyCenterHome(browser)
+    pc.tab_bar.go_to_desktop()
+    pc.tab_bar.search_account(data["Account_number"])
 
     account = Account(browser)
     account.summary.click_new_submission_btn()
@@ -56,23 +54,24 @@ def test_new_work_comp_policy_creation(browser, data):
     # Locations Screen
     if data["location_screen_add_new_location"]:
         wc_policy.location_screen.add_new_location(address1=data["location_screen_address1"],
-                                                   city= data["location_screen_city"],
+                                                   city=data["location_screen_city"],
                                                    state=data["location_screen_state"],
                                                    zip_code=data["location_screen_zip_code"])
     wc_policy.title_toolbar.next()
 
     # WC Coverages Screen
     wc_policy.wc_coverages_screen.add_class(row_number=data["wc_coverages_screen_class_row"],
-                                            gov_law= data["wc_coverages_screen_gov_law"],
+                                            gov_law=data["wc_coverages_screen_gov_law"],
                                             location=data["wc_coverages_screen_location"],
-                                            code= data["wc_coverages_screen_class_code"],
+                                            code=data["wc_coverages_screen_class_code"],
                                             employees=data["wc_coverages_screen_employees#"],
                                             basis_value=data["wc_coverages_screen_basis_value"])
     wc_policy.title_toolbar.next()
 
     # Supplemental Screen
     wc_policy.supplement_screen.table_questionnaires.select_all_radio_btn("no")
-    wc_policy.supplement_screen.table_questionnaires.select_radio_btn("Any employees under 16 or over 60 years of age?", "Yes")
+    wc_policy.supplement_screen.table_questionnaires.\
+        select_radio_btn("Any employees under 16 or over 60 years of age?", "Yes")
     wc_policy.title_toolbar.next()
 
     # WC option Screen
@@ -102,5 +101,4 @@ def test_new_work_comp_policy_creation(browser, data):
 
     # wc_policy.title_toolbar.screen_title_element.wait_till_text_to_be_present_in_element(Subm)
     take_screenshot(browser)
-    csv_data_converter.update_csv(file_path,"TestCase", data["TestCase"], "submission_number", submission_number)
-
+    csv_data_converter.update_csv(file_path, "TestCase", data["TestCase"], "submission_number", submission_number)

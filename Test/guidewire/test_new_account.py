@@ -7,7 +7,7 @@ from pytest import mark, fixture
 
 
 file_path = definitions.ROOT_DIR + "/Data/data_new_account.csv"
-test_data = csv_data_converter.get_rows(file_path, "TestCase", "1",  "2")
+test_data = csv_data_converter.get_rows(file_path, "TestCase", "1",  "2", "3", "4", "5", "6")
 
 
 @fixture(params=test_data)
@@ -59,6 +59,9 @@ def test_new_account_creation(browser, data):
     new_account.create_account_screen.select_producer(organization=data["organization"],
                                                       producer_code=data["producer"])
     new_account.create_account_screen.click_btn_update()
+    account_number = account.summary.get_account_number()
+    csv_data_converter.update_csv(file_path, "TestCase", data["TestCase"], "account_number", account_number)
+    pc.tab_bar.go_to_desktop()
 
 
 @mark.skip

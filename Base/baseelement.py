@@ -2,7 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import ElementClickInterceptedException, TimeoutException, NoSuchElementException
+from selenium.common.exceptions import ElementClickInterceptedException, TimeoutException, NoSuchElementException, \
+    WebDriverException
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.select import Select
@@ -151,8 +152,10 @@ class BaseElement:
             until(EC.invisibility_of_element_located(self.locator))
 
     def wait_till_staleness_of_element(self):
-        WebDriverWait(self.driver, MAX_WAIT_TIME).\
-            until(EC.staleness_of(self.web_element))
+        WebDriverWait(self.driver, MAX_WAIT_TIME).until(EC.staleness_of(self.web_element))
+
+    def wait_till_visibility_of_element(self):
+        WebDriverWait(self.driver, MAX_WAIT_TIME).until(EC.visibility_of(self.web_element))
 
     # methods for multiple elements returned
     def get_all_elements(self) -> list:

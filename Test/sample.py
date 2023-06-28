@@ -1,9 +1,5 @@
-from faker import Faker
+message_types = ["Warning:", "Errors:"]
 
-fake = Faker()
+t= any("error" in message_type.lower() for message_type in message_types)
 
-# print(fake.name())
-
-print(fake.phone_number())
-
-print(fake.country())
+print(t)
