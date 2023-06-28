@@ -34,6 +34,7 @@ class CommercialAuto(BasePage):
         self.forms_screen = common.Forms(self.driver)
         # self.payment_screen = Payment(self.driver)
         self.workspace_screen = common.Workspace(self.driver)
+        self.sidebar = common.Sidebar(self.driver)
 
 
 class Offerings:
@@ -86,9 +87,9 @@ class CommercialAutoLine:
         fleet_elm = BaseElement(self.driver, self._locator_fleet)
         fleet_elm.select_option(text=fleet)
 
-    def wait_liability_covg(self):
-        liability_text = BaseElement(self.driver, self._locator_liability_covg_text)
-        liability_text.wait_till_text_to_be_present_in_element("Liability")
+    # def wait_liability_covg(self):
+    #     liability_text = BaseElement(self.driver, self._locator_liability_covg_text)
+    #     liability_text.wait_till_text_to_be_present_in_element("Liability")
 
     def hired_auto_coverages(self, coverage):
         _locator_hired_auto_covg = (By.XPATH, f'//input[contains(@aria-label,"{coverage}")]')

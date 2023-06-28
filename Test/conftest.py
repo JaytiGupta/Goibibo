@@ -53,13 +53,13 @@ def login_data(request):
     yield request.param
 
 
-file_path_ca = definitions.ROOT_DIR + "/Data/data_new_submission_comm_auto.csv"
-test_data_ca = csv_data_converter.get_rows(file_path_ca, "TestCase", "1")
+# file_path_ca = definitions.ROOT_DIR + "/Data/data_new_submission_comm_auto.csv"
+# test_data_ca = csv_data_converter.get_rows(file_path_ca, "TestCase", "1")
 
 
-@fixture(params=test_data_ca)
-def data(request):
-    yield request.param
+# @fixture(params=test_data_ca)
+# def data(request):
+#     yield request.param
 
 
 if __name__ == "__main__":

@@ -49,6 +49,7 @@ class Workspace:
 
     def get_all_message_types(self) -> list:
         message_types = self.messages_types.get_all_elements_attribute("aria-label")
+        self.log.info(f"Getting messages(types) - {', '.join(message_types)}")
         return [message_type for message_type in message_types]
 
 

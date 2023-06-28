@@ -177,7 +177,6 @@ class TitleToolbar(BasePage):
             self.quote2()
         elif self.workspace.is_workspace_present():
             message_types = self.workspace.get_all_message_types()
-            self.log.info(f"Getting messages(types) - {', '.join(message_types)}")
             if any("error" in message_type.lower() for message_type in message_types):
                 self.log.debug("Getting error and unable to quote")
                 raise Exception("Getting error and unable to quote")

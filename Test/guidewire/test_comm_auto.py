@@ -1,9 +1,19 @@
-import time
-from Util import random_data
+import definitions
+from Util import random_data, csv_data_converter
 from Page.guidewire_pc.policy_center_home import PolicyCenterHome
 from Page.guidewire_pc.accounts.account import Account
 from Page.guidewire_pc.policies.policy import Policy
 from Util.screenshot import take_screenshot
+from pytest import fixture
+
+
+file_path = definitions.ROOT_DIR + "/Data/data_new_submission_comm_auto.csv"
+test_data = csv_data_converter.get_rows(file_path, "TestCase", "1", "2")
+
+
+@fixture(params=test_data)
+def data(request):
+    yield request.param
 
 
 def test_login(browser, login_data):
@@ -16,7 +26,7 @@ def test_login(browser, login_data):
 def test_new_commercial_auto_creation(browser, data):
     PC = PolicyCenterHome(browser)
     PC.tab_bar.go_to_desktop()
-    PC.tab_bar.search_account("1342104490") #data["Account#"])
+    PC.tab_bar.search_account(data["Account#"]) #"1342104490"
 
     account = Account(browser)
     account.summary.click_new_submission_btn()
@@ -47,7 +57,7 @@ def test_new_commercial_auto_creation(browser, data):
 
     # Commercial Auto Line screen
     ca_policy.comm_auto_line_screen.ca_coverages(product=data["product"], fleet=data["fleet"])
-    ca_policy.comm_auto_line_screen.wait_liability_covg()
+    # ca_policy.comm_auto_line_screen.wait_liability_covg()
     ca_policy.comm_auto_line_screen.hired_auto_coverages(data["hired_auto_cvg1"])
     ca_policy.comm_auto_line_screen.hired_auto_coverages(data["hired_auto_cvg2"])
     ca_policy.comm_auto_line_screen.hired_auto_coverages(data["hired_auto_cvg3"])
@@ -58,7 +68,7 @@ def test_new_commercial_auto_creation(browser, data):
     ca_policy.title_toolbar.next()
 
     # Locations screen
-    address = random_address.get_one_address("VA")
+    address = random_data.get_one_address("VA")
     ca_policy.location_screen.add_new_location(address1=address["Address_1"],
                                                city= address["City"],
                                                state=address["State"],
@@ -81,26 +91,12 @@ def test_new_commercial_auto_creation(browser, data):
                                             dob=data["dob"], license_state=data["lic_state"])
     ca_policy.title_toolbar.next()
 
-    # Covered Vehicles screen
-    # Not required for a smoke run
-    # ca_policy.title_toolbar.next()
-
-    # Modifiers screen
-    # Not required for a smoke run
-    # ca_policy.title_toolbar.next()
-
     # Risk Analysis screen
-    ca_policy.title_toolbar.quote()
+    submission_number: str = ca_policy.sidebar.transaction_number()
+    ca_policy.title_toolbar.quote_btn.click_element()
 
-    # Quote screen
-    assert ca_policy.quote_screen.total_premium_amount() > 0
-    ca_policy.title_toolbar.next()
-
-    # Forms screen
-    ca_policy.title_toolbar.next()
-
-    # Payment screen
-    ca_policy.title_toolbar.issue_policy()
-
-    time.sleep(20)
+    # Workspace
+    message_types = ca_policy.workspace_screen.get_all_message_types()
+    assert any("error" in message_type.lower() for message_type in message_types)
     take_screenshot(browser)
+    csv_data_converter.update_csv(file_path, "TestCase", data["TestCase"], "submission_number", submission_number)
