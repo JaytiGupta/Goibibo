@@ -15,6 +15,13 @@ test_data = csv_data_converter.get_rows(file_path, "TestCase", "1", "2")
 def data(request):
     yield request.param
 
+# to perform cross browser testing:
+# @fixture(params=[webdriver.Chrome, webdriver.Firefox, webdriver.Edge])
+# def browser(request):
+#     driver = request.param
+#     drvr = driver()
+#     yield drvr
+#     drvr.quit()
 
 def test_login(browser, login_data):
     home_page = PolicyCenterHome(browser)
