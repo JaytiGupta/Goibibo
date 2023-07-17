@@ -16,7 +16,6 @@ def data(request):
     yield request.param
 
 
-
 def test_login(browser, login_data):
     home_page = PolicyCenterHome(browser)
     home_page.go()

@@ -7,7 +7,7 @@ from pytest import mark, fixture
 
 
 file_path = definitions.ROOT_DIR + "/Data/data_new_account.csv"
-test_data = csv_data_converter.get_rows(file_path, "TestCase", "1",  "2", "3", "4", "5", "6")
+test_data = csv_data_converter.get_rows(file_path, "TestCase", "1",  "2", "3")
 
 
 @fixture(params=test_data)
