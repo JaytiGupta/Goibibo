@@ -10,7 +10,7 @@ from Test.config import Config
 import os
 
 
-@fixture(scope="session")
+@fixture(scope="function")
 def browser():
     # return webdriver.Chrome()
     log = getLogger()

@@ -7,7 +7,7 @@ from pytest import mark, fixture
 
 
 file_path = definitions.ROOT_DIR + "/Data/data_new_account.csv"
-test_data = csv_data_converter.get_rows(file_path, "TestCase", "1",  "2", "3")
+test_data = csv_data_converter.get_rows(file_path, "TestCase", "1",  "2", "3", "4")
 
 
 @fixture(params=test_data)
@@ -15,15 +15,11 @@ def data(request):
     yield request.param
 
 
-def test_login(browser, login_data):
+# @mark.skip
+def test_new_account_creation(browser, data, login_data):
     home_page = PolicyCenterHome(browser)
     home_page.go()
     home_page.login_page.login(username=login_data["username"], password=login_data["password"])
-
-
-# @mark.skip
-def test_new_account_creation(browser, data):
-
     pc = PolicyCenterHome(browser)
     pc.tab_bar.go_to_desktop()
     pc.tab_bar.create_new_account_btn()

@@ -154,10 +154,10 @@ class EnterAccountInformation(BasePage):
         elif account_type.lower() == "from address book":
             self.address_book_dropdown.click_element()
             self.log.info(f"Clicked Create New Account 'From Address Book'.")
-        try:
-            self.search_btn.wait_till_staleness_of_element()
-        except WebDriverException:
-            pass
+        # try:
+        #     self.search_btn.wait_till_staleness_of_element()
+        # except WebDriverException:
+        #     pass
 
 
 class CreateAccountPage(BasePage):
