@@ -2,6 +2,7 @@ from Base.basepage import BasePage
 from Base.baseelement import BaseElement
 from selenium.webdriver.common.by import By
 from Util.logs import getLogger
+from Page.guidewire_pc.accounts.titilebar import TitleBar
 
 
 class TabBar(BasePage):
@@ -49,14 +50,17 @@ class TabBar(BasePage):
         account_dropdown_btn.click_element()
         new_account_btn = BaseElement(self.driver, self._locator_new_Account_btn)
         new_account_btn.click_element()
-        new_account_btn.wait_till_staleness_of_element()
         self.log.info(f"Click New Account button from Account dropdown.")
+
+        title_bar = TitleBar(self.driver)
+        title_bar.wait_for_screen("Enter Account Information")
 
     def search_submission(self, submission_num):
         self.policy_dropdown.click_element()
         input_box = BaseElement(self.driver, self._locator_submission_input_box)
         input_box.enter_text(submission_num)
         input_box.press_enter_key()
+        #TODO
         input_box.wait_till_staleness_of_element()
         self.log.info(f"Search submission {submission_num}")
 
@@ -65,6 +69,7 @@ class TabBar(BasePage):
         input_box = BaseElement(self.driver, self._locator_policy_input_box)
         input_box.enter_text(policy_num)
         input_box.press_enter_key()
+        #TODO
         input_box.wait_till_staleness_of_element()
         self.log.info(f"Search policy {policy_num}")
 
@@ -77,6 +82,7 @@ class TabBar(BasePage):
         self.options_btn.click_element()
         sign_out_btn = BaseElement(self.driver, self._locator_options_logout)
         sign_out_btn.click_element()
+        #TODO
         sign_out_btn.wait_till_staleness_of_element()
         self.log.info(f"Logged out.")
 

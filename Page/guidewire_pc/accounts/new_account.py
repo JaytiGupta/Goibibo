@@ -1,5 +1,3 @@
-import time
-from datetime import datetime
 import random
 
 from selenium.common import WebDriverException
@@ -92,8 +90,6 @@ class EnterAccountInformation(BasePage):
         locator = (By.XPATH, '//div[text()="Last name"]/following-sibling::div//input')
         return BaseElement(self.driver, locator)
 
-
-
     @property
     def zero_results_information_tag(self):
         locator = (By.XPATH, '//div[contains(text(),"The search returned zero results.")]')
@@ -133,6 +129,9 @@ class EnterAccountInformation(BasePage):
 
             self._create_new_account_btn.click_element()
 
+            if not self._company_option.is_element_present():
+                self._create_new_account_btn.click_element()
+
             if account_type.lower() == "company":
                 self._company_option.click_element()
                 self.log.info(f"Clicked Create New Account 'Company'.")
@@ -167,13 +166,12 @@ class EnterAccountInformation(BasePage):
             self.log.info("Account Search results found for the entered information")
 
 
-
-
 class CreateAccountPage(BasePage):
     log = getLogger()
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
+        self.title_bar = TitleBar(self.driver)
 
     @property
     def office_phone(self):
@@ -248,6 +246,8 @@ class CreateAccountPage(BasePage):
     def input_office_phone(self, number):
         self.office_phone.enter_text(number)
         self.log.info(f"Office Phone: '{number}' value entered.")
+        # Page is reloading after entering the phone number
+        self.title_bar.wait_for_screen("Create account")
 
     def input_primary_email(self, text):
         self.primary_email.enter_text(text)
@@ -275,10 +275,7 @@ class CreateAccountPage(BasePage):
     def click_btn_update(self):
         self.update_btn.click_element()
         self.log.info(f"Clicked Update button.")
-        try:
-            self.update_btn.wait_till_staleness_of_element()
-        except WebDriverException:
-            pass
+        self.title_bar.wait_for_screen("Account Summary")
 
     def click_btn_cancel(self):
         self.cancel_btn.click_element()

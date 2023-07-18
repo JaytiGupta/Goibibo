@@ -9,7 +9,7 @@ from pytest import mark, fixture
 
 
 file_path = definitions.ROOT_DIR + "/Data/data_new_account.csv"
-test_data = csv_data_converter.get_rows(file_path, "TestCase", "4")
+test_data = csv_data_converter.get_rows(file_path, "TestCase", "1", "2", "3", "5", "6", "4")
 
 
 @fixture(params=test_data)
@@ -43,7 +43,6 @@ def test_new_account_creation(browser,login_data, data):
             input_name(new_account.random_first_name, new_account.random_last_name)
         new_account.enter_account_information_screen.create_new_account.person()
 
-
     # Create account Page
     if account_type.lower() == "company":
         new_account.create_account_screen.input_office_phone(data["office_Phone"])
@@ -61,20 +60,20 @@ def test_new_account_creation(browser,login_data, data):
     new_account.create_account_screen.click_btn_update()
     account_number = account.summary.get_account_number()
     csv_data_converter.update_csv(file_path, "TestCase", data["TestCase"], "account_number", account_number)
-    pc.tab_bar.go_to_desktop()
-    pc.tab_bar.log_out_user()
+    # pc.tab_bar.go_to_desktop()
+    # pc.tab_bar.log_out_user()
 
 
-@mark.skip
-def test_default_company_account_creation(browser, login_data):
-    home_page = PolicyCenterHome(browser)
-    home_page.go()
-    time.sleep(2)
-    home_page.login_page.login(username=login_data["username"], password=login_data["password"])
-
-    page = PolicyCenterHome(browser)
-    page.tab_bar.go_to_desktop()
-    page.tab_bar.create_new_account_btn()
-    account = Account(browser)
-    account.new_account.create_default_new_account("Company", "VA")
-    assert account.summary.account_summary_title_present()
+# @mark.skip
+# def test_default_company_account_creation(browser, login_data):
+#     home_page = PolicyCenterHome(browser)
+#     home_page.go()
+#     time.sleep(2)
+#     home_page.login_page.login(username=login_data["username"], password=login_data["password"])
+#
+#     page = PolicyCenterHome(browser)
+#     page.tab_bar.go_to_desktop()
+#     page.tab_bar.create_new_account_btn()
+#     account = Account(browser)
+#     account.new_account.create_default_new_account("Company", "VA")
+#     assert account.summary.account_summary_title_present()
