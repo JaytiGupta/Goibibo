@@ -46,12 +46,12 @@ class BaseElement:
             return None
 
     def click_element(self):
-        try:
-            element = WebDriverWait(self.driver, MAX_WAIT_TIME).until(
-                EC.element_to_be_clickable(self.locator))
-            element.click()
-        except ElementClickInterceptedException:
-            self.log.debug("Element is not clickable.")
+        # try:
+        element = WebDriverWait(self.driver, MAX_WAIT_TIME).until(
+            EC.element_to_be_clickable(self.locator))
+        element.click()
+        # except ElementClickInterceptedException:
+        #     self.log.debug("Element is not clickable.")
 
     def enter_text(self, text):
         # calling_object = inspect.currentframe().f_back.f_locals.get('self', None)

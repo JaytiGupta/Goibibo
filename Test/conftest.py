@@ -10,7 +10,7 @@ from Test.config import Config
 import os
 
 
-@fixture(scope="session")
+@fixture(scope="function")
 def browser():
     # return webdriver.Chrome()
     log = getLogger()
@@ -31,6 +31,14 @@ def pytest_addoption(parser):
         help="Environment to run tests against"
     )
 
+
+# to perform cross browser testing:
+# @fixture(params=[webdriver.Chrome, webdriver.Firefox, webdriver.Edge])
+# def browser(request):
+#     driver = request.param
+#     drvr = driver()
+#     yield drvr
+#     drvr.quit()
 
 @fixture(scope='session')
 def env(request):
