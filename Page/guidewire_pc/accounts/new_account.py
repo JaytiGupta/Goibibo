@@ -1,6 +1,6 @@
 import time
 from datetime import datetime
-from random import randint, choice
+import random
 
 from selenium.common import WebDriverException
 
@@ -9,6 +9,8 @@ from Base.baseelement import BaseElement
 from selenium.webdriver.common.by import By
 from Util.logs import getLogger
 from Util import random_data
+from Page.guidewire_pc.accounts.titilebar import TitleBar
+from faker import Faker
 
 
 class NewAccount(BasePage):
@@ -21,23 +23,20 @@ class NewAccount(BasePage):
         self.create_account_screen = CreateAccountPage(self.driver)
 
         # random input data
-        current_datetime = datetime.now()
-        unique_string = current_datetime.strftime("%y%m%d%H%M%S")
-        self.random_company_name = "company-" + unique_string
-        self.random_first_name = "first-" + unique_string
-        self.random_last_name = "last-" + unique_string
-        self.random_phone_number = f"(650) {randint(101, 999)}-{randint(1001, 9999)}"
-        self.random_email_address = f"my_email{unique_string}@test.com"
-        address = random_data.random_address("VA")
-        self.random_address1 = address.Address_1,
-        self.random_city = address.City,
-        self.random_state = address.State,
-        self.random_zip_code = address.Zip_Code,
-        self.random_address_type = choice(["Billing", "Business", "Home", "Other"])
-        self.random_organization = "Armstrong and Company",
+        fake = Faker(locale="en_US")
+        self.random_company_name = fake.company()
+        self.random_first_name = fake.first_name()
+        self.random_last_name = fake.last_name()
+        self.random_phone_number = fake.unique.numerify('###-###-####')
+        self.random_email_address = fake.company_email()
+
+        # self.random_address = random_data.random_address("VA")
+
+        self.random_address_type = random.choice(["Billing", "Business", "Home", "Other"])
+        self.random_organization = "Armstrong and Company"
         self.random_producer_code = "100-002541 Armstrong (Premier)"
 
-    def create_default_new_account(self, account_type):
+    def create_default_new_account(self, account_type, state):
         """
         :param account_type: company or person
         Creates a new account with all mandatory fields filled as random values.
@@ -46,22 +45,23 @@ class NewAccount(BasePage):
         # Enter Account Information Page
         if account_type.lower() == "company":
             self.enter_account_information_screen.input_company_name(self.random_company_name)
+            self.enter_account_information_screen.create_new_account.company()
 
         if account_type.lower() == "person":
             self.enter_account_information_screen.input_name(self.random_first_name, self.random_last_name)
-
-        self.enter_account_information_screen.search_btn.click_element()
-        self.enter_account_information_screen.select_new_account_type(account_type)
+            self.enter_account_information_screen.create_new_account.person()
 
         # Create account Page
         if account_type.lower() == "company":
             self.create_account_screen.input_office_phone(self.random_phone_number)
 
         self.create_account_screen.input_primary_email(self.random_email_address)
-        self.create_account_screen.input_address(address1=self.random_address1,
-                                                 city=self.random_city,
-                                                 state=self.random_state,
-                                                 zip_code=self.random_zip_code,
+
+        random_address = random_data.random_address(state)
+        self.create_account_screen.input_address(address1=random_address.Address_1,
+                                                 city=random_address.City,
+                                                 state=random_address.State,
+                                                 zip_code=random_address.Zip_Code,
                                                  address_type=self.random_address_type)
 
         self.create_account_screen.select_producer(organization=self.random_organization,
@@ -74,6 +74,8 @@ class EnterAccountInformation(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
+        self.titlebar = TitleBar(self.driver)
+        self.create_new_account = self.CreateNewAccount(self.driver)
 
     @property
     def company_name_input_box(self):
@@ -90,36 +92,62 @@ class EnterAccountInformation(BasePage):
         locator = (By.XPATH, '//div[text()="Last name"]/following-sibling::div//input')
         return BaseElement(self.driver, locator)
 
-    @property
-    def search_btn(self):
-        locator = (By.XPATH, '//div[@id="NewAccount-NewAccountScreen-NewAccountSearchDV-SearchAndResetInputSet-'
-                               'SearchLinksInputSet-Search"]')
-        return BaseElement(self.driver, locator)
+
 
     @property
     def zero_results_information_tag(self):
         locator = (By.XPATH, '//div[contains(text(),"The search returned zero results.")]')
         return BaseElement(self.driver, locator)
 
-    @property
-    def new_account_btn(self):
-        locator = (By.XPATH, '//div[@aria-label="Create New Account"]')
-        return BaseElement(self.driver, locator)
+    class CreateNewAccount:
+        log = getLogger()
 
-    @property
-    def company_dropdown(self):
-        locator = (By.XPATH, '//div[@aria-label="Company"]')
-        return BaseElement(self.driver, locator)
+        def __init__(self, driver):
+            self.driver = driver
+            self.titlebar = TitleBar(self.driver)
 
-    @property
-    def person_dropdown(self):
-        locator = (By.XPATH, '//div[@aria-label="Person"]')
-        return BaseElement(self.driver, locator)
+        @property
+        def _search_btn(self):
+            locator = (By.XPATH, '//div[@id="NewAccount-NewAccountScreen-NewAccountSearchDV-SearchAndResetInputSet-'
+                                 'SearchLinksInputSet-Search"]')
+            return BaseElement(self.driver, locator)
 
-    @property
-    def address_book_dropdown(self):
-        locator = (By.XPATH, '//div[@aria-label="From Address Book"]')
-        return BaseElement(self.driver, locator)
+        @property
+        def _create_new_account_btn(self):
+            locator = (By.XPATH, '//div[@aria-label="Create New Account"]')
+            return BaseElement(self.driver, locator)
+
+        @property
+        def _company_option(self):
+            locator = (By.XPATH, '//div[@aria-label="Company"]')
+            return BaseElement(self.driver, locator)
+
+        @property
+        def _person_option(self):
+            locator = (By.XPATH, '//div[@aria-label="Person"]')
+            return BaseElement(self.driver, locator)
+
+        def _select_new_account_type(self, account_type):
+            self._search_btn.click_element()
+            self.log.info(f"Clicked Search button.")
+
+            self._create_new_account_btn.click_element()
+
+            if account_type.lower() == "company":
+                self._company_option.click_element()
+                self.log.info(f"Clicked Create New Account 'Company'.")
+            elif account_type.lower() == "person":
+                self._person_option.click_element()
+                self.log.info(f"Clicked Create New Account 'Person'.")
+
+            self.titlebar.wait_for_screen("Create account")
+            self.log.info(f"Navigated to 'Create account' screen.")
+
+        def person(self):
+            self._select_new_account_type("person")
+
+        def company(self):
+            self._select_new_account_type("company")
 
     def input_company_name(self, name):
         self.company_name_input_box.enter_text(name)
@@ -132,32 +160,13 @@ class EnterAccountInformation(BasePage):
         self.last_name_input_box.enter_text(last_name)
         self.log.info(f"Last Name: '{last_name}' value entered.")
 
-    def click_search_btn(self):
-        self.search_btn.click_element()
-        self.log.info(f"Clicked Search button.")
-        self.new_account_btn.wait_till_visibility_of_element()
-
     def validate_zero_results(self):
         if self.zero_results_information_tag == "The search returned zero results.":
             self.log.info("No matching records found")
         else:
             self.log.info("Account Search results found for the entered information")
 
-    def select_new_account_type(self, account_type):
-        self.new_account_btn.click_element()
-        if account_type.lower() == "company":
-            self.company_dropdown.click_element()
-            self.log.info(f"Clicked Create New Account 'Company'.")
-        elif account_type.lower() == "person":
-            self.person_dropdown.click_element()
-            self.log.info(f"Clicked Create New Account 'Person'.")
-        elif account_type.lower() == "from address book":
-            self.address_book_dropdown.click_element()
-            self.log.info(f"Clicked Create New Account 'From Address Book'.")
-        try:
-            self.search_btn.wait_till_staleness_of_element()
-        except WebDriverException:
-            pass
+
 
 
 class CreateAccountPage(BasePage):

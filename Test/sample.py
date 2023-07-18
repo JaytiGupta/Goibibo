@@ -1,5 +1,10 @@
-message_types = ["Warning:", "Errors:"]
+from faker import Faker
 
-t= any("error" in message_type.lower() for message_type in message_types)
+fake = Faker(locale="en_US")
 
-print(t)
+print(fake.name())
+print(fake.first_name())
+print(fake.last_name())
+print(fake.company_email())
+print(fake.company())
+print(fake.unique.numerify('###-###-####'))

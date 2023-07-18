@@ -1,4 +1,6 @@
 import time
+
+from selenium.common import WebDriverException
 from selenium.webdriver.common.by import By
 from Util.logs import getLogger
 from Base.basepage import BasePage
@@ -96,12 +98,12 @@ class TitleToolbar(BasePage):
         self.screen_title_element.wait_till_text_to_be_present_in_element(screen_title_text)
 
     def next(self):
+        title = self.screen_title_text()
         self.next_btn.click_element()
-        self.next_btn.wait_till_staleness_of_element() # wait for page change
-        # OR
-        # title = self.screen_title_text()
-        # self.next_btn.click_element()
-        # self.screen_title_element.wait_till_text_to_be_not_present_in_element(title)
+        try:
+            self.next_btn.wait_till_staleness_of_element()
+        except WebDriverException:
+            self.screen_title_element.wait_till_text_to_be_not_present_in_element(title)
 
     def navigate_till_screen(self, screen_title):
         actual_screen_title = self.screen_title_text()
@@ -111,13 +113,11 @@ class TitleToolbar(BasePage):
 
     def quote(self):  # TODO needs to update max depth for recursion
         initial_screen_title = self.screen_title_text()
-
         self.log.info(f"{initial_screen_title} screen")
+
         self.quote_btn.click_element()
         self.log.info("Clicked Quote button.")
-
-        # TODO: update need to wait for page after click, screen can be same, pre_quote or quote
-        time.sleep(5)
+        time.sleep(3)
         # Policy Quoted without any stop - reached quote screen after one click
         # Getting error, warnings in workspace
         # Pre-Quote issues
@@ -134,7 +134,6 @@ class TitleToolbar(BasePage):
             self.quote()
         elif self.workspace.is_workspace_present():
             message_types = self.workspace.get_all_message_types()
-            self.log.info(f"Getting messages(types) - {', '.join(message_types)}")
             if any("error" in message_type.lower() for message_type in message_types):
                 self.log.debug("Getting error and unable to quote")
                 raise Exception("Getting error and unable to quote")

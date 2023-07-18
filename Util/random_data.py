@@ -21,6 +21,7 @@ STATE_CODES = {
         "WA": "Washington", "WV": "West Virginia", "WI": "Wisconsin", "WY": "Wyoming",
     }
 
+
 def get_address_list(*states):
     """
     :param states: states (or state code) for which list of address required.

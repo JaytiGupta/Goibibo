@@ -1,3 +1,5 @@
+import time
+
 import definitions
 from Util import random_data, csv_data_converter
 from Page.guidewire_pc.policy_center_home import PolicyCenterHome
@@ -7,7 +9,7 @@ from pytest import mark, fixture
 
 
 file_path = definitions.ROOT_DIR + "/Data/data_new_account.csv"
-test_data = csv_data_converter.get_rows(file_path, "TestCase", "1",  "2", "3", "4", "5", "6")
+test_data = csv_data_converter.get_rows(file_path, "TestCase", "4")
 
 
 @fixture(params=test_data)
@@ -15,14 +17,12 @@ def data(request):
     yield request.param
 
 
-def test_login(browser, login_data):
+# @mark.skip
+def test_new_account_creation(browser,login_data, data):
     home_page = PolicyCenterHome(browser)
     home_page.go()
+    time.sleep(2)
     home_page.login_page.login(username=login_data["username"], password=login_data["password"])
-
-
-# @mark.skip
-def test_new_account_creation(browser, data):
 
     pc = PolicyCenterHome(browser)
     pc.tab_bar.go_to_desktop()
@@ -36,19 +36,19 @@ def test_new_account_creation(browser, data):
     if account_type.lower() == "company":
         new_account.enter_account_information_screen.\
             input_company_name(new_account.random_company_name)
+        new_account.enter_account_information_screen.create_new_account.company()
 
     if account_type.lower() == "person":
         new_account.enter_account_information_screen.\
             input_name(new_account.random_first_name, new_account.random_last_name)
+        new_account.enter_account_information_screen.create_new_account.person()
 
-    new_account.enter_account_information_screen.search_btn.click_element()
-    new_account.enter_account_information_screen.select_new_account_type(account_type)
 
     # Create account Page
     if account_type.lower() == "company":
         new_account.create_account_screen.input_office_phone(data["office_Phone"])
 
-    new_account.create_account_screen.input_primary_email(data["primary_email"])
+    new_account.create_account_screen.input_primary_email(new_account.random_email_address)
 
     new_account.create_account_screen.input_address(address1=data["address_1"],
                                                     city=data["city"],
@@ -62,13 +62,19 @@ def test_new_account_creation(browser, data):
     account_number = account.summary.get_account_number()
     csv_data_converter.update_csv(file_path, "TestCase", data["TestCase"], "account_number", account_number)
     pc.tab_bar.go_to_desktop()
+    pc.tab_bar.log_out_user()
 
 
 @mark.skip
-def test_default_company_account_creation(browser):
+def test_default_company_account_creation(browser, login_data):
+    home_page = PolicyCenterHome(browser)
+    home_page.go()
+    time.sleep(2)
+    home_page.login_page.login(username=login_data["username"], password=login_data["password"])
+
     page = PolicyCenterHome(browser)
     page.tab_bar.go_to_desktop()
     page.tab_bar.create_new_account_btn()
     account = Account(browser)
-    account.new_account.create_default_new_account("Company")
+    account.new_account.create_default_new_account("Company", "VA")
     assert account.summary.account_summary_title_present()

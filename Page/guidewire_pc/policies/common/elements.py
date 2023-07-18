@@ -47,3 +47,47 @@ class TableQuestionnaires:
         dropdown_elm = BaseElement(self.driver, locator)
         dropdown_elm.select_option(text=dropdown_text)
 
+
+# TODO - for WC coverages screen add class
+class InputSet:
+    log = getLogger()
+
+    def __init__(self, driver):
+        self.driver = driver
+        self.tr_xpath = '//div[text()="Class Code"]/ancestor::tr'
+
+    def input_set_row(self, row_number, column_number, tag_name):
+        xpath = f'{self.tr_xpath}/following-sibling::tr[{row_number}]/td[{column_number}]//{tag_name}'
+        locator = (By.XPATH, xpath)
+        return BaseElement(self.driver, locator)
+
+
+    def add_class(self, row_number, gov_law, location, code, employees, basis_value):
+        add_class_button = BaseElement(self.driver, self._locator_AddClass_btn)
+        add_class_button.click_element()
+
+        outside_elm = BaseElement(self.driver, self._locator_covered_employee_txt)
+
+        locator_dict_add_class = self._locator_dynamic_wc_coverages_screen_add_class(row_number)
+
+        governing_law = BaseElement(self.driver, locator_dict_add_class["Governing Law"])
+        governing_law.select_option(text=gov_law)
+
+        loc = BaseElement(self.driver, locator_dict_add_class["Location"])
+        loc.select_option(index=location)
+        outside_elm.click_element()
+
+        class_code = BaseElement(self.driver, locator_dict_add_class["Class Code"])
+        class_code.enter_text(code)
+        outside_elm.click_element()
+        # class_code.press_tab_key() # text not updating in basis field without pressing tab
+
+        emp_number = BaseElement(self.driver, locator_dict_add_class["Employees"])
+        emp_number.enter_text(employees)
+        outside_elm.click_element()
+        # emp_number.press_tab_key()  # text not updating in basis field without pressing tab
+
+        basis = BaseElement(self.driver, locator_dict_add_class["Basis"])
+        basis.enter_text(basis_value)
+
+        self.log.info(f"Covered Employees section - New Class Added. Row Number - {row_number}")
