@@ -17,15 +17,11 @@ def data(request):
     yield request.param
 
 
-def test_login(browser, login_data):
+def test_work_comp_change_policy_transaction(browser, data, login_data):
     home_page = PolicyCenterHome(browser)
     home_page.go()
     home_page.login_page.login(username=login_data["username"],
                                password=login_data["password"])
-
-
-# @mark.skip
-def test_work_comp_change_policy_transaction(browser, data):
     PC = PolicyCenterHome(browser)
     PC.tab_bar.go_to_desktop()
     PC.tab_bar.search_policy(data["policy_number"])
