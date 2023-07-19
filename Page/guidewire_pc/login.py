@@ -24,7 +24,7 @@ class Login(BasePage):
         return BaseElement(self.driver, locator)
 
     @property
-    def _login_button(self):
+    def login_button(self):
         locator = (By.XPATH, '//div[@aria-label="Log In"]')
         return BaseElement(self.driver, locator)
 
@@ -36,7 +36,7 @@ class Login(BasePage):
     def login(self, username, password):
         self._user_name_input_box.enter_text(username)
         self._password_input_box.enter_text(password)
-        self._login_button.click_element()
+        self.login_button.click_element()
 
         if self._home_screen_title.is_element_present():
             take_screenshot(self.driver)

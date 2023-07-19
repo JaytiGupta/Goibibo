@@ -7,7 +7,7 @@ from Base.baseelement import BaseElement
 from selenium.webdriver.common.by import By
 from Util.logs import getLogger
 from Util import random_data
-from Page.guidewire_pc.accounts.titilebar import TitleBar
+from Page.guidewire_pc.accounts.titlebar import TitleBar
 from faker import Faker
 
 

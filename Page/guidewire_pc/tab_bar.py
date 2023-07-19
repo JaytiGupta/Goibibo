@@ -2,7 +2,9 @@ from Base.basepage import BasePage
 from Base.baseelement import BaseElement
 from selenium.webdriver.common.by import By
 from Util.logs import getLogger
-from Page.guidewire_pc.accounts.titilebar import TitleBar
+from Page.guidewire_pc.accounts.titlebar import TitleBar
+from Page.guidewire_pc.policies.common.sidebar import Sidebar
+from Page.guidewire_pc.login import Login
 
 
 class TabBar(BasePage):
@@ -23,6 +25,7 @@ class TabBar(BasePage):
         self._locator_options_btn = (By.XPATH, '//div[@id="TabBar"]//div[@aria-label="settings"]')
         self._locator_options_logout = (By.XPATH, '//div[@id="TabBar"]//div[contains(text(), "Log Out")]')
         self._locator_logo = (By.XPATH, '//div[@aria-label="company logo"]')
+        self.titlebar = TitleBar(self.driver)
 
     @property
     def policy_dropdown(self):
@@ -60,8 +63,8 @@ class TabBar(BasePage):
         input_box = BaseElement(self.driver, self._locator_submission_input_box)
         input_box.enter_text(submission_num)
         input_box.press_enter_key()
-        #TODO
-        input_box.wait_till_staleness_of_element()
+        policy_sidebar = Sidebar(self.driver)
+        policy_sidebar.heading.wait_till_text_to_be_present_in_element("Submission")
         self.log.info(f"Search submission {submission_num}")
 
     def search_policy(self, policy_num):
@@ -69,8 +72,7 @@ class TabBar(BasePage):
         input_box = BaseElement(self.driver, self._locator_policy_input_box)
         input_box.enter_text(policy_num)
         input_box.press_enter_key()
-        #TODO
-        input_box.wait_till_staleness_of_element()
+        self.titlebar.wait_for_screen("Policy Summary")
         self.log.info(f"Search policy {policy_num}")
 
     def go_to_admin(self):
@@ -82,7 +84,8 @@ class TabBar(BasePage):
         self.options_btn.click_element()
         sign_out_btn = BaseElement(self.driver, self._locator_options_logout)
         sign_out_btn.click_element()
-        #TODO
+        login_page = Login(self.driver)
+        login_page.login_button.wait_till_text_to_be_present_in_element("Log In")
         sign_out_btn.wait_till_staleness_of_element()
         self.log.info(f"Logged out.")
 
