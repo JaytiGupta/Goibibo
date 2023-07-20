@@ -46,7 +46,6 @@ def get_address_list(*states):
     return return_address_list
 
 
-# TODO - Need to update random_addrees() in place of get_one_address() then delete it.
 def get_one_address(*state):
     address_list = get_address_list(*state)
     return random.choice(address_list)

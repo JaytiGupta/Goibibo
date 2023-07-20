@@ -12,7 +12,7 @@ import random
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from Page.guidewire_pc.policies.common.workspace import Workspace
-
+from Page.guidewire_pc.policies.common.sidebar import Sidebar
 
 class TableQuestionnaires:
     log = getLogger()
@@ -77,6 +77,11 @@ class TitleToolbar(BasePage):
     @property
     def next_btn(self):
         locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[contains(@aria-label, "Next")]/parent::div')
+        return BaseElement(self.driver, locator)
+
+    @property
+    def next_btn_text(self):
+        locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[contains(@aria-label, "Next")]')
         return BaseElement(self.driver, locator)
 
     @property
@@ -152,12 +157,17 @@ class TitleToolbar(BasePage):
         # OR
         title = self.screen_title_text()
         self.next_btn.click_element()
-        try:
-            self.next_btn.wait_till_staleness_of_element()
-        except WebDriverException:
-            self.screen_title_element.wait_till_text_to_be_not_present_in_element(title)
+        self.screen_title_element.wait_till_text_to_be_not_present_in_element(title)
+        self.back_btn.wait_till_text_to_be_present_in_element("Back")
+        # sidebar = Sidebar(self.driver)
+        # sidebar.heading.wait_till_text_to_be_present_in_element("Submission")
+        # try:
+        #     self.next_btn.wait_till_staleness_of_element()
+        # except WebDriverException:
+        #     self.screen_title_element.wait_till_text_to_be_not_present_in_element(title)
 
     def quote2(self):
+        self.back_btn.wait_till_text_to_be_present_in_element("Back")
         initial_screen_title = self.screen_title_text()
         self.log.info(f"{initial_screen_title} screen")
 
@@ -181,6 +191,7 @@ class TitleToolbar(BasePage):
                 self.log.debug("Getting error and unable to quote")
                 raise Exception("Getting error and unable to quote")
             else:
+                self.workspace.clear_btn.click_element()
                 self.quote2()
 
     def quote(self):  # TODO needs to update max depth for recursion

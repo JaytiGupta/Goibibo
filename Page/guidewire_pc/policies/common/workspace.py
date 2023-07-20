@@ -30,6 +30,11 @@ class Workspace:
         return BaseElement(self.driver, locator)
 
     @property
+    def clear_btn(self):
+        locator = (By.XPATH, '//div[@id="gw-south-panel"]//div[contains(text(),"Clear")]')
+        return BaseElement(self.driver, locator)
+
+    @property
     def information(self):
         locator = (By.XPATH, '//div[@id="gw-south-panel"]//div[contains(text(),"Information")]')
         return BaseElement(self.driver, locator)

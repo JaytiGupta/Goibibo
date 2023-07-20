@@ -8,7 +8,7 @@ from pytest import mark, fixture
 
 
 file_path = definitions.ROOT_DIR + "/Data/data_newbusiness_work_comp.csv"
-test_data = csv_data_converter.get_rows(file_path, "TestCase", "1", "2")
+test_data = csv_data_converter.get_rows(file_path, "TestCase", "11", "12", "13", "14")
 
 
 @fixture(params=test_data)
@@ -77,6 +77,7 @@ def test_new_work_comp_policy_creation(browser, data, login_data):
                                                   emp_no=15,
                                                   basis_value=5000)
     wc_policy.title_toolbar.next()
+    # wc_policy.risk_analysis_screen.SCREEN_TITLE
 
     # risk analysis screen
     wc_policy.title_toolbar.next()

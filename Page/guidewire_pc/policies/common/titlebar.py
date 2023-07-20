@@ -157,21 +157,19 @@ class TitleToolbar(BasePage):
         self.accept_alert()
 
         # TODO: update need to wait for page after click, screen can be same, pre_quote or quote
-        time.sleep(5)
+        time.sleep(3)
 
         if self.screen_title_text() == "Submission Bound":
             self.log.info("Your Submission has been bound.")
         elif self.screen_title_text() == "Policy Change Bound":
             self.log.info("Your Policy Change has been bound.")
-        elif self.screen_title_text() == initial_screen_title:
-            self.log.info(f"{initial_screen_title} screen")
-            if self.workspace.error.is_element_present():
+        elif self.workspace.is_workspace_present():
+            message_types = self.workspace.get_all_message_types()
+            if any("error" in message_type.lower() for message_type in message_types):
                 self.log.debug("Getting error and unable to quote")
                 raise Exception("Getting error and unable to quote")
-            elif self.workspace.warning.is_element_present():
-                self.log.info("Getting warnings")
-            # TODO elif Information
-            self.issue_policy()
+            else:
+                self.issue_policy()
 
     def schedule_cancellation(self):
         pass
