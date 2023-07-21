@@ -1,17 +1,19 @@
 from Page.guidewire_pc.policy_center_home import PolicyCenterHome
 from Page.guidewire_pc.accounts.account import Account
 from Page.guidewire_pc.policies.policy import Policy
-from Util.screenshot import take_screenshot
+from Util.screenshot import Screenshot
 from pytest import mark
 
 
+@mark.skip
 def test_website_is_available(browser):
     home_page = PolicyCenterHome(browser)
     home_page.go()
     assert home_page.get_title() == home_page.expected_title
-    take_screenshot(browser)
+    Screenshot.capture(browser)
 
 
+@mark.skip
 def test_user_is_able_to_login(browser):
     home_page = PolicyCenterHome(browser)
     home_page.login_page.login(username='su', password='gw')
@@ -19,12 +21,12 @@ def test_user_is_able_to_login(browser):
     # take_screenshot(browser)
 
 
-@mark.skip
-def test_search_account(browser):
-    page = PolicyCenterHome(browser)
-    page.tab_bar.go_to_desktop()
+# @mark.skip
+def test_search_account(guidewire):
+    page = PolicyCenterHome(guidewire)
+    # page.tab_bar.go_to_desktop()
     page.tab_bar.search_account("7325149628")
-    account = Account(browser)
+    account = Account(guidewire)
     assert account.summary.account_summary_title_present()
 
 

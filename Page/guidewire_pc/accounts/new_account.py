@@ -246,6 +246,7 @@ class CreateAccountPage(BasePage):
     def input_office_phone(self, number):
         self.office_phone.enter_text(number)
         self.log.info(f"Office Phone: '{number}' value entered.")
+        self.office_phone.press_tab_key()
         # Page is reloading after entering the phone number
         self.title_bar.wait_for_screen("Create account")
 

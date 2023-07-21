@@ -3,7 +3,6 @@ from Base.baseelement import BaseElement
 from selenium.webdriver.common.by import By
 import definitions
 from Util.logs import getLogger
-from Util.screenshot import take_screenshot
 
 
 class Login(BasePage):
@@ -39,9 +38,7 @@ class Login(BasePage):
         self.login_button.click_element()
 
         if self._home_screen_title.is_element_present():
-            take_screenshot(self.driver)
             self.log.info("Login Successful")
         else:
-            take_screenshot(self.driver)
             self.log.info("Unable to Login. Invalid Credentials")
 

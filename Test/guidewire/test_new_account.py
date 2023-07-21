@@ -4,7 +4,7 @@ import definitions
 from Util import random_data, csv_data_converter
 from Page.guidewire_pc.policy_center_home import PolicyCenterHome
 from Page.guidewire_pc.accounts.account import Account
-from Util.screenshot import take_screenshot
+# from Util.screenshot import take_screenshot
 from pytest import mark, fixture
 
 
@@ -18,16 +18,12 @@ def data(request):
 
 
 # @mark.skip
-def test_new_account_creation(browser,login_data, data):
-    home_page = PolicyCenterHome(browser)
-    home_page.go()
-    time.sleep(2)
-    home_page.login_page.login(username=login_data["username"], password=login_data["password"])
-
-    pc = PolicyCenterHome(browser)
+def test_new_account_creation(guidewire,login_data, data):
+    home_page = PolicyCenterHome(guidewire)
+    pc = PolicyCenterHome(guidewire)
     pc.tab_bar.go_to_desktop()
     pc.tab_bar.create_new_account_btn()
-    account = Account(browser)
+    account = Account(guidewire)
     new_account = account.new_account
 
     account_type = data["account_type"]

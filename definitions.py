@@ -1,25 +1,16 @@
-from datetime import datetime
 import os
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # TODO: Put screenshot and env variables in some other dict like config
 global_dict = {
-    "screenshot_folder": "",
     "env": "test",
-    "screenshots": False
+    "take_screenshots": False,
 }
 
 
 def set_value(key, value):
     global_dict[key] = value
-
-
-# To create unique folder names along with time stamp for storing screenshots
-def create_screenshot_folder():
-    current_datetime = datetime.now()
-    folder_name = current_datetime.strftime("%Y_%m_%d-%H_%M_%S")
-    set_value("screenshot_folder", folder_name)
 
 
 # TODO exception handling

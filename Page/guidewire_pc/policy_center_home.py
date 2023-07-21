@@ -3,11 +3,12 @@ from Base.baseelement import BaseElement
 from selenium.webdriver.common.by import By
 import definitions
 from Util.logs import getLogger
-from Util.screenshot import take_screenshot
-from .tab_bar import TabBar
-from .login import Login
+from Page.guidewire_pc.tab_bar import TabBar
+from Page.guidewire_pc.login import Login
+from Util.read_json import config_test
 
 
+# URL = config_settings("test").base_url
 URL = {
     "test": "http://localhost:8180/pc/PolicyCenter.do",
     "dev" : "somthing dev"
@@ -24,3 +25,6 @@ class PolicyCenterHome(BasePage):
         self.expected_title = TITLE
         self.login_page = Login(self.driver)
         self.tab_bar = TabBar(self.driver)
+
+
+print(URL)

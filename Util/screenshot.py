@@ -1,33 +1,49 @@
-import datetime
 from definitions import ROOT_DIR, global_dict
+import os
+import random
+import string
+from datetime import datetime
 
 
-def take_screenshot(driver, base_element=None):
-    if global_dict["screenshots"]:
-        file_path = create_file_path()
-        if base_element is not None:
-            base_element.scroll_to_element()
-        driver.save_screenshot(file_path)
-    else:
-        pass
+# This Folder should be present in project directory
+SCREENSHOTS_FOLDER_PATH = ROOT_DIR + "\\ResultFiles\\screenshots\\"
 
 
-def highlight_element_and_take_screenshot(driver, base_element):
-    if global_dict["screenshots"]:
-        file_path = create_file_path()
-        base_element.scroll_to_element()
-        highlight_element(driver, base_element.web_element)
-        driver.save_screenshot(file_path)
-    else:
-        pass
+class Screenshot:
+    test_run_started = False
+    screenshot_folder = None
 
+    @staticmethod
+    def capture(driver):
+        if global_dict["take_screenshots"]:
+            if not Screenshot.test_run_started:
+                Screenshot._create_screenshot_folder()
 
-def create_file_path():
-    current_datetime = datetime.datetime.now()
-    image_name = current_datetime.strftime("capture" + "-%H%M%S%f" + ".png")
-    file_path = ROOT_DIR + f"\\ResultFiles\\screenshots\\{global_dict['screenshot_folder']}\\{image_name}"
-    return file_path
+            screenshot_filename = Screenshot._generate_unique_filename()
+            driver.save_screenshot(screenshot_filename)
+        else:
+            pass
 
+    @staticmethod
+    def highlight_and_capture(driver, base_element):
+        if global_dict["take_screenshots"]:
+            driver.execute_script("arguments[0].style.border='2px solid red'", base_element.web_element)
+            Screenshot.capture(driver)
 
-def highlight_element(driver, web_element):
-    driver.execute_script("arguments[0].style.border='2px solid red'", web_element)
+    @staticmethod
+    def _create_screenshot_folder(base_path=SCREENSHOTS_FOLDER_PATH):
+        timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        folder_name = f"run_{timestamp}"
+        Screenshot.screenshot_folder = os.path.join(base_path, folder_name)
+        # Create the folder if it doesn't exist
+        os.makedirs(Screenshot.screenshot_folder, exist_ok=True)
+        Screenshot.test_run_started = True
+        return Screenshot.screenshot_folder
+
+    @staticmethod
+    def _generate_unique_filename(file_extension=".png"):
+        timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        random_string = ''.join(random.choices(string.ascii_lowercase + string.digits, k=6))
+        filename = f"{timestamp}_{random_string}{file_extension}"
+        return os.path.join(Screenshot.screenshot_folder, filename)
+
