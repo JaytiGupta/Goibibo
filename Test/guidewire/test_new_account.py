@@ -9,7 +9,7 @@ from pytest import mark, fixture
 
 
 file_path = definitions.ROOT_DIR + "/Data/data_new_account.csv"
-test_data = csv_data_converter.get_rows(file_path, "TestCase", "1", "2", "3", "5", "6", "4")
+test_data = csv_data_converter.get_rows(file_path, "TestCase", "1", "2")#, "3", "5", "6", "4")
 
 
 @fixture(params=test_data)
@@ -17,13 +17,11 @@ def data(request):
     yield request.param
 
 
-# @mark.skip
-def test_new_account_creation(guidewire,login_data, data):
-    home_page = PolicyCenterHome(guidewire)
-    pc = PolicyCenterHome(guidewire)
+def test_new_account_creation(browser_pc, data):
+    pc = PolicyCenterHome(browser_pc)
     pc.tab_bar.go_to_desktop()
     pc.tab_bar.create_new_account_btn()
-    account = Account(guidewire)
+    account = Account(browser_pc)
     new_account = account.new_account
 
     account_type = data["account_type"]

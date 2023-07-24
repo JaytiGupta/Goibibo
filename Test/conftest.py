@@ -1,17 +1,26 @@
 from selenium import webdriver
 from pytest import fixture
 import definitions
-from Util import csv_data_converter
 from Util.logs import getLogger
 from Test.config import Config
 from Util.read_json import config_test
+from Util.config import Config, Environment
 from Page.guidewire_pc.login import Login
-import os
 
 
 log = getLogger()
 
-# test_data = csv_data_converter.get_rows(file_path, "env", definitions.global_dict["env"])
+
+# @fixture(scope='session')
+# def app_config(request):
+#     env_option = request.config.getoption("--env")
+#     screenshot_option = request.config.getoption("--screenshot")
+#
+#     env = Environment[env_option.upper()] if env_option else Environment.TEST
+#     take_screenshots = screenshot_option
+#
+#     cfg = Config(env, take_screenshots)
+#     return cfg
 
 
 @fixture(autouse=True, scope="session")
@@ -34,10 +43,11 @@ def browser():
 
 
 @fixture(scope="function")
-def guidewire(request, browser):
+def browser_pc(request, browser):
     log = getLogger()
     log.info("Opening Guidewire Policy Center.")
     environment_data = config_test(request.config.getoption("--env"))
+    # environment_data = config_test(definitions.global_dict["env"])
     browser.maximize_window()
     browser.get(environment_data.base_url)
     login_page = Login(browser)

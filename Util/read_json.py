@@ -10,6 +10,7 @@ def get_configuration(environment):
     config_file = CONFIG_FOLDER_PATH + f'config_{environment}.json'
     with open(config_file, 'r') as file:
         config_data = json.load(file)
+
     return config_data
 
 
@@ -27,5 +28,16 @@ def config_test(environment):
     return config_object
 
 
-a = config_test("test")
-print(a.username)
+# a = config_test("test")
+# print(a.username)
+
+if __name__ == "__main__":
+    env = "test"
+
+    b = config_test(env)
+    print(b.base_url)
+    print(b.username)
+    print(b.password)
+    print(b.timeout)
+
+

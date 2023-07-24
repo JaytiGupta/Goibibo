@@ -2,7 +2,6 @@ import os
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# TODO: Put screenshot and env variables in some other dict like config
 global_dict = {
     "env": "test",
     "take_screenshots": False,

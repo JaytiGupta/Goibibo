@@ -8,11 +8,11 @@ from Page.guidewire_pc.login import Login
 from Util.read_json import config_test
 
 
-# URL = config_settings("test").base_url
-URL = {
-    "test": "http://localhost:8180/pc/PolicyCenter.do",
-    "dev" : "somthing dev"
-       }[definitions.global_dict["env"]]
+# # URL = config_settings("test").base_url
+# URL = {
+#     "test": "http://localhost:8180/pc/PolicyCenter.do",
+#     "dev" : "somthing dev"
+#        }[definitions.global_dict["env"]]
 TITLE = "[DEV mode - 10.2.2.1786] Guidewire PolicyCenter"
 
 
@@ -21,10 +21,8 @@ class PolicyCenterHome(BasePage):
     log = getLogger()
 
     def __init__(self, driver):
-        super().__init__(driver=driver, url=URL)
+        super().__init__(driver=driver, url=None)
         self.expected_title = TITLE
         self.login_page = Login(self.driver)
         self.tab_bar = TabBar(self.driver)
 
-
-print(URL)

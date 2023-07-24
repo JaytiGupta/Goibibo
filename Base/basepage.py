@@ -11,7 +11,6 @@ class BasePage:
 
     def __init__(self, driver: webdriver.Chrome, url):
         self.driver = driver
-        # self.driver.set_page_load_timeout(5)  --- not of use for now
         self.url = url
 
     def go(self):

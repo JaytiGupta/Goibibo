@@ -1,0 +1,6 @@
+{
+  "base_url": "http://dev:8180/pc/PolicyCenter.do",
+  "username": "sudev",
+  "password": "gwdev",
+  "timeout": 15
+}
