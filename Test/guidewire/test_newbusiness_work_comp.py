@@ -16,18 +16,18 @@ def data(request):
     yield request.param
 
 
-def test_new_work_comp_policy_creation(browser, data, login_data):
-    home_page = PolicyCenterHome(browser)
+def test_new_work_comp_policy_creation(pc, data, login_data):
+    home_page = PolicyCenterHome(pc)
     home_page.go()
     home_page.login_page.login(username=login_data["username"], password=login_data["password"])
-    pc = PolicyCenterHome(browser)
+    pc = PolicyCenterHome(pc)
     pc.tab_bar.go_to_desktop()
     pc.tab_bar.search_account(data["Account_number"])
 
-    account = Account(browser)
+    account = Account(pc)
     account.summary.click_new_submission_btn()
 
-    policy = Policy(browser)
+    policy = Policy(pc)
     policy.new_submission_screen.select_base_state(data["new_submission_screen_base_state"])
     policy.new_submission_screen.enter_effective_date(data["new_submission_screen_effective_date"])
     policy.new_submission_screen.select_lob.workers_compensation()
@@ -97,5 +97,5 @@ def test_new_work_comp_policy_creation(browser, data, login_data):
     wc_policy.title_toolbar.issue_policy()
 
     # wc_policy.title_toolbar.screen_title_element.wait_till_text_to_be_present_in_element(Subm)
-    take_screenshot(browser)
+    take_screenshot(pc)
     csv_data_converter.update_csv(file_path, "TestCase", data["TestCase"], "submission_number", submission_number)

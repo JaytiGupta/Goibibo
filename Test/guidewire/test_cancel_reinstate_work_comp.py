@@ -17,20 +17,20 @@ def data(request):
     yield request.param
 
 
-def test_work_comp_cancel_policy_transaction(browser, data, login_data):
-    home_page = PolicyCenterHome(browser)
+def test_work_comp_cancel_policy_transaction(pc, data, login_data):
+    home_page = PolicyCenterHome(pc)
     home_page.go()
     home_page.login_page.login(username=login_data["username"],
                                password=login_data["password"])
-    pc = PolicyCenterHome(browser)
+    pc = PolicyCenterHome(pc)
     pc.tab_bar.go_to_desktop()
     pc.tab_bar.search_policy(data["policy_number"])
 
-    policy = Policy(browser)
+    policy = Policy(pc)
     policy.summary.new_transaction.cancel_policy()
 
     # Cancel
-    cancel_transaction = Cancel(browser)
+    cancel_transaction = Cancel(pc)
     cancel_transaction.start_cancellation_for_policy_screen.\
         fill_details(source=data["cancellation_source"],
                      reason=data["cancellation_reason"],
@@ -43,7 +43,7 @@ def test_work_comp_cancel_policy_transaction(browser, data, login_data):
 
     # Reinstate
     policy.summary.new_transaction.reinstate_policy()
-    reinstate = Reinstate(browser)
+    reinstate = Reinstate(pc)
     reinstate.start_reinstatement_screen.fill_details(reason=data["reinstate_reason"],
                                                       reason_description= data["reinstate_reason_description"])  #Other
     reinstate.title_toolbar.quote()

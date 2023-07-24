@@ -16,22 +16,15 @@ def data(request):
     yield request.param
 
 
-def test_login(browser, login_data):
-    home_page = PolicyCenterHome(browser)
-    home_page.go()
-    home_page.login_page.login(username=login_data["username"],
-                               password=login_data["password"])
-
-
-def test_new_commercial_auto_creation(browser, data):
-    PC = PolicyCenterHome(browser)
+def test_new_commercial_auto_creation(pc, data):
+    PC = PolicyCenterHome(pc)
     PC.tab_bar.go_to_desktop()
     PC.tab_bar.search_account(data["Account#"]) #"1342104490"
 
-    account = Account(browser)
+    account = Account(pc)
     account.summary.click_new_submission_btn()
 
-    policy = Policy(browser)
+    policy = Policy(pc)
     policy.new_submission_screen.select_base_state(data["base_state"])
     policy.new_submission_screen.enter_effective_date(data["effective_date"])
     policy.new_submission_screen.select_lob.commercial_auto()
@@ -98,5 +91,5 @@ def test_new_commercial_auto_creation(browser, data):
     # Workspace
     message_types = ca_policy.workspace_screen.get_all_message_types()
     assert any("error" in message_type.lower() for message_type in message_types)
-    take_screenshot(browser)
+    take_screenshot(pc)
     csv_data_converter.update_csv(file_path, "TestCase", data["TestCase"], "submission_number", submission_number)

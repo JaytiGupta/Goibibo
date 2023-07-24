@@ -18,12 +18,12 @@ def data(request):
 
 
 # @mark.skip
-def test_new_account_creation(guidewire,login_data, data):
-    home_page = PolicyCenterHome(guidewire)
-    pc = PolicyCenterHome(guidewire)
+def test_new_account_creation(pc, login_data, data):
+    home_page = PolicyCenterHome(pc)
+    pc = PolicyCenterHome(pc)
     pc.tab_bar.go_to_desktop()
     pc.tab_bar.create_new_account_btn()
-    account = Account(guidewire)
+    account = Account(pc)
     new_account = account.new_account
 
     account_type = data["account_type"]

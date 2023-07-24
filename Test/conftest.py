@@ -22,27 +22,26 @@ def setup_before_tests(request):
     definitions.set_value("env", request.config.getoption("--env"))
     yield
     # Code to run after all tests have finished (pytest_sessionfinish)
-    print("\nAll tests have finished. Performing cleanup or final actions here.")
     log.info("************* Execution complete *************")
 
 
 @fixture(scope="function")
-def browser():
+def pc():
     log = getLogger()
     log.info("Opening Chrome Browser.")
     yield webdriver.Chrome()
 
 
 @fixture(scope="function")
-def guidewire(request, browser):
+def pc(request, pc):
     log = getLogger()
     log.info("Opening Guidewire Policy Center.")
     environment_data = config_test(request.config.getoption("--env"))
-    browser.maximize_window()
-    browser.get(environment_data.base_url)
-    login_page = Login(browser)
+    pc.maximize_window()
+    pc.get(environment_data.base_url)
+    login_page = Login(pc)
     login_page.login(environment_data.username, environment_data.password)
-    yield browser
+    yield pc
 
 
 def pytest_addoption(parser):
