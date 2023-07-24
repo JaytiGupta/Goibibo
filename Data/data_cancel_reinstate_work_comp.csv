@@ -1,3 +1,7 @@
 TestCase,policy_number,cancellation_source,cancellation_reason,cancellation_reason_description,reinstate_reason,reinstate_reason_description
 1,4422699884,Insured,Policy not-taken,Test,Payment received,Test
 2,4422699884,Insured,Policy not-taken,Test,Other,Test
+11,8410742626,Insured,Policy not-taken,Test,Payment received,Test
+12,5038080091,Insured,Policy not-taken,Test,Other,Test
+13,0978102061,Insured,Policy not-taken,Test,Payment received,Test
+14,6101233616,Insured,Policy not-taken,Test,Other,Test

@@ -17,19 +17,19 @@ def data(request):
     yield request.param
 
 
-def test_work_comp_change_policy_transaction(browser, data, login_data):
-    home_page = PolicyCenterHome(browser)
+def test_work_comp_change_policy_transaction(pc, data, login_data):
+    home_page = PolicyCenterHome(pc)
     home_page.go()
     home_page.login_page.login(username=login_data["username"],
                                password=login_data["password"])
-    PC = PolicyCenterHome(browser)
+    PC = PolicyCenterHome(pc)
     PC.tab_bar.go_to_desktop()
     PC.tab_bar.search_policy(data["policy_number"])
 
-    policy = Policy(browser)
+    policy = Policy(pc)
     policy.summary.new_transaction.change_policy()
 
-    amendment = ChangePolicy(browser)
+    amendment = ChangePolicy(pc)
     amendment.start_policy_change_screen.fill_all_details(data["change_effective_date"],
                                                           data["description"])
     amendment.title_toolbar.next()
@@ -51,6 +51,6 @@ def test_work_comp_change_policy_transaction(browser, data, login_data):
     # Payment Screen
     submission_number: str = wc_policy.sidebar.transaction_number()
     wc_policy.title_toolbar.issue_policy()
-    take_screenshot(browser)
+    take_screenshot(pc)
     csv_data_converter.update_csv(file_path, "TestCase", data["TestCase"], "policy_change_number", submission_number)
 
