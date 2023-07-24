@@ -27,5 +27,3 @@ def test_search_policy(browser_pc):
 
 
 
-
-
