@@ -22,22 +22,7 @@ class ConfigObjectClass:
     timeout: int
 
 
-def config_test(environment):
+def config_data(environment):
     config = get_configuration(environment)
     config_object = ConfigObjectClass(**config)
     return config_object
-
-
-# a = config_test("test")
-# print(a.username)
-
-if __name__ == "__main__":
-    env = "test"
-
-    b = config_test(env)
-    print(b.base_url)
-    print(b.username)
-    print(b.password)
-    print(b.timeout)
-
-

@@ -1,2 +1,3 @@
-username,password
-su,gw
+env,username,password
+test,su,gw
+dev,su_dev,dwvgw

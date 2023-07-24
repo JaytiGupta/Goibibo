@@ -1,4 +1,4 @@
-from definitions import ROOT_DIR, global_dict
+import definitions
 import os
 import random
 import string
@@ -6,7 +6,7 @@ from datetime import datetime
 
 
 # This Folder should be present in project directory
-SCREENSHOTS_FOLDER_PATH = ROOT_DIR + "\\ResultFiles\\screenshots\\"
+SCREENSHOTS_FOLDER_PATH = definitions.ROOT_DIR + "\\ResultFiles\\screenshots\\"
 
 
 class Screenshot:
@@ -15,7 +15,7 @@ class Screenshot:
 
     @staticmethod
     def capture(driver):
-        if global_dict["take_screenshots"]:
+        if definitions.CONFIG.take_screenshot:
             if not Screenshot.test_run_started:
                 Screenshot._create_screenshot_folder()
 
@@ -26,8 +26,11 @@ class Screenshot:
 
     @staticmethod
     def highlight_and_capture(driver, base_element):
-        if global_dict["take_screenshots"]:
+        if definitions.CONFIG.take_screenshot:
+            # Highlight the element by adding a red border
             driver.execute_script("arguments[0].style.border='2px solid red'", base_element.web_element)
+            # Scroll to the element to ensure it's visible in the viewport
+            driver.execute_script("arguments[0].scrollIntoView(true);", base_element.web_element)
             Screenshot.capture(driver)
 
     @staticmethod

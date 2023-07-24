@@ -46,6 +46,10 @@ class TabBar(BasePage):
         input_box.enter_text(account_num)
         search_button = BaseElement(self.driver, self._locator_account_search_btn)
         search_button.click_element()
+
+        title_bar = TitleBar(self.driver)
+        title_bar.wait_for_screen("Account Summary:")
+
         self.log.info(f"Search account {account_num}")
 
     def create_new_account_btn(self):
