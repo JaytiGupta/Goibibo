@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1cff9728-a55a-47b7-9b9b-fec12f295d76" name="Changes" comment="Logs updated">
+      <change beforePath="$PROJECT_DIR$/../Automation_selenium_python/.idea/Automation_selenium_python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Automation_selenium_python/.idea/Automation_selenium_python.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Automation_selenium_python/Page/Amazon/amazon_cart.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Automation_selenium_python/Page/Amazon/amazon_cart.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Automation_selenium_python/ResultFiles/Logs/logfile.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Automation_selenium_python/ResultFiles/Logs/logfile.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Automation_selenium_python/ResultFiles/screenshots/2023_05_05-17_45_28/capture17_45_35920576.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Automation_selenium_python/Test/Goibibo/test_goibibo_homepage.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Automation_selenium_python/Test/Goibibo/test_goibibo_homepage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Automation_selenium_python/Test/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Automation_selenium_python/Test/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Automation_selenium_python/Test/guidewire/test_home.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Automation_selenium_python/Test/guidewire/test_home.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Automation_selenium_python/Util/csv_data_converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Automation_selenium_python/Util/csv_data_converter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Automation_selenium_python/Util/excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Automation_selenium_python/Util/excel.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../Automation_selenium_python" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2PEuez9LJVh8OqP7wkmOwwxaKTh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/shubham.singh/PycharmProjects/pandas_practice",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\shubham.singh\PycharmProjects\Goibibo\Data" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.Python tests in test_home.py">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="Automation_selenium_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="conftest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Automation_selenium_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test/conftest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="csv_data_converter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Automation_selenium_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Util" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Util/csv_data_converter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="notest_sample" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Automation_selenium_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test/guidewire" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test/guidewire/notest_sample.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <module name="Automation_selenium_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docs" factoryName="Docutils task">
+      <module name="Automation_selenium_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="docutils_input_file" value="" />
+      <option name="docutils_output_file" value="" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docs" factoryName="Sphinx task">
+      <module name="Automation_selenium_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="docutils_input_file" value="" />
+      <option name="docutils_output_file" value="" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in notest_sample.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Automation_selenium_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Automation_selenium_python/Test/guidewire" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/../Automation_selenium_python/Test/guidewire/notest_sample.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_home.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Automation_selenium_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Automation_selenium_python/Test/guidewire" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/../Automation_selenium_python/Test/guidewire/test_home.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Autodetect">
+      <module name="Automation_selenium_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <module name="Automation_selenium_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests in test_home.py" />
+        <item itemvalue="Python tests.Python tests in notest_sample.py" />
+        <item itemvalue="Python.conftest" />
+        <item itemvalue="Python.csv_data_converter" />
+        <item itemvalue="Python.notest_sample" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1cff9728-a55a-47b7-9b9b-fec12f295d76" name="Changes" comment="" />
+      <created>1683034662034</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1683034662034</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Created file &quot;definations&quot; and defined variable ROOT_DIR to access root directory anywhere in project">
+      <created>1683040538453</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1683040538453</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Updated file path with variable ROOT_DIR">
+      <created>1683040571889</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1683040571889</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Updated the path with variable ROOT_DIR">
+      <created>1683101164712</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1683101164712</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Pytest marker and small variable renames">
+      <created>1683105934681</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1683105934681</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Project Todo's updated in definations file and removed from test_forex">
+      <created>1683107776879</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683107776879</updated>
+    </task>
+    <task id="LOCAL-00006" summary="New Updates">
+      <created>1683544633355</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1683544633355</updated>
+    </task>
+    <task id="LOCAL-00007" summary="framwork_changes and guidewire POM files">
+      <created>1684152913171</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1684152913171</updated>
+    </task>
+    <task id="LOCAL-00008" summary="framwork_changes and guidewire POM files">
+      <created>1684325109481</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684325109481</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Updated get_element method. (except statement)">
+      <created>1684411024483</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1684411024483</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Updated 'accept_alert' method in BasePage class">
+      <created>1684411090319</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684411090319</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Changes 05/18">
+      <created>1684411182510</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684411182510</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Changes 05/18 -2">
+      <created>1684426049203</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1684426049203</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Changes 05/23 -2">
+      <created>1684838031138</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1684838031138</updated>
+    </task>
+    <task id="LOCAL-00014" summary="logs updated">
+      <created>1684850728556</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1684850728556</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Project Name updated">
+      <created>1684925786302</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1684925786302</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Logs updated">
+      <created>1684925812805</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1684925812805</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="Created file &quot;definations&quot; and defined variable ROOT_DIR to access root directory anywhere in project" />
+    <MESSAGE value="Updated file path with variable ROOT_DIR" />
+    <MESSAGE value="Updated the path with variable ROOT_DIR" />
+    <MESSAGE value="Pytest marker and small variable renames" />
+    <MESSAGE value="Project Todo's updated in definations file and removed from test_forex" />
+    <MESSAGE value="New Updates" />
+    <MESSAGE value="framwork_changes and guidewire POM files" />
+    <MESSAGE value="Updated get_element method. (except statement)" />
+    <MESSAGE value="Updated 'accept_alert' method in BasePage class" />
+    <MESSAGE value="Changes 05/18" />
+    <MESSAGE value="Changes 05/18 -2" />
+    <MESSAGE value="Changes 05/23 -2" />
+    <MESSAGE value="logs updated" />
+    <MESSAGE value="Project Name updated" />
+    <MESSAGE value="Logs updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Logs updated" />
+  </component>
+</project>
