@@ -13,6 +13,14 @@ class PolicySummary(BasePage):
         super().__init__(driver=driver, url=None)
         self.new_transaction = NewTransaction(self.driver)
 
+    def _policy_number(self):
+        locator = (By.XPATH, '//div[text()="Policy Number"]/following-sibling::div')
+        return BaseElement(self.driver, locator)
+
+    def get_policy_number(self) -> str:
+        policy_number = self._policy_number().get_text()
+        return policy_number
+
 
 class NewTransaction(BasePage):
     log = getLogger()

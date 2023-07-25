@@ -5,7 +5,7 @@ import definitions
 from Util.logs import getLogger
 from Page.guidewire_pc.tab_bar import TabBar
 from Page.guidewire_pc.login import Login
-from Util.read_json import config_test
+from Util.read_json import config_data
 
 
 # # URL = config_settings("test").base_url

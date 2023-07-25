@@ -1,21 +1,13 @@
 import os
+from Util.config import AppConfig
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
-global_dict = {
-    "env": "test",
-    "take_screenshots": False,
-}
+AVAILABLE_ENVIRONMENT = ("test", "dev")
 
-
-def set_value(key, value):
-    global_dict[key] = value
+CONFIG = AppConfig(AVAILABLE_ENVIRONMENT)
 
 
 # TODO exception handling
 # TODO reporting
 # TODO logs - separate file creation for each run
-# Add 8-10 test cases with lists/collections etc...   ----- 1 with each feature
-# TODO parallel/linear execution ------- 6
-# pass URL as parameter  ------ 1
-# github (try this first) /gitlab ------ 4
