@@ -17,6 +17,7 @@ class ChangePolicy(BasePage):
 
     def next_btn(self, driver):
         self.title_toolbar.next_btn.click_element()
+        self.title_toolbar.wait_for_screen("Policy Info")
 
 
 class StartPolicyChange(BasePage):

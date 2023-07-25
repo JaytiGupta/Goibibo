@@ -9,7 +9,7 @@ from Util import csv_data_converter
 
 
 file_path = definitions.ROOT_DIR + "/Data/data_policy_change_work_comp.csv"
-test_data = csv_data_converter.get_rows(file_path, "TestCase", "11", "12")
+test_data = csv_data_converter.get_rows(file_path, "TestCase", "1")
 
 
 @fixture(params=test_data)
@@ -18,7 +18,7 @@ def data(request):
 
 
 @mark.policychange
-@mark.skip
+# @mark.skip
 def test_work_comp_change_policy_transaction(browser_pc, data):
     PC = PolicyCenterHome(browser_pc)
     PC.tab_bar.go_to_desktop()
@@ -35,13 +35,12 @@ def test_work_comp_change_policy_transaction(browser_pc, data):
 
     # Policy Info Screen
     wc_policy = policy.work_comp
-    wc_policy.navigate_till_screen("WC Coverages")
-    wc_policy.wc_coverages_screen.update_class(row_number=data["wc_coverages_screen_class_rows#"],
-                                               gov_law=data["wc_coverages_screen_gov_law"],
-                                               basis_value=data["wc_coverages_screen_basis_value"])
-
-    wc_policy.navigate_till_screen("Policy Review")
-
+    wc_policy.title_toolbar.navigate_till_screen("Supplemental")
+    wc_policy.supplement_screen.table_questionnaires.\
+        select_radio_btn("Are athletic teams sponsored?", "Yes")
+    wc_policy.supplement_screen.table_questionnaires. \
+        select_radio_btn("Are employee health plans provided?", "Yes")
+    wc_policy.title_toolbar.navigate_till_screen("Policy Review")
     wc_policy.title_toolbar.quote()
     # Quote Screen
     wc_policy.title_toolbar.next()

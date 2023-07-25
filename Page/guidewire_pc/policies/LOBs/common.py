@@ -159,12 +159,13 @@ class TitleToolbar(BasePage):
         self.next_btn.click_element()
         self.screen_title_element.wait_till_text_to_be_not_present_in_element(title)
         self.back_btn.wait_till_text_to_be_present_in_element("Back")
-        # sidebar = Sidebar(self.driver)
-        # sidebar.heading.wait_till_text_to_be_present_in_element("Submission")
-        # try:
-        #     self.next_btn.wait_till_staleness_of_element()
-        # except WebDriverException:
-        #     self.screen_title_element.wait_till_text_to_be_not_present_in_element(title)
+
+    def navigate_till_screen(self, screen_title):
+        actual_screen_title = self.screen_title_text()
+
+        while screen_title != actual_screen_title:
+            self.next()
+            actual_screen_title = self.screen_title_text()
 
     def quote2(self):
         self.back_btn.wait_till_text_to_be_present_in_element("Back")
@@ -278,13 +279,6 @@ class TitleToolbar(BasePage):
         self.screen_title_element.wait_till_text_to_be_not_present_in_element(initial_screen_title)
         if self.screen_title_text() == "Reinstatement Bound":
             self.log.info("Your Reinstatement has been bound.")
-
-    def navigate_till_screen(self, screen_title):
-        actual_screen_title = self.screen_title_text()
-
-        while screen_title != actual_screen_title:
-            self.next()
-            actual_screen_title = self.screen_title_text()
 
 
 class Sidebar(BasePage):
