@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="82aaf498-e6c0-43b0-8f5f-8e928a4d18b3" name="Changes" comment="25th July - jayti" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2QEo99C57nYEl71ChcnEIvzPXWB" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jayti.gupta/PycharmProjects/Automation_selenium_python&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Python tests.pytest for test_newbusiness_work_comp.test_new_work_comp_policy_creation">
+    <configuration name="sample" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Automation_selenium_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test/sample.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_newbusiness_work_comp.test_new_work_comp_policy_creation" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Automation_selenium_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test/guidewire" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_newbusiness_work_comp.test_new_work_comp_policy_creation&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in test_cancel_reinstate_work_comp.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Automation_selenium_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test/guidewire" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Test/guidewire/test_cancel_reinstate_work_comp.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in test_comm_auto.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Automation_selenium_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test/guidewire" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Test/guidewire/test_comm_auto.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in test_new_account.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Automation_selenium_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test/guidewire" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Test/guidewire/test_new_account.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.pytest for test_newbusiness_work_comp.test_new_work_comp_policy_creation" />
+        <item itemvalue="Python tests.pytest in test_comm_auto.py" />
+        <item itemvalue="Python tests.pytest in test_cancel_reinstate_work_comp.py" />
+        <item itemvalue="Python tests.pytest in test_new_account.py" />
+        <item itemvalue="Python.sample" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="82aaf498-e6c0-43b0-8f5f-8e928a4d18b3" name="Changes" comment="" />
+      <created>1684927950670</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684927950670</updated>
+    </task>
+    <task id="LOCAL-00001" summary="new submission code">
+      <created>1684931410045</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684931410045</updated>
+    </task>
+    <task id="LOCAL-00002" summary="new submission code1">
+      <created>1685016885803</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685016885803</updated>
+    </task>
+    <task id="LOCAL-00003" summary="work_comp till Supplemental">
+      <created>1685455143696</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1685455143696</updated>
+    </task>
+    <task id="LOCAL-00004" summary="work_comp till quote">
+      <created>1686226805019</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686226805019</updated>
+    </task>
+    <task id="LOCAL-00005" summary="comm auto June 13th_jayti">
+      <created>1686652875748</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1686652875748</updated>
+    </task>
+    <task id="LOCAL-00006" summary="comm auto June 14th_jayti">
+      <created>1686753346620</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1686753346620</updated>
+    </task>
+    <task id="LOCAL-00007" summary="old files removed June 16th_jayti">
+      <created>1686912066251</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1686912066251</updated>
+    </task>
+    <task id="LOCAL-00008" summary="CA removed June 16th_jayti">
+      <created>1686912100453</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686912100453</updated>
+    </task>
+    <task id="LOCAL-00009" summary="minor updates June 16th_jayti">
+      <created>1686918557266</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1686918557266</updated>
+    </task>
+    <task id="LOCAL-00010" summary="2 excel files June 19th_jayti">
+      <created>1687173624254</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1687173624254</updated>
+    </task>
+    <task id="LOCAL-00011" summary="2 excel files June 19th_jayti">
+      <created>1687173741304</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1687173741304</updated>
+    </task>
+    <task id="LOCAL-00012" summary="CA June 19th_jayti">
+      <created>1687192316675</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1687192316675</updated>
+    </task>
+    <task id="LOCAL-00013" summary="CA June 19th_jayti">
+      <created>1687194491027</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1687194491027</updated>
+    </task>
+    <task id="LOCAL-00014" summary="CA June 21st_jayti">
+      <created>1687339563026</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1687339563026</updated>
+    </task>
+    <task id="LOCAL-00015" summary="ca data file">
+      <created>1687339581548</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1687339581548</updated>
+    </task>
+    <task id="LOCAL-00016" summary="latest change 21st June">
+      <created>1687351790929</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1687351790929</updated>
+    </task>
+    <task id="LOCAL-00017" summary="latest change 22nd June">
+      <created>1687431694612</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1687431694612</updated>
+    </task>
+    <task id="LOCAL-00018" summary="latest change 22nd June">
+      <created>1687432090822</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1687432090822</updated>
+    </task>
+    <task id="LOCAL-00019" summary="latest change 28th June">
+      <created>1687945773811</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1687945773811</updated>
+    </task>
+    <task id="LOCAL-00020" summary="cross browser testing code">
+      <created>1689158404070</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1689158404070</updated>
+    </task>
+    <task id="LOCAL-00021" summary="cross browser testing code">
+      <created>1689162620900</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1689162620900</updated>
+    </task>
+    <task id="LOCAL-00022" summary="requirements file">
+      <created>1689592278231</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1689592278231</updated>
+    </task>
+    <task id="LOCAL-00023" summary="minor changes">
+      <created>1689597240704</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1689597240704</updated>
+    </task>
+    <task id="LOCAL-00024" summary="minor changes - 19th July">
+      <created>1689756992182</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1689756992182</updated>
+    </task>
+    <task id="LOCAL-00025" summary="minor changes - 19th July">
+      <created>1689757121638</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1689757121638</updated>
+    </task>
+    <task id="LOCAL-00026" summary="minor changes - 19th July">
+      <created>1689763264474</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1689763264474</updated>
+    </task>
+    <task id="LOCAL-00027" summary="changes around next and quote - 20th July">
+      <created>1689860869285</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1689860869285</updated>
+    </task>
+    <task id="LOCAL-00028" summary="24th July - jayti">
+      <created>1690196615054</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1690196615054</updated>
+    </task>
+    <task id="LOCAL-00029" summary="25th July - jayti">
+      <created>1690265636830</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1690265636830</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="new submission code" />
+    <MESSAGE value="new submission code1" />
+    <MESSAGE value="work_comp till Supplemental" />
+    <MESSAGE value="work_comp till quote" />
+    <MESSAGE value="comm auto June 13th_jayti" />
+    <MESSAGE value="comm auto June 14th_jayti" />
+    <MESSAGE value="old files removed June 16th_jayti" />
+    <MESSAGE value="CA removed June 16th_jayti" />
+    <MESSAGE value="minor updates June 16th_jayti" />
+    <MESSAGE value="2 excel files June 19th_jayti" />
+    <MESSAGE value="CA June 19th_jayti" />
+    <MESSAGE value="CA June 21st_jayti" />
+    <MESSAGE value="ca data file" />
+    <MESSAGE value="latest change 21st June" />
+    <MESSAGE value="latest change 22nd June" />
+    <MESSAGE value="latest change 28th June" />
+    <MESSAGE value="cross browser testing code" />
+    <MESSAGE value="requirements file" />
+    <MESSAGE value="minor changes" />
+    <MESSAGE value="minor changes - 19th July" />
+    <MESSAGE value="changes around next and quote - 20th July" />
+    <MESSAGE value="24th July - jayti" />
+    <MESSAGE value="25th July - jayti" />
+    <option name="LAST_COMMIT_MESSAGE" value="25th July - jayti" />
+  </component>
+</project>
