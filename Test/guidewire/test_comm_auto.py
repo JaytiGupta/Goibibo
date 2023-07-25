@@ -3,7 +3,7 @@ from Util import random_data, csv_data_converter
 from Page.guidewire_pc.policy_center_home import PolicyCenterHome
 from Page.guidewire_pc.accounts.account import Account
 from Page.guidewire_pc.policies.policy import Policy
-from Util.screenshot import take_screenshot
+from Util.screenshot import Screenshot
 from pytest import fixture
 
 
