@@ -1,2 +1,4 @@
 TestCase,policy_number,change_effective_date,description,wc_coverages_screen_class_rows#,wc_coverages_screen_gov_law,wc_coverages_screen_location,wc_coverages_screen_class_code,wc_coverages_screen_employee,wc_coverages_screen_basis_value,policy_change_number
-1,2672994591,11/15/2023,test,2,Voluntary Comp,1,2883,10,15000,0001618605
+1,2672994591,11/15/2023,test,2,Voluntary Comp,1,2883,10,15000,1618605
+11,8410742626,11/15/2023,test,2,Voluntary Comp,1,2883,10,15000,1618605
+12,5038080091,11/15/2023,test,2,Voluntary Comp,1,2883,10,15000,1618605

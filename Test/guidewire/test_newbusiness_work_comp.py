@@ -3,12 +3,12 @@ from Util import csv_data_converter
 from Page.guidewire_pc.policy_center_home import PolicyCenterHome
 from Page.guidewire_pc.accounts.account import Account
 from Page.guidewire_pc.policies.policy import Policy
-from Util.screenshot import take_screenshot
+from Util.screenshot import Screenshot
 from pytest import mark, fixture
 
 
 file_path = definitions.ROOT_DIR + "/Data/data_newbusiness_work_comp.csv"
-test_data = csv_data_converter.get_rows(file_path, "TestCase", "11", "12", "13", "14")
+test_data = csv_data_converter.get_rows(file_path, "TestCase", "11")#, "12", "13", "14")
 
 
 @fixture(params=test_data)
@@ -16,18 +16,16 @@ def data(request):
     yield request.param
 
 
-def test_new_work_comp_policy_creation(pc, data, login_data):
-    home_page = PolicyCenterHome(pc)
-    home_page.go()
-    home_page.login_page.login(username=login_data["username"], password=login_data["password"])
-    pc = PolicyCenterHome(pc)
-    pc.tab_bar.go_to_desktop()
+@mark.workcomp
+@mark.newbusiness
+def test_new_work_comp_policy_creation(browser_pc, data):
+    pc = PolicyCenterHome(browser_pc)
     pc.tab_bar.search_account(data["Account_number"])
 
-    account = Account(pc)
+    account = Account(browser_pc)
     account.summary.click_new_submission_btn()
 
-    policy = Policy(pc)
+    policy = Policy(browser_pc)
     policy.new_submission_screen.select_base_state(data["new_submission_screen_base_state"])
     policy.new_submission_screen.enter_effective_date(data["new_submission_screen_effective_date"])
     policy.new_submission_screen.select_lob.workers_compensation()
@@ -80,6 +78,7 @@ def test_new_work_comp_policy_creation(pc, data, login_data):
     # wc_policy.risk_analysis_screen.SCREEN_TITLE
 
     # risk analysis screen
+    Screenshot.capture(browser_pc)
     wc_policy.title_toolbar.next()
 
     # policy review screen
@@ -96,6 +95,6 @@ def test_new_work_comp_policy_creation(pc, data, login_data):
     submission_number: str = wc_policy.sidebar.transaction_number()
     wc_policy.title_toolbar.issue_policy()
 
-    # wc_policy.title_toolbar.screen_title_element.wait_till_text_to_be_present_in_element(Subm)
-    take_screenshot(pc)
+    wc_policy.title_toolbar.screen_title_element.wait_till_text_to_be_present_in_element("Submission Bound")
+    Screenshot.capture(browser_pc)
     csv_data_converter.update_csv(file_path, "TestCase", data["TestCase"], "submission_number", submission_number)

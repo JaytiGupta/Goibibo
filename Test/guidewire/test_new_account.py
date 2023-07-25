@@ -1,15 +1,13 @@
-import time
-
 import definitions
 from Util import random_data, csv_data_converter
 from Page.guidewire_pc.policy_center_home import PolicyCenterHome
 from Page.guidewire_pc.accounts.account import Account
-# from Util.screenshot import take_screenshot
+from Util.screenshot import Screenshot
 from pytest import mark, fixture
 
 
 file_path = definitions.ROOT_DIR + "/Data/data_new_account.csv"
-test_data = csv_data_converter.get_rows(file_path, "TestCase", "1", "2")#, "3", "5", "6", "4")
+test_data = csv_data_converter.get_rows(file_path, "TestCase", "11", "12", "13", "15", "16", "14")
 
 
 @fixture(params=test_data)
@@ -17,6 +15,7 @@ def data(request):
     yield request.param
 
 
+@mark.smoke
 def test_new_account_creation(browser_pc, data):
     pc = PolicyCenterHome(browser_pc)
     pc.tab_bar.go_to_desktop()
@@ -53,21 +52,7 @@ def test_new_account_creation(browser_pc, data):
                                                       producer_code=data["producer"])
     new_account.create_account_screen.click_btn_update()
     account_number = account.summary.get_account_number()
+    Screenshot.capture(browser_pc)
     csv_data_converter.update_csv(file_path, "TestCase", data["TestCase"], "account_number", account_number)
-    # pc.tab_bar.go_to_desktop()
-    # pc.tab_bar.log_out_user()
 
 
-# @mark.skip
-# def test_default_company_account_creation(browser, login_data):
-#     home_page = PolicyCenterHome(browser)
-#     home_page.go()
-#     time.sleep(2)
-#     home_page.login_page.login(username=login_data["username"], password=login_data["password"])
-#
-#     page = PolicyCenterHome(browser)
-#     page.tab_bar.go_to_desktop()
-#     page.tab_bar.create_new_account_btn()
-#     account = Account(browser)
-#     account.new_account.create_default_new_account("Company", "VA")
-#     assert account.summary.account_summary_title_present()

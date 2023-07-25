@@ -4,7 +4,7 @@ from Page.guidewire_pc.policy_center_home import PolicyCenterHome
 from Page.guidewire_pc.accounts.account import Account
 from Page.guidewire_pc.policies.policy import Policy
 from Util.screenshot import Screenshot
-from pytest import fixture
+from pytest import fixture, mark
 
 
 file_path = definitions.ROOT_DIR + "/Data/data_new_submission_comm_auto.csv"
@@ -16,15 +16,16 @@ def data(request):
     yield request.param
 
 
-def test_new_commercial_auto_creation(pc, data):
-    PC = PolicyCenterHome(pc)
-    PC.tab_bar.go_to_desktop()
-    PC.tab_bar.search_account(data["Account#"]) #"1342104490"
-
-    account = Account(pc)
+@mark.newbusiness
+@mark.smoke
+@mark.commauto
+def test_new_commercial_auto_creation(browser_pc, data):
+    pc = PolicyCenterHome(browser_pc)
+    pc.tab_bar.search_account(data["Account#"])
+    account = Account(browser_pc)
     account.summary.click_new_submission_btn()
 
-    policy = Policy(pc)
+    policy = Policy(browser_pc)
     policy.new_submission_screen.select_base_state(data["base_state"])
     policy.new_submission_screen.enter_effective_date(data["effective_date"])
     policy.new_submission_screen.select_lob.commercial_auto()
@@ -91,5 +92,5 @@ def test_new_commercial_auto_creation(pc, data):
     # Workspace
     message_types = ca_policy.workspace_screen.get_all_message_types()
     assert any("error" in message_type.lower() for message_type in message_types)
-    take_screenshot(pc)
+    Screenshot.capture(browser_pc)
     csv_data_converter.update_csv(file_path, "TestCase", data["TestCase"], "submission_number", submission_number)
