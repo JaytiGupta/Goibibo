@@ -15,12 +15,17 @@ class ChangePolicy(BasePage):
         self.title_toolbar = common.TitleToolbar(self.driver)
         self.start_policy_change_screen = StartPolicyChange(self.driver)
 
+    def next_btn(self, driver):
+        self.title_toolbar.next_btn.click_element()
+
 
 class StartPolicyChange(BasePage):
     log = getLogger()
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
+        self.title_toolbar = common.TitleToolbar(self.driver)
+
 
     @property
     def effective_date_input_box(self):

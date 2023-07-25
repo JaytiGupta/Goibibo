@@ -33,7 +33,7 @@ class WorkersCompensation(BasePage):
         actual_screen_title = self.title_toolbar.screen_title_text()
 
         while screen_title != actual_screen_title:
-            self.title_toolbar.next()
+            self.title_toolbar.next_btn.click_element()
             actual_screen_title = self.title_toolbar.screen_title_text()
 
 

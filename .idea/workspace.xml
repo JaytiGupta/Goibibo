@@ -2,18 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82aaf498-e6c0-43b0-8f5f-8e928a4d18b3" name="Changes" comment="25th July - jayti">
-      <change afterPath="$PROJECT_DIR$/Test/guidewire/test_default_account_creation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_16-04-45/2023-07-25_16-04-45_bqsisf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_16-04-45/2023-07-25_16-05-19_hocivw.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_16-08-40/2023-07-25_16-08-40_yk4six.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_16-08-40/2023-07-25_16-08-59_6oowi0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_16-42-26/2023-07-25_16-42-26_yiyqpi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_16-44-33/2023-07-25_16-44-33_divwkv.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_16-44-33/2023-07-25_16-44-33_ki7hbz.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17-05-2023_17_36__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17-05-2023_17_36__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24-05-2023_18_13__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24-05-2023_18_13__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/data_new_account.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_new_account.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/data_new_submission_comm_auto.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_new_submission_comm_auto.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/data_newbusiness_work_comp.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_newbusiness_work_comp.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/data_policy_change_work_comp.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_policy_change_work_comp.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/work_comp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/work_comp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/Trasactions/change_policy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/Trasactions/change_policy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ResultFiles/Logs/logfile.log" beforeDir="false" afterPath="$PROJECT_DIR$/ResultFiles/Logs/logfile.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_comm_auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_comm_auto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_home.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_home.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_new_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_new_account.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_newbusiness_work_comp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_newbusiness_work_comp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_cancel_reinstate_work_comp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_cancel_reinstate_work_comp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_policy_change_work_comp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_policy_change_work_comp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Test/pytest.ini" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -365,7 +371,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690266186960</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="25th July - jayti">
+      <created>1690283833611</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1690283833611</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
