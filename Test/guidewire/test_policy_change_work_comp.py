@@ -9,7 +9,7 @@ from Util import csv_data_converter
 
 
 file_path = definitions.ROOT_DIR + "/Data/data_policy_change_work_comp.csv"
-test_data = csv_data_converter.get_rows(file_path, "TestCase", "1")
+test_data = csv_data_converter.get_rows(file_path, "TestCase", "11")#, "12")
 
 
 @fixture(params=test_data)

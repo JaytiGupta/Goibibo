@@ -9,7 +9,7 @@ from Util.screenshot import Screenshot
 
 
 file_path = definitions.ROOT_DIR + "/Data/data_cancel_reinstate_work_comp.csv"
-test_data = csv_data_converter.get_rows(file_path, "TestCase", "11", "12")
+test_data = csv_data_converter.get_rows(file_path, "TestCase", "13", "14")
 
 
 @fixture(params=test_data)
