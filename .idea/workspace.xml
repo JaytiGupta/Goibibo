@@ -28,7 +28,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17-05-2023_17_36__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24-05-2023_18_13__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ResultFiles/Logs/logfile.log" beforeDir="false" afterPath="$PROJECT_DIR$/ResultFiles/Logs/logfile.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/test_sample.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/test_sample.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_home.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_home.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +44,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Test/pytest.ini" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -414,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690358692270</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="26th - Jayti">
+      <created>1690359222795</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1690359222795</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

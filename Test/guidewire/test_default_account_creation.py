@@ -4,7 +4,7 @@ from Util.screenshot import Screenshot
 from pytest import mark
 
 
-@mark.regression
+# @mark.regression
 def test_default_company_account_creation(browser_pc):
     page = PolicyCenterHome(browser_pc)
     page.tab_bar.create_new_account_btn()
@@ -14,7 +14,7 @@ def test_default_company_account_creation(browser_pc):
     assert account.summary.account_summary_title_present()
 
 
-@mark.regression
+# @mark.regression
 def test_default_person_account_creation(browser_pc):
     page = PolicyCenterHome(browser_pc)
     page.tab_bar.create_new_account_btn()

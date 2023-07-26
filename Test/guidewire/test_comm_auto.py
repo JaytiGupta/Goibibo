@@ -16,9 +16,9 @@ def data(request):
     yield request.param
 
 
-@mark.newbusiness
-@mark.smoke
-@mark.commauto
+# @mark.newbusiness
+# @mark.smoke
+# @mark.commauto
 def test_new_commercial_auto_creation(browser_pc, data):
     pc = PolicyCenterHome(browser_pc)
     pc.tab_bar.search_account(data["Account#"])

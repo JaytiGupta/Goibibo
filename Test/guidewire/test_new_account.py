@@ -15,7 +15,7 @@ def data(request):
     yield request.param
 
 
-@mark.smoke
+# @mark.smoke
 def test_new_account_creation(browser_pc, data):
     pc = PolicyCenterHome(browser_pc)
     pc.tab_bar.go_to_desktop()

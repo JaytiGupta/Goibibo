@@ -17,7 +17,7 @@ def data(request):
     yield request.param
 
 
-@mark.policychange
+# @mark.policychange
 # @mark.skip
 def test_work_comp_change_policy_transaction(browser_pc, data):
     PC = PolicyCenterHome(browser_pc)

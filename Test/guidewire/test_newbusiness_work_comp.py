@@ -16,8 +16,8 @@ def data(request):
     yield request.param
 
 
-@mark.workcomp
-@mark.newbusiness
+# @mark.workcomp
+# @mark.newbusiness
 def test_new_work_comp_policy_creation(browser_pc, data):
     pc = PolicyCenterHome(browser_pc)
     pc.tab_bar.search_account(data["Account_number"])

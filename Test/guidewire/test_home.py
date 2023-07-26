@@ -6,8 +6,8 @@ from pytest import mark
 from Page.guidewire_pc.policies.common.sidebar import Sidebar
 
 
-@mark.regression
-@mark.smoke
+# @mark.regression
+# @mark.smoke
 def test_search_account(browser_pc):
     page = PolicyCenterHome(browser_pc)
     page.tab_bar.search_account("5635397383")
@@ -16,8 +16,8 @@ def test_search_account(browser_pc):
     Screenshot.capture(browser_pc)
 
 
-@mark.smoke
-@mark.regression
+# @mark.smoke
+# @mark.regression
 def test_search_submission(browser_pc):
     submission_number = "0000038964"
     page = PolicyCenterHome(browser_pc)
@@ -27,8 +27,8 @@ def test_search_submission(browser_pc):
     Screenshot.highlight_and_capture(browser_pc, policy_sidebar.heading)
 
 
-@mark.smoke
-@mark.regression
+# @mark.smoke
+# @mark.regression
 def test_search_policy(browser_pc):
     policy_number_to_search = "8410742626"
     page = PolicyCenterHome(browser_pc)
