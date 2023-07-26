@@ -10,7 +10,7 @@ from Page.guidewire_pc.policies.common.sidebar import Sidebar
 @mark.smoke
 def test_search_account(browser_pc):
     page = PolicyCenterHome(browser_pc)
-    page.tab_bar.search_account("7325149628")
+    page.tab_bar.search_account("5635397383")
     account = Account(browser_pc)
     assert account.summary.account_summary_title_present()
     Screenshot.capture(browser_pc)

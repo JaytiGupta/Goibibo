@@ -9,18 +9,27 @@
       <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_16-42-26/2023-07-25_16-42-26_yiyqpi.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_16-44-33/2023-07-25_16-44-33_divwkv.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_16-44-33/2023-07-25_16-44-33_ki7hbz.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17-05-2023_17_36__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17-05-2023_17_36__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24-05-2023_18_13__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24-05-2023_18_13__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-20-53/2023-07-25_17-20-53_0joit0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-20-53/2023-07-25_17-21-27_xo1nae.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-23-55/2023-07-25_17-23-55_0dm6rs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-23-55/2023-07-25_17-25-54_i209y8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-23-55/2023-07-25_17-26-15_mp939s.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-23-58/2023-07-25_17-23-58_xcaa3e.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-23-58/2023-07-25_17-24-56_rfoqmy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-24-09/2023-07-25_17-24-09_21knv2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-24-09/2023-07-25_17-25-11_8xikfq.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-24-17/2023-07-25_17-24-17_7h6fmy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-24-17/2023-07-25_17-25-19_3ajdax.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-24-29/2023-07-25_17-24-29_rh5wqe.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-24-29/2023-07-25_17-25-53_m1yttf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-24-33/2023-07-25_17-24-33_jkpfkb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-25-25/2023-07-25_17-25-25_ux0nf8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-25-25/2023-07-25_17-26-24_bgwpls.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17-05-2023_17_36__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24-05-2023_18_13__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/data_new_account.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_new_account.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/data_new_submission_comm_auto.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_new_submission_comm_auto.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/data_newbusiness_work_comp.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_newbusiness_work_comp.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/work_comp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/work_comp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/Trasactions/change_policy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/Trasactions/change_policy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ResultFiles/Logs/logfile.log" beforeDir="false" afterPath="$PROJECT_DIR$/ResultFiles/Logs/logfile.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_cancel_reinstate_work_comp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_cancel_reinstate_work_comp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_policy_change_work_comp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_policy_change_work_comp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Test/pytest.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_home.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_home.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -378,7 +387,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690283833611</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="25th July - jayti">
+      <created>1690286359826</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1690286359826</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
