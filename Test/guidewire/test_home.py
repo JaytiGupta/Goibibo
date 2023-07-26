@@ -19,7 +19,7 @@ def test_search_account(browser_pc):
 @mark.smoke
 @mark.regression
 def test_search_submission(browser_pc):
-    submission_number = "0001930088"
+    submission_number = "0000038964"
     page = PolicyCenterHome(browser_pc)
     page.tab_bar.search_submission(submission_number)
     policy_sidebar = Sidebar(browser_pc)
@@ -30,7 +30,7 @@ def test_search_submission(browser_pc):
 @mark.smoke
 @mark.regression
 def test_search_policy(browser_pc):
-    policy_number_to_search = "7823570597"
+    policy_number_to_search = "8410742626"
     page = PolicyCenterHome(browser_pc)
     page.tab_bar.search_policy(policy_number_to_search)
     policy_summary_screen = PolicySummary(browser_pc)
