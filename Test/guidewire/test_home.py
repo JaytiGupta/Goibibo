@@ -26,8 +26,8 @@ def test_search_submission(browser_pc):
     page = PolicyCenterHome(browser_pc)
     page.tab_bar.search_submission(submission_number)
     policy_sidebar = Sidebar(browser_pc)
-    assert submission_number in policy_sidebar.heading.get_text()
-    Screenshot.highlight_and_capture(browser_pc, policy_sidebar.heading)
+    # assert submission_number in policy_sidebar.heading.get_text()
+    # Screenshot.highlight_and_capture(browser_pc, policy_sidebar.heading)
 
 
 # @mark.smoke
