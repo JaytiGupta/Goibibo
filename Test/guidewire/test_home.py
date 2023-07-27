@@ -21,13 +21,13 @@ def test_search_account(browser_pc):
 # @mark.smoke
 # @mark.regression
 def test_search_submission(browser_pc):
-    submission_number = "0000655199"
+    submission_number = "0000082844"
     # submission_number = "0000038964"
     page = PolicyCenterHome(browser_pc)
     page.tab_bar.search_submission(submission_number)
     policy_sidebar = Sidebar(browser_pc)
-    # assert submission_number in policy_sidebar.heading.get_text()
-    # Screenshot.highlight_and_capture(browser_pc, policy_sidebar.heading)
+    assert submission_number in policy_sidebar.heading.get_text()
+    Screenshot.highlight_and_capture(browser_pc, policy_sidebar.heading)
 
 
 # @mark.smoke
