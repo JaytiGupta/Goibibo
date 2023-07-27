@@ -23,8 +23,6 @@ class BasePage:
 
     def accept_alert(self):
         try:
-            # wait = WebDriverWait(self.driver, 10)
-            # alert = wait.until(EC.alert_is_present())
             alert = self.driver.switch_to.alert
             alert.accept()
             self.log.info("alert accepted")

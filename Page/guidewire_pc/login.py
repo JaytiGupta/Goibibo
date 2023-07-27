@@ -38,7 +38,7 @@ class Login(BasePage):
         self.login_button.click_element()
 
         if self._home_screen_title.is_element_present():
-            self.log.info("Login Successful")
+            self.log.info("Login Successful - Guidewire Policy Center.")
         else:
             self.log.info("Unable to Login. Invalid Credentials")
 

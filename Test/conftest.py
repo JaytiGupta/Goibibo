@@ -4,27 +4,25 @@ import definitions
 from Util.logs import getLogger
 from Util.read_json import config_data
 from Page.guidewire_pc.login import Login
+from Page.guidewire_pc.policy_center_home import PolicyCenterHome
 
-log = getLogger()
 
-
-@fixture(scope="function")
+@fixture(scope="session")
 def browser():
-    # log = getLogger()
-    log.info("Opening Chrome Browser.")
+    getLogger().info("Opening Chrome Browser.")
     yield webdriver.Chrome()
 
 
 @fixture(scope="function")
 def browser_pc(browser):
-    # log = getLogger()
-    log.info("Opening Guidewire Policy Center.")
     environment_data = config_data(definitions.CONFIG.env)
     browser.maximize_window()
     browser.get(environment_data.base_url)
     login_page = Login(browser)
     login_page.login(environment_data.username, environment_data.password)
     yield browser
+    pc_home = PolicyCenterHome(browser)
+    pc_home.tab_bar.log_out_user()
 
 
 def pytest_addoption(parser):
@@ -50,14 +48,29 @@ def take_screenshots(request):
     return request.config.getoption("--screenshot")
 
 
-@fixture(scope='session', autouse=True)
-def app_config(env, take_screenshots):
-    # log = getLogger()
-    log.info("************* Starting Execution *************")
-    definitions.CONFIG.env = env.lower()
-    definitions.CONFIG.take_screenshot = take_screenshots
-    yield
+fixture_executed = False  # Session-scoped flag variable
+
+
+# Define the finalizer function
+def finalizer(log):
     log.info("************* Execution complete *************")
+
+
+@fixture(scope='session', autouse=True)
+def app_config(request, env, take_screenshots):
+    global fixture_executed
+    if not fixture_executed:
+        log2 = getLogger()
+        log2.info("************* Starting Execution *************")
+        definitions.CONFIG.env = env.lower()
+        definitions.CONFIG.take_screenshot = take_screenshots
+        fixture_executed = True  # Set the flag to True to indicate the fixture has been executed once
+
+        # Add the finalizer to the request
+        request.addfinalizer(lambda: finalizer(log2))
+
+    # Yield here, fixture execution will resume after all tests are done
+    yield
 
 
 if __name__ == "__main__":

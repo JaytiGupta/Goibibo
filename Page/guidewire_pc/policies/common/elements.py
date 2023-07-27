@@ -1,3 +1,5 @@
+import random
+
 from selenium.webdriver.common.by import By
 from Base.baseelement import BaseElement
 from Util.logs import getLogger
@@ -46,6 +48,52 @@ class TableQuestionnaires:
         locator = (By.XPATH, x_path)
         dropdown_elm = BaseElement(self.driver, locator)
         dropdown_elm.select_option(text=dropdown_text)
+
+
+class SearchOptionPicker:
+    log = getLogger()
+
+    def __init__(self, driver, search_btn_xpath):
+        self.driver = driver
+        self.search_btn_xpath = search_btn_xpath
+
+    @property
+    def _search_btn_locator(self):
+        locator = (By.XPATH, self.search_btn_xpath)
+        return BaseElement(self.driver, locator)
+
+    @property
+    def _last_page_locator(self):
+        locator = (By.XPATH, '//div[@class="gw-paging--label-post"]')
+        return BaseElement(self.driver, locator)
+
+    @property
+    def _page_input(self):
+        locator = (By.XPATH, '//input[@class="gw-paging--input gw-noTrack"]')
+        return BaseElement(self.driver, locator)
+
+    @property
+    def _select_button(self):
+        locator = (By.XPATH, '//div[text()="Select"]')
+        return BaseElement(self.driver, locator)
+
+    def select_random_option_on_page(self):
+        all_select_buttons = self._select_button.get_all_elements()
+        random.choice(all_select_buttons).click()
+
+    def _navigate_to_random_page(self):
+        last_page_text = self._last_page_locator.get_text()
+        last_page = int(last_page_text.replace("/", ""))
+
+        page_to_navigate = random.randint(1, last_page)
+
+        self._page_input.enter_text(page_to_navigate)
+        self._page_input.press_enter_key()
+
+    def select_random_option(self):
+        self._search_btn_locator.click_element()
+        self._navigate_to_random_page()
+        self.select_random_option_on_page()
 
 
 # TODO - for WC coverages screen add class

@@ -7,15 +7,18 @@ from pytest import mark, fixture
 
 
 file_path = definitions.ROOT_DIR + "/Data/data_new_account.csv"
-test_data = csv_data_converter.get_rows(file_path, "TestCase", "11", "12", "13", "15", "16", "14")
+s_test_data = csv_data_converter.get_rows(file_path, "TestCase", "1", "2", "3", "5", "6", "4")
+j_test_data = csv_data_converter.get_rows(file_path, "TestCase", "11", "12", "13", "15", "16", "14")
 
 
-@fixture(params=test_data)
+@fixture(params=s_test_data)
 def data(request):
     yield request.param
 
 
-# @mark.smoke
+@mark.account
+@mark.account_creation
+@mark.smoke
 def test_new_account_creation(browser_pc, data):
     pc = PolicyCenterHome(browser_pc)
     pc.tab_bar.go_to_desktop()

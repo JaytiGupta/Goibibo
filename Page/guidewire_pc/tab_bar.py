@@ -1,3 +1,5 @@
+from selenium.common import NoAlertPresentException
+
 from Base.basepage import BasePage
 from Base.baseelement import BaseElement
 from selenium.webdriver.common.by import By
@@ -85,9 +87,13 @@ class TabBar(BasePage):
         self.log.info(f"Navigate to admin tab.")
 
     def log_out_user(self):
+        self.log.info(f"Logging out.")
+
         self.options_btn.click_element()
         sign_out_btn = BaseElement(self.driver, self._locator_options_logout)
         sign_out_btn.click_element()
+        self.accept_alert()
+
         login_page = Login(self.driver)
         login_page.login_button.wait_till_text_to_be_present_in_element("Log In")
         sign_out_btn.wait_till_staleness_of_element()

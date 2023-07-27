@@ -29,13 +29,6 @@ class WorkersCompensation(BasePage):
         self.workspace_screen = common.Workspace(self.driver)
         self.transaction_bound_screen = common.TransactionBoundScreen(self.driver)
 
-    # def navigate_till_screen(self, screen_title):
-    #     actual_screen_title = self.title_toolbar.screen_title_text()
-    #
-    #     while screen_title != actual_screen_title:
-    #         self.title_toolbar.next_btn.click_element()
-    #         actual_screen_title = self.title_toolbar.screen_title_text()
-
 
 class Qualification:
     log = getLogger()

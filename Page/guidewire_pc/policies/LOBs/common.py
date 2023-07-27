@@ -148,13 +148,6 @@ class TitleToolbar(BasePage):
         return text
 
     def next(self):
-        # self.next_btn.click_element()
-        # self.next_btn.wait_till_staleness_of_element() # wait for page change
-        # OR
-        # title = self.screen_title_text()
-        # self.next_btn.click_element()
-        # self.screen_title_element.wait_till_text_to_be_not_present_in_element(title)
-        # OR
         title = self.screen_title_text()
         self.next_btn.click_element()
         self.screen_title_element.wait_till_text_to_be_not_present_in_element(title)
