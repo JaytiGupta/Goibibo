@@ -5919,3 +5919,19 @@
 2023-07-28 17:56:25 [INFO] TabBar :Logging out.
 2023-07-28 17:56:25 [INFO] TabBar :alert accepted
 2023-07-28 17:56:27 [INFO] app_config :************* Execution complete *************
+2023-07-28 18:14:47 [INFO] app_config :************* Starting Execution *************
+2023-07-28 18:14:47 [INFO] app_config :************* Starting Execution *************
+2023-07-28 18:14:47 [INFO] browser :Opening Chrome Browser.
+2023-07-28 18:14:47 [INFO] browser :Opening Chrome Browser.
+2023-07-28 18:14:53 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 18:14:53 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 18:14:53 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 18:14:54 [INFO] TabBar :Search submission 0000082844
+2023-07-28 18:14:54 [INFO] TabBar :Search policy 2672994591
+2023-07-28 18:14:54 [INFO] TabBar :Logging out.
+2023-07-28 18:14:54 [INFO] TabBar :Logging out.
+2023-07-28 18:14:56 [INFO] TabBar :Search account 3164631717
+2023-07-28 18:14:56 [INFO] TabBar :Logging out.
+2023-07-28 18:14:57 [INFO] app_config :************* Execution complete *************
+2023-07-28 18:14:57 [INFO] app_config :************* Execution complete *************
+2023-07-28 18:14:59 [INFO] app_config :************* Execution complete *************

@@ -158,11 +158,11 @@ class BaseElement:
         WebDriverWait(self.driver, MAX_WAIT_TIME).\
             until(EC.invisibility_of_element_located(self.locator))
 
-    # def wait_till_staleness_of_element(self):
-    #     WebDriverWait(self.driver, MAX_WAIT_TIME).until(EC.staleness_of(self.web_element))
-    #
-    # def wait_till_visibility_of_element(self):
-    #     WebDriverWait(self.driver, MAX_WAIT_TIME).until(EC.visibility_of(self.web_element))
+    def wait_till_staleness_of_element(self):
+        WebDriverWait(self.driver, MAX_WAIT_TIME).until(EC.staleness_of(self.web_element))
+
+    def wait_till_visibility_of_element(self):
+        WebDriverWait(self.driver, MAX_WAIT_TIME).until(EC.visibility_of(self.web_element))
 
     # methods for multiple elements returned
     def get_all_elements(self) -> list:
