@@ -39,11 +39,3 @@ class DesktopSearchTests:
         policy_number_in_details = policy_summary_screen.get_policy_number()
         assert policy_number_to_search == policy_number_in_details
         Screenshot.capture(browser_pc)
-
-
-
-
-
-
-
-

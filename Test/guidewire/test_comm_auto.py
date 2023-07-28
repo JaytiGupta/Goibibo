@@ -1,3 +1,5 @@
+import time
+
 import definitions
 from Util import random_data, csv_data_converter
 from Page.guidewire_pc.policy_center_home import PolicyCenterHome
@@ -9,16 +11,17 @@ from pytest import fixture, mark
 
 file_path = definitions.ROOT_DIR + "/Data/data_new_submission_comm_auto.csv"
 test_data = csv_data_converter.get_rows(file_path, "TestCase", "1", "2")
+s_test_data = csv_data_converter.get_rows(file_path, "TestCase", "11")
 
 
-@fixture(params=test_data)
+@fixture(params=s_test_data)
 def data(request):
     yield request.param
 
 
-# @mark.newbusiness
-# @mark.smoke
-# @mark.commauto
+@mark.newbusiness
+@mark.smoke
+@mark.commauto
 def test_new_commercial_auto_creation(browser_pc, data):
     pc = PolicyCenterHome(browser_pc)
     pc.tab_bar.search_account(data["Account#"])
@@ -52,13 +55,15 @@ def test_new_commercial_auto_creation(browser_pc, data):
     # Commercial Auto Line screen
     ca_policy.comm_auto_line_screen.ca_coverages(product=data["product"], fleet=data["fleet"])
     # ca_policy.comm_auto_line_screen.wait_liability_covg()
-    ca_policy.comm_auto_line_screen.hired_auto_coverages(data["hired_auto_cvg1"])
-    ca_policy.comm_auto_line_screen.hired_auto_coverages(data["hired_auto_cvg2"])
-    ca_policy.comm_auto_line_screen.hired_auto_coverages(data["hired_auto_cvg3"])
-    ca_policy.comm_auto_line_screen.hired_auto_state(cost_of_hire=data["cost_of_hire"], state=data["base_state"])
-    ca_policy.comm_auto_line_screen.non_owned_auto_covg()
-    ca_policy.comm_auto_line_screen.non_owned_auto_state(emp_no=data["emp_no"], partners=data["partners"],
-                                                         volunteers=data["volunteers"], state=data["base_state"])
+    ca_policy.comm_auto_line_screen.add_hired_auto_coverages(data["hired_auto_cvg1"])
+    ca_policy.comm_auto_line_screen.add_hired_auto_coverages(data["hired_auto_cvg2"])
+    ca_policy.comm_auto_line_screen.add_hired_auto_coverages(data["hired_auto_cvg3"])
+    ca_policy.comm_auto_line_screen.add_hired_auto_state(cost_of_hire=data["cost_of_hire"], state=data["base_state"])
+    ca_policy.comm_auto_line_screen.add_non_owned_auto_covg()
+    ca_policy.comm_auto_line_screen.add_non_owned_auto_state(emp_no=data["emp_no"],
+                                                         partners=data["partners"],
+                                                         volunteers=data["volunteers"],
+                                                         state=data["base_state"])
     ca_policy.title_toolbar.next()
 
     # Locations screen

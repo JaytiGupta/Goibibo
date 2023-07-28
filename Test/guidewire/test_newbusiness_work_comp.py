@@ -8,16 +8,17 @@ from pytest import mark, fixture
 
 
 file_path = definitions.ROOT_DIR + "/Data/data_newbusiness_work_comp.csv"
-test_data = csv_data_converter.get_rows(file_path, "TestCase", "11")#, "12", "13", "14")
+j_test_data = csv_data_converter.get_rows(file_path, "TestCase", "11")#, "12", "13", "14")
+s_test_data = csv_data_converter.get_rows(file_path, "TestCase", "1", "2", "3", "4")
 
 
-@fixture(params=test_data)
+@fixture(params=s_test_data)
 def data(request):
     yield request.param
 
 
-# @mark.workcomp
-# @mark.newbusiness
+@mark.workcomp
+@mark.newbusiness
 def test_new_work_comp_policy_creation(browser_pc, data):
     pc = PolicyCenterHome(browser_pc)
     pc.tab_bar.search_account(data["Account_number"])

@@ -6,6 +6,7 @@ from Base.baseelement import NestedElement
 from Base.basepage import BasePage
 from Util.logs import getLogger
 import random
+from Page.guidewire_pc.policies.common.titlebar import TitleToolbar
 
 
 class PolicyInfo(BasePage):
@@ -162,6 +163,9 @@ class Location(BasePage):
         add_new_location_btn = BaseElement(self.driver, self._locator_add_new_location_btn)
         add_new_location_btn.click_element()
 
+        policy_title = TitleToolbar(self.driver)
+        policy_title.wait_for_screen("Location Information")
+
         address1_elm = BaseElement(self.driver, self._locator_address1)
         address1_elm.enter_text(address1)
 
@@ -192,6 +196,8 @@ class Location(BasePage):
 
         ok_btn = BaseElement(self.driver, self._locator_ok_btn)
         ok_btn.click_element()
+
+        policy_title.wait_for_screen(self.SCREEN_TITLE)
 
     def add_existing_location(self, index):
         existing_loc_list = BaseElement(self.driver, self._locator_add_existing_location_btn)

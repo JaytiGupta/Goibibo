@@ -5,26 +5,18 @@
       <change afterPath="$PROJECT_DIR$/ResultFiles/BUILD_results.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ResultFiles/Logs/.__logfile.lock" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Test/guidewire/BUILD_results.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17-05-2023_17_36__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24-05-2023_18_13__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Base/baseelement.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/baseelement.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Base/basepage.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/basepage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/data_new_account.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_new_account.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/login.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/data_new_submission_comm_auto.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_new_submission_comm_auto.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/data_newbusiness_work_comp.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_newbusiness_work_comp.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/commercial_auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/commercial_auto.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/common.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/work_comp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/work_comp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/elements.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/elements.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/titlebar.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/titlebar.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/tab_bar.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/tab_bar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/screens.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/screens.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ResultFiles/Logs/logfile.log" beforeDir="false" afterPath="$PROJECT_DIR$/ResultFiles/Logs/logfile.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_comm_auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_comm_auto.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/guidewire/test_home.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_home.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_new_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_new_account.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Test/pytest.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/test_sample.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/test_sample.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Util/logs.py" beforeDir="false" afterPath="$PROJECT_DIR$/Util/logs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_newbusiness_work_comp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_newbusiness_work_comp.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -405,7 +397,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690463558263</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="27th July">
+      <created>1690469175796</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1690469175796</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="UnknownFeatures">

@@ -4841,3 +4841,1051 @@
 2023-07-27 20:12:33 [INFO] TabBar :no alert
 2023-07-27 20:12:34 [INFO] TabBar :Logged out.
 2023-07-27 20:12:34 [INFO] app_config :************* Execution complete *************
+2023-07-28 13:03:52 [INFO] app_config :************* Starting Execution *************
+2023-07-28 13:03:52 [INFO] browser :Opening Chrome Browser.
+2023-07-28 13:03:57 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 13:04:02 [INFO] TabBar :Search account 0765463929
+2023-07-28 13:04:03 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 13:04:03 [INFO] NewSubmissionScreen :Enter effective Date - 10/01/2023
+2023-07-28 13:04:04 [INFO] SelectLOB :Select LOB: Workers' Compensation
+2023-07-28 13:04:09 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:04:09 [INFO] TableQuestionnaires :Enter 12345 for Total annual payroll:.
+2023-07-28 13:04:11 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 13:04:11 [INFO] PolicyInfo :Enter Industry Code - 0782
+2023-07-28 13:04:11 [INFO] PolicyInfo :Select Organisation Type - LLC
+2023-07-28 13:04:24 [DEBUG] BaseElement : common.py - add_new_location() - An element is not found.
+2023-07-28 13:04:24 [INFO] Location :Page: Locations - new location added. 10110 BROOK RD, GLEN ALLEN, Virginia, 23060.
+2023-07-28 13:04:28 [INFO] WCCoverages :Covered Employees section - New Class Added. Row Number - 1
+2023-07-28 13:04:30 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:04:31 [INFO] TableQuestionnaires :Select Yes for Any employees under 16 or over 60 years of age?.
+2023-07-28 13:04:38 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:04:38 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:04:41 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:04:41 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:04:41 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:04:41 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:04:44 [INFO] TitleToolbar :Quoted successfully
+2023-07-28 13:04:44 [INFO] Quote :Total Premium is $1,086.00
+2023-07-28 13:04:47 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 13:04:47 [INFO] TitleToolbar :alert accepted
+2023-07-28 13:04:51 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:04:51 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:04:51 [INFO] TitleToolbar :Getting messages(types) - Warnings:
+2023-07-28 13:04:51 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 13:04:51 [INFO] TitleToolbar :alert accepted
+2023-07-28 13:04:54 [INFO] TitleToolbar :Your Submission has been bound.
+2023-07-28 13:04:54 [INFO] TabBar :Logging out.
+2023-07-28 13:04:55 [INFO] TabBar :Logged out.
+2023-07-28 13:04:57 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 13:04:58 [INFO] TabBar :Search account 4838483801
+2023-07-28 13:04:59 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 13:04:59 [INFO] NewSubmissionScreen :Enter effective Date - 10/10/2023
+2023-07-28 13:04:59 [INFO] SelectLOB :Select LOB: Workers' Compensation
+2023-07-28 13:05:00 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:05:00 [INFO] TableQuestionnaires :Enter 12345 for Total annual payroll:.
+2023-07-28 13:05:01 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 13:05:01 [INFO] PolicyInfo :Enter Industry Code - 0782
+2023-07-28 13:05:01 [INFO] PolicyInfo :Select Organisation Type - LLC
+2023-07-28 13:05:14 [DEBUG] BaseElement : common.py - add_new_location() - An element is not found.
+2023-07-28 13:05:14 [INFO] Location :Page: Locations - new location added. 10110 BROOK RD, GLEN ALLEN, Virginia, 23060.
+2023-07-28 13:05:17 [INFO] WCCoverages :Covered Employees section - New Class Added. Row Number - 1
+2023-07-28 13:05:18 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:05:19 [INFO] TableQuestionnaires :Select Yes for Any employees under 16 or over 60 years of age?.
+2023-07-28 13:05:24 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:05:24 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:05:28 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:05:28 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:05:28 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:05:28 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:05:31 [INFO] TitleToolbar :Quoted successfully
+2023-07-28 13:05:31 [INFO] Quote :Total Premium is $1,086.00
+2023-07-28 13:05:33 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 13:05:33 [INFO] TitleToolbar :alert accepted
+2023-07-28 13:05:36 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:05:36 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:05:36 [INFO] TitleToolbar :Getting messages(types) - Warnings:
+2023-07-28 13:05:36 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 13:05:36 [INFO] TitleToolbar :alert accepted
+2023-07-28 13:05:39 [INFO] TitleToolbar :Your Submission has been bound.
+2023-07-28 13:05:39 [INFO] TabBar :Logging out.
+2023-07-28 13:05:40 [INFO] TabBar :Logged out.
+2023-07-28 13:05:40 [INFO] app_config :************* Execution complete *************
+2023-07-28 13:23:14 [INFO] app_config :************* Starting Execution *************
+2023-07-28 13:23:14 [INFO] browser :Opening Chrome Browser.
+2023-07-28 13:23:18 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 13:23:19 [INFO] TabBar :Search account 0765463929
+2023-07-28 13:23:19 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 13:23:20 [INFO] NewSubmissionScreen :Enter effective Date - 10/01/2023
+2023-07-28 13:23:20 [INFO] SelectLOB :Select LOB: Workers' Compensation
+2023-07-28 13:23:21 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:23:21 [INFO] TableQuestionnaires :Enter 12345 for Total annual payroll:.
+2023-07-28 13:23:22 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 13:23:22 [INFO] PolicyInfo :Enter Industry Code - 0782
+2023-07-28 13:23:22 [INFO] PolicyInfo :Select Organisation Type - LLC
+2023-07-28 13:23:30 [INFO] Location :Page: Locations - new location added. 10110 BROOK RD, GLEN ALLEN, Virginia, 23060.
+2023-07-28 13:23:31 [INFO] TabBar :Logging out.
+2023-07-28 13:23:32 [INFO] TabBar :alert accepted
+2023-07-28 13:23:33 [INFO] app_config :************* Execution complete *************
+2023-07-28 13:23:46 [INFO] app_config :************* Starting Execution *************
+2023-07-28 13:23:46 [INFO] app_config :************* Starting Execution *************
+2023-07-28 13:23:46 [INFO] browser :Opening Chrome Browser.
+2023-07-28 13:23:46 [INFO] browser :Opening Chrome Browser.
+2023-07-28 13:23:50 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 13:23:50 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 13:23:51 [INFO] TabBar :Search account 7693328905
+2023-07-28 13:23:51 [INFO] TabBar :Search account 0765463929
+2023-07-28 13:23:52 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 13:23:52 [INFO] NewSubmissionScreen :Enter effective Date - 08/01/2023
+2023-07-28 13:23:52 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 13:23:53 [INFO] NewSubmissionScreen :Enter effective Date - 10/01/2023
+2023-07-28 13:23:53 [INFO] SelectLOB :Select LOB: Workers' Compensation
+2023-07-28 13:23:53 [INFO] SelectLOB :Select LOB: Workers' Compensation
+2023-07-28 13:23:53 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:23:54 [INFO] TableQuestionnaires :Enter 12345 for Total annual payroll:.
+2023-07-28 13:23:54 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:23:54 [INFO] TableQuestionnaires :Enter 12345 for Total annual payroll:.
+2023-07-28 13:23:55 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 13:23:55 [INFO] PolicyInfo :Enter Industry Code - 0782
+2023-07-28 13:23:55 [INFO] PolicyInfo :Select Organisation Type - LLC
+2023-07-28 13:24:05 [DEBUG] BaseElement : common.py - input_FEIN() - An element is not found.
+2023-07-28 13:24:05 [INFO] TabBar :Logging out.
+2023-07-28 13:24:06 [INFO] TabBar :Logged out.
+2023-07-28 13:24:07 [DEBUG] BaseElement : common.py - add_new_location() - An element is not found.
+2023-07-28 13:24:07 [INFO] Location :Page: Locations - new location added. 10110 BROOK RD, GLEN ALLEN, Virginia, 23060.
+2023-07-28 13:24:08 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 13:24:09 [INFO] TabBar :Search account 7693328905
+2023-07-28 13:24:10 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 13:24:10 [INFO] NewSubmissionScreen :Enter effective Date - 08/01/2023
+2023-07-28 13:24:10 [INFO] SelectLOB :Select LOB: Workers' Compensation
+2023-07-28 13:24:12 [INFO] WCCoverages :Covered Employees section - New Class Added. Row Number - 1
+2023-07-28 13:24:12 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:24:13 [INFO] TableQuestionnaires :Enter 12345 for Total annual payroll:.
+2023-07-28 13:24:15 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:24:15 [INFO] TableQuestionnaires :Select Yes for Any employees under 16 or over 60 years of age?.
+2023-07-28 13:24:21 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:24:21 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:24:24 [DEBUG] BaseElement : common.py - input_FEIN() - An element is not found.
+2023-07-28 13:24:24 [INFO] TabBar :Logging out.
+2023-07-28 13:24:24 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:24:24 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:24:25 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:24:25 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:24:26 [INFO] TabBar :Logged out.
+2023-07-28 13:24:26 [INFO] app_config :************* Execution complete *************
+2023-07-28 13:24:28 [INFO] TitleToolbar :Quoted successfully
+2023-07-28 13:24:28 [INFO] Quote :Total Premium is $1,086.00
+2023-07-28 13:24:30 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 13:24:30 [INFO] TitleToolbar :alert accepted
+2023-07-28 13:24:33 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:24:33 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:24:33 [INFO] TitleToolbar :Getting messages(types) - Warnings:
+2023-07-28 13:24:33 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 13:24:33 [INFO] TitleToolbar :alert accepted
+2023-07-28 13:24:36 [INFO] TitleToolbar :Your Submission has been bound.
+2023-07-28 13:24:36 [INFO] TabBar :Logging out.
+2023-07-28 13:24:37 [INFO] TabBar :Logged out.
+2023-07-28 13:24:39 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 13:24:40 [INFO] TabBar :Search account 4838483801
+2023-07-28 13:24:41 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 13:24:41 [INFO] NewSubmissionScreen :Enter effective Date - 10/10/2023
+2023-07-28 13:24:41 [INFO] SelectLOB :Select LOB: Workers' Compensation
+2023-07-28 13:24:42 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:24:42 [INFO] TableQuestionnaires :Enter 12345 for Total annual payroll:.
+2023-07-28 13:24:43 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 13:24:43 [INFO] PolicyInfo :Enter Industry Code - 0782
+2023-07-28 13:24:43 [INFO] PolicyInfo :Select Organisation Type - LLC
+2023-07-28 13:24:56 [DEBUG] BaseElement : common.py - add_new_location() - An element is not found.
+2023-07-28 13:24:56 [INFO] Location :Page: Locations - new location added. 10110 BROOK RD, GLEN ALLEN, Virginia, 23060.
+2023-07-28 13:24:59 [INFO] WCCoverages :Covered Employees section - New Class Added. Row Number - 1
+2023-07-28 13:25:01 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:25:01 [INFO] TableQuestionnaires :Select Yes for Any employees under 16 or over 60 years of age?.
+2023-07-28 13:25:07 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:25:07 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:25:10 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:25:10 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:25:10 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:25:10 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:25:13 [INFO] TitleToolbar :Quoted successfully
+2023-07-28 13:25:13 [INFO] Quote :Total Premium is $1,086.00
+2023-07-28 13:25:15 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 13:25:15 [INFO] TitleToolbar :alert accepted
+2023-07-28 13:25:19 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:25:19 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:25:19 [INFO] TitleToolbar :Getting messages(types) - Warnings:
+2023-07-28 13:25:19 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 13:25:19 [INFO] TitleToolbar :alert accepted
+2023-07-28 13:25:22 [INFO] TitleToolbar :Your Submission has been bound.
+2023-07-28 13:25:22 [INFO] TabBar :Logging out.
+2023-07-28 13:25:23 [INFO] TabBar :Logged out.
+2023-07-28 13:25:23 [INFO] app_config :************* Execution complete *************
+2023-07-28 13:30:00 [INFO] app_config :************* Starting Execution *************
+2023-07-28 13:30:00 [INFO] app_config :************* Starting Execution *************
+2023-07-28 13:30:00 [INFO] browser :Opening Chrome Browser.
+2023-07-28 13:30:00 [INFO] browser :Opening Chrome Browser.
+2023-07-28 13:30:04 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 13:30:05 [INFO] TabBar :Search account 0765463929
+2023-07-28 13:30:05 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 13:30:06 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 13:30:06 [INFO] NewSubmissionScreen :Enter effective Date - 10/01/2023
+2023-07-28 13:30:06 [INFO] TabBar :Search account 1205787611
+2023-07-28 13:30:06 [INFO] SelectLOB :Select LOB: Workers' Compensation
+2023-07-28 13:30:07 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 13:30:07 [INFO] NewSubmissionScreen :Enter effective Date - 08/01/2023
+2023-07-28 13:30:08 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:30:08 [INFO] TableQuestionnaires :Enter 12345 for Total annual payroll:.
+2023-07-28 13:30:08 [INFO] SelectLOB :Select LOB: Workers' Compensation
+2023-07-28 13:30:09 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:30:09 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 13:30:09 [INFO] TableQuestionnaires :Enter 12345 for Total annual payroll:.
+2023-07-28 13:30:09 [INFO] PolicyInfo :Enter Industry Code - 0782
+2023-07-28 13:30:09 [INFO] PolicyInfo :Select Organisation Type - LLC
+2023-07-28 13:30:10 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 13:30:10 [INFO] PolicyInfo :Enter Industry Code - 0742
+2023-07-28 13:30:10 [INFO] PolicyInfo :Select Organisation Type - Individual
+2023-07-28 13:30:21 [DEBUG] BaseElement : common.py - add_new_location() - An element is not found.
+2023-07-28 13:30:21 [INFO] Location :Page: Locations - new location added. 10110 BROOK RD, GLEN ALLEN, Virginia, 23060.
+2023-07-28 13:30:22 [DEBUG] BaseElement : common.py - add_new_location() - An element is not found.
+2023-07-28 13:30:22 [INFO] Location :Page: Locations - new location added. 10110 BROOK RD, GLEN ALLEN, Virginia, 23060.
+2023-07-28 13:30:25 [INFO] WCCoverages :Covered Employees section - New Class Added. Row Number - 1
+2023-07-28 13:30:25 [INFO] WCCoverages :Covered Employees section - New Class Added. Row Number - 1
+2023-07-28 13:30:28 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:30:28 [INFO] TableQuestionnaires :Select Yes for Any employees under 16 or over 60 years of age?.
+2023-07-28 13:30:29 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:30:29 [INFO] TableQuestionnaires :Select Yes for Any employees under 16 or over 60 years of age?.
+2023-07-28 13:30:33 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:30:34 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:30:35 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:30:35 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:30:37 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:30:37 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:30:37 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:30:38 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:30:38 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:30:38 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:30:38 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:30:41 [INFO] TitleToolbar :Quoted successfully
+2023-07-28 13:30:41 [INFO] Quote :Total Premium is $1,086.00
+2023-07-28 13:30:43 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 13:30:43 [INFO] TitleToolbar :alert accepted
+2023-07-28 13:30:47 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:30:47 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:30:47 [INFO] TitleToolbar :Getting messages(types) - Warnings:
+2023-07-28 13:30:47 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 13:30:47 [INFO] TitleToolbar :alert accepted
+2023-07-28 13:30:50 [INFO] TitleToolbar :Your Submission has been bound.
+2023-07-28 13:30:50 [INFO] TabBar :Logging out.
+2023-07-28 13:30:51 [INFO] TabBar :Logged out.
+2023-07-28 13:30:53 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 13:30:54 [INFO] TabBar :Search account 1660586871
+2023-07-28 13:30:55 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 13:30:55 [INFO] NewSubmissionScreen :Enter effective Date - 08/01/2023
+2023-07-28 13:30:55 [INFO] SelectLOB :Select LOB: Workers' Compensation
+2023-07-28 13:30:56 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:30:56 [INFO] TableQuestionnaires :Enter 12345 for Total annual payroll:.
+2023-07-28 13:30:57 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 13:30:58 [INFO] PolicyInfo :Enter Industry Code - 0740
+2023-07-28 13:30:58 [INFO] PolicyInfo :Select Organisation Type - Individual
+2023-07-28 13:31:10 [DEBUG] BaseElement : common.py - add_new_location() - An element is not found.
+2023-07-28 13:31:10 [INFO] Location :Page: Locations - new location added. 10110 BROOK RD, GLEN ALLEN, Virginia, 23060.
+2023-07-28 13:31:13 [INFO] WCCoverages :Covered Employees section - New Class Added. Row Number - 1
+2023-07-28 13:31:16 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:31:16 [INFO] TableQuestionnaires :Select Yes for Any employees under 16 or over 60 years of age?.
+2023-07-28 13:31:22 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:31:22 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:31:25 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:31:25 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:31:25 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:31:26 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:31:29 [INFO] TitleToolbar :Quoted successfully
+2023-07-28 13:31:29 [INFO] Quote :Total Premium is $1,086.00
+2023-07-28 13:31:30 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 13:31:30 [INFO] TitleToolbar :alert accepted
+2023-07-28 13:31:33 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:31:33 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:31:33 [INFO] TitleToolbar :Getting messages(types) - Warnings:
+2023-07-28 13:31:33 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 13:31:33 [INFO] TitleToolbar :alert accepted
+2023-07-28 13:31:37 [INFO] TitleToolbar :Your Submission has been bound.
+2023-07-28 13:31:37 [INFO] TabBar :Logging out.
+2023-07-28 13:31:38 [INFO] TabBar :Logged out.
+2023-07-28 13:31:38 [INFO] app_config :************* Execution complete *************
+2023-07-28 13:33:13 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:33:16 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:33:16 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:33:16 [INFO] TitleToolbar :Payment screen
+2023-07-28 13:33:23 [INFO] TabBar :Logging out.
+2023-07-28 13:33:31 [INFO] app_config :************* Execution complete *************
+2023-07-28 13:34:56 [INFO] app_config :************* Starting Execution *************
+2023-07-28 13:34:56 [INFO] app_config :************* Starting Execution *************
+2023-07-28 13:34:56 [INFO] app_config :************* Starting Execution *************
+2023-07-28 13:34:56 [INFO] browser :Opening Chrome Browser.
+2023-07-28 13:34:56 [INFO] browser :Opening Chrome Browser.
+2023-07-28 13:34:56 [INFO] browser :Opening Chrome Browser.
+2023-07-28 13:35:03 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 13:35:03 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 13:35:03 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 13:35:03 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 13:35:04 [INFO] TabBar :Search account 0765463929
+2023-07-28 13:35:04 [INFO] TabBar :Search account 1660586871
+2023-07-28 13:35:04 [INFO] TabBar :Search account 4838483801
+2023-07-28 13:35:05 [INFO] TabBar :Search account 1205787611
+2023-07-28 13:35:06 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 13:35:06 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 13:35:06 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 13:35:06 [INFO] NewSubmissionScreen :Enter effective Date - 08/01/2023
+2023-07-28 13:35:06 [INFO] NewSubmissionScreen :Enter effective Date - 10/01/2023
+2023-07-28 13:35:06 [INFO] NewSubmissionScreen :Enter effective Date - 08/01/2023
+2023-07-28 13:35:06 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 13:35:07 [INFO] NewSubmissionScreen :Enter effective Date - 10/10/2023
+2023-07-28 13:35:07 [INFO] SelectLOB :Select LOB: Workers' Compensation
+2023-07-28 13:35:08 [INFO] SelectLOB :Select LOB: Workers' Compensation
+2023-07-28 13:35:08 [INFO] SelectLOB :Select LOB: Workers' Compensation
+2023-07-28 13:35:09 [INFO] SelectLOB :Select LOB: Workers' Compensation
+2023-07-28 13:35:09 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:35:09 [INFO] TableQuestionnaires :Enter 12345 for Total annual payroll:.
+2023-07-28 13:35:09 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:35:09 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:35:10 [INFO] TableQuestionnaires :Enter 12345 for Total annual payroll:.
+2023-07-28 13:35:10 [INFO] TableQuestionnaires :Enter 12345 for Total annual payroll:.
+2023-07-28 13:35:10 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:35:11 [INFO] TableQuestionnaires :Enter 12345 for Total annual payroll:.
+2023-07-28 13:35:11 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 13:35:11 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 13:35:11 [INFO] PolicyInfo :Enter Industry Code - 0740
+2023-07-28 13:35:11 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 13:35:11 [INFO] PolicyInfo :Select Organisation Type - Individual
+2023-07-28 13:35:11 [INFO] PolicyInfo :Enter Industry Code - 0742
+2023-07-28 13:35:11 [INFO] PolicyInfo :Enter Industry Code - 0782
+2023-07-28 13:35:11 [INFO] PolicyInfo :Select Organisation Type - Individual
+2023-07-28 13:35:11 [INFO] PolicyInfo :Select Organisation Type - LLC
+2023-07-28 13:35:12 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 13:35:12 [INFO] PolicyInfo :Enter Industry Code - 0782
+2023-07-28 13:35:13 [INFO] PolicyInfo :Select Organisation Type - LLC
+2023-07-28 13:35:24 [DEBUG] BaseElement : common.py - add_new_location() - An element is not found.
+2023-07-28 13:35:24 [INFO] Location :Page: Locations - new location added. 10110 BROOK RD, GLEN ALLEN, Virginia, 23060.
+2023-07-28 13:35:25 [DEBUG] BaseElement : common.py - add_new_location() - An element is not found.
+2023-07-28 13:35:25 [INFO] Location :Page: Locations - new location added. 10110 BROOK RD, GLEN ALLEN, Virginia, 23060.
+2023-07-28 13:35:26 [DEBUG] BaseElement : common.py - add_new_location() - An element is not found.
+2023-07-28 13:35:26 [INFO] Location :Page: Locations - new location added. 10110 BROOK RD, GLEN ALLEN, Virginia, 23060.
+2023-07-28 13:35:26 [DEBUG] BaseElement : common.py - add_new_location() - An element is not found.
+2023-07-28 13:35:26 [INFO] Location :Page: Locations - new location added. 10110 BROOK RD, GLEN ALLEN, Virginia, 23060.
+2023-07-28 13:35:28 [INFO] TabBar :Logging out.
+2023-07-28 13:35:28 [INFO] TabBar :alert accepted
+2023-07-28 13:35:30 [INFO] TabBar :Logged out.
+2023-07-28 13:35:30 [INFO] app_config :************* Execution complete *************
+2023-07-28 13:35:33 [INFO] WCCoverages :Covered Employees section - New Class Added. Row Number - 1
+2023-07-28 13:35:34 [INFO] WCCoverages :Covered Employees section - New Class Added. Row Number - 1
+2023-07-28 13:35:35 [INFO] WCCoverages :Covered Employees section - New Class Added. Row Number - 1
+2023-07-28 13:35:37 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:35:38 [INFO] TableQuestionnaires :Select Yes for Any employees under 16 or over 60 years of age?.
+2023-07-28 13:35:38 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:35:38 [INFO] TableQuestionnaires :Select Yes for Any employees under 16 or over 60 years of age?.
+2023-07-28 13:35:38 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:35:38 [INFO] TableQuestionnaires :Select Yes for Any employees under 16 or over 60 years of age?.
+2023-07-28 13:35:45 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:35:45 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:35:45 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:35:45 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:35:46 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:35:46 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:35:48 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:35:48 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:35:48 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:35:48 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:35:49 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:35:49 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:35:49 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:35:49 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:35:49 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:35:49 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:35:50 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:35:50 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:35:52 [INFO] TitleToolbar :Quoted successfully
+2023-07-28 13:35:52 [INFO] Quote :Total Premium is $1,086.00
+2023-07-28 13:35:52 [INFO] TitleToolbar :Quoted successfully
+2023-07-28 13:35:52 [INFO] Quote :Total Premium is $1,086.00
+2023-07-28 13:35:53 [INFO] TitleToolbar :Quoted successfully
+2023-07-28 13:35:53 [INFO] Quote :Total Premium is $1,086.00
+2023-07-28 13:35:54 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 13:35:54 [INFO] TitleToolbar :alert accepted
+2023-07-28 13:35:54 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 13:35:54 [INFO] TitleToolbar :alert accepted
+2023-07-28 13:35:55 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 13:35:55 [INFO] TitleToolbar :alert accepted
+2023-07-28 13:35:57 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:35:57 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:35:57 [INFO] TitleToolbar :Getting messages(types) - Warnings:
+2023-07-28 13:35:57 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 13:35:57 [INFO] TitleToolbar :alert accepted
+2023-07-28 13:35:58 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:35:58 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:35:58 [INFO] TitleToolbar :Getting messages(types) - Warnings:
+2023-07-28 13:35:58 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 13:35:58 [INFO] TitleToolbar :alert accepted
+2023-07-28 13:35:58 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:35:58 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:35:58 [INFO] TitleToolbar :Getting messages(types) - Warnings:
+2023-07-28 13:35:59 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 13:35:59 [INFO] TitleToolbar :alert accepted
+2023-07-28 13:36:00 [INFO] TitleToolbar :Your Submission has been bound.
+2023-07-28 13:36:00 [INFO] TabBar :Logging out.
+2023-07-28 13:36:01 [INFO] TitleToolbar :Your Submission has been bound.
+2023-07-28 13:36:01 [INFO] TabBar :Logging out.
+2023-07-28 13:36:01 [INFO] TabBar :Logged out.
+2023-07-28 13:36:01 [INFO] app_config :************* Execution complete *************
+2023-07-28 13:36:02 [INFO] TitleToolbar :Your Submission has been bound.
+2023-07-28 13:36:02 [INFO] TabBar :Logging out.
+2023-07-28 13:36:02 [INFO] TabBar :Logged out.
+2023-07-28 13:36:02 [INFO] app_config :************* Execution complete *************
+2023-07-28 13:36:03 [INFO] TabBar :Logged out.
+2023-07-28 13:36:03 [INFO] app_config :************* Execution complete *************
+2023-07-28 13:45:18 [INFO] app_config :************* Starting Execution *************
+2023-07-28 13:45:18 [INFO] app_config :************* Starting Execution *************
+2023-07-28 13:45:18 [INFO] browser :Opening Chrome Browser.
+2023-07-28 13:45:18 [INFO] browser :Opening Chrome Browser.
+2023-07-28 13:45:23 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 13:45:23 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 13:45:24 [INFO] TabBar :Search account 1205787611
+2023-07-28 13:45:24 [INFO] TabBar :Search account 0765463929
+2023-07-28 13:45:25 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 13:45:25 [INFO] NewSubmissionScreen :Enter effective Date - 08/01/2023
+2023-07-28 13:45:25 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 13:45:25 [INFO] NewSubmissionScreen :Enter effective Date - 10/01/2023
+2023-07-28 13:45:25 [INFO] SelectLOB :Select LOB: Workers' Compensation
+2023-07-28 13:45:26 [INFO] SelectLOB :Select LOB: Workers' Compensation
+2023-07-28 13:45:26 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:45:27 [INFO] TableQuestionnaires :Enter 12345 for Total annual payroll:.
+2023-07-28 13:45:27 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:45:27 [INFO] TableQuestionnaires :Enter 12345 for Total annual payroll:.
+2023-07-28 13:45:27 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 13:45:28 [INFO] PolicyInfo :Enter Industry Code - 0742
+2023-07-28 13:45:28 [INFO] PolicyInfo :Select Organisation Type - Individual
+2023-07-28 13:45:28 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 13:45:28 [INFO] PolicyInfo :Enter Industry Code - 0782
+2023-07-28 13:45:28 [INFO] PolicyInfo :Select Organisation Type - LLC
+2023-07-28 13:45:40 [DEBUG] BaseElement : common.py - add_new_location() - An element is not found.
+2023-07-28 13:45:40 [INFO] Location :Page: Locations - new location added. 10110 BROOK RD, GLEN ALLEN, Virginia, 23060.
+2023-07-28 13:45:40 [DEBUG] BaseElement : common.py - add_new_location() - An element is not found.
+2023-07-28 13:45:40 [INFO] Location :Page: Locations - new location added. 10110 BROOK RD, GLEN ALLEN, Virginia, 23060.
+2023-07-28 13:45:44 [INFO] WCCoverages :Covered Employees section - New Class Added. Row Number - 1
+2023-07-28 13:45:44 [INFO] WCCoverages :Covered Employees section - New Class Added. Row Number - 1
+2023-07-28 13:45:48 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:45:48 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:45:48 [INFO] TableQuestionnaires :Select Yes for Any employees under 16 or over 60 years of age?.
+2023-07-28 13:45:48 [INFO] TableQuestionnaires :Select Yes for Any employees under 16 or over 60 years of age?.
+2023-07-28 13:45:53 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:45:53 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:45:54 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:45:54 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:45:56 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:45:56 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:45:57 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:45:57 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:45:57 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:45:57 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:45:57 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:45:57 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:46:00 [INFO] TitleToolbar :Quoted successfully
+2023-07-28 13:46:00 [INFO] Quote :Total Premium is $1,086.00
+2023-07-28 13:46:00 [INFO] TitleToolbar :Quoted successfully
+2023-07-28 13:46:00 [INFO] Quote :Total Premium is $1,086.00
+2023-07-28 13:46:01 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 13:46:01 [INFO] TitleToolbar :alert accepted
+2023-07-28 13:46:02 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 13:46:02 [INFO] TitleToolbar :alert accepted
+2023-07-28 13:46:04 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:46:04 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:46:04 [INFO] TitleToolbar :Getting messages(types) - Warnings:
+2023-07-28 13:46:04 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 13:46:04 [INFO] TitleToolbar :alert accepted
+2023-07-28 13:46:05 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:46:05 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:46:05 [INFO] TitleToolbar :Getting messages(types) - Warnings:
+2023-07-28 13:46:05 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 13:46:05 [INFO] TitleToolbar :alert accepted
+2023-07-28 13:46:07 [INFO] TitleToolbar :Your Submission has been bound.
+2023-07-28 13:46:08 [INFO] TabBar :Logging out.
+2023-07-28 13:46:08 [INFO] TitleToolbar :Your Submission has been bound.
+2023-07-28 13:46:08 [INFO] TabBar :Logging out.
+2023-07-28 13:46:08 [INFO] TabBar :Logged out.
+2023-07-28 13:46:09 [INFO] TabBar :Logged out.
+2023-07-28 13:46:10 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 13:46:10 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 13:46:11 [INFO] TabBar :Search account 4838483801
+2023-07-28 13:46:11 [INFO] TabBar :Search account 1660586871
+2023-07-28 13:46:11 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 13:46:12 [INFO] NewSubmissionScreen :Enter effective Date - 10/10/2023
+2023-07-28 13:46:12 [INFO] SelectLOB :Select LOB: Workers' Compensation
+2023-07-28 13:46:12 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 13:46:12 [INFO] NewSubmissionScreen :Enter effective Date - 08/01/2023
+2023-07-28 13:46:12 [INFO] SelectLOB :Select LOB: Workers' Compensation
+2023-07-28 13:46:13 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:46:13 [INFO] TableQuestionnaires :Enter 12345 for Total annual payroll:.
+2023-07-28 13:46:13 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:46:13 [INFO] TableQuestionnaires :Enter 12345 for Total annual payroll:.
+2023-07-28 13:46:14 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 13:46:14 [INFO] PolicyInfo :Enter Industry Code - 0782
+2023-07-28 13:46:14 [INFO] PolicyInfo :Select Organisation Type - LLC
+2023-07-28 13:46:14 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 13:46:14 [INFO] PolicyInfo :Enter Industry Code - 0740
+2023-07-28 13:46:14 [INFO] PolicyInfo :Select Organisation Type - Individual
+2023-07-28 13:46:25 [DEBUG] BaseElement : common.py - add_new_location() - An element is not found.
+2023-07-28 13:46:25 [INFO] Location :Page: Locations - new location added. 10110 BROOK RD, GLEN ALLEN, Virginia, 23060.
+2023-07-28 13:46:26 [DEBUG] BaseElement : common.py - add_new_location() - An element is not found.
+2023-07-28 13:46:26 [INFO] Location :Page: Locations - new location added. 10110 BROOK RD, GLEN ALLEN, Virginia, 23060.
+2023-07-28 13:46:28 [INFO] WCCoverages :Covered Employees section - New Class Added. Row Number - 1
+2023-07-28 13:46:29 [INFO] WCCoverages :Covered Employees section - New Class Added. Row Number - 1
+2023-07-28 13:46:30 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:46:30 [INFO] TableQuestionnaires :Select Yes for Any employees under 16 or over 60 years of age?.
+2023-07-28 13:46:30 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 13:46:31 [INFO] TableQuestionnaires :Select Yes for Any employees under 16 or over 60 years of age?.
+2023-07-28 13:46:35 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:46:35 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:46:35 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:46:36 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:46:38 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:46:38 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:46:38 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:46:38 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:46:39 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:46:39 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:46:39 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 13:46:39 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 13:46:41 [INFO] TitleToolbar :Quoted successfully
+2023-07-28 13:46:42 [INFO] Quote :Total Premium is $1,086.00
+2023-07-28 13:46:42 [INFO] TitleToolbar :Quoted successfully
+2023-07-28 13:46:42 [INFO] Quote :Total Premium is $1,086.00
+2023-07-28 13:46:43 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 13:46:43 [INFO] TitleToolbar :alert accepted
+2023-07-28 13:46:44 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 13:46:44 [INFO] TitleToolbar :alert accepted
+2023-07-28 13:46:46 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:46:46 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:46:46 [INFO] TitleToolbar :Getting messages(types) - Warnings:
+2023-07-28 13:46:46 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 13:46:46 [INFO] TitleToolbar :alert accepted
+2023-07-28 13:46:47 [INFO] Workspace :Workspace area is present.
+2023-07-28 13:46:47 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 13:46:47 [INFO] TitleToolbar :Getting messages(types) - Warnings:
+2023-07-28 13:46:47 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 13:46:47 [INFO] TitleToolbar :alert accepted
+2023-07-28 13:46:49 [INFO] TitleToolbar :Your Submission has been bound.
+2023-07-28 13:46:49 [INFO] TabBar :Logging out.
+2023-07-28 13:46:50 [INFO] TitleToolbar :Your Submission has been bound.
+2023-07-28 13:46:50 [INFO] TabBar :Logging out.
+2023-07-28 13:46:51 [INFO] TabBar :Logged out.
+2023-07-28 13:46:51 [INFO] app_config :************* Execution complete *************
+2023-07-28 13:46:51 [INFO] TabBar :Logged out.
+2023-07-28 13:46:51 [INFO] app_config :************* Execution complete *************
+2023-07-28 15:00:37 [INFO] app_config :************* Starting Execution *************
+2023-07-28 15:00:37 [INFO] browser :Opening Chrome Browser.
+2023-07-28 15:00:43 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 15:00:44 [INFO] TabBar :Search account 5943333063
+2023-07-28 15:00:45 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 15:00:45 [INFO] NewSubmissionScreen :Enter effective Date - 10/10/2023
+2023-07-28 15:00:45 [INFO] SelectLOB :Select LOB: Commercial Auto
+2023-07-28 15:00:46 [INFO] Offerings :Offering selected
+2023-07-28 15:00:47 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 15:00:48 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 15:00:48 [INFO] PolicyInfo :Enter Industry Code - 0782
+2023-07-28 15:00:48 [INFO] PolicyInfo :Select Organisation Type - LLC
+2023-07-28 15:00:48 [INFO] PolicyInfo :Enter Policy Effective Date - 10/10/2023
+2023-07-28 15:00:49 [INFO] CommercialAutoLine :<Base.baseelement.BaseElement object at 0x0000029DA8480160> selected under the Hired Auto coverage section
+2023-07-28 15:00:49 [INFO] CommercialAutoLine :<Base.baseelement.BaseElement object at 0x0000029DA8480160> selected under the Hired Auto coverage section
+2023-07-28 15:00:49 [INFO] CommercialAutoLine :<Base.baseelement.BaseElement object at 0x0000029DA8480160> selected under the Hired Auto coverage section
+2023-07-28 15:00:50 [INFO] CommercialAutoLine :Details for the selected state Virginia entered - under the Hired Auto coverage section
+2023-07-28 15:00:50 [INFO] CommercialAutoLine :Non Owned Auto coverage selected
+2023-07-28 15:00:51 [INFO] CommercialAutoLine :Details for the selected state Virginia entered - under the Non Owned Auto coverage section
+2023-07-28 15:00:53 [INFO] Location :Page: Locations - new location added. 305 MT CROSS ROAD, DANVILLE, Virginia, 24540.
+2023-07-28 15:00:53 [INFO] Location :Page: Locations - new location added. 305 MT CROSS ROAD, DANVILLE, Virginia, 24540.
+2023-07-28 15:00:55 [INFO] Vehicles :Vehicle type Trucks,Tractors,Trailers added on the Vehicles screen for the Location 1
+2023-07-28 15:00:57 [INFO] Vehicles :Class code for the entered vehicle is selected
+2023-07-28 15:00:59 [INFO] StateInfo :Bodily Injury package 50/100 is selected for the Uninsured Motorist coverage
+2023-07-28 15:00:59 [INFO] StateInfo :Property Damage Limit 50,000 is selected for the Uninsured Motorist coverage
+2023-07-28 15:01:01 [INFO] Drivers :Driver details are entered
+2023-07-28 15:01:02 [INFO] TabBar :Logging out.
+2023-07-28 15:01:02 [INFO] TabBar :alert accepted
+2023-07-28 15:01:03 [INFO] TabBar :Logged out.
+2023-07-28 15:01:03 [INFO] app_config :************* Execution complete *************
+2023-07-28 15:02:03 [INFO] app_config :************* Starting Execution *************
+2023-07-28 15:02:03 [INFO] browser :Opening Chrome Browser.
+2023-07-28 15:02:06 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 15:02:07 [INFO] TabBar :Search account 5943333063
+2023-07-28 15:02:08 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 15:02:08 [INFO] NewSubmissionScreen :Enter effective Date - 10/10/2023
+2023-07-28 15:02:08 [INFO] SelectLOB :Select LOB: Commercial Auto
+2023-07-28 15:02:09 [INFO] Offerings :Offering selected
+2023-07-28 15:02:10 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 15:02:11 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 15:02:11 [INFO] PolicyInfo :Enter Industry Code - 0782
+2023-07-28 15:02:11 [INFO] PolicyInfo :Select Organisation Type - LLC
+2023-07-28 15:02:11 [INFO] PolicyInfo :Enter Policy Effective Date - 10/10/2023
+2023-07-28 15:02:12 [INFO] CommercialAutoLine :<Base.baseelement.BaseElement object at 0x000001AEEA067AC0> selected under the Hired Auto coverage section
+2023-07-28 15:02:12 [INFO] CommercialAutoLine :<Base.baseelement.BaseElement object at 0x000001AEEA067AC0> selected under the Hired Auto coverage section
+2023-07-28 15:02:12 [INFO] CommercialAutoLine :<Base.baseelement.BaseElement object at 0x000001AEEA067AC0> selected under the Hired Auto coverage section
+2023-07-28 15:02:13 [INFO] CommercialAutoLine :Details for the selected state Virginia entered - under the Hired Auto coverage section
+2023-07-28 15:02:13 [INFO] CommercialAutoLine :Non Owned Auto coverage selected
+2023-07-28 15:02:14 [INFO] CommercialAutoLine :Details for the selected state Virginia entered - under the Non Owned Auto coverage section
+2023-07-28 15:02:16 [INFO] Location :Page: Locations - new location added. 14235 POTOMAC MILLS RD, WOODBRIDGE, Virginia, 22192.
+2023-07-28 15:02:16 [INFO] Location :Page: Locations - new location added. 14235 POTOMAC MILLS RD, WOODBRIDGE, Virginia, 22192.
+2023-07-28 15:02:18 [INFO] Vehicles :Vehicle type Trucks,Tractors,Trailers added on the Vehicles screen for the Location 1
+2023-07-28 15:02:20 [INFO] Vehicles :Class code for the entered vehicle is selected
+2023-07-28 15:02:22 [INFO] StateInfo :Bodily Injury package 50/100 is selected for the Uninsured Motorist coverage
+2023-07-28 15:02:22 [INFO] StateInfo :Property Damage Limit 50,000 is selected for the Uninsured Motorist coverage
+2023-07-28 15:02:24 [INFO] Drivers :Driver details are entered
+2023-07-28 15:02:25 [INFO] Workspace :Getting messages(types) - Errors:
+2023-07-28 15:02:25 [INFO] TabBar :Logging out.
+2023-07-28 15:02:25 [INFO] TabBar :alert accepted
+2023-07-28 15:02:26 [INFO] TabBar :Logged out.
+2023-07-28 15:02:26 [INFO] app_config :************* Execution complete *************
+2023-07-28 15:04:14 [INFO] app_config :************* Starting Execution *************
+2023-07-28 15:04:14 [INFO] browser :Opening Chrome Browser.
+2023-07-28 15:04:17 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 15:04:18 [INFO] TabBar :Search account 5943333063
+2023-07-28 15:04:19 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 15:04:19 [INFO] NewSubmissionScreen :Enter effective Date - 10/10/2023
+2023-07-28 15:04:19 [INFO] SelectLOB :Select LOB: Commercial Auto
+2023-07-28 15:04:20 [INFO] Offerings :Offering selected
+2023-07-28 15:04:21 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 15:04:22 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 15:04:22 [INFO] PolicyInfo :Enter Industry Code - 0782
+2023-07-28 15:04:22 [INFO] PolicyInfo :Select Organisation Type - LLC
+2023-07-28 15:04:22 [INFO] PolicyInfo :Enter Policy Effective Date - 10/10/2023
+2023-07-28 15:04:23 [INFO] CommercialAutoLine :<Base.baseelement.BaseElement object at 0x000002257FDB0B80> selected under the Hired Auto coverage section
+2023-07-28 15:04:23 [INFO] CommercialAutoLine :<Base.baseelement.BaseElement object at 0x000002257FDB0B80> selected under the Hired Auto coverage section
+2023-07-28 15:04:23 [INFO] CommercialAutoLine :<Base.baseelement.BaseElement object at 0x000002257FDB0B80> selected under the Hired Auto coverage section
+2023-07-28 15:04:24 [INFO] CommercialAutoLine :Details for the selected state Virginia entered - under the Hired Auto coverage section
+2023-07-28 15:04:24 [INFO] CommercialAutoLine :Non Owned Auto coverage selected
+2023-07-28 15:04:25 [INFO] CommercialAutoLine :Details for the selected state Virginia entered - under the Non Owned Auto coverage section
+2023-07-28 15:04:27 [INFO] Location :Page: Locations - new location added. 1252 EMMETT ST, CHARLOTTESVILLE, Virginia, 22903.
+2023-07-28 15:04:27 [INFO] Location :Page: Locations - new location added. 1252 EMMETT ST, CHARLOTTESVILLE, Virginia, 22903.
+2023-07-28 15:04:28 [INFO] Vehicles :Vehicle type Trucks,Tractors,Trailers added on the Vehicles screen for the Location 1
+2023-07-28 15:04:30 [INFO] Vehicles :Class code for the entered vehicle is selected
+2023-07-28 15:04:32 [INFO] StateInfo :Bodily Injury package 50/100 is selected for the Uninsured Motorist coverage
+2023-07-28 15:04:32 [INFO] StateInfo :Property Damage Limit 50,000 is selected for the Uninsured Motorist coverage
+2023-07-28 15:04:33 [INFO] Drivers :Driver details are entered
+2023-07-28 15:09:05 [INFO] TabBar :Logging out.
+2023-07-28 15:09:37 [INFO] app_config :************* Execution complete *************
+2023-07-28 15:09:56 [INFO] app_config :************* Starting Execution *************
+2023-07-28 15:09:56 [INFO] browser :Opening Chrome Browser.
+2023-07-28 15:10:00 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 15:10:00 [INFO] TabBar :Search account 5943333063
+2023-07-28 15:10:01 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 15:10:01 [INFO] NewSubmissionScreen :Enter effective Date - 10/10/2023
+2023-07-28 15:10:02 [INFO] SelectLOB :Select LOB: Commercial Auto
+2023-07-28 15:10:02 [INFO] Offerings :Offering selected
+2023-07-28 15:10:04 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 15:10:05 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 15:10:05 [INFO] PolicyInfo :Enter Industry Code - 0782
+2023-07-28 15:10:05 [INFO] PolicyInfo :Select Organisation Type - LLC
+2023-07-28 15:10:05 [INFO] PolicyInfo :Enter Policy Effective Date - 10/10/2023
+2023-07-28 15:10:06 [INFO] CommercialAutoLine :<Base.baseelement.BaseElement object at 0x000001F939300B80> selected under the Hired Auto coverage section
+2023-07-28 15:10:06 [INFO] CommercialAutoLine :<Base.baseelement.BaseElement object at 0x000001F939300B80> selected under the Hired Auto coverage section
+2023-07-28 15:10:06 [INFO] CommercialAutoLine :<Base.baseelement.BaseElement object at 0x000001F939300B80> selected under the Hired Auto coverage section
+2023-07-28 15:10:07 [INFO] CommercialAutoLine :Details for the selected state Virginia entered - under the Hired Auto coverage section
+2023-07-28 15:10:07 [INFO] CommercialAutoLine :Non Owned Auto coverage selected
+2023-07-28 15:10:08 [INFO] CommercialAutoLine :Details for the selected state Virginia entered - under the Non Owned Auto coverage section
+2023-07-28 15:10:10 [INFO] Location :Page: Locations - new location added. 120 A SIMONS RUN, LYNCHBURG, Virginia, 24502.
+2023-07-28 15:10:10 [INFO] Location :Page: Locations - new location added. 120 A SIMONS RUN, LYNCHBURG, Virginia, 24502.
+2023-07-28 15:10:12 [INFO] Vehicles :Vehicle type Trucks,Tractors,Trailers added on the Vehicles screen for the Location 1
+2023-07-28 15:10:14 [INFO] Vehicles :Class code for the entered vehicle is selected
+2023-07-28 15:10:16 [INFO] StateInfo :Bodily Injury package 50/100 is selected for the Uninsured Motorist coverage
+2023-07-28 15:10:16 [INFO] StateInfo :Property Damage Limit 50,000 is selected for the Uninsured Motorist coverage
+2023-07-28 15:10:17 [INFO] Drivers :Driver details are entered
+2023-07-28 15:10:19 [INFO] Workspace :Getting messages(types) - Errors:
+2023-07-28 15:10:19 [INFO] TabBar :Logging out.
+2023-07-28 15:10:19 [INFO] TabBar :alert accepted
+2023-07-28 15:10:20 [INFO] TabBar :Logged out.
+2023-07-28 15:10:20 [INFO] app_config :************* Execution complete *************
+2023-07-28 15:13:12 [INFO] app_config :************* Starting Execution *************
+2023-07-28 15:13:12 [INFO] browser :Opening Chrome Browser.
+2023-07-28 15:13:16 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 15:13:16 [INFO] TabBar :Search account 0765463929
+2023-07-28 15:13:17 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 15:13:17 [INFO] NewSubmissionScreen :Enter effective Date - 10/01/2023
+2023-07-28 15:13:18 [INFO] SelectLOB :Select LOB: Workers' Compensation
+2023-07-28 15:13:18 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 15:13:19 [INFO] TableQuestionnaires :Enter 12345 for Total annual payroll:.
+2023-07-28 15:13:19 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 15:13:19 [INFO] PolicyInfo :Enter Industry Code - 0782
+2023-07-28 15:13:19 [INFO] PolicyInfo :Select Organisation Type - LLC
+2023-07-28 15:13:24 [INFO] WCCoverages :Covered Employees section - New Class Added. Row Number - 1
+2023-07-28 15:13:25 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 15:13:25 [INFO] TableQuestionnaires :Select Yes for Any employees under 16 or over 60 years of age?.
+2023-07-28 15:13:30 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 15:13:31 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 15:13:34 [INFO] Workspace :Workspace area is present.
+2023-07-28 15:13:34 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 15:13:34 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 15:13:34 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 15:13:37 [INFO] TitleToolbar :Quoted successfully
+2023-07-28 15:13:37 [INFO] Quote :Total Premium is $1,086.00
+2023-07-28 15:13:38 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 15:13:38 [INFO] TitleToolbar :alert accepted
+2023-07-28 15:13:41 [INFO] Workspace :Workspace area is present.
+2023-07-28 15:13:41 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 15:13:41 [INFO] TitleToolbar :Getting messages(types) - Warnings:
+2023-07-28 15:13:42 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 15:13:42 [INFO] TitleToolbar :alert accepted
+2023-07-28 15:13:45 [INFO] TitleToolbar :Your Submission has been bound.
+2023-07-28 15:13:45 [INFO] TabBar :Logging out.
+2023-07-28 15:13:45 [INFO] TabBar :Logged out.
+2023-07-28 15:13:47 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 15:13:48 [INFO] TabBar :Search account 4838483801
+2023-07-28 15:13:48 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 15:13:48 [INFO] NewSubmissionScreen :Enter effective Date - 10/10/2023
+2023-07-28 15:13:49 [INFO] SelectLOB :Select LOB: Workers' Compensation
+2023-07-28 15:13:49 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 15:13:50 [INFO] TableQuestionnaires :Enter 12345 for Total annual payroll:.
+2023-07-28 15:13:50 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 15:13:50 [INFO] PolicyInfo :Enter Industry Code - 0782
+2023-07-28 15:13:50 [INFO] PolicyInfo :Select Organisation Type - LLC
+2023-07-28 15:13:54 [INFO] WCCoverages :Covered Employees section - New Class Added. Row Number - 1
+2023-07-28 15:13:56 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 15:13:56 [INFO] TableQuestionnaires :Select Yes for Any employees under 16 or over 60 years of age?.
+2023-07-28 15:14:01 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 15:14:01 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 15:14:04 [INFO] Workspace :Workspace area is present.
+2023-07-28 15:14:04 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 15:14:04 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 15:14:04 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 15:14:07 [INFO] TitleToolbar :Quoted successfully
+2023-07-28 15:14:07 [INFO] Quote :Total Premium is $1,086.00
+2023-07-28 15:14:09 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 15:14:09 [INFO] TitleToolbar :alert accepted
+2023-07-28 15:14:12 [INFO] Workspace :Workspace area is present.
+2023-07-28 15:14:12 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 15:14:12 [INFO] TitleToolbar :Getting messages(types) - Warnings:
+2023-07-28 15:14:12 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 15:14:12 [INFO] TitleToolbar :alert accepted
+2023-07-28 15:14:15 [INFO] TitleToolbar :Your Submission has been bound.
+2023-07-28 15:14:15 [INFO] TabBar :Logging out.
+2023-07-28 15:14:16 [INFO] TabBar :Logged out.
+2023-07-28 15:14:16 [INFO] app_config :************* Execution complete *************
+2023-07-28 15:15:00 [INFO] app_config :************* Starting Execution *************
+2023-07-28 15:15:00 [INFO] app_config :************* Starting Execution *************
+2023-07-28 15:15:00 [INFO] app_config :************* Starting Execution *************
+2023-07-28 15:15:00 [INFO] app_config :************* Starting Execution *************
+2023-07-28 15:15:00 [INFO] browser :Opening Chrome Browser.
+2023-07-28 15:15:00 [INFO] browser :Opening Chrome Browser.
+2023-07-28 15:15:00 [INFO] browser :Opening Chrome Browser.
+2023-07-28 15:15:00 [INFO] browser :Opening Chrome Browser.
+2023-07-28 15:15:06 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 15:15:06 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 15:15:06 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 15:15:07 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 15:15:07 [INFO] TabBar :Search account 0765463929
+2023-07-28 15:15:07 [INFO] TabBar :Search account 1205787611
+2023-07-28 15:15:07 [INFO] TabBar :Search account 1660586871
+2023-07-28 15:15:09 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 15:15:09 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 15:15:09 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 15:15:09 [INFO] NewSubmissionScreen :Enter effective Date - 08/01/2023
+2023-07-28 15:15:09 [INFO] NewSubmissionScreen :Enter effective Date - 10/01/2023
+2023-07-28 15:15:09 [INFO] NewSubmissionScreen :Enter effective Date - 08/01/2023
+2023-07-28 15:15:09 [INFO] TabBar :Search account 4838483801
+2023-07-28 15:15:10 [INFO] SelectLOB :Select LOB: Workers' Compensation
+2023-07-28 15:15:10 [INFO] SelectLOB :Select LOB: Workers' Compensation
+2023-07-28 15:15:10 [INFO] SelectLOB :Select LOB: Workers' Compensation
+2023-07-28 15:15:11 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 15:15:11 [INFO] NewSubmissionScreen :Enter effective Date - 10/10/2023
+2023-07-28 15:15:12 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 15:15:12 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 15:15:12 [INFO] TableQuestionnaires :Enter 12345 for Total annual payroll:.
+2023-07-28 15:15:12 [INFO] TableQuestionnaires :Enter 12345 for Total annual payroll:.
+2023-07-28 15:15:12 [INFO] SelectLOB :Select LOB: Workers' Compensation
+2023-07-28 15:15:12 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 15:15:13 [INFO] TableQuestionnaires :Enter 12345 for Total annual payroll:.
+2023-07-28 15:15:13 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 15:15:13 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 15:15:13 [INFO] PolicyInfo :Enter Industry Code - 0742
+2023-07-28 15:15:13 [INFO] PolicyInfo :Select Organisation Type - Individual
+2023-07-28 15:15:14 [INFO] PolicyInfo :Enter Industry Code - 0782
+2023-07-28 15:15:14 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 15:15:14 [INFO] PolicyInfo :Select Organisation Type - LLC
+2023-07-28 15:15:14 [INFO] TableQuestionnaires :Enter 12345 for Total annual payroll:.
+2023-07-28 15:15:14 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 15:15:14 [INFO] PolicyInfo :Enter Industry Code - 0740
+2023-07-28 15:15:14 [INFO] PolicyInfo :Select Organisation Type - Individual
+2023-07-28 15:15:15 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 15:15:16 [INFO] PolicyInfo :Enter Industry Code - 0782
+2023-07-28 15:15:16 [INFO] PolicyInfo :Select Organisation Type - LLC
+2023-07-28 15:15:23 [INFO] WCCoverages :Covered Employees section - New Class Added. Row Number - 1
+2023-07-28 15:15:23 [INFO] WCCoverages :Covered Employees section - New Class Added. Row Number - 1
+2023-07-28 15:15:25 [INFO] WCCoverages :Covered Employees section - New Class Added. Row Number - 1
+2023-07-28 15:15:27 [INFO] WCCoverages :Covered Employees section - New Class Added. Row Number - 1
+2023-07-28 15:15:28 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 15:15:29 [INFO] TableQuestionnaires :Select Yes for Any employees under 16 or over 60 years of age?.
+2023-07-28 15:15:30 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 15:15:30 [INFO] TableQuestionnaires :Select Yes for Any employees under 16 or over 60 years of age?.
+2023-07-28 15:15:31 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 15:15:31 [INFO] TableQuestionnaires :Select Yes for Any employees under 16 or over 60 years of age?.
+2023-07-28 15:15:31 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 15:15:32 [INFO] TableQuestionnaires :Select Yes for Any employees under 16 or over 60 years of age?.
+2023-07-28 15:15:37 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 15:15:38 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 15:15:39 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 15:15:40 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 15:15:41 [INFO] Workspace :Workspace area is present.
+2023-07-28 15:15:41 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 15:15:41 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 15:15:41 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 15:15:41 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 15:15:41 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 15:15:41 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 15:15:42 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 15:15:43 [INFO] Workspace :Workspace area is present.
+2023-07-28 15:15:43 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 15:15:43 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 15:15:43 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 15:15:44 [INFO] Workspace :Workspace area is present.
+2023-07-28 15:15:44 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 15:15:45 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 15:15:45 [INFO] TitleToolbar :Quoted successfully
+2023-07-28 15:15:45 [INFO] Quote :Total Premium is $1,086.00
+2023-07-28 15:15:45 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 15:15:45 [INFO] Workspace :Workspace area is present.
+2023-07-28 15:15:45 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 15:15:46 [INFO] TitleToolbar :Policy Review screen
+2023-07-28 15:15:46 [INFO] TitleToolbar :Clicked Quote button.
+2023-07-28 15:15:47 [INFO] TitleToolbar :Quoted successfully
+2023-07-28 15:15:47 [INFO] Quote :Total Premium is $1,086.00
+2023-07-28 15:15:47 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 15:15:47 [INFO] TitleToolbar :alert accepted
+2023-07-28 15:15:48 [INFO] TitleToolbar :Quoted successfully
+2023-07-28 15:15:48 [INFO] Quote :Total Premium is $1,086.00
+2023-07-28 15:15:49 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 15:15:49 [INFO] TitleToolbar :alert accepted
+2023-07-28 15:15:49 [INFO] TitleToolbar :Quoted successfully
+2023-07-28 15:15:49 [INFO] Quote :Total Premium is $1,086.00
+2023-07-28 15:15:50 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 15:15:50 [INFO] TitleToolbar :alert accepted
+2023-07-28 15:15:50 [INFO] Workspace :Workspace area is present.
+2023-07-28 15:15:50 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 15:15:50 [INFO] TitleToolbar :Getting messages(types) - Warnings:
+2023-07-28 15:15:51 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 15:15:51 [INFO] TitleToolbar :alert accepted
+2023-07-28 15:15:51 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 15:15:51 [INFO] TitleToolbar :alert accepted
+2023-07-28 15:15:52 [INFO] Workspace :Workspace area is present.
+2023-07-28 15:15:52 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 15:15:52 [INFO] TitleToolbar :Getting messages(types) - Warnings:
+2023-07-28 15:15:52 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 15:15:52 [INFO] TitleToolbar :alert accepted
+2023-07-28 15:15:53 [INFO] Workspace :Workspace area is present.
+2023-07-28 15:15:53 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 15:15:53 [INFO] TitleToolbar :Getting messages(types) - Warnings:
+2023-07-28 15:15:53 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 15:15:53 [INFO] TitleToolbar :alert accepted
+2023-07-28 15:15:54 [INFO] TitleToolbar :Your Submission has been bound.
+2023-07-28 15:15:54 [INFO] TabBar :Logging out.
+2023-07-28 15:15:54 [INFO] Workspace :Workspace area is present.
+2023-07-28 15:15:54 [INFO] Workspace :Getting messages(types) - Warnings:
+2023-07-28 15:15:54 [INFO] TitleToolbar :Getting messages(types) - Warnings:
+2023-07-28 15:15:54 [INFO] TitleToolbar :Clicked Issue Policy button.
+2023-07-28 15:15:54 [INFO] TitleToolbar :alert accepted
+2023-07-28 15:15:55 [INFO] TabBar :Logged out.
+2023-07-28 15:15:55 [INFO] app_config :************* Execution complete *************
+2023-07-28 15:15:55 [INFO] TitleToolbar :Your Submission has been bound.
+2023-07-28 15:15:55 [INFO] TabBar :Logging out.
+2023-07-28 15:15:56 [INFO] TabBar :Logged out.
+2023-07-28 15:15:56 [INFO] app_config :************* Execution complete *************
+2023-07-28 15:15:56 [INFO] TitleToolbar :Your Submission has been bound.
+2023-07-28 15:15:56 [INFO] TabBar :Logging out.
+2023-07-28 15:15:57 [INFO] TabBar :Logged out.
+2023-07-28 15:15:57 [INFO] app_config :************* Execution complete *************
+2023-07-28 15:15:57 [INFO] TitleToolbar :Your Submission has been bound.
+2023-07-28 15:15:57 [INFO] TabBar :Logging out.
+2023-07-28 15:15:58 [INFO] TabBar :Logged out.
+2023-07-28 15:15:58 [INFO] app_config :************* Execution complete *************
+2023-07-28 16:14:27 [INFO] app_config :************* Starting Execution *************
+2023-07-28 16:14:27 [INFO] browser :Opening Chrome Browser.
+2023-07-28 16:14:31 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 16:14:31 [INFO] TabBar :Search account 5943333063
+2023-07-28 16:14:32 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 16:14:32 [INFO] NewSubmissionScreen :Enter effective Date - 10/10/2023
+2023-07-28 16:14:33 [INFO] SelectLOB :Select LOB: Commercial Auto
+2023-07-28 16:14:33 [INFO] Offerings :Offering selected
+2023-07-28 16:14:35 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 16:14:36 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 16:14:36 [INFO] PolicyInfo :Enter Industry Code - 0782
+2023-07-28 16:14:36 [INFO] PolicyInfo :Select Organisation Type - LLC
+2023-07-28 16:14:36 [INFO] PolicyInfo :Enter Policy Effective Date - 10/10/2023
+2023-07-28 16:14:37 [INFO] CommercialAutoLine :Hired Auto Liability selected under the Hired Auto coverage section
+2023-07-28 16:14:37 [INFO] CommercialAutoLine :Hired Auto Comprehensive selected under the Hired Auto coverage section
+2023-07-28 16:14:37 [INFO] CommercialAutoLine :Hired Auto Collision selected under the Hired Auto coverage section
+2023-07-28 16:14:38 [INFO] CommercialAutoLine :Details for the selected state Virginia entered - under the Hired Auto coverage section
+2023-07-28 16:14:38 [INFO] CommercialAutoLine :Non Owned Auto coverage selected
+2023-07-28 16:14:39 [INFO] CommercialAutoLine :Details for the selected state Virginia entered - under the Non Owned Auto coverage section
+2023-07-28 16:14:41 [INFO] Location :Page: Locations - new location added. 2170 COLISEUM DRIVE, HAMPTON, Virginia, 23666.
+2023-07-28 16:14:41 [INFO] Location :Page: Locations - new location added. 2170 COLISEUM DRIVE, HAMPTON, Virginia, 23666.
+2023-07-28 16:14:59 [INFO] Vehicles :Vehicle type Trucks,Tractors,Trailers added on the Vehicles screen for the Location 1
+2023-07-28 16:15:01 [INFO] Vehicles :Class code for the entered vehicle is selected
+2023-07-28 16:15:02 [INFO] StateInfo :Bodily Injury package 50/100 is selected for the Uninsured Motorist coverage
+2023-07-28 16:15:02 [INFO] StateInfo :Property Damage Limit 50,000 is selected for the Uninsured Motorist coverage
+2023-07-28 16:15:04 [INFO] Drivers :Driver details are entered
+2023-07-28 16:15:05 [INFO] Workspace :Getting messages(types) - Errors:
+2023-07-28 16:15:05 [INFO] TabBar :Logging out.
+2023-07-28 16:15:06 [INFO] TabBar :alert accepted
+2023-07-28 16:15:07 [INFO] TabBar :Logged out.
+2023-07-28 16:15:07 [INFO] app_config :************* Execution complete *************
+2023-07-28 16:56:04 [INFO] app_config :************* Starting Execution *************
+2023-07-28 16:56:04 [INFO] browser :Opening Chrome Browser.
+2023-07-28 16:56:08 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 16:56:09 [INFO] TabBar :Search account 5943333063
+2023-07-28 16:56:09 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 16:56:09 [INFO] NewSubmissionScreen :Enter effective Date - 10/10/2023
+2023-07-28 16:56:10 [INFO] SelectLOB :Select LOB: Commercial Auto
+2023-07-28 16:56:10 [INFO] Offerings :Offering selected
+2023-07-28 16:56:12 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 16:56:12 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 16:56:13 [INFO] PolicyInfo :Enter Industry Code - 0782
+2023-07-28 16:56:13 [INFO] PolicyInfo :Select Organisation Type - LLC
+2023-07-28 16:56:13 [INFO] PolicyInfo :Enter Policy Effective Date - 10/10/2023
+2023-07-28 16:56:14 [INFO] CommercialAutoLine :In this method -----------------------@@@@@@@@ 
+2023-07-28 16:56:24 [DEBUG] BaseElement : commercial_auto.py - new_row() - An element is not found.
+2023-07-28 16:56:34 [INFO] TabBar :Logging out.
+2023-07-28 16:56:35 [INFO] TabBar :alert accepted
+2023-07-28 16:56:36 [INFO] app_config :************* Execution complete *************
+2023-07-28 16:58:49 [INFO] app_config :************* Starting Execution *************
+2023-07-28 16:58:49 [INFO] browser :Opening Chrome Browser.
+2023-07-28 16:58:52 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 16:58:53 [INFO] TabBar :Search account 5943333063
+2023-07-28 16:58:54 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 16:58:54 [INFO] NewSubmissionScreen :Enter effective Date - 10/10/2023
+2023-07-28 16:58:54 [INFO] SelectLOB :Select LOB: Commercial Auto
+2023-07-28 16:58:55 [INFO] Offerings :Offering selected
+2023-07-28 16:58:56 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 16:58:57 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 16:58:57 [INFO] PolicyInfo :Enter Industry Code - 0782
+2023-07-28 16:58:57 [INFO] PolicyInfo :Select Organisation Type - LLC
+2023-07-28 16:58:57 [INFO] PolicyInfo :Enter Policy Effective Date - 10/10/2023
+2023-07-28 16:58:58 [INFO] CommercialAutoLine :'Hired Auto Liability' coverage selected under the Hired Auto coverage section
+2023-07-28 16:58:58 [INFO] CommercialAutoLine :'Hired Auto Comprehensive' coverage selected under the Hired Auto coverage section
+2023-07-28 16:58:59 [INFO] CommercialAutoLine :'Hired Auto Collision' coverage selected under the Hired Auto coverage section
+2023-07-28 16:58:59 [INFO] CommercialAutoLine :In this method -----------------------@@@@@@@@ 
+2023-07-28 16:58:59 [INFO] CommercialAutoLine :Details for the selected state Virginia entered - under the Hired Auto coverage section
+2023-07-28 16:58:59 [INFO] CommercialAutoLine :Non Owned Auto coverage selected
+2023-07-28 16:59:01 [INFO] CommercialAutoLine :Details for the selected state Virginia entered - under the Non Owned Auto coverage section
+2023-07-28 16:59:03 [INFO] Location :Page: Locations - new location added. 8365 C LEESBURG PIKE, VIENNA, Virginia, 22182.
+2023-07-28 16:59:03 [INFO] Location :Page: Locations - new location added. 8365 C LEESBURG PIKE, VIENNA, Virginia, 22182.
+2023-07-28 16:59:05 [INFO] Vehicles :Vehicle type Trucks,Tractors,Trailers added on the Vehicles screen for the Location 1
+2023-07-28 16:59:07 [INFO] Vehicles :Class code for the entered vehicle is selected
+2023-07-28 16:59:09 [INFO] StateInfo :Bodily Injury package 50/100 is selected for the Uninsured Motorist coverage
+2023-07-28 16:59:09 [INFO] StateInfo :Property Damage Limit 50,000 is selected for the Uninsured Motorist coverage
+2023-07-28 16:59:11 [INFO] Drivers :Driver details are entered
+2023-07-28 16:59:12 [INFO] Workspace :Getting messages(types) - Errors:
+2023-07-28 16:59:12 [INFO] TabBar :Logging out.
+2023-07-28 16:59:12 [INFO] TabBar :alert accepted
+2023-07-28 16:59:13 [INFO] app_config :************* Execution complete *************
+2023-07-28 17:04:06 [INFO] app_config :************* Starting Execution *************
+2023-07-28 17:04:06 [INFO] browser :Opening Chrome Browser.
+2023-07-28 17:04:09 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 17:04:10 [INFO] TabBar :Search account 5943333063
+2023-07-28 17:04:11 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 17:04:11 [INFO] NewSubmissionScreen :Enter effective Date - 10/10/2023
+2023-07-28 17:04:11 [INFO] SelectLOB :Select LOB: Commercial Auto
+2023-07-28 17:04:12 [INFO] Offerings :Offering selected
+2023-07-28 17:04:13 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 17:04:14 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 17:04:14 [INFO] PolicyInfo :Enter Industry Code - 0782
+2023-07-28 17:04:14 [INFO] PolicyInfo :Select Organisation Type - LLC
+2023-07-28 17:04:14 [INFO] PolicyInfo :Enter Policy Effective Date - 10/10/2023
+2023-07-28 17:04:15 [INFO] CommercialAutoLine :'Hired Auto Liability' coverage selected under the Hired Auto coverage section
+2023-07-28 17:04:15 [INFO] CommercialAutoLine :'Hired Auto Comprehensive' coverage selected under the Hired Auto coverage section
+2023-07-28 17:04:15 [INFO] CommercialAutoLine :'Hired Auto Collision' coverage selected under the Hired Auto coverage section
+2023-07-28 17:04:16 [INFO] CommercialAutoLine :Details for the selected state Virginia entered - under the Hired Auto coverage section
+2023-07-28 17:04:16 [INFO] CommercialAutoLine :Non Owned Auto coverage selected
+2023-07-28 17:04:17 [INFO] CommercialAutoLine :Details for the selected state Virginia entered - under the Non Owned Auto coverage section
+2023-07-28 17:04:20 [INFO] Location :Page: Locations - new location added. 723 SOUTHPARK BLVD, COLONIAL HEIGHTS, Virginia, 23834.
+2023-07-28 17:04:20 [INFO] Location :Page: Locations - new location added. 723 SOUTHPARK BLVD, COLONIAL HEIGHTS, Virginia, 23834.
+2023-07-28 17:04:22 [INFO] Vehicles :Vehicle type Trucks,Tractors,Trailers added on the Vehicles screen for the Location 1
+2023-07-28 17:04:24 [INFO] Vehicles :Class code for the entered vehicle is selected
+2023-07-28 17:04:25 [INFO] StateInfo :Bodily Injury package 50/100 is selected for the Uninsured Motorist coverage
+2023-07-28 17:04:26 [INFO] StateInfo :Property Damage Limit 50,000 is selected for the Uninsured Motorist coverage
+2023-07-28 17:04:27 [INFO] Drivers :Driver details are entered
+2023-07-28 17:04:29 [INFO] Workspace :Getting messages(types) - Errors:
+2023-07-28 17:04:29 [INFO] TabBar :Logging out.
+2023-07-28 17:04:29 [INFO] TabBar :alert accepted
+2023-07-28 17:04:30 [INFO] app_config :************* Execution complete *************
+2023-07-28 17:13:33 [INFO] app_config :************* Starting Execution *************
+2023-07-28 17:13:33 [INFO] browser :Opening Chrome Browser.
+2023-07-28 17:13:36 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 17:13:37 [INFO] TabBar :Search account 5943333063
+2023-07-28 17:13:38 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 17:13:38 [INFO] NewSubmissionScreen :Enter effective Date - 10/10/2023
+2023-07-28 17:13:39 [INFO] SelectLOB :Select LOB: Commercial Auto
+2023-07-28 17:13:39 [INFO] Offerings :Offering selected
+2023-07-28 17:13:41 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 17:13:42 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 17:13:42 [INFO] PolicyInfo :Enter Industry Code - 0782
+2023-07-28 17:13:42 [INFO] PolicyInfo :Select Organisation Type - LLC
+2023-07-28 17:13:42 [INFO] PolicyInfo :Enter Policy Effective Date - 10/10/2023
+2023-07-28 17:13:43 [INFO] CommercialAutoLine :'Hired Auto Liability' coverage selected under the Hired Auto coverage section
+2023-07-28 17:13:43 [INFO] CommercialAutoLine :'Hired Auto Comprehensive' coverage selected under the Hired Auto coverage section
+2023-07-28 17:13:43 [INFO] CommercialAutoLine :'Hired Auto Collision' coverage selected under the Hired Auto coverage section
+2023-07-28 17:13:44 [INFO] CommercialAutoLine :Details for the selected state Virginia entered - under the Hired Auto coverage section
+2023-07-28 17:13:44 [INFO] CommercialAutoLine :Non Owned Auto coverage selected
+2023-07-28 17:13:44 [INFO] TabBar :Logging out.
+2023-07-28 17:13:45 [INFO] TabBar :alert accepted
+2023-07-28 17:13:46 [INFO] app_config :************* Execution complete *************
+2023-07-28 17:14:36 [INFO] app_config :************* Starting Execution *************
+2023-07-28 17:14:36 [INFO] browser :Opening Chrome Browser.
+2023-07-28 17:14:39 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 17:14:40 [INFO] TabBar :Search account 5943333063
+2023-07-28 17:14:41 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 17:14:41 [INFO] NewSubmissionScreen :Enter effective Date - 10/10/2023
+2023-07-28 17:14:41 [INFO] SelectLOB :Select LOB: Commercial Auto
+2023-07-28 17:14:42 [INFO] Offerings :Offering selected
+2023-07-28 17:14:44 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 17:14:45 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 17:14:45 [INFO] PolicyInfo :Enter Industry Code - 0782
+2023-07-28 17:14:45 [INFO] PolicyInfo :Select Organisation Type - LLC
+2023-07-28 17:14:45 [INFO] PolicyInfo :Enter Policy Effective Date - 10/10/2023
+2023-07-28 17:14:46 [INFO] CommercialAutoLine :'Hired Auto Liability' coverage selected under the Hired Auto coverage section
+2023-07-28 17:14:46 [INFO] CommercialAutoLine :'Hired Auto Comprehensive' coverage selected under the Hired Auto coverage section
+2023-07-28 17:14:47 [INFO] CommercialAutoLine :'Hired Auto Collision' coverage selected under the Hired Auto coverage section
+2023-07-28 17:14:48 [INFO] CommercialAutoLine :Details for the selected state Virginia entered - under the Hired Auto coverage section
+2023-07-28 17:14:48 [INFO] CommercialAutoLine :Non Owned Auto coverage selected
+2023-07-28 17:14:49 [INFO] CommercialAutoLine :Details for the selected state Virginia entered - under the Non Owned Auto coverage section
+2023-07-28 17:14:51 [INFO] Location :Page: Locations - new location added. 3165 DUKE ST, ALEXANDRIA, Virginia, 22314.
+2023-07-28 17:14:51 [INFO] Location :Page: Locations - new location added. 3165 DUKE ST, ALEXANDRIA, Virginia, 22314.
+2023-07-28 17:14:54 [INFO] Vehicles :Vehicle type Trucks,Tractors,Trailers added on the Vehicles screen for the Location 1
+2023-07-28 17:14:56 [INFO] Vehicles :Class code for the entered vehicle is selected
+2023-07-28 17:14:58 [INFO] StateInfo :Bodily Injury package 50/100 is selected for the Uninsured Motorist coverage
+2023-07-28 17:14:58 [INFO] StateInfo :Property Damage Limit 50,000 is selected for the Uninsured Motorist coverage
+2023-07-28 17:14:59 [INFO] Drivers :Driver details are entered
+2023-07-28 17:15:01 [INFO] Workspace :Getting messages(types) - Errors:
+2023-07-28 17:15:01 [INFO] TabBar :Logging out.
+2023-07-28 17:15:02 [INFO] TabBar :alert accepted
+2023-07-28 17:15:03 [INFO] app_config :************* Execution complete *************
+2023-07-28 17:15:13 [INFO] app_config :************* Starting Execution *************
+2023-07-28 17:15:13 [INFO] browser :Opening Chrome Browser.
+2023-07-28 17:15:16 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 17:15:17 [INFO] TabBar :Search account 5943333063
+2023-07-28 17:15:18 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 17:15:18 [INFO] NewSubmissionScreen :Enter effective Date - 10/10/2023
+2023-07-28 17:15:19 [INFO] SelectLOB :Select LOB: Commercial Auto
+2023-07-28 17:15:19 [INFO] Offerings :Offering selected
+2023-07-28 17:15:21 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 17:15:22 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 17:15:22 [INFO] PolicyInfo :Enter Industry Code - 0782
+2023-07-28 17:15:22 [INFO] PolicyInfo :Select Organisation Type - LLC
+2023-07-28 17:15:22 [INFO] PolicyInfo :Enter Policy Effective Date - 10/10/2023
+2023-07-28 17:15:23 [INFO] CommercialAutoLine :'Hired Auto Liability' coverage selected under the Hired Auto coverage section
+2023-07-28 17:15:24 [INFO] CommercialAutoLine :'Hired Auto Comprehensive' coverage selected under the Hired Auto coverage section
+2023-07-28 17:15:24 [INFO] CommercialAutoLine :'Hired Auto Collision' coverage selected under the Hired Auto coverage section
+2023-07-28 17:15:25 [INFO] CommercialAutoLine :Details for the selected state Virginia entered - under the Hired Auto coverage section
+2023-07-28 17:15:25 [INFO] CommercialAutoLine :Non Owned Auto coverage selected
+2023-07-28 17:15:26 [INFO] CommercialAutoLine :Details for the selected state Virginia entered - under the Non Owned Auto coverage section
+2023-07-28 17:15:28 [INFO] Location :Page: Locations - new location added. 2148 SOUTH PLEASANT VALLEY RD, WINCHESTER, Virginia, 22602.
+2023-07-28 17:15:28 [INFO] Location :Page: Locations - new location added. 2148 SOUTH PLEASANT VALLEY RD, WINCHESTER, Virginia, 22602.
+2023-07-28 17:15:30 [INFO] Vehicles :Vehicle type Trucks,Tractors,Trailers added on the Vehicles screen for the Location 1
+2023-07-28 17:15:32 [INFO] Vehicles :Class code for the entered vehicle is selected
+2023-07-28 17:15:34 [INFO] StateInfo :Bodily Injury package 50/100 is selected for the Uninsured Motorist coverage
+2023-07-28 17:15:34 [INFO] StateInfo :Property Damage Limit 50,000 is selected for the Uninsured Motorist coverage
+2023-07-28 17:15:36 [INFO] Drivers :Driver details are entered
+2023-07-28 17:15:37 [INFO] Workspace :Getting messages(types) - Errors:
+2023-07-28 17:15:37 [INFO] TabBar :Logging out.
+2023-07-28 17:15:37 [INFO] TabBar :alert accepted
+2023-07-28 17:15:38 [INFO] app_config :************* Execution complete *************

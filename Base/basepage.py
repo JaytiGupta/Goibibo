@@ -27,5 +27,4 @@ class BasePage:
             alert.accept()
             self.log.info("alert accepted")
         except NoAlertPresentException:
-            self.log.info("no alert")
-
+            pass

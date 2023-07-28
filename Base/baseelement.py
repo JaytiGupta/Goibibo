@@ -142,6 +142,14 @@ class BaseElement:
         WebDriverWait(self.driver, MAX_WAIT_TIME).\
             until(EC.text_to_be_present_in_element(self.locator, text))
 
+    def wait_till_text_to_be_present_in_value(self, text):
+        WebDriverWait(self.driver, MAX_WAIT_TIME). \
+            until(EC.text_to_be_present_in_element_value(self.locator, text))
+
+    def wait_till_text_to_be_present_in_attribute(self, attribute, text):
+        WebDriverWait(self.driver, MAX_WAIT_TIME). \
+            until(EC.text_to_be_present_in_element_attribute(self.locator, attribute, text))
+
     def wait_till_text_to_be_not_present_in_element(self, text):
         WebDriverWait(self.driver, MAX_WAIT_TIME).\
             until_not(EC.text_to_be_present_in_element(self.locator, text))
@@ -150,11 +158,11 @@ class BaseElement:
         WebDriverWait(self.driver, MAX_WAIT_TIME).\
             until(EC.invisibility_of_element_located(self.locator))
 
-    def wait_till_staleness_of_element(self):
-        WebDriverWait(self.driver, MAX_WAIT_TIME).until(EC.staleness_of(self.web_element))
-
-    def wait_till_visibility_of_element(self):
-        WebDriverWait(self.driver, MAX_WAIT_TIME).until(EC.visibility_of(self.web_element))
+    # def wait_till_staleness_of_element(self):
+    #     WebDriverWait(self.driver, MAX_WAIT_TIME).until(EC.staleness_of(self.web_element))
+    #
+    # def wait_till_visibility_of_element(self):
+    #     WebDriverWait(self.driver, MAX_WAIT_TIME).until(EC.visibility_of(self.web_element))
 
     # methods for multiple elements returned
     def get_all_elements(self) -> list:

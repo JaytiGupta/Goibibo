@@ -23,7 +23,7 @@ class CommercialAuto(BasePage):
         self.qualification_screen = Qualification(self.driver)
         self.policy_info_screen = common.PolicyInfo(self.driver)
         self.comm_auto_line_screen = CommercialAutoLine(self.driver)
-        self.location_screen = common.Location(self.driver)
+        self.location_screen = Location(self.driver)
         self.vehicles_screen = Vehicles(self.driver)
         self.state_info_screen = StateInfo(self.driver)
         self.drivers_screen = Drivers(self.driver)
@@ -91,33 +91,47 @@ class CommercialAutoLine:
     #     liability_text = BaseElement(self.driver, self._locator_liability_covg_text)
     #     liability_text.wait_till_text_to_be_present_in_element("Liability")
 
-    def hired_auto_coverages(self, coverage):
+    def add_hired_auto_coverages(self, coverage):
         _locator_hired_auto_covg = (By.XPATH, f'//input[contains(@aria-label,"{coverage}")]')
-        coverage = BaseElement(self.driver, _locator_hired_auto_covg)
-        coverage.click_element()
-        self.log.info(f"{coverage} selected under the Hired Auto coverage section")
+        coverage_elm = BaseElement(self.driver, _locator_hired_auto_covg)
+        coverage_elm.click_element()
+        self.log.info(f"'{coverage}' coverage selected under the Hired Auto coverage section")
         return None
 
-    def hired_auto_state(self, cost_of_hire, state):
+    def add_hired_auto_state(self, cost_of_hire, state):
         hired_state = BaseElement(self.driver, self._locator_hired_auto_select_state)
         hired_state.select_option(text=state)
         add_state = BaseElement(self.driver, self._locator_hired_auto_add_state_btn)
         add_state.click_element()
+
+        def new_row(row_number):
+            locator = (By.XPATH, f'//div[contains(@id,"HiredAutoLVInput")]//table//tr[{row_number}]')
+            return BaseElement(self.driver, locator)
+
+        new_row(2).wait_till_text_to_be_present_in_attribute("role", "row")
+
         cost_of_hire_elm = BaseElement(self.driver, self._locator_hired_auto_cost_of_hire)
         cost_of_hire_elm.enter_text(cost_of_hire)
         self.log.info(f"Details for the selected state {state} entered - under the Hired Auto coverage section")
 
-    def non_owned_auto_covg(self):
+    def add_non_owned_auto_covg(self):
         non_owned = BaseElement(self.driver, self._locator_non_owned_auto_checkbox)
         non_owned.click_element()
         self.log.info("Non Owned Auto coverage selected")
         return None
 
-    def non_owned_auto_state(self, emp_no, partners, volunteers, state):
+    def add_non_owned_auto_state(self, emp_no, partners, volunteers, state):
         non_owned_state = BaseElement(self.driver, self._locator_non_owned_auto_select_state)
         non_owned_state.select_option(text=state)
         add_state = BaseElement(self.driver, self._locator_non_owned_auto_add_state_btn)
         add_state.click_element()
+
+        def new_row(row_number):
+            locator = (By.XPATH, f'//div[contains(@id,"NonownedLVInput")]//table//tr[{row_number}]')
+            return BaseElement(self.driver, locator)
+
+        new_row(2).wait_till_text_to_be_present_in_attribute("role", "row")
+
         no_of_emp = BaseElement(self.driver, self._locator_non_owned_auto_state_no_of_emp)
         no_of_emp.enter_text(emp_no)
         total_partners = BaseElement(self.driver, self._locator_non_owned_auto_state_total_partners)
@@ -259,3 +273,54 @@ class CoveredVehicles:
         self.log.info("Details of the Covered Vehicle are not updated")
         return None
 
+
+class Location(common.Location):
+    log = getLogger()
+
+    def __init__(self, driver):
+        super().__init__(driver=driver)
+        self._locator_autofill_territory_code_btn = (By.XPATH, '//div[text() = "Autofill Territory Codes"]')
+
+        # locate only when value is filled in input box
+        self._locator_territory_input_box = (By.XPATH, '//div[text()="Territory Code for Commercial Auto Line"]/'
+                                                          'following-sibling::div//input')
+
+    def add_new_location(self, address1, city, state, zip_code, address2=None, address3=None):
+        add_new_location_btn = BaseElement(self.driver, self._locator_add_new_location_btn)
+        add_new_location_btn.click_element()
+
+        policy_title = common.TitleToolbar(self.driver)
+        policy_title.wait_for_screen("Location Information")
+
+        address1_elm = BaseElement(self.driver, self._locator_address1)
+        address1_elm.enter_text(address1)
+
+        if address2 is not None:
+            address2_elm = BaseElement(self.driver, self._locator_address2)
+            address2_elm.enter_text(address2)
+
+        if address3 is not None:
+            address3_elm = BaseElement(self.driver, self._locator_address3)
+            address3_elm.enter_text(address3)
+
+        city_elm = BaseElement(self.driver, self._locator_input_city)
+        city_elm.enter_text(city)
+
+        state_elm = BaseElement(self.driver, self._locator_select_state)
+        state_elm.select_option(text=state)
+
+        zip_elm = BaseElement(self.driver, self._locator_input_zip)
+        zip_elm.enter_text(zip_code)
+
+        territory_code_btn = BaseElement(self.driver, self._locator_autofill_territory_code_btn)
+        territory_code_btn.click_element()
+
+        territory_input_box = BaseElement(self.driver, self._locator_territory_input_box)
+        # Wait until the element's value attribute has any text present
+        territory_input_box.wait_till_text_to_be_present_in_value("322")
+
+        self.log.info(f"Page: Locations - new location added. {address1}, {city}, {state}, {zip_code}.")
+
+        ok_btn = BaseElement(self.driver, self._locator_ok_btn)
+        ok_btn.click_element()
+        policy_title.wait_for_screen(self.SCREEN_TITLE)
