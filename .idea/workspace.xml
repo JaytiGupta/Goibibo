@@ -1,22 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="82aaf498-e6c0-43b0-8f5f-8e928a4d18b3" name="Changes" comment="27th July">
+    <list default="true" id="82aaf498-e6c0-43b0-8f5f-8e928a4d18b3" name="Changes" comment="28th July">
       <change afterPath="$PROJECT_DIR$/ResultFiles/BUILD_results.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ResultFiles/Logs/.__logfile.lock" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Test/guidewire/BUILD_results.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Base/baseelement.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/baseelement.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Base/basepage.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/basepage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/data_new_submission_comm_auto.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_new_submission_comm_auto.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/data_newbusiness_work_comp.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_newbusiness_work_comp.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/commercial_auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/commercial_auto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/common.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/screens.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/screens.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ResultFiles/Logs/logfile.log" beforeDir="false" afterPath="$PROJECT_DIR$/ResultFiles/Logs/logfile.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_comm_auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_comm_auto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_home.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_home.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_newbusiness_work_comp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_newbusiness_work_comp.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -404,7 +396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690469175796</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="28th July">
+      <created>1690545297157</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1690545297157</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -447,6 +446,7 @@
     <MESSAGE value="24th July - jayti" />
     <MESSAGE value="25th July - jayti" />
     <MESSAGE value="27th July" />
-    <option name="LAST_COMMIT_MESSAGE" value="27th July" />
+    <MESSAGE value="28th July" />
+    <option name="LAST_COMMIT_MESSAGE" value="28th July" />
   </component>
 </project>

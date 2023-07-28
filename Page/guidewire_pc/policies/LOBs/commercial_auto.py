@@ -105,10 +105,10 @@ class CommercialAutoLine:
         add_state.click_element()
 
         def new_row(row_number):
-            locator = (By.XPATH, f'//div[contains(@id,"HiredAutoLVInput")]//table//tr[{row_number}]')
+            locator = (By.XPATH, f'//div[contains(@id,"HiredAutoLVInput")]//table//tr[{row_number + 1}]')
             return BaseElement(self.driver, locator)
 
-        new_row(2).wait_till_text_to_be_present_in_attribute("role", "row")
+        new_row(1).wait_till_text_to_be_present_in_attribute("role", "row")
 
         cost_of_hire_elm = BaseElement(self.driver, self._locator_hired_auto_cost_of_hire)
         cost_of_hire_elm.enter_text(cost_of_hire)
@@ -127,10 +127,10 @@ class CommercialAutoLine:
         add_state.click_element()
 
         def new_row(row_number):
-            locator = (By.XPATH, f'//div[contains(@id,"NonownedLVInput")]//table//tr[{row_number}]')
+            locator = (By.XPATH, f'//div[contains(@id,"NonownedLVInput")]//table//tr[{row_number + 1}]')
             return BaseElement(self.driver, locator)
 
-        new_row(2).wait_till_text_to_be_present_in_attribute("role", "row")
+        new_row(1).wait_till_text_to_be_present_in_attribute("role", "row")
 
         no_of_emp = BaseElement(self.driver, self._locator_non_owned_auto_state_no_of_emp)
         no_of_emp.enter_text(emp_no)

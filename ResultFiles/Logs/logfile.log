@@ -5889,3 +5889,33 @@
 2023-07-28 17:15:37 [INFO] TabBar :Logging out.
 2023-07-28 17:15:37 [INFO] TabBar :alert accepted
 2023-07-28 17:15:38 [INFO] app_config :************* Execution complete *************
+2023-07-28 17:55:57 [INFO] app_config :************* Starting Execution *************
+2023-07-28 17:55:57 [INFO] browser :Opening Chrome Browser.
+2023-07-28 17:56:01 [INFO] Login :Login Successful - Guidewire Policy Center.
+2023-07-28 17:56:02 [INFO] TabBar :Search account 5943333063
+2023-07-28 17:56:03 [INFO] NewSubmissionScreen :Select Base State - Virginia
+2023-07-28 17:56:03 [INFO] NewSubmissionScreen :Enter effective Date - 10/10/2023
+2023-07-28 17:56:03 [INFO] SelectLOB :Select LOB: Commercial Auto
+2023-07-28 17:56:04 [INFO] Offerings :Offering selected
+2023-07-28 17:56:06 [INFO] TableQuestionnaires :Select all radio button questions as no.
+2023-07-28 17:56:07 [INFO] PolicyInfo :Enter FEIN - 456545654
+2023-07-28 17:56:07 [INFO] PolicyInfo :Enter Industry Code - 0782
+2023-07-28 17:56:07 [INFO] PolicyInfo :Select Organisation Type - LLC
+2023-07-28 17:56:08 [INFO] PolicyInfo :Enter Policy Effective Date - 10/10/2023
+2023-07-28 17:56:09 [INFO] CommercialAutoLine :'Hired Auto Liability' coverage selected under the Hired Auto coverage section
+2023-07-28 17:56:09 [INFO] CommercialAutoLine :'Hired Auto Comprehensive' coverage selected under the Hired Auto coverage section
+2023-07-28 17:56:09 [INFO] CommercialAutoLine :'Hired Auto Collision' coverage selected under the Hired Auto coverage section
+2023-07-28 17:56:10 [INFO] CommercialAutoLine :Details for the selected state Virginia entered - under the Hired Auto coverage section
+2023-07-28 17:56:11 [INFO] CommercialAutoLine :Non Owned Auto coverage selected
+2023-07-28 17:56:12 [INFO] CommercialAutoLine :Details for the selected state Virginia entered - under the Non Owned Auto coverage section
+2023-07-28 17:56:14 [INFO] Location :Page: Locations - new location added. 5841-B CROSSROADS CENTER WAY, FALLS CHURCH, Virginia, 22041.
+2023-07-28 17:56:14 [INFO] Location :Page: Locations - new location added. 5841-B CROSSROADS CENTER WAY, FALLS CHURCH, Virginia, 22041.
+2023-07-28 17:56:17 [INFO] Vehicles :Vehicle type Trucks,Tractors,Trailers added on the Vehicles screen for the Location 1
+2023-07-28 17:56:19 [INFO] Vehicles :Class code for the entered vehicle is selected
+2023-07-28 17:56:21 [INFO] StateInfo :Bodily Injury package 50/100 is selected for the Uninsured Motorist coverage
+2023-07-28 17:56:21 [INFO] StateInfo :Property Damage Limit 50,000 is selected for the Uninsured Motorist coverage
+2023-07-28 17:56:23 [INFO] Drivers :Driver details are entered
+2023-07-28 17:56:25 [INFO] Workspace :Getting messages(types) - Errors:
+2023-07-28 17:56:25 [INFO] TabBar :Logging out.
+2023-07-28 17:56:25 [INFO] TabBar :alert accepted
+2023-07-28 17:56:27 [INFO] app_config :************* Execution complete *************
