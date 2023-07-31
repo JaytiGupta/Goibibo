@@ -9,6 +9,7 @@ from selenium.webdriver.common.by import By
 from Page.guidewire_pc.policies.LOBs import common
 from Page.guidewire_pc.policies.common.elements import TableQuestionnaires
 from Page.guidewire_pc.policies.common.sidebar import Sidebar
+from Page.guidewire_pc.policies.common.titlebar import TitleToolbar
 from Page.guidewire_pc.policies.common import screens
 from Util.logs import getLogger
 from Util import random_data
@@ -21,7 +22,7 @@ class CommercialAuto(BasePage):
         super().__init__(driver=driver, url=None)
 
         # screens
-        self.title_toolbar = common.TitleToolbar(self.driver)
+        self.title_toolbar = TitleToolbar(self.driver)
         self.offerings_screen = Offerings(self.driver)
         self.qualification_screen = Qualification(self.driver)
         self.policy_info_screen = screens.PolicyInfo(self.driver)
@@ -292,7 +293,7 @@ class Location(screens.Location):
         add_new_location_btn = BaseElement(self.driver, self._locator_add_new_location_btn)
         add_new_location_btn.click_element()
 
-        policy_title = common.TitleToolbar(self.driver)
+        policy_title = TitleToolbar(self.driver)
         policy_title.wait_for_screen("Location Information")
 
         address1_elm = BaseElement(self.driver, self._locator_address1)

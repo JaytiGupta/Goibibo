@@ -8,6 +8,8 @@ from Page.guidewire_pc.policies.LOBs import common
 from Page.guidewire_pc.policies.common.elements import TableQuestionnaires
 from Page.guidewire_pc.policies.common.sidebar import Sidebar
 from Page.guidewire_pc.policies.common import screens
+from Page.guidewire_pc.policies.common.titlebar import TitleToolbar
+
 from Util.logs import getLogger
 
 
@@ -16,7 +18,7 @@ class WorkersCompensation(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
-        self.title_toolbar = common.TitleToolbar(self.driver)
+        self.title_toolbar = TitleToolbar(self.driver)
         self.sidebar = Sidebar(self.driver)
         self.qualification_screen = Qualification(self.driver)
         self.policy_info_screen = screens.PolicyInfo(self.driver)

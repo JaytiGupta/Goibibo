@@ -4,18 +4,48 @@ from Base.basepage import BasePage
 from Base.baseelement import BaseElement
 from selenium.webdriver.common.by import By
 from Util.logs import getLogger
-from Page.guidewire_pc.policies.LOBs import common
-
+from Page.guidewire_pc.policies.common.titlebar import TitleToolbar
 
 class Cancel(BasePage):
     log = getLogger()
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
-        self.title_toolbar = common.TitleToolbar(self.driver)
+        self.title_toolbar = CancelTitleToolbar(self.driver)
         self.refund_method = None
         self.start_cancellation_for_policy_screen = StartCancellationForPolicy(self.driver)
         self.confirmation_screen = Confirmation(self.driver)
+
+
+class CancelTitleToolbar(TitleToolbar):
+    log = getLogger()
+
+    @property
+    def cancel_now_btn(self):
+        locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//'
+                             'div[contains(@id,"BindOptions")]//'
+                             'div[@aria-label="Cancel Now"]')
+        return BaseElement(self.driver, locator)
+
+    @property
+    def schedule_cancellation_btn(self):
+        locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//'
+                             'div[contains(@id,"BindOptions")]//'
+                             'div[@aria-label="Schedule Cancellation"]')
+        return BaseElement(self.driver, locator)
+
+    def schedule_cancellation(self):
+        pass
+
+    def cancel_now(self):
+        initial_screen_title = self.screen_title_text()
+        self.bind_options_btn.click_element()
+        self.cancel_now_btn.click_element()
+        self.log.info(f"Clicked Cancel Now button.")
+        self.accept_alert()
+        self.screen_title_element.wait_till_text_to_be_not_present_in_element(initial_screen_title)
+        if self.screen_title_text() == "Cancellation Bound":
+            self.log.info("Your Cancellation has been bound.")
 
 
 class StartCancellationForPolicy(BasePage):

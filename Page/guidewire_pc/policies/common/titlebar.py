@@ -23,6 +23,11 @@ class TitleToolbar(BasePage):
 
     @property
     def next_btn(self):
+        locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[contains(@aria-label, "Next")]/parent::div')
+        return BaseElement(self.driver, locator)
+
+    @property
+    def next_btn_text(self):
         locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[contains(@aria-label, "Next")]')
         return BaseElement(self.driver, locator)
 
@@ -47,11 +52,6 @@ class TitleToolbar(BasePage):
         return BaseElement(self.driver, locator)
 
     @property
-    def reinstate_btn(self):
-        locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[@aria-label="Reinstate"]')
-        return BaseElement(self.driver, locator)
-
-    @property
     def bind_options_btn(self):
         locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[@aria-label="Bind Options"]')
         return BaseElement(self.driver, locator)
@@ -64,20 +64,6 @@ class TitleToolbar(BasePage):
     @property
     def issue_policy_btn(self):
         locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[@aria-label="Issue Policy"]')
-        return BaseElement(self.driver, locator)
-
-    @property
-    def cancel_now_btn(self):
-        locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//'
-                             'div[contains(@id,"BindOptions")]//'
-                             'div[@aria-label="Cancel Now"]')
-        return BaseElement(self.driver, locator)
-
-    @property
-    def schedule_cancellation_btn(self):
-        locator = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//'
-                             'div[contains(@id,"BindOptions")]//'
-                             'div[@aria-label="Schedule Cancellation"]')
         return BaseElement(self.driver, locator)
 
     @property
@@ -105,28 +91,22 @@ class TitleToolbar(BasePage):
             self.next()
             actual_screen_title = self.screen_title_text()
 
-    def quote(self):  # TODO needs to update max depth for recursion
+    def quote(self):
+        self.back_btn.wait_till_text_to_be_present_in_element("Back")
         initial_screen_title = self.screen_title_text()
         self.log.info(f"{initial_screen_title} screen")
-
         self.quote_btn.click_element()
         self.log.info("Clicked Quote button.")
         time.sleep(3)
-        # Policy Quoted without any stop - reached quote screen after one click
-        # Getting error, warnings in workspace
-        # Pre-Quote issues
 
         if self.screen_title_text() == "Quote":
             self.log.info("Quoted successfully")
         elif self.screen_title_text() == "Pre-Quote Issues":
-            pass
             self.log.info("Pre-Quote Issues screen")
             self.details_btn.click_element()
             self.log.debug("Navigate to Underwriter issues tab at Risk Analysis screen.")
-
             risk_analysis_screen = RiskAnalysis(self.driver)
             risk_analysis_screen.approve_all_uw_issues()
-
             self.log.debug("All underwriter issues approved.")
             self.wait_for_screen("Risk Analysis")
             self.quote()
@@ -136,6 +116,7 @@ class TitleToolbar(BasePage):
                 self.log.debug("Getting error and unable to quote")
                 raise Exception("Getting error and unable to quote")
             else:
+                self.workspace.clear_btn.click_element()
                 self.quote()
 
     def bind_policy(self):
@@ -163,29 +144,9 @@ class TitleToolbar(BasePage):
             self.log.info("Your Policy Change has been bound.")
         elif self.workspace.is_workspace_present():
             message_types = self.workspace.get_all_message_types()
+            self.log.info(f"Getting messages(types) - {', '.join(message_types)}")
             if any("error" in message_type.lower() for message_type in message_types):
                 self.log.debug("Getting error and unable to quote")
                 raise Exception("Getting error and unable to quote")
             else:
                 self.issue_policy()
-
-    def schedule_cancellation(self):
-        pass
-
-    def cancel_now(self):
-        initial_screen_title = self.screen_title_text()
-        self.bind_options_btn.click_element()
-        self.cancel_now_btn.click_element()
-        self.log.info(f"Clicked Cancel Now button.")
-        self.accept_alert()
-        self.screen_title_element.wait_till_text_to_be_not_present_in_element(initial_screen_title)
-        if self.screen_title_text() == "Cancellation Bound":
-            self.log.info("Your Cancellation has been bound.")
-
-    def reinstate(self):
-        initial_screen_title = self.screen_title_text()
-        self.reinstate_btn.click_element()
-        self.accept_alert()
-        self.screen_title_element.wait_till_text_to_be_not_present_in_element(initial_screen_title)
-        if self.screen_title_text() == "Reinstatement Bound":
-            self.log.info("Your Reinstatement has been bound.")

@@ -2,7 +2,7 @@ from Base.basepage import BasePage
 from Base.baseelement import BaseElement
 from selenium.webdriver.common.by import By
 from Util.logs import getLogger
-from Page.guidewire_pc.policies.LOBs import common
+from Page.guidewire_pc.policies.common.titlebar import TitleToolbar
 from Page.guidewire_pc.policies.info_bar import InfoBar
 
 
@@ -12,7 +12,7 @@ class ChangePolicy(BasePage):
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
         self.info_bar = InfoBar(self.driver)
-        self.title_toolbar = common.TitleToolbar(self.driver)
+        self.title_toolbar = TitleToolbar(self.driver)
         self.start_policy_change_screen = StartPolicyChange(self.driver)
 
     def next_btn(self, driver):
@@ -25,7 +25,7 @@ class StartPolicyChange(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
-        self.title_toolbar = common.TitleToolbar(self.driver)
+        self.title_toolbar = TitleToolbar(self.driver)
 
 
     @property

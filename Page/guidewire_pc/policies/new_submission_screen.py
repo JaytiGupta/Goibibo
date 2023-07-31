@@ -2,8 +2,7 @@ from Base.basepage import BasePage
 from Base.baseelement import BaseElement
 from selenium.webdriver.common.by import By
 from Util.logs import getLogger
-from Page.guidewire_pc.policies.LOBs.common import TitleToolbar
-
+from Page.guidewire_pc.policies.common.titlebar import TitleToolbar
 
 class NewSubmissionScreen(BasePage):
     log = getLogger()

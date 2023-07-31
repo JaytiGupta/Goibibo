@@ -9,14 +9,16 @@ from Util.screenshot import Screenshot
 
 
 file_path = definitions.ROOT_DIR + "/Data/data_cancel_reinstate_work_comp.csv"
-test_data = csv_data_converter.get_rows(file_path, "TestCase", "13", "14")
+s_test_data = csv_data_converter.get_rows(file_path, "TestCase", "1", "2")
+j_test_data = csv_data_converter.get_rows(file_path, "TestCase", "13", "14")
 
 
-@fixture(params=test_data)
+@fixture(params=s_test_data)
 def data(request):
     yield request.param
 
 
+@mark.cancel_rein
 def test_work_comp_cancel_policy_transaction(browser_pc, data):
     pc = PolicyCenterHome(browser_pc)
     pc.tab_bar.go_to_desktop()

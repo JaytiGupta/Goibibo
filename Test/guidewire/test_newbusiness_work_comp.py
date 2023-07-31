@@ -83,7 +83,7 @@ def test_new_work_comp_policy_creation(browser_pc, data):
     wc_policy.title_toolbar.next()
 
     # policy review screen
-    wc_policy.title_toolbar.quote2()
+    wc_policy.title_toolbar.quote()
 
     # Quote Screen
     assert wc_policy.quote_screen.total_premium_amount() > 0

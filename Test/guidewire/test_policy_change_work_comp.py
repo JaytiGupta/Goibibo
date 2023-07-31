@@ -9,16 +9,17 @@ from Util import csv_data_converter
 
 
 file_path = definitions.ROOT_DIR + "/Data/data_policy_change_work_comp.csv"
-test_data = csv_data_converter.get_rows(file_path, "TestCase", "11")#, "12")
+s_test_data = csv_data_converter.get_rows(file_path, "TestCase", "1")#, "12")
+j_test_data = csv_data_converter.get_rows(file_path, "TestCase", "11")#, "12")
 
 
-@fixture(params=test_data)
+@fixture(params=s_test_data)
 def data(request):
     yield request.param
 
 
-# @mark.policychange
-# @mark.skip
+@mark.workcomp
+@mark.policychange
 def test_work_comp_change_policy_transaction(browser_pc, data):
     PC = PolicyCenterHome(browser_pc)
     PC.tab_bar.go_to_desktop()
