@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="82aaf498-e6c0-43b0-8f5f-8e928a4d18b3" name="Changes" comment="28th July">
-      <change afterPath="$PROJECT_DIR$/Data/data_desktop_search.csv" afterDir="false" />
+    <list default="true" id="82aaf498-e6c0-43b0-8f5f-8e928a4d18b3" name="Changes" comment="31th July">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/commercial_auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/commercial_auto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/common.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/work_comp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/work_comp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/Trasactions/reinstate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/Trasactions/reinstate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/screens.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/screens.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ResultFiles/Logs/logfile.log" beforeDir="false" afterPath="$PROJECT_DIR$/ResultFiles/Logs/logfile.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_comm_auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_comm_auto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_home.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_home.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_new_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_new_account.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Test/pytest.ini" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -423,7 +422,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690548799254</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="31th July">
+      <created>1690797092428</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1690797092428</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -442,7 +448,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="new submission code" />
     <MESSAGE value="new submission code1" />
     <MESSAGE value="work_comp till Supplemental" />
     <MESSAGE value="work_comp till quote" />
@@ -467,6 +472,7 @@
     <MESSAGE value="25th July - jayti" />
     <MESSAGE value="27th July" />
     <MESSAGE value="28th July" />
-    <option name="LAST_COMMIT_MESSAGE" value="28th July" />
+    <MESSAGE value="31th July" />
+    <option name="LAST_COMMIT_MESSAGE" value="31th July" />
   </component>
 </project>

@@ -7,6 +7,9 @@ from Base.basepage import BasePage
 from Base.baseelement import BaseElement
 from selenium.webdriver.common.by import By
 from Page.guidewire_pc.policies.LOBs import common
+from Page.guidewire_pc.policies.common.elements import TableQuestionnaires
+from Page.guidewire_pc.policies.common.sidebar import Sidebar
+from Page.guidewire_pc.policies.common import screens
 from Util.logs import getLogger
 from Util import random_data
 
@@ -21,20 +24,20 @@ class CommercialAuto(BasePage):
         self.title_toolbar = common.TitleToolbar(self.driver)
         self.offerings_screen = Offerings(self.driver)
         self.qualification_screen = Qualification(self.driver)
-        self.policy_info_screen = common.PolicyInfo(self.driver)
+        self.policy_info_screen = screens.PolicyInfo(self.driver)
         self.comm_auto_line_screen = CommercialAutoLine(self.driver)
         self.location_screen = Location(self.driver)
         self.vehicles_screen = Vehicles(self.driver)
         self.state_info_screen = StateInfo(self.driver)
         self.drivers_screen = Drivers(self.driver)
         self.covered_vehicles_screen = CoveredVehicles(self.driver)
-        self.risk_analysis_screen = common.RiskAnalysis(self.driver)
-        self.policy_review_screen = common.PolicyReview(self.driver)
-        self.quote_screen = common.Quote(self.driver)
-        self.forms_screen = common.Forms(self.driver)
+        self.risk_analysis_screen = screens.RiskAnalysis(self.driver)
+        self.policy_review_screen = screens.PolicyReview(self.driver)
+        self.quote_screen = screens.Quote(self.driver)
+        self.forms_screen = screens.Forms(self.driver)
         # self.payment_screen = Payment(self.driver)
         self.workspace_screen = common.Workspace(self.driver)
-        self.sidebar = common.Sidebar(self.driver)
+        self.sidebar = Sidebar(self.driver)
 
 
 class Offerings:
@@ -58,7 +61,7 @@ class Qualification:
     def __init__(self, driver):
         self.driver = driver
         self.SCREEN_TITLE = "Qualification"
-        self.table_questionnaires = common.TableQuestionnaires(self.driver)
+        self.table_questionnaires = TableQuestionnaires(self.driver)
 
 
 class CommercialAutoLine:
@@ -274,7 +277,7 @@ class CoveredVehicles:
         return None
 
 
-class Location(common.Location):
+class Location(screens.Location):
     log = getLogger()
 
     def __init__(self, driver):

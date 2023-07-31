@@ -5,6 +5,9 @@ from Base.basepage import BasePage
 from Base.baseelement import BaseElement, NestedElement
 from selenium.webdriver.common.by import By
 from Page.guidewire_pc.policies.LOBs import common
+from Page.guidewire_pc.policies.common.elements import TableQuestionnaires
+from Page.guidewire_pc.policies.common.sidebar import Sidebar
+from Page.guidewire_pc.policies.common import screens
 from Util.logs import getLogger
 
 
@@ -14,20 +17,20 @@ class WorkersCompensation(BasePage):
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
         self.title_toolbar = common.TitleToolbar(self.driver)
-        self.sidebar = common.Sidebar(self.driver)
+        self.sidebar = Sidebar(self.driver)
         self.qualification_screen = Qualification(self.driver)
-        self.policy_info_screen = common.PolicyInfo(self.driver)
-        self.location_screen = common.Location(self.driver)
+        self.policy_info_screen = screens.PolicyInfo(self.driver)
+        self.location_screen = screens.Location(self.driver)
         self.wc_coverages_screen = WCCoverages(self.driver)
         self.supplement_screen = Supplemental(self.driver)
         self.wc_options_screen = WCOptions(self.driver)
-        self.risk_analysis_screen = common.RiskAnalysis(self.driver)
-        self.policy_review_screen = common.PolicyReview(self.driver)
-        self.quote_screen = common.Quote(self.driver)
-        self.forms_screen = common.Forms(self.driver)
+        self.risk_analysis_screen = screens.RiskAnalysis(self.driver)
+        self.policy_review_screen = screens.PolicyReview(self.driver)
+        self.quote_screen = screens.Quote(self.driver)
+        self.forms_screen = screens.Forms(self.driver)
         self.payment_screen = Payment(self.driver)
         self.workspace_screen = common.Workspace(self.driver)
-        self.transaction_bound_screen = common.TransactionBoundScreen(self.driver)
+        self.transaction_bound_screen = screens.TransactionBoundScreen(self.driver)
 
 
 class Qualification:
@@ -36,7 +39,7 @@ class Qualification:
     def __init__(self, driver):
         self.driver = driver
         self.SCREEN_TITLE = "Qualification"
-        self.table_questionnaires = common.TableQuestionnaires(self.driver)
+        self.table_questionnaires = TableQuestionnaires(self.driver)
 
 
 class WCCoverages(BasePage):
@@ -140,7 +143,7 @@ class Supplemental(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
-        self.table_questionnaires = common.TableQuestionnaires(self.driver)
+        self.table_questionnaires = TableQuestionnaires(self.driver)
 
 
 class WCOptions(BasePage):

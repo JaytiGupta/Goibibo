@@ -3,6 +3,7 @@ from Base.baseelement import BaseElement
 from selenium.webdriver.common.by import By
 from Util.logs import getLogger
 from Page.guidewire_pc.policies.LOBs import common
+from Page.guidewire_pc.policies.common import screens
 
 
 class Reinstate(BasePage):
@@ -12,8 +13,8 @@ class Reinstate(BasePage):
         super().__init__(driver=driver, url=None)
         self.title_toolbar = common.TitleToolbar(self.driver)
         self.start_reinstatement_screen = StartReinstatement(self.driver)
-        self.risk_analysis_screen = common.RiskAnalysis(self.driver)
-        self.quote_screen = common.Quote(self.driver)
+        self.risk_analysis_screen = screens.RiskAnalysis(self.driver)
+        self.quote_screen = screens.Quote(self.driver)
         self.payment_screen = Payment(self.driver)
 
 
