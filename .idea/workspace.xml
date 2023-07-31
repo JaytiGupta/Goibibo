@@ -3,12 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="82aaf498-e6c0-43b0-8f5f-8e928a4d18b3" name="Changes" comment="31th July">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/commercial_auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/commercial_auto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/common.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/work_comp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/work_comp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/Trasactions/reinstate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/Trasactions/reinstate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/data_newbusiness_work_comp.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_newbusiness_work_comp.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/screens.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/screens.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/titlebar.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/titlebar.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ResultFiles/Logs/logfile.log" beforeDir="false" afterPath="$PROJECT_DIR$/ResultFiles/Logs/logfile.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_newbusiness_work_comp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_newbusiness_work_comp.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +49,28 @@
       <recent name="C:\Users\shubham.singh\PycharmProjects\Automation_selenium_python\Data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest in test_sample.py">
+  <component name="RunManager" selected="Python.titlebar">
+    <configuration name="titlebar" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Automation_selenium_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Page/guidewire_pc/policies/common" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Page/guidewire_pc/policies/common/titlebar.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="pytest for test_newbusiness_work_comp.test_new_work_comp_policy_creation" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Automation_selenium_python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -82,7 +103,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest in test_cancel_reinstate_work_comp.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest in test_newbusiness_work_comp.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Automation_selenium_python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -94,23 +115,7 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/Test/guidewire/test_cancel_reinstate_work_comp.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest in test_comm_auto.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="Automation_selenium_python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test/guidewire" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/Test/guidewire/test_comm_auto.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Test/guidewire/test_newbusiness_work_comp.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
@@ -132,11 +137,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.titlebar" />
+        <item itemvalue="Python tests.pytest in test_newbusiness_work_comp.py" />
         <item itemvalue="Python tests.pytest in test_sample.py" />
         <item itemvalue="Python tests.pytest for test_sample.test_case_1" />
         <item itemvalue="Python tests.pytest for test_newbusiness_work_comp.test_new_work_comp_policy_creation" />
-        <item itemvalue="Python tests.pytest in test_comm_auto.py" />
-        <item itemvalue="Python tests.pytest in test_cancel_reinstate_work_comp.py" />
       </list>
     </recent_temporary>
   </component>
@@ -429,7 +434,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690797092428</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="31th July">
+      <created>1690799853826</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1690799853826</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="UnknownFeatures">

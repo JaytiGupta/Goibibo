@@ -1,6 +1,4 @@
 import time
-
-from selenium.common import WebDriverException
 from selenium.webdriver.common.by import By
 from Util.logs import getLogger
 from Base.basepage import BasePage
@@ -8,8 +6,6 @@ from Base.baseelement import BaseElement
 from Page.guidewire_pc.policies.info_bar import InfoBar
 from Page.guidewire_pc.policies.common.workspace import Workspace
 from Page.guidewire_pc.policies.common.screens import RiskAnalysis
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 
 
 class TitleToolbar(BasePage):
@@ -17,7 +13,6 @@ class TitleToolbar(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
-        self.risk_analysis_screen = RiskAnalysis(self.driver)
         self.workspace = Workspace(self.driver)
         self.info_bar = InfoBar(self.driver)
 
@@ -124,10 +119,14 @@ class TitleToolbar(BasePage):
         if self.screen_title_text() == "Quote":
             self.log.info("Quoted successfully")
         elif self.screen_title_text() == "Pre-Quote Issues":
+            pass
             self.log.info("Pre-Quote Issues screen")
             self.details_btn.click_element()
             self.log.debug("Navigate to Underwriter issues tab at Risk Analysis screen.")
-            self.risk_analysis_screen.approve_all_uw_issues()
+
+            risk_analysis_screen = RiskAnalysis(self.driver)
+            risk_analysis_screen.approve_all_uw_issues()
+
             self.log.debug("All underwriter issues approved.")
             self.wait_for_screen("Risk Analysis")
             self.quote()
