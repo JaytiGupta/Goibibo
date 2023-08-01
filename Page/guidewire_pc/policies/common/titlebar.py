@@ -83,6 +83,7 @@ class TitleToolbar(BasePage):
         self.next_btn.click_element()
         self.screen_title_element.wait_till_text_to_be_not_present_in_element(title)
         self.back_btn.wait_till_text_to_be_present_in_element("Back")
+        self.screen_title_element.wait_till_text_to_be_present_in_element("")
 
     def navigate_till_screen(self, screen_title):
         actual_screen_title = self.screen_title_text()

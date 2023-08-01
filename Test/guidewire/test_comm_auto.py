@@ -10,11 +10,11 @@ from pytest import fixture, mark
 
 
 file_path = definitions.ROOT_DIR + "/Data/data_new_submission_comm_auto.csv"
-j_test_data = csv_data_converter.get_rows(file_path, "TestCase", "1", "2")
+j_test_data = csv_data_converter.get_rows(file_path, "TestCase", "2")
 s_test_data = csv_data_converter.get_rows(file_path, "TestCase", "11")
 
 
-@fixture(params=s_test_data)
+@fixture(params=j_test_data)
 def data(request):
     yield request.param
 
