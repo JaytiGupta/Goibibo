@@ -1,3 +1,4 @@
+import time
 from re import sub
 from selenium.webdriver.common.by import By
 from Base.baseelement import BaseElement
@@ -155,7 +156,7 @@ class Location(BasePage):
         self._locator_input_zip = (By.XPATH, '//div[contains(text(),"ZIP Code")]/following-sibling::div//input')
         self._locator_ok_btn = (By.XPATH, '//div[@id="LocationPopup-LocationScreen-Update"]')
         self._locator_add_existing_location_btn = (By.XPATH, '//div[text()="Add Existing Location"]')
-        self._locator_screen_title = (By.XPATH, '//div[@class="gw-TitleBar--title"]')
+        self._locator_screen_title = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[@role="heading"]')
 
     def add_new_location(self, address1, city, state, zip_code, address2=None, address3=None):
         add_new_location_btn = BaseElement(self.driver, self._locator_add_new_location_btn)
