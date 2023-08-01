@@ -10,10 +10,10 @@ from Util import csv_data_converter
 
 file_path = definitions.ROOT_DIR + "/Data/data_policy_change_work_comp.csv"
 s_test_data = csv_data_converter.get_rows(file_path, "TestCase", "1")#, "12")
-j_test_data = csv_data_converter.get_rows(file_path, "TestCase", "11")#, "12")
+j_test_data = csv_data_converter.get_rows(file_path, "TestCase", "14")
 
 
-@fixture(params=s_test_data)
+@fixture(params=j_test_data)
 def data(request):
     yield request.param
 
