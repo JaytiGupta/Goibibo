@@ -115,19 +115,12 @@
       <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_15-03-01/2023-07-26_15-03-16_u26f18.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_15-03-22/2023-07-26_15-03-22_hx3eaa.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_15-03-22/2023-07-26_15-03-39_97xm4a.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/data_new_account.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_new_account.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/data_new_submission_comm_auto.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_new_submission_comm_auto.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/data_newbusiness_work_comp.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_newbusiness_work_comp.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/commercial_auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/commercial_auto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/titlebar.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/titlebar.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ResultFiles/Logs/logfile.log" beforeDir="false" afterPath="$PROJECT_DIR$/ResultFiles/Logs/logfile.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_cancel_reinstate_work_comp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_cancel_reinstate_work_comp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/guidewire/test_comm_auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_comm_auto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_home.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_home.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_new_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_new_account.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_newbusiness_work_comp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_newbusiness_work_comp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_policy_change_work_comp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_policy_change_work_comp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -577,7 +570,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690808449296</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="26th - Jayti">
+      <created>1690884795308</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1690884795308</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -596,7 +596,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="new submission code1" />
     <MESSAGE value="work_comp till Supplemental" />
     <MESSAGE value="work_comp till quote" />
     <MESSAGE value="comm auto June 13th_jayti" />
@@ -621,6 +620,7 @@
     <MESSAGE value="27th July" />
     <MESSAGE value="28th July" />
     <MESSAGE value="31th July" />
-    <option name="LAST_COMMIT_MESSAGE" value="31th July" />
+    <MESSAGE value="26th - Jayti" />
+    <option name="LAST_COMMIT_MESSAGE" value="26th - Jayti" />
   </component>
 </project>

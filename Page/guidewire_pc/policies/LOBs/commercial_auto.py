@@ -291,6 +291,7 @@ class Location(screens.Location):
 
     def add_new_location(self, address1, city, state, zip_code, address2=None, address3=None):
         add_new_location_btn = BaseElement(self.driver, self._locator_add_new_location_btn)
+        add_new_location_btn.wait_till_text_to_be_present_in_attribute("aria-label", "New Location")
         add_new_location_btn.click_element()
 
         policy_title = TitleToolbar(self.driver)
