@@ -1,5 +1,3 @@
-from selenium.common import NoAlertPresentException
-
 from Base.basepage import BasePage
 from Base.baseelement import BaseElement
 from selenium.webdriver.common.by import By
@@ -105,4 +103,3 @@ class TabBar(BasePage):
         self.log.info(f"Navigate to desktop.")
         logo = BaseElement(self.driver, self._locator_logo)
         logo.click_element()
-

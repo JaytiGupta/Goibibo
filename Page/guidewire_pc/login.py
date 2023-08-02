@@ -1,7 +1,6 @@
 from Base.basepage import BasePage
 from Base.baseelement import BaseElement
 from selenium.webdriver.common.by import By
-import definitions
 from Util.logs import getLogger
 
 

@@ -57,5 +57,6 @@ class Workspace:
         self.log.info(f"Getting messages(types) - {', '.join(message_types)}")
         return [message_type for message_type in message_types]
 
-
-
+    def has_error_messages(self):
+        message_types = self.get_all_message_types()
+        return any("error" in message_type.lower() for message_type in message_types)

@@ -13,7 +13,7 @@ s_test_data = csv_data_converter.get_rows(file_path, "TestCase", "1", "2")
 j_test_data = csv_data_converter.get_rows(file_path, "TestCase", "14")
 
 
-@fixture(params=j_test_data)
+@fixture(params=s_test_data)
 def data(request):
     yield request.param
 

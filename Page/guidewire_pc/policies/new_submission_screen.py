@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from Util.logs import getLogger
 from Page.guidewire_pc.policies.common.titlebar import TitleToolbar
 
+
 class NewSubmissionScreen(BasePage):
     log = getLogger()
 
@@ -57,6 +58,7 @@ class SelectLOB:
         self._dynamic_lob_select_button_element(lob).click_element()
         self.log.info(f"Select LOB: {lob}")
 
+        # TODO - Change this to wait for Submission Text in sidebar
         self.title_toolbar.screen_title_element.wait_till_text_to_be_not_present_in_element(title)
         return None
 

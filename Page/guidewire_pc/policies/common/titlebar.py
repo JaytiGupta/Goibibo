@@ -82,6 +82,7 @@ class TitleToolbar(BasePage):
         title = self.screen_title_text()
         self.next_btn.click_element()
         self.screen_title_element.wait_till_text_to_be_not_present_in_element(title)
+        self.screen_title_element.wait_till_text_to_be_present_in_element("")
         self.back_btn.wait_till_text_to_be_present_in_element("Back")
         self.screen_title_element.wait_till_text_to_be_present_in_element("")
 
@@ -151,3 +152,39 @@ class TitleToolbar(BasePage):
                 raise Exception("Getting error and unable to quote")
             else:
                 self.issue_policy()
+
+
+    # updated quote method - need to be updated in place of above quote method
+    def quote_new(self, recursive_calls=0, max_recursive_calls=5):
+        if recursive_calls >= max_recursive_calls:
+            self.log.error("Maximum recursive calls reached. Stopping.")
+            raise Exception("Unable to quote.")
+
+        self.back_btn.wait_till_text_to_be_present_in_element("Back")
+        self.log.info(f"At {self.screen_title_text()} screen")
+        self.quote_btn.click_element()
+        self.log.info("Clicked Quote button.")
+        time.sleep(3)
+
+        if self.screen_title_text() == "Quote":
+            self.log.info("Quoted successfully")
+        elif self.screen_title_text() == "Pre-Quote Issues":
+            self.resolve_pre_quote_issues()
+            self.quote_new(recursive_calls + 1, max_recursive_calls)
+        elif self.workspace.is_workspace_present():
+            if self.workspace.has_error_messages():
+                self.log.debug("Getting error and unable to quote")
+                raise Exception("Getting error during quote. Hence unable to quote")
+            else:
+                self.workspace.clear_btn.click_element()
+            self.quote_new(recursive_calls + 1, max_recursive_calls)
+
+    def resolve_pre_quote_issues(self):
+        self.log.info("Pre-Quote Issues screen")
+        self.details_btn.click_element()
+        self.wait_for_screen("Risk Analysis")
+        self.log.debug("Navigate to Underwriter issues tab at Risk Analysis screen.")
+        risk_analysis_screen = RiskAnalysis(self.driver)
+        risk_analysis_screen.approve_all_uw_issues()
+        self.log.debug("All underwriter issues approved.")
+        self.wait_for_screen("Risk Analysis")
