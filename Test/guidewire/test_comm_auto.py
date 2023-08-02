@@ -11,10 +11,10 @@ from pytest import fixture, mark
 
 file_path = definitions.ROOT_DIR + "/Data/data_new_submission_comm_auto.csv"
 j_test_data = csv_data_converter.get_rows(file_path, "TestCase", "2")
-s_test_data = csv_data_converter.get_rows(file_path, "TestCase", "11")
+s_test_data = csv_data_converter.get_rows(file_path, "TestCase", "11", "12", "13")
 
 
-@fixture(params=j_test_data)
+@fixture(params=s_test_data)
 def data(request):
     yield request.param
 
@@ -55,9 +55,9 @@ def test_new_commercial_auto_creation(browser_pc, data):
     # Commercial Auto Line screen
     ca_policy.comm_auto_line_screen.ca_coverages(product=data["product"], fleet=data["fleet"])
     # ca_policy.comm_auto_line_screen.wait_liability_covg()
-    ca_policy.comm_auto_line_screen.add_hired_auto_coverages(data["hired_auto_cvg1"])
-    ca_policy.comm_auto_line_screen.add_hired_auto_coverages(data["hired_auto_cvg2"])
     ca_policy.comm_auto_line_screen.add_hired_auto_coverages(data["hired_auto_cvg3"])
+    ca_policy.comm_auto_line_screen.add_hired_auto_coverages(data["hired_auto_cvg2"])
+    ca_policy.comm_auto_line_screen.add_hired_auto_coverages(data["hired_auto_cvg1"])
     ca_policy.comm_auto_line_screen.add_hired_auto_state(cost_of_hire=data["cost_of_hire"], state=data["base_state"])
     ca_policy.comm_auto_line_screen.add_non_owned_auto_covg()
     ca_policy.comm_auto_line_screen.add_non_owned_auto_state(emp_no=data["emp_no"],
@@ -89,9 +89,10 @@ def test_new_commercial_auto_creation(browser_pc, data):
     ca_policy.drivers_screen.driver_details(fn=data["fn"], ln=data["ln"], driver_gender=data["gender"],
                                             dob=data["dob"], license_state=data["lic_state"])
     ca_policy.title_toolbar.next()
-
     # Risk Analysis screen
     submission_number: str = ca_policy.sidebar.transaction_number()
+
+    ca_policy.title_toolbar.quote_btn.wait_till_text_to_be_present_in_attribute("aria-label", "Quote")
     ca_policy.title_toolbar.quote_btn.click_element()
 
     # Workspace
