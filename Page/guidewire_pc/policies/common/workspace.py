@@ -10,7 +10,7 @@ class Workspace:
         self.driver = driver
 
     @property
-    def workspace_area(self):
+    def workspace_area(self):  # always present hidden
         locator = (By.XPATH, '//div[@id="gw-south-panel"]')
         return BaseElement(self.driver, locator)
 
@@ -44,13 +44,16 @@ class Workspace:
         locator = (By.XPATH, '//div[@class="gw-MessagesWidget--severity-sub-group"]')
         return BaseElement(self.driver, locator)
 
-    def is_workspace_present(self):
-        is_present =  self.workspace_area.is_element_present()
-        if is_present:
+    def is_workspace_present(self) -> bool:
+
+        workspace_present_and_visible = self.workspace_area.attribute("aria-hidden") is None
+
+        if workspace_present_and_visible:
             self.log.info("Workspace area is present.")
         else:
             self.log.info("Workspace area is not present.")
-        return is_present
+
+        return workspace_present_and_visible
 
     def get_all_message_types(self) -> list:
         message_types = self.messages_types.get_all_elements_attribute("aria-label")
@@ -60,3 +63,19 @@ class Workspace:
     def has_error_messages(self):
         message_types = self.get_all_message_types()
         return any("error" in message_type.lower() for message_type in message_types)
+
+    def clear_workspace(self):
+        if self.has_error_messages():
+            self.log.debug("Getting error.")
+            raise Exception("Getting error.")
+        else:
+            self.clear_btn.click_element()
+            self.log.debug("Clicked clear button at workspace")
+            self.workspace_area.wait_till_text_to_be_present_in_attribute("aria-hidden", "true")
+
+    def clear_workspace_old(self):
+        self.clear_btn.click_element()
+        self.log.debug("Clicked clear button at workspace")
+        self.workspace_area.wait_till_text_to_be_present_in_attribute("aria-hidden", "true")
+
+    # def clear_workspace(self):

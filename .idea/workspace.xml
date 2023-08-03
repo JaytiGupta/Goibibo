@@ -1,128 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="82aaf498-e6c0-43b0-8f5f-8e928a4d18b3" name="Changes" comment="1st Aug - Jayti">
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_16-04-45/2023-07-25_16-04-45_bqsisf.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_16-04-45/2023-07-25_16-05-19_hocivw.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_16-08-40/2023-07-25_16-08-40_yk4six.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_16-08-40/2023-07-25_16-08-59_6oowi0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_16-42-26/2023-07-25_16-42-26_yiyqpi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_16-44-33/2023-07-25_16-44-33_divwkv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_16-44-33/2023-07-25_16-44-33_ki7hbz.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-20-53/2023-07-25_17-20-53_0joit0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-20-53/2023-07-25_17-21-27_xo1nae.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-23-55/2023-07-25_17-23-55_0dm6rs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-23-55/2023-07-25_17-25-54_i209y8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-23-55/2023-07-25_17-26-15_mp939s.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-23-58/2023-07-25_17-23-58_xcaa3e.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-23-58/2023-07-25_17-24-56_rfoqmy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-24-09/2023-07-25_17-24-09_21knv2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-24-09/2023-07-25_17-25-11_8xikfq.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-24-17/2023-07-25_17-24-17_7h6fmy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-24-17/2023-07-25_17-25-19_3ajdax.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-24-29/2023-07-25_17-24-29_rh5wqe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-24-29/2023-07-25_17-25-53_m1yttf.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-24-33/2023-07-25_17-24-33_jkpfkb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-25-25/2023-07-25_17-25-25_ux0nf8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-25_17-25-25/2023-07-25_17-26-24_bgwpls.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-08-01/2023-07-26_14-08-01_y20knq.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-08-07/2023-07-26_14-08-07_3le118.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-08-13/2023-07-26_14-08-13_vumh8l.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-09-14/2023-07-26_14-09-14_h4hxvx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-09-37/2023-07-26_14-09-38_gmeci4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-09-40/2023-07-26_14-09-40_rbxog6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-09-49/2023-07-26_14-09-49_fd4nj5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-10-08/2023-07-26_14-10-08_a60pa0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-10-09/2023-07-26_14-10-09_myy3qb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-10-20/2023-07-26_14-10-20_4c9nfc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-10-20/2023-07-26_14-10-39_likuxa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-28-14/2023-07-26_14-28-14_gltfdg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-28-15/2023-07-26_14-28-15_1s8zvw.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-28-19/2023-07-26_14-28-19_59hotg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-28-34/2023-07-26_14-28-34_weg370.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-28-34/2023-07-26_14-30-00_jo3d3v.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-28-56/2023-07-26_14-28-56_i1ygc2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-28-56/2023-07-26_14-30-41_1f5vmi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-28-56/2023-07-26_14-30-57_12kzic.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-28-59/2023-07-26_14-28-59_g65rbq.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-29-11/2023-07-26_14-29-11_4m5r0m.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-29-11/2023-07-26_14-30-12_zsvi53.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-29-15/2023-07-26_14-29-15_hgnh5j.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-29-15/2023-07-26_14-30-06_t6yk4n.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-30-21/2023-07-26_14-30-21_01yqbd.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-30-21/2023-07-26_14-30-40_5hkgoy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-30-36/2023-07-26_14-30-36_tq6ze4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-33-49/2023-07-26_14-33-49_vjoc5j.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-33-53/2023-07-26_14-33-53_ibt8oo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-34-01/2023-07-26_14-34-01_pcf5bi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-34-24/2023-07-26_14-34-24_l7naet.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-34-24/2023-07-26_14-35-45_r5fvnr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-34-28/2023-07-26_14-34-28_y8fgk8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-35-00/2023-07-26_14-35-00_ovma7z.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-35-00/2023-07-26_14-35-00_rtvm07.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-35-00/2023-07-26_14-35-58_bwbzq1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-35-00/2023-07-26_14-35-59_tpyx8l.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-36-03/2023-07-26_14-36-03_oqhsrn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-36-07/2023-07-26_14-36-07_ffhklq.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-36-08/2023-07-26_14-36-08_fmr5fe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-36-08/2023-07-26_14-36-25_zdm03e.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-46-19/2023-07-26_14-46-19_puca8j.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-46-21/2023-07-26_14-46-21_zelme5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-46-27/2023-07-26_14-46-27_5ckzjs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-46-46/2023-07-26_14-46-46_kduufx.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-46-46/2023-07-26_14-48-01_qu47nc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-46-48/2023-07-26_14-46-48_oa5vr4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-46-48/2023-07-26_14-48-48_9esdzy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-46-48/2023-07-26_14-49-05_k1ehop.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-46-50/2023-07-26_14-46-50_289g51.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-47-26/2023-07-26_14-47-26_fwe3d6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-47-26/2023-07-26_14-48-20_bs6c62.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-47-29/2023-07-26_14-47-29_f0kv5f.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-47-29/2023-07-26_14-48-17_1snieo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-48-36/2023-07-26_14-48-36_0sm1gn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-48-36/2023-07-26_14-48-36_3d6niy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-51-30/2023-07-26_14-51-30_pwh39l.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-51-30/2023-07-26_14-52-04_rupiv9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-54-08/2023-07-26_14-54-08_p1z872.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-54-14/2023-07-26_14-54-14_eh4var.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-54-16/2023-07-26_14-54-16_fmsb23.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-54-34/2023-07-26_14-54-34_aoc6ag.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-54-38/2023-07-26_14-54-38_eg0q5i.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-54-39/2023-07-26_14-54-39_1m3b8g.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-54-54/2023-07-26_14-54-54_02sl6i.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-54-59/2023-07-26_14-54-59_higicu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-55-15/2023-07-26_14-55-15_evjj5k.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-55-15/2023-07-26_14-55-15_fh3zxd.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-55-15/2023-07-26_14-55-53_8t8www.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-55-15/2023-07-26_14-55-56_4xvgrq.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-55-59/2023-07-26_14-55-59_o1lxwv.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-55-59/2023-07-26_14-56-16_9r7b0e.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-56-00/2023-07-26_14-56-00_1smhyb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-56-00/2023-07-26_14-56-40_o9wbbr.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_14-56-00/2023-07-26_14-56-57_as0cso.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_15-01-09/2023-07-26_15-01-09_hsi07y.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_15-01-11/2023-07-26_15-01-11_8fco7a.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_15-01-16/2023-07-26_15-01-16_xt0hnw.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_15-01-32/2023-07-26_15-01-32_uumx50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_15-01-43/2023-07-26_15-01-43_vfr58w.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_15-01-57/2023-07-26_15-01-57_xnqpiz.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_15-01-58/2023-07-26_15-01-58_9rpztu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_15-02-05/2023-07-26_15-02-05_220h9u.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_15-02-05/2023-07-26_15-02-42_np5juu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_15-02-15/2023-07-26_15-02-15_vypw2d.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_15-02-15/2023-07-26_15-02-49_um1w15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_15-03-01/2023-07-26_15-03-01_cxuroe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_15-03-01/2023-07-26_15-03-16_u26f18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_15-03-22/2023-07-26_15-03-22_hx3eaa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResultFiles/screenshots/run_2023-07-26_15-03-22/2023-07-26_15-03-39_97xm4a.png" afterDir="false" />
+    <list default="true" id="82aaf498-e6c0-43b0-8f5f-8e928a4d18b3" name="Changes" comment="2 Aug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/data_new_account.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_new_account.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Base/baseelement.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/baseelement.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/data_new_submission_comm_auto.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_new_submission_comm_auto.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/data_newbusiness_work_comp.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_newbusiness_work_comp.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/commercial_auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/commercial_auto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/elements.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/elements.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/screens.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/screens.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/titlebar.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/titlebar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/workspace.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/workspace.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ResultFiles/Logs/logfile.log" beforeDir="false" afterPath="$PROJECT_DIR$/ResultFiles/Logs/logfile.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/conftest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/guidewire/test_comm_auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_comm_auto.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/guidewire/test_newbusiness_work_comp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_newbusiness_work_comp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_policy_change_work_comp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_policy_change_work_comp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/test_sample.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/test_sample.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +59,7 @@
       <recent name="C:\Users\shubham.singh\PycharmProjects\Automation_selenium_python\Data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.titlebar">
+  <component name="RunManager" selected="Python tests.pytest in test_newbusiness_work_comp.py">
     <configuration name="titlebar" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Automation_selenium_python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -254,9 +147,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.titlebar" />
         <item itemvalue="Python tests.pytest in test_newbusiness_work_comp.py" />
         <item itemvalue="Python tests.pytest in test_sample.py" />
+        <item itemvalue="Python.titlebar" />
         <item itemvalue="Python tests.pytest for test_sample.test_case_1" />
         <item itemvalue="Python tests.pytest for test_newbusiness_work_comp.test_new_work_comp_policy_creation" />
       </list>
@@ -586,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690886397022</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="2 Aug">
+      <created>1690979089567</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1690979089567</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -605,7 +505,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="work_comp till quote" />
     <MESSAGE value="comm auto June 13th_jayti" />
     <MESSAGE value="comm auto June 14th_jayti" />
     <MESSAGE value="old files removed June 16th_jayti" />
@@ -630,6 +529,7 @@
     <MESSAGE value="31th July" />
     <MESSAGE value="26th - Jayti" />
     <MESSAGE value="1st Aug - Jayti" />
-    <option name="LAST_COMMIT_MESSAGE" value="1st Aug - Jayti" />
+    <MESSAGE value="2 Aug" />
+    <option name="LAST_COMMIT_MESSAGE" value="2 Aug" />
   </component>
 </project>

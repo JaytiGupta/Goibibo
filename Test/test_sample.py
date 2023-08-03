@@ -1,30 +1,18 @@
-# test_sample.py
-
 import time
-from Util.logs import getLogger
+from Page.guidewire_pc.policy_center_home import PolicyCenterHome
+from Page.guidewire_pc.accounts.account import Account
+from Page.guidewire_pc.policies.policy import Policy
 
 
-def test_case_1():
-    time.sleep(2)
-    log = getLogger()
+def test_work_comp(browser_pc):
+    pc = PolicyCenterHome(browser_pc)
+    pc.tab_bar.search_submission("0002507580")
 
-    log.info("Test case 1 Running...")
-    time.sleep(2)
-    log.info("Test case 1: Running...")
-    assert 1 + 1 == 2
+    wc_policy = Policy(browser_pc).work_comp
+    wc_policy.title_toolbar.navigate_till_screen("Policy Review")
 
+    wc_policy.title_toolbar.quote()
 
-def test_case_2():
-    time.sleep(2)
-    log = getLogger()
+    assert wc_policy.quote_screen.total_premium_amount() > 0
+    wc_policy.title_toolbar.next()
 
-    log.info("Test case 2 Running...")
-    time.sleep(2)
-    log.info("Test case 2: Running...")
-    assert 2 * 3 == 6
-
-
-# @mark.skip
-# def test_new(env, take_screenshots, guidewire):
-#     print(f"\nEnvironment: {env}")
-#     print(f"Taking Screenshots: {take_screenshots} ")

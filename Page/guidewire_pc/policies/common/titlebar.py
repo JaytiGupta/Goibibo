@@ -82,9 +82,9 @@ class TitleToolbar(BasePage):
         title = self.screen_title_text()
         self.next_btn.click_element()
         self.screen_title_element.wait_till_text_to_be_not_present_in_element(title)
-        self.screen_title_element.wait_till_text_to_be_present_in_element("")
         self.back_btn.wait_till_text_to_be_present_in_element("Back")
         self.screen_title_element.wait_till_text_to_be_present_in_element("")
+        self.log.info(f"Navigating from {title} to {self.screen_title_text()} screen.")
 
     def navigate_till_screen(self, screen_title):
         actual_screen_title = self.screen_title_text()
@@ -93,91 +93,29 @@ class TitleToolbar(BasePage):
             self.next()
             actual_screen_title = self.screen_title_text()
 
-    def quote(self):
-        self.back_btn.wait_till_text_to_be_present_in_element("Back")
-        initial_screen_title = self.screen_title_text()
-        self.log.info(f"{initial_screen_title} screen")
-        self.quote_btn.click_element()
-        self.log.info("Clicked Quote button.")
-        time.sleep(3)
-
-        if self.screen_title_text() == "Quote":
-            self.log.info("Quoted successfully")
-        elif self.screen_title_text() == "Pre-Quote Issues":
-            self.log.info("Pre-Quote Issues screen")
-            self.details_btn.click_element()
-            self.log.debug("Navigate to Underwriter issues tab at Risk Analysis screen.")
-            risk_analysis_screen = RiskAnalysis(self.driver)
-            risk_analysis_screen.approve_all_uw_issues()
-            self.log.debug("All underwriter issues approved.")
-            self.wait_for_screen("Risk Analysis")
-            self.quote()
-        elif self.workspace.is_workspace_present():
-            message_types = self.workspace.get_all_message_types()
-            if any("error" in message_type.lower() for message_type in message_types):
-                self.log.debug("Getting error and unable to quote")
-                raise Exception("Getting error and unable to quote")
-            else:
-                self.workspace.clear_btn.click_element()
-                self.quote()
-
-    def bind_policy(self):
-        self.bind_options_btn.click_element()
-        self.bind_only_btn.click_element()
-        self.log.info(f"Clicked Bind Only button.")
-
-    def issue_policy(self): # TODO needs to update max depth for recursion
-        initial_screen_title = self.screen_title_text()
-
-        # bind option is not present for change policy transaction. Issue policy btn is on title toolbar.
-        if self.bind_options_btn.is_element_present():
-            self.bind_options_btn.click_element()
-
-        self.issue_policy_btn.click_element()
-        self.log.info(f"Clicked Issue Policy button.")
-        self.accept_alert()
-
-        # TODO: update need to wait for page after click, screen can be same, pre_quote or quote
-        time.sleep(3)
-
-        if self.screen_title_text() == "Submission Bound":
-            self.log.info("Your Submission has been bound.")
-        elif self.screen_title_text() == "Policy Change Bound":
-            self.log.info("Your Policy Change has been bound.")
-        elif self.workspace.is_workspace_present():
-            message_types = self.workspace.get_all_message_types()
-            self.log.info(f"Getting messages(types) - {', '.join(message_types)}")
-            if any("error" in message_type.lower() for message_type in message_types):
-                self.log.debug("Getting error and unable to quote")
-                raise Exception("Getting error and unable to quote")
-            else:
-                self.issue_policy()
-
-
-    # updated quote method - need to be updated in place of above quote method
-    def quote_new(self, recursive_calls=0, max_recursive_calls=5):
+    def quote(self, recursive_calls=0, max_recursive_calls=2):
         if recursive_calls >= max_recursive_calls:
             self.log.error("Maximum recursive calls reached. Stopping.")
             raise Exception("Unable to quote.")
 
-        self.back_btn.wait_till_text_to_be_present_in_element("Back")
-        self.log.info(f"At {self.screen_title_text()} screen")
+        initial_title = self.screen_title_text()
         self.quote_btn.click_element()
         self.log.info("Clicked Quote button.")
-        time.sleep(3)
+
+        # Working fine now. But if any problem comes time.sleep() for 1-2 second might be required here.
+        if self.workspace.is_workspace_present():
+            self.workspace.clear_workspace()
+            self.quote_btn.click_element()
+            self.log.info("Clicked Quote button.")
+
+        self.screen_title_element.wait_till_text_to_be_not_present_in_element(initial_title)
+        self.screen_title_element.wait_till_text_to_be_present_in_element("")
 
         if self.screen_title_text() == "Quote":
             self.log.info("Quoted successfully")
         elif self.screen_title_text() == "Pre-Quote Issues":
             self.resolve_pre_quote_issues()
-            self.quote_new(recursive_calls + 1, max_recursive_calls)
-        elif self.workspace.is_workspace_present():
-            if self.workspace.has_error_messages():
-                self.log.debug("Getting error and unable to quote")
-                raise Exception("Getting error during quote. Hence unable to quote")
-            else:
-                self.workspace.clear_btn.click_element()
-            self.quote_new(recursive_calls + 1, max_recursive_calls)
+            self.quote(recursive_calls + 1, max_recursive_calls)
 
     def resolve_pre_quote_issues(self):
         self.log.info("Pre-Quote Issues screen")
@@ -188,3 +126,88 @@ class TitleToolbar(BasePage):
         risk_analysis_screen.approve_all_uw_issues()
         self.log.debug("All underwriter issues approved.")
         self.wait_for_screen("Risk Analysis")
+
+    def bind_policy(self):
+        self.bind_options_btn.click_element()
+        self.bind_only_btn.click_element()
+        self.log.info(f"Clicked Bind Only button.")
+
+    def click_issue_btn(self):
+        # bind dropdown option is not present for change policy transaction.
+        # Issue policy btn is on title toolbar.
+        if self.bind_options_btn.is_element_present():
+            self.bind_options_btn.click_element()
+        self.issue_policy_btn.click_element()
+        self.log.info(f"Clicked Issue Policy button.")
+        self.accept_alert()
+
+    def issue_policy(self):
+        initial_title = self.screen_title_text()
+        self.click_issue_btn()
+
+        # Working fine now. But if any problem comes time.sleep() for 1-2 second might be required here.
+        if self.workspace.is_workspace_present():
+            self.workspace.clear_workspace()
+            self.click_issue_btn()
+
+        self.screen_title_element.wait_till_text_to_be_not_present_in_element(initial_title)
+        self.screen_title_element.wait_till_text_to_be_present_in_element("")
+
+        if self.screen_title_text() == "Submission Bound":
+            self.log.info("Your Submission has been bound.")
+        elif self.screen_title_text() == "Policy Change Bound":
+            self.log.info("Your Policy Change has been bound.")
+
+    # def issue_policy_old(self, recursive_calls=0, max_recursive_calls=2):
+    #     if recursive_calls >= max_recursive_calls:
+    #         self.log.error("Maximum recursive calls reached. Stopping.")
+    #         raise Exception("Unable to Issue Policy.")
+    #
+    #     # bind option is not present for change policy transaction.
+    #     # Issue policy btn is on title toolbar.
+    #     if self.bind_options_btn.is_element_present():
+    #         self.bind_options_btn.click_element()
+    #
+    #     self.issue_policy_btn.click_element()
+    #     self.log.info(f"Clicked Issue Policy button.")
+    #     self.accept_alert()
+    #
+    #     # TODO: update need to wait for page after click, screen can be same, pre_quote or quote
+    #     time.sleep(3)
+    #
+    #     if self.screen_title_text() == "Submission Bound":
+    #         self.log.info("Your Submission has been bound.")
+    #     elif self.screen_title_text() == "Policy Change Bound":
+    #         self.log.info("Your Policy Change has been bound.")
+    #     elif self.workspace.is_workspace_present():
+    #         if self.workspace.has_error_messages():
+    #             self.log.debug("Getting error and unable to issue")
+    #             raise Exception("Getting error. Hence unable to Issue Policy")
+    #         else:
+    #             self.workspace.clear_btn.click_element()
+    #             self.issue_policy_old(recursive_calls + 1, max_recursive_calls)
+    #
+    # def quote_old(self, recursive_calls=0, max_recursive_calls=6):
+    #     if recursive_calls >= max_recursive_calls:
+    #         self.log.error("Maximum recursive calls reached. Stopping.")
+    #         raise Exception("Unable to quote.")
+    #
+    #     # self.back_btn.wait_till_text_to_be_present_in_element("Back")
+    #     self.quote_btn.click_element()
+    #     self.log.info("Clicked Quote button.")
+    #     time.sleep(3)
+    #     self.screen_title_element.wait_till_text_to_be_present_in_element("")
+    #     self.back_btn.wait_till_text_to_be_present_in_element("Back")
+    #
+    #     if self.screen_title_text() == "Quote":
+    #         self.log.info("Quoted successfully")
+    #     elif self.screen_title_text() == "Pre-Quote Issues":
+    #         self.resolve_pre_quote_issues()
+    #         self.quote_old(recursive_calls + 1, max_recursive_calls)
+    #     elif self.workspace.is_workspace_present():
+    #         if self.workspace.has_error_messages():
+    #             self.log.debug("Getting error and unable to quote")
+    #             raise Exception("Getting error. Hence unable to quote")
+    #         else:
+    #             self.workspace.clear_workspace()
+    #         self.quote_old(recursive_calls + 1, max_recursive_calls)

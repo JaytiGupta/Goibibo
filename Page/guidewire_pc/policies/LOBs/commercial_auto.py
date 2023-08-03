@@ -98,7 +98,11 @@ class CommercialAutoLine:
     def add_hired_auto_coverages(self, coverage):
         _locator_hired_auto_covg = (By.XPATH, f'//input[contains(@aria-label,"{coverage}")]')
         coverage_elm = BaseElement(self.driver, _locator_hired_auto_covg)
+
+        coverage_elm.wait_till_text_to_be_present_in_attribute("aria-label",f"{coverage}")
         coverage_elm.click_element()
+        coverage_elm.wait_till_element_attribute_to_include("checked")
+
         self.log.info(f"'{coverage}' coverage selected under the Hired Auto coverage section")
         return None
 
@@ -187,16 +191,21 @@ class Vehicles:
     def vehicle_class_code(self, radius):
         search_class_code = BaseElement(self.driver, self._locator_class_code_search_btn)
         search_class_code.click_element()
+
         # years_of_experience_elm = BaseElement(self.driver, self._locator_class_code_experience)
         # years_of_experience_elm.select_option(text=years_of_experience)
         radius_elm = BaseElement(self.driver, self._locator_class_code_radius)
+        radius_elm.wait_till_text_to_be_present_in_attribute("name", "Radius")
         radius_elm.select_option(text=radius)
         screen_search_btn = BaseElement(self.driver, self._locator_class_code_screen_search)
         screen_search_btn.click_element()
         result = BaseElement(self.driver, self._locator_class_code_first_result)
         result.click_element()
+        search_class_code.wait_till_text_to_be_present_in_attribute("aria-label", "Search")
         ok_btn = BaseElement(self.driver, self._locator_vehicle_ok_btn)
         ok_btn.click_element()
+        add_vehicle_btn = BaseElement(self.driver, self._locator_create_vehicle_btn)
+        add_vehicle_btn.wait_till_element_attribute_to_include("class")
         self.log.info("Class code for the entered vehicle is selected")
 
 
@@ -279,53 +288,42 @@ class CoveredVehicles:
 
 
 class Location(screens.Location):
-    log = getLogger()
 
     def __init__(self, driver):
         super().__init__(driver=driver)
-        self._locator_autofill_territory_code_btn = (By.XPATH, '//div[text() = "Autofill Territory Codes"]')
 
-        # locate only when value is filled in input box
-        self._locator_territory_input_box = (By.XPATH, '//div[text()="Territory Code for Commercial Auto Line"]/'
-                                                          'following-sibling::div//input')
+    @property
+    def _autofill_territory_code_btn(self):
+        locator = (By.XPATH, '//div[text() = "Autofill Territory Codes"]')
+        return BaseElement(self.driver, locator)
+
+    @property
+    def _territory_input_box(self):
+        locator = (By.XPATH, '//div[text()="Territory Code for Commercial Auto Line"]/'
+                             'following-sibling::div//input')
+        return BaseElement(self.driver, locator)
 
     def add_new_location(self, address1, city, state, zip_code, address2=None, address3=None):
-        add_new_location_btn = BaseElement(self.driver, self._locator_add_new_location_btn)
-        add_new_location_btn.wait_till_text_to_be_present_in_attribute("aria-label", "New Location")
-        add_new_location_btn.click_element()
+        self.log.info(f"Adding new location")
+        try:
+            # Locations screen
+            self._add_new_location_btn.click_element()
+            self._ok_btn.wait_till_text_to_be_present_in_attribute("aria-disabled", "false")
 
-        policy_title = TitleToolbar(self.driver)
-        policy_title.wait_for_screen("Location Information")
+            # Location Information screen
+            self._address1.enter_text(address1)
+            self._address2.enter_text(address2) if (address2 is not None) else None
+            self._address3.enter_text(address3) if (address3 is not None) else None
+            self._input_city.enter_text(city)
+            self._select_state.select_option(text=state)
+            self._input_zip.enter_text(zip_code)
+            self._autofill_territory_code_btn.click_element()
+            self._territory_input_box.wait_till_text_to_be_present_in_value("322")
+            self._ok_btn.click_element()
 
-        address1_elm = BaseElement(self.driver, self._locator_address1)
-        address1_elm.enter_text(address1)
-
-        if address2 is not None:
-            address2_elm = BaseElement(self.driver, self._locator_address2)
-            address2_elm.enter_text(address2)
-
-        if address3 is not None:
-            address3_elm = BaseElement(self.driver, self._locator_address3)
-            address3_elm.enter_text(address3)
-
-        city_elm = BaseElement(self.driver, self._locator_input_city)
-        city_elm.enter_text(city)
-
-        state_elm = BaseElement(self.driver, self._locator_select_state)
-        state_elm.select_option(text=state)
-
-        zip_elm = BaseElement(self.driver, self._locator_input_zip)
-        zip_elm.enter_text(zip_code)
-
-        territory_code_btn = BaseElement(self.driver, self._locator_autofill_territory_code_btn)
-        territory_code_btn.click_element()
-
-        territory_input_box = BaseElement(self.driver, self._locator_territory_input_box)
-        # Wait until the element's value attribute has any text present
-        territory_input_box.wait_till_text_to_be_present_in_value("322")
-
-        self.log.info(f"Page: Locations - new location added. {address1}, {city}, {state}, {zip_code}.")
-
-        ok_btn = BaseElement(self.driver, self._locator_ok_btn)
-        ok_btn.click_element()
-        policy_title.wait_for_screen(self.SCREEN_TITLE)
+            # Locations screen
+            self._add_new_location_btn.wait_till_text_to_be_present_in_attribute("aria-label", "New Location")
+            self.log.info(f"Added new location: {address1}, {city}, {state}, {zip_code}")
+        except:
+            self.log.info(f"Unable to add new location.")
+            raise Exception("Unable to add new location.")

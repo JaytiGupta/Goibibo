@@ -55,9 +55,9 @@ def test_new_commercial_auto_creation(browser_pc, data):
     # Commercial Auto Line screen
     ca_policy.comm_auto_line_screen.ca_coverages(product=data["product"], fleet=data["fleet"])
     # ca_policy.comm_auto_line_screen.wait_liability_covg()
-    ca_policy.comm_auto_line_screen.add_hired_auto_coverages(data["hired_auto_cvg3"])
-    ca_policy.comm_auto_line_screen.add_hired_auto_coverages(data["hired_auto_cvg2"])
     ca_policy.comm_auto_line_screen.add_hired_auto_coverages(data["hired_auto_cvg1"])
+    ca_policy.comm_auto_line_screen.add_hired_auto_coverages(data["hired_auto_cvg2"])
+    ca_policy.comm_auto_line_screen.add_hired_auto_coverages(data["hired_auto_cvg3"])
     ca_policy.comm_auto_line_screen.add_hired_auto_state(cost_of_hire=data["cost_of_hire"], state=data["base_state"])
     ca_policy.comm_auto_line_screen.add_non_owned_auto_covg()
     ca_policy.comm_auto_line_screen.add_non_owned_auto_state(emp_no=data["emp_no"],

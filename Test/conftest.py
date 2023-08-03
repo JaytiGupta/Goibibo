@@ -62,7 +62,7 @@ def app_config(request, env, take_screenshots):
     if not fixture_executed:
         log2 = getLogger()
         log2.info("************* Starting Execution *************")
-        definitions.CONFIG.env = env.lower()
+        definitions.CONFIG.env = "test" #env.lower()
         definitions.CONFIG.take_screenshot = take_screenshots
         fixture_executed = True  # Set the flag to True to indicate the fixture has been executed once
 

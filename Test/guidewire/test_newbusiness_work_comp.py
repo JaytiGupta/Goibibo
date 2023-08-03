@@ -1,3 +1,5 @@
+import time
+
 import definitions
 from Util import csv_data_converter
 from Page.guidewire_pc.policy_center_home import PolicyCenterHome
@@ -9,7 +11,7 @@ from pytest import mark, fixture
 
 file_path = definitions.ROOT_DIR + "/Data/data_newbusiness_work_comp.csv"
 j_test_data = csv_data_converter.get_rows(file_path, "TestCase", "11")#, "12", "13", "14")
-s_test_data = csv_data_converter.get_rows(file_path, "TestCase", "1", "2") #, "3", "4")
+s_test_data = csv_data_converter.get_rows(file_path, "TestCase", "2", "3", "4")
 
 
 @fixture(params=s_test_data)
@@ -34,16 +36,14 @@ def test_new_work_comp_policy_creation(browser_pc, data):
 
     # Qualification Screen
     wc_policy = policy.work_comp
-    wc_policy.qualification_screen.table_questionnaires.select_all_radio_btn("no")
+    wc_policy.qualification_screen.table_questionnaires.select_all_radio_btn("yes")
     wc_policy.qualification_screen.table_questionnaires.input_box("Total annual payroll:", "12345")
     wc_policy.title_toolbar.next()
 
     # Policy Info Screen
-    # wc_policy.policy_info_screen.fill_random_details()
     wc_policy.policy_info_screen.input_FEIN(data["policy_info_screent_FEIN"])
     wc_policy.policy_info_screen.industry_code_input(data["policy_info_screent_industry_code"])
     wc_policy.policy_info_screen.select_organization_type(type_of_org=data["policy_info_screent_organization_type"])
-    # wc_policy.policy_info_screen.policy_effective_date(data["policy_info_screent_effective_date"])
     wc_policy.title_toolbar.next()
 
     # Locations Screen

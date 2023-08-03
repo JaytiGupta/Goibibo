@@ -154,6 +154,10 @@ class BaseElement:
         WebDriverWait(self.driver, MAX_WAIT_TIME).\
             until_not(EC.text_to_be_present_in_element(self.locator, text))
 
+    def wait_till_element_attribute_to_include(self, attribute):
+        WebDriverWait(self.driver, MAX_WAIT_TIME). \
+            until(EC.element_attribute_to_include(self.locator, attribute))
+
     def wait_till_element_not_present(self):
         WebDriverWait(self.driver, MAX_WAIT_TIME).\
             until(EC.invisibility_of_element_located(self.locator))

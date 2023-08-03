@@ -107,11 +107,11 @@ class RiskAnalysis(BasePage):
         self._risk_approval_details_screen_ok_button.click_element()
         self.accept_alert()
 
-        pending_check_boxes = self._all_pending_approval_check_box.is_element_present()
-        if pending_check_boxes:
-            self.log.debug("All UW Issues are not approved yet.")
-        else:
-            self.log.info("All UW Issues are approved.")
+        # pending_check_boxes = self._all_pending_approval_check_box.is_element_present()
+        # if pending_check_boxes:
+        #     self.log.debug("All UW Issues are not approved yet.")
+        # else:
+        #     self.log.info("All UW Issues are approved.")
 
 
 class PolicyReview(BasePage):
@@ -147,53 +147,79 @@ class Location(BasePage):
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
         self.SCREEN_TITLE = "Locations"
-        self._locator_add_new_location_btn = (By.XPATH, '//div[contains(text(), "New Loc")]')
-        self._locator_address1 = (By.XPATH, '//div[contains(text(),"Address 1")]/following-sibling::div//input')
-        self._locator_address2 = (By.XPATH, '//div[contains(text(),"Address 2")]/following-sibling::div//input')
-        self._locator_address3 = (By.XPATH, '//div[contains(text(),"Address 3")]/following-sibling::div//input')
-        self._locator_input_city = (By.XPATH, '//div[contains(text(),"City")]/following-sibling::div//input')
-        self._locator_select_state = (By.XPATH, '//div[contains(text(),"State")]/following-sibling::div//select')
-        self._locator_input_zip = (By.XPATH, '//div[contains(text(),"ZIP Code")]/following-sibling::div//input')
-        self._locator_ok_btn = (By.XPATH, '//div[@id="LocationPopup-LocationScreen-Update"]')
-        self._locator_add_existing_location_btn = (By.XPATH, '//div[text()="Add Existing Location"]')
-        self._locator_screen_title = (By.XPATH, '//div[@id="gw-center-title-toolbar"]//div[@role="heading"]')
+
+    @property
+    def _add_new_location_btn(self):
+        locator = (By.XPATH, '//div[contains(text(), "New Loc")]')
+        return BaseElement(self.driver, locator)
+
+    @property
+    def _address1(self):
+        locator = (By.XPATH, '//div[contains(text(),"Address 1")]/following-sibling::div//input')
+        return BaseElement(self.driver, locator)
+
+    @property
+    def _address2(self):
+        locator = (By.XPATH, '//div[contains(text(),"Address 2")]/following-sibling::div//input')
+        return BaseElement(self.driver, locator)
+
+    @property
+    def _address3(self):
+        locator = (By.XPATH, '//div[contains(text(),"Address 3")]/following-sibling::div//input')
+        return BaseElement(self.driver, locator)
+
+    @property
+    def _input_city(self):
+        locator = (By.XPATH, '//div[contains(text(),"City")]/following-sibling::div//input')
+        return BaseElement(self.driver, locator)
+
+    @property
+    def _select_state(self):
+        locator = (By.XPATH, '//div[contains(text(),"State")]/following-sibling::div//select')
+        return BaseElement(self.driver, locator)
+
+    @property
+    def _input_zip(self):
+        locator = (By.XPATH, '//div[contains(text(),"ZIP Code")]/following-sibling::div//input')
+        return BaseElement(self.driver, locator)
+
+    @property
+    def _ok_btn(self):
+        locator = (By.XPATH, '//div[@id="LocationPopup-LocationScreen-Update"]')
+        return BaseElement(self.driver, locator)
+
+    @property
+    def _add_existing_location_btn(self):
+        locator = (By.XPATH, '//div[text()="Add Existing Location"]')
+        return BaseElement(self.driver, locator)
 
     def add_new_location(self, address1, city, state, zip_code, address2=None, address3=None):
-        add_new_location_btn = BaseElement(self.driver, self._locator_add_new_location_btn)
-        add_new_location_btn.click_element()
+        self.log.info(f"Adding new location")
+        try:
+            # Locations screen
+            self._add_new_location_btn.click_element()
+            self._ok_btn.wait_till_text_to_be_present_in_attribute("aria-disabled", "false")
 
-        screen_title = BaseElement(self.driver, self._locator_screen_title)
-        screen_title.wait_till_text_to_be_not_present_in_element("Location Information")
+            # Location Information screen
+            self._address1.enter_text(address1)
+            self._address2.enter_text(address2) if (address2 is not None) else None
+            self._address3.enter_text(address3) if (address3 is not None) else None
+            self._input_city.enter_text(city)
+            self._select_state.select_option(text=state)
+            self._input_zip.enter_text(zip_code)
+            self._ok_btn.click_element()
 
-        address1_elm = BaseElement(self.driver, self._locator_address1)
-        address1_elm.enter_text(address1)
-
-        if address2 is not None:
-            address2_elm = BaseElement(self.driver, self._locator_address2)
-            address2_elm.enter_text(address2)
-
-        if address3 is not None:
-            address3_elm = BaseElement(self.driver, self._locator_address3)
-            address3_elm.enter_text(address3)
-
-        city_elm = BaseElement(self.driver, self._locator_input_city)
-        city_elm.enter_text(city)
-
-        state_elm = BaseElement(self.driver, self._locator_select_state)
-        state_elm.select_option(text=state)
-
-        zip_elm = BaseElement(self.driver, self._locator_input_zip)
-        zip_elm.enter_text(zip_code)
-
-        ok_btn = BaseElement(self.driver, self._locator_ok_btn)
-        ok_btn.click_element()
-        screen_title.wait_till_text_to_be_not_present_in_element(self.SCREEN_TITLE)
+            # Locations screen
+            self._add_new_location_btn.wait_till_text_to_be_present_in_attribute("aria-label", "New Location")
+            self.log.info(f"Added new location: {address1}, {city}, {state}, {zip_code}")
+        except:
+            self.log.info(f"Unable to add new location.")
+            raise Exception("Unable to add new location.")
 
     def add_existing_location(self, index):
-        existing_loc_list = BaseElement(self.driver, self._locator_add_existing_location_btn)
-        existing_loc_list.select_option(index=index)
-        ok_btn = BaseElement(self.driver, self._locator_ok_btn)
-        ok_btn.click_element()
+        self._add_existing_location_btn.select_option(index=index)
+        self._ok_btn.wait_till_text_to_be_present_in_attribute("aria-disabled", "false")
+        self._ok_btn.click_element()
 
 
 class Forms(BasePage):
