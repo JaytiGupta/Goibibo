@@ -172,7 +172,7 @@ class TitleToolbar(BasePage):
     #     self.log.info(f"Clicked Issue Policy button.")
     #     self.accept_alert()
     #
-    #     # TODO: update need to wait for page after click, screen can be same, pre_quote or quote
+    #
     #     time.sleep(3)
     #
     #     if self.screen_title_text() == "Submission Bound":

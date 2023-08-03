@@ -244,14 +244,14 @@ from Page.guidewire_pc.policies.common.workspace import Workspace
 #                 self.workspace.clear_btn.click_element()
 #                 self.quote2()
 #
-#     def quote(self):  # TODO needs to update max depth for recursion
+#     def quote(self):
 #         initial_screen_title = self.screen_title_text()
 #
 #         self.log.info(f"{initial_screen_title} screen")
 #         self.quote_btn.click_element()
 #         self.log.info("Clicked Quote button.")
 #
-#         # TODO: update need to wait for page after click, screen can be same, pre_quote or quote
+#
 #         time.sleep(5)
 #
 #         if self.screen_title_text() == "Quote":
@@ -278,7 +278,7 @@ from Page.guidewire_pc.policies.common.workspace import Workspace
 #         self.bind_only_btn.click_element()
 #         self.log.info(f"Clicked Bind Only button.")
 #
-#     def issue_policy(self): # TODO needs to update max depth for recursion
+#     def issue_policy(self):
 #         initial_screen_title = self.screen_title_text()
 #
 #         # bind option is not present for change policy transaction. Issue policy btn is on title toolbar.
@@ -289,7 +289,7 @@ from Page.guidewire_pc.policies.common.workspace import Workspace
 #         self.log.info(f"Clicked Issue Policy button.")
 #         self.accept_alert()
 #
-#         # TODO: update need to wait for page after click, screen can be same, pre_quote or quote
+#
 #         time.sleep(3)
 #
 #         if self.screen_title_text() == "Submission Bound":
