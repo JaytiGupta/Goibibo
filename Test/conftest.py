@@ -62,7 +62,7 @@ def app_config(request, env, take_screenshots):
     if not fixture_executed:
         log2 = getLogger()
         log2.info("************* Starting Execution *************")
-        definitions.CONFIG.env = "test" #env.lower()
+        definitions.CONFIG.env = "test"  # env.lower()
         definitions.CONFIG.take_screenshot = take_screenshots
         fixture_executed = True  # Set the flag to True to indicate the fixture has been executed once
 
@@ -71,7 +71,3 @@ def app_config(request, env, take_screenshots):
 
     # Yield here, fixture execution will resume after all tests are done
     yield
-
-
-if __name__ == "__main__":
-    pass

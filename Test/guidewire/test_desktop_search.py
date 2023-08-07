@@ -1,16 +1,14 @@
 from Page.guidewire_pc.policy_center_home import PolicyCenterHome
 from Page.guidewire_pc.accounts.account import Account
 from Page.guidewire_pc.policies.policy_summary import PolicySummary
+from Page.guidewire_pc.policies.common.sidebar import Sidebar
 from Util.screenshot import Screenshot
 from pytest import mark, fixture
-from Page.guidewire_pc.policies.common.sidebar import Sidebar
-from Util import csv_data_converter
-import definitions
-from Util.logs import getLogger
+from Util.csv_data_converter import CSVTestData
 
-file_path = definitions.ROOT_DIR + "/Data/data_desktop_search.csv"
-j_test_data = csv_data_converter.get_rows(file_path, "TestCase", "11")
-s_test_data = csv_data_converter.get_rows(file_path, "TestCase", "1")
+
+j_test_data = CSVTestData.load("11")
+s_test_data = CSVTestData.load("1")
 
 
 @fixture(params=s_test_data)
@@ -29,10 +27,8 @@ class DesktopSearchTests:
         self.policy_number = data["policy_number"]
         self.submission_number = data["submission_number"]
 
-
     @mark.account
     def test_search_account(self, browser_pc):
-        # account_number = self.data["account_number"]
         account_number = self.account_number
         page = PolicyCenterHome(browser_pc)
         page.tab_bar.search_account(account_number)
@@ -41,7 +37,6 @@ class DesktopSearchTests:
         Screenshot.capture(browser_pc)
 
     def test_search_submission(self, browser_pc):
-        # submission_number = self.data["submission_number"]
         submission_number = self.submission_number
         page = PolicyCenterHome(browser_pc)
         page.tab_bar.search_submission(submission_number)
@@ -50,7 +45,6 @@ class DesktopSearchTests:
         Screenshot.highlight_and_capture(browser_pc, policy_sidebar.heading)
 
     def test_search_policy(self, browser_pc):
-        # policy_number = self.data["policy_number"]
         policy_number = self.policy_number
         page = PolicyCenterHome(browser_pc)
         page.tab_bar.search_policy(policy_number)

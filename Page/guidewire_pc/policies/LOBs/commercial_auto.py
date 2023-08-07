@@ -13,6 +13,7 @@ from Page.guidewire_pc.policies.common.titlebar import TitleToolbar
 from Page.guidewire_pc.policies.common import screens
 from Util.logs import getLogger
 from Util import random_data
+from selenium.common.exceptions import ElementClickInterceptedException
 
 
 class CommercialAuto(BasePage):
@@ -99,11 +100,16 @@ class CommercialAutoLine:
         _locator_hired_auto_covg = (By.XPATH, f'//input[contains(@aria-label,"{coverage}")]')
         coverage_elm = BaseElement(self.driver, _locator_hired_auto_covg)
 
-        coverage_elm.wait_till_text_to_be_present_in_attribute("aria-label",f"{coverage}")
-        coverage_elm.click_element()
-        coverage_elm.wait_till_element_attribute_to_include("checked")
+        try:
+            coverage_elm.click_element()
+            coverage_elm.wait_till_element_attribute_to_include("checked")
+            self.log.info(f"'{coverage}' coverage selected under the Hired Auto coverage section")
+        except ElementClickInterceptedException:
+            coverage_elm.wait_till_text_to_be_present_in_attribute("type", "checkbox")
+            coverage_elm.click_element()
+            coverage_elm.wait_till_element_attribute_to_include("checked")
+            self.log.info(f"'{coverage}' coverage selected under the Hired Auto coverage section")
 
-        self.log.info(f"'{coverage}' coverage selected under the Hired Auto coverage section")
         return None
 
     def add_hired_auto_state(self, cost_of_hire, state):

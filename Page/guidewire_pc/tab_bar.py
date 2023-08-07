@@ -94,7 +94,7 @@ class TabBar(BasePage):
 
         login_page = Login(self.driver)
         login_page.login_button.wait_till_text_to_be_present_in_element("Log In")
-        sign_out_btn.wait_till_staleness_of_element()
+        # sign_out_btn.wait_till_staleness_of_element()
         self.log.info(f"Logged out.")
 
     def go_to_desktop(self):

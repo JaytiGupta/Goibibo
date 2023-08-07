@@ -1,14 +1,12 @@
-import definitions
-from Util import random_data, csv_data_converter
 from Page.guidewire_pc.policy_center_home import PolicyCenterHome
 from Page.guidewire_pc.accounts.account import Account
 from Util.screenshot import Screenshot
 from pytest import mark, fixture
+from Util.csv_data_converter import CSVTestData
 
 
-file_path = definitions.ROOT_DIR + "/Data/data_new_account.csv"
-s_test_data = csv_data_converter.get_rows(file_path, "TestCase", "1", "2", "3", "4", "5", "6")
-j_test_data = csv_data_converter.get_rows(file_path, "TestCase", "11", "12", "13", "15", "16", "14")
+s_test_data = CSVTestData.load("1", "2", "3", "4", "5", "6")
+j_test_data = CSVTestData.load("11", "12", "13", "15", "16", "14")
 
 
 @fixture(params=s_test_data)
@@ -56,6 +54,4 @@ def test_new_account_creation(browser_pc, data):
     new_account.create_account_screen.click_btn_update()
     account_number = account.summary.get_account_number()
     Screenshot.capture(browser_pc)
-    csv_data_converter.update_csv(file_path, "TestCase", data["TestCase"], "account_number", account_number)
-
-
+    CSVTestData.update(data["TestCase"], "account_number", account_number)

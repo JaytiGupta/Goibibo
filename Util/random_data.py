@@ -5,9 +5,12 @@ from definitions import ROOT_DIR
 from dataclasses import dataclass
 
 
-ADDRESS_DATA_FILE_PATH = ROOT_DIR + "/Data/Address.csv"
-VIN_FILE_PATH = ROOT_DIR + "/Data/VIN.csv"
-LICENSE_FILE_PATH = ROOT_DIR + "/Data/License.csv"
+FAKE_DATA_DIR = ROOT_DIR + "/Data/fake_data/"
+
+ADDRESS_DATA_FILE_PATH = FAKE_DATA_DIR + "Address.csv"
+VIN_FILE_PATH = FAKE_DATA_DIR + "VIN.csv"
+LICENSE_FILE_PATH = FAKE_DATA_DIR + "License.csv"
+
 STATE_CODES = {
         "AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas", "CA": "California", "CO": "Colorado",
         "CT": "Connecticut", "DE": "Delaware", "DC": "District of Columbia", "FL": "Florida", "GA": "Georgia",

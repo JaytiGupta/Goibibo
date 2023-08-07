@@ -1,17 +1,14 @@
-import time
-
-import definitions
-from Util import random_data, csv_data_converter
+from Util import random_data
 from Page.guidewire_pc.policy_center_home import PolicyCenterHome
 from Page.guidewire_pc.accounts.account import Account
 from Page.guidewire_pc.policies.policy import Policy
 from Util.screenshot import Screenshot
 from pytest import fixture, mark
+from Util.csv_data_converter import CSVTestData
 
 
-file_path = definitions.ROOT_DIR + "/Data/data_new_submission_comm_auto.csv"
-j_test_data = csv_data_converter.get_rows(file_path, "TestCase", "2")
-s_test_data = csv_data_converter.get_rows(file_path, "TestCase", "11", "12", "13")
+j_test_data = CSVTestData.load("2")
+s_test_data = CSVTestData.load("11")  # , "12", "13")
 
 
 @fixture(params=s_test_data)
@@ -61,15 +58,15 @@ def test_new_commercial_auto_creation(browser_pc, data):
     ca_policy.comm_auto_line_screen.add_hired_auto_state(cost_of_hire=data["cost_of_hire"], state=data["base_state"])
     ca_policy.comm_auto_line_screen.add_non_owned_auto_covg()
     ca_policy.comm_auto_line_screen.add_non_owned_auto_state(emp_no=data["emp_no"],
-                                                         partners=data["partners"],
-                                                         volunteers=data["volunteers"],
-                                                         state=data["base_state"])
+                                                             partners=data["partners"],
+                                                             volunteers=data["volunteers"],
+                                                             state=data["base_state"])
     ca_policy.title_toolbar.next()
 
     # Locations screen
     address = random_data.get_one_address("VA")
     ca_policy.location_screen.add_new_location(address1=address["Address_1"],
-                                               city= address["City"],
+                                               city=address["City"],
                                                state=address["State"],
                                                zip_code=address["Zip_Code"])
     ca_policy.title_toolbar.next()
@@ -99,4 +96,4 @@ def test_new_commercial_auto_creation(browser_pc, data):
     message_types = ca_policy.workspace_screen.get_all_message_types()
     assert any("error" in message_type.lower() for message_type in message_types)
     Screenshot.capture(browser_pc)
-    csv_data_converter.update_csv(file_path, "TestCase", data["TestCase"], "submission_number", submission_number)
+    CSVTestData.update(data["TestCase"], "submission_number", submission_number)

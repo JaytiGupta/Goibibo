@@ -1,16 +1,14 @@
 from pytest import fixture, mark
-import definitions
 from Page.guidewire_pc.policy_center_home import PolicyCenterHome
 from Page.guidewire_pc.policies.policy import Policy
 from Page.guidewire_pc.policies.Trasactions.cancel import Cancel
 from Page.guidewire_pc.policies.Trasactions.reinstate import Reinstate
-from Util import csv_data_converter
 from Util.screenshot import Screenshot
+from Util.csv_data_converter import CSVTestData
 
 
-file_path = definitions.ROOT_DIR + "/Data/data_cancel_reinstate_work_comp.csv"
-s_test_data = csv_data_converter.get_rows(file_path, "TestCase", "1", "2")
-j_test_data = csv_data_converter.get_rows(file_path, "TestCase", "14")
+s_test_data = CSVTestData.load("1", "2")
+j_test_data = CSVTestData.load("14")
 
 
 @fixture(params=s_test_data)

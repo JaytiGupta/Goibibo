@@ -1,3 +1,6 @@
+import inspect
+import os
+
 import pandas
 import random
 import definitions
@@ -53,6 +56,29 @@ def update_csv(file_path, reference_column, reference_column_value, column, valu
     data.loc[data[reference_column].astype(str) == reference_column_value, column] = value
     # Write the updated Dataframe back to CSV file
     data.to_csv(file_path, index=False)
+
+
+class CSVTestData:
+
+    @staticmethod
+    def _data_file():
+        file_name = os.path.basename(inspect.stack()[2].filename)
+        data_file_path = definitions.ROOT_DIR + "\\Data\\data_driven_tests\\"
+        data_file_name = file_name.replace("test", "data", 1).replace(".py", ".csv")
+        data_file = data_file_path + data_file_name
+        return data_file
+
+    @staticmethod
+    def load(*test_case_numbers):
+        str_args = [str(tc) if isinstance(tc, int) else tc for tc in test_case_numbers]
+        test_data = get_rows(CSVTestData._data_file(), "TestCase", *str_args)
+        return test_data
+
+    @staticmethod
+    def update(test_case, column_name, value):
+        test_case_str = str(test_case) if isinstance(test_case, int) else test_case
+        file_path = CSVTestData._data_file()
+        update_csv(file_path, "TestCase", test_case_str, column_name, value)
 
 
 if __name__ == "__main__":

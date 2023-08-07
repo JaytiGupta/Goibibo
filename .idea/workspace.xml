@@ -1,21 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="82aaf498-e6c0-43b0-8f5f-8e928a4d18b3" name="Changes" comment="2 Aug">
+    <list default="true" id="82aaf498-e6c0-43b0-8f5f-8e928a4d18b3" name="Changes" comment="3 Aug">
+      <change afterPath="$PROJECT_DIR$/Data/data_driven_tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Data/fake_data/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Base/baseelement.py" beforeDir="false" afterPath="$PROJECT_DIR$/Base/baseelement.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/data_new_submission_comm_auto.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_new_submission_comm_auto.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/data_newbusiness_work_comp.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_newbusiness_work_comp.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/Address.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/fake_data/Address.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/License.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/fake_data/License.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/VIN.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/fake_data/VIN.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/data_cancel_reinstate_work_comp.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_driven_tests/data_workers_comp_cancel_reinstate.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/data_desktop_search.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_driven_tests/data_desktop_search.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/data_new_account.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_driven_tests/data_new_account.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/data_new_submission_comm_auto.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_driven_tests/data_commercial_auto_submission.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/data_newbusiness_work_comp.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_driven_tests/data_workers_comp_submission.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/data_policy_change_work_comp.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_driven_tests/data_workers_comp_policy_change.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/login_data.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/commercial_auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/commercial_auto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/elements.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/elements.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/screens.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/screens.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/titlebar.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/titlebar.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/workspace.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/common/workspace.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policy_center_home.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policy_center_home.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/tab_bar.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/tab_bar.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ResultFiles/Logs/logfile.log" beforeDir="false" afterPath="$PROJECT_DIR$/ResultFiles/Logs/logfile.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_comm_auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_comm_auto.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_newbusiness_work_comp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_newbusiness_work_comp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/test_sample.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/test_sample.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_cancel_reinstate_work_comp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_workers_comp_cancel_reinstate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_comm_auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_commercial_auto_submission.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_home.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_desktop_search.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_new_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_new_account.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_newbusiness_work_comp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_workers_comp_submission.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_policy_change_work_comp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_workers_comp_policy_change.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/sample.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/sample.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/csv_data_converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/Util/csv_data_converter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/random_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/Util/random_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,16 +66,18 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jayti.gupta/PycharmProjects/Automation_selenium_python&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/shubham.singh/PycharmProjects/Automation_selenium_python/Data/fake_data&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\shubham.singh\PycharmProjects\Automation_selenium_python\Data\fake_data" />
+      <recent name="C:\Users\shubham.singh\PycharmProjects\Automation_selenium_python\Data\data_driven_tests" />
       <recent name="C:\Users\shubham.singh\PycharmProjects\Automation_selenium_python\Data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.pytest in test_newbusiness_work_comp.py">
-    <configuration name="titlebar" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.random_data">
+    <configuration name="random_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Automation_selenium_python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -68,11 +85,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Page/guidewire_pc/policies/common" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Util" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Page/guidewire_pc/policies/common/titlebar.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Util/random_data.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -81,23 +98,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_newbusiness_work_comp.test_new_work_comp_policy_creation" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="sample" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Automation_selenium_python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test/guidewire" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_newbusiness_work_comp.test_new_work_comp_policy_creation&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test/sample.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest for test_sample.test_case_1" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest in sample.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Automation_selenium_python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -109,49 +131,49 @@
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_sample.test_case_1&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest in test_newbusiness_work_comp.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="Automation_selenium_python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test/guidewire" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/Test/guidewire/test_newbusiness_work_comp.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Test/sample.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest in test_sample.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest in test_desktop_search.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Automation_selenium_python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test/guidewire" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/Test/test_sample.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Test/guidewire/test_desktop_search.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in test_workers_comp_submission.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Automation_selenium_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test/guidewire" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Test/guidewire/test_workers_comp_submission.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.pytest in test_newbusiness_work_comp.py" />
-        <item itemvalue="Python tests.pytest in test_sample.py" />
-        <item itemvalue="Python.titlebar" />
-        <item itemvalue="Python tests.pytest for test_sample.test_case_1" />
-        <item itemvalue="Python tests.pytest for test_newbusiness_work_comp.test_new_work_comp_policy_creation" />
+        <item itemvalue="Python.random_data" />
+        <item itemvalue="Python tests.pytest in test_workers_comp_submission.py" />
+        <item itemvalue="Python.sample" />
+        <item itemvalue="Python tests.pytest in sample.py" />
+        <item itemvalue="Python tests.pytest in test_desktop_search.py" />
       </list>
     </recent_temporary>
   </component>
@@ -486,7 +508,21 @@
       <option name="project" value="LOCAL" />
       <updated>1690979089567</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="3 Aug">
+      <created>1691061901533</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1691061901533</updated>
+    </task>
+    <task id="LOCAL-00048" summary="3 Aug">
+      <created>1691062112584</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1691062112584</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -505,7 +541,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="comm auto June 13th_jayti" />
     <MESSAGE value="comm auto June 14th_jayti" />
     <MESSAGE value="old files removed June 16th_jayti" />
     <MESSAGE value="CA removed June 16th_jayti" />
@@ -530,6 +565,7 @@
     <MESSAGE value="26th - Jayti" />
     <MESSAGE value="1st Aug - Jayti" />
     <MESSAGE value="2 Aug" />
-    <option name="LAST_COMMIT_MESSAGE" value="2 Aug" />
+    <MESSAGE value="3 Aug" />
+    <option name="LAST_COMMIT_MESSAGE" value="3 Aug" />
   </component>
 </project>

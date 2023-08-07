@@ -1,17 +1,13 @@
-import time
-
-import definitions
-from Util import csv_data_converter
 from Page.guidewire_pc.policy_center_home import PolicyCenterHome
 from Page.guidewire_pc.accounts.account import Account
 from Page.guidewire_pc.policies.policy import Policy
 from Util.screenshot import Screenshot
 from pytest import mark, fixture
+from Util.csv_data_converter import CSVTestData
 
 
-file_path = definitions.ROOT_DIR + "/Data/data_newbusiness_work_comp.csv"
-j_test_data = csv_data_converter.get_rows(file_path, "TestCase", "11")#, "12", "13", "14")
-s_test_data = csv_data_converter.get_rows(file_path, "TestCase", "2", "3", "4")
+j_test_data = CSVTestData.load(11)  # , "12", "13", "14")
+s_test_data = CSVTestData.load("2")   # , "3", "4")
 
 
 @fixture(params=s_test_data)
@@ -98,4 +94,4 @@ def test_new_work_comp_policy_creation(browser_pc, data):
 
     wc_policy.title_toolbar.screen_title_element.wait_till_text_to_be_present_in_element("Submission Bound")
     Screenshot.capture(browser_pc)
-    csv_data_converter.update_csv(file_path, "TestCase", data["TestCase"], "submission_number", submission_number)
+    CSVTestData.update(data["TestCase"], "submission_number", submission_number)

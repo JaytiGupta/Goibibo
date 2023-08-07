@@ -1,16 +1,13 @@
-import time
 from Page.guidewire_pc.policy_center_home import PolicyCenterHome
 from Page.guidewire_pc.policies.policy import Policy
 from Page.guidewire_pc.policies.Trasactions.change_policy import ChangePolicy
 from Util.screenshot import Screenshot
 from pytest import mark, fixture
-import definitions
-from Util import csv_data_converter
+from Util.csv_data_converter import CSVTestData
 
 
-file_path = definitions.ROOT_DIR + "/Data/data_policy_change_work_comp.csv"
-s_test_data = csv_data_converter.get_rows(file_path, "TestCase", "1", "2")
-j_test_data = csv_data_converter.get_rows(file_path, "TestCase", "12")
+s_test_data = CSVTestData.load("1", "2")
+j_test_data = CSVTestData.load(12)
 
 
 @fixture(params=s_test_data)
@@ -48,8 +45,7 @@ def test_work_comp_change_policy_transaction(browser_pc, data):
     # Forms Screen
     wc_policy.title_toolbar.next()
     # Payment Screen
-    submission_number: str = wc_policy.sidebar.transaction_number()
+    transaction_number: str = wc_policy.sidebar.transaction_number()
     wc_policy.title_toolbar.issue_policy()
     Screenshot.capture(browser_pc)
-    csv_data_converter.update_csv(file_path, "TestCase", data["TestCase"], "policy_change_number", submission_number)
-
+    CSVTestData.update(data["TestCase"], "policy_change_number", transaction_number)

@@ -1,15 +1,13 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException, NoSuchElementException
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.select import Select
-
 import inspect
 import random
-
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support.select import Select
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
 from Util.logs import getLogger
 
 
@@ -30,7 +28,8 @@ class BaseElement:
         is_element_found = True
         try:
             element = WebDriverWait(self.driver, MAX_WAIT_TIME).until(
-                EC.visibility_of_element_located(self.locator))
+                EC.visibility_of_element_located(self.locator)
+            )
         except TimeoutException:
             is_element_found = False
         else:
@@ -40,25 +39,23 @@ class BaseElement:
                 caller_file = inspect.stack()[2][1].split("\\")[-1]
                 caller_function = inspect.stack()[2][3]
                 line = inspect.getframeinfo(inspect.stack()[1][0]).lineno
-                self.log.debug(f" {caller_file} - {caller_function}() - An element is not found.")
-                # raise Exception(f"Unable to find web element in {caller_file} file {caller_function}() function")
+                self.log.debug(f" {caller_file} - {caller_function}() at line{line} - An element is not found.")
             return None
 
     def click_element(self):
         # try:
         element = WebDriverWait(self.driver, MAX_WAIT_TIME).until(
-            EC.element_to_be_clickable(self.locator))
+            EC.element_to_be_clickable(self.locator)
+        )
         element.click()
+        return None
         # except ElementClickInterceptedException:
         #     self.log.debug("Element is not clickable.")
 
     def enter_text(self, text):
-        # calling_object = inspect.currentframe().f_back.f_locals.get('self', None)
-        # object_name = calling_object.__class__.__name__ if calling_object else "Unknown Object"
-        # function_name = inspect.currentframe().f_back.f_code.co_name
-        # self.log.info(f"{function_name} - {object_name} - Sending text: {text}")
         self.web_element.clear()
         self.web_element.send_keys(text)
+        return None
 
     def get_text(self):
         text = self.web_element.text
@@ -77,14 +74,17 @@ class BaseElement:
     def scroll_to_element(self):
         actions = ActionChains(self.driver)
         actions.move_to_element(self.web_element).perform()
+        return None
         # Or we can use
         # driver.execute_script("arguments[0].scrollIntoView();", self.element)
 
     def press_enter_key(self):
         self.web_element.send_keys(Keys.ENTER)
+        return None
 
     def press_tab_key(self):
         self.web_element.send_keys(Keys.TAB)
+        return None
 
     def select_option(self, **kwargs):
         """
@@ -99,79 +99,107 @@ class BaseElement:
             elif kwargs.get("value") is not None:
                 elm.select_by_value(kwargs.get("value"))
         except NoSuchElementException:
-            self.log.debug(f"- No option present for which dropdown {list(kwargs.keys())[0]} "
-                           f"is \"{list(kwargs.values())[0]}\"")
-            raise ValueError(f"No option present for which dropdown {list(kwargs.keys())[0]} is \"{list(kwargs.values())[0]}\"")
+            self.log.debug(
+                f"No option present for which dropdown {list(kwargs.keys())[0]} "
+                f"is \"{list(kwargs.values())[0]}\""
+            )
+            raise ValueError(
+                f"No option present for which dropdown {list(kwargs.keys())[0]} "
+                f"is \"{list(kwargs.values())[0]}\""
+            )
+        return None
 
     def select_random_dropdown_option(self, *options_to_remove: str):
         """
         Used to select any random value from the dropdown while excluding
         any given no. of values that are passed as parameters (optional)
         """
-        all_dropdown_option_locator = (By.XPATH, ".//option") # All dropdown elements are always in option tags
+        all_dropdown_option_locator = (By.XPATH, ".//option")  # All dropdown elements are always present in option tags
         nested_element_list = NestedElement(self.web_element, all_dropdown_option_locator).get_all_elements()
         all_dropdown_option_text = [element.text for element in nested_element_list]
-
-        print("-------", all_dropdown_option_text)
 
         for option in options_to_remove:
             if option in all_dropdown_option_text:
                 all_dropdown_option_text.remove(option)
             else:
-                self.log.info(f"Option {option} is not in the dropdown options to be removed for selection.")
+                self.log.info(f"Option '{option}' is not in the dropdown options "
+                              f"to be removed for selection.")
 
         random_element_text = random.choice(all_dropdown_option_text)
 
         self.select_option(text=random_element_text)
-        self.log.info(f"Select {random_element_text} from dropdown option.")
+        self.log.info(f"'{random_element_text}' selected from dropdown option.")
 
         return None
 
-    def is_element_present(self):
-        """
-        :return: True or False
-        """
+    def is_element_present(self) -> bool:
         return self.web_element is not None
 
     def double_click(self):
         action_chains = ActionChains(self.driver)
         action_chains.double_click(self.web_element).perform()
+        return None
 
     # methods for waiting
     def wait_till_text_to_be_present_in_element(self, text):
-        WebDriverWait(self.driver, MAX_WAIT_TIME).\
-            until(EC.text_to_be_present_in_element(self.locator, text))
+        WebDriverWait(self.driver, MAX_WAIT_TIME).until(
+            EC.text_to_be_present_in_element(self.locator, text)
+        )
+        return None
 
     def wait_till_text_to_be_present_in_value(self, text):
-        WebDriverWait(self.driver, MAX_WAIT_TIME). \
-            until(EC.text_to_be_present_in_element_value(self.locator, text))
+        WebDriverWait(self.driver, MAX_WAIT_TIME).until(
+            EC.text_to_be_present_in_element_value(self.locator, text)
+        )
+        return None
 
     def wait_till_text_to_be_present_in_attribute(self, attribute, text):
-        WebDriverWait(self.driver, MAX_WAIT_TIME). \
-            until(EC.text_to_be_present_in_element_attribute(self.locator, attribute, text))
-
-    def wait_till_text_to_be_not_present_in_element(self, text):
-        WebDriverWait(self.driver, MAX_WAIT_TIME).\
-            until_not(EC.text_to_be_present_in_element(self.locator, text))
+        WebDriverWait(self.driver, MAX_WAIT_TIME).until(
+            EC.text_to_be_present_in_element_attribute(self.locator, attribute, text)
+        )
+        return None
 
     def wait_till_element_attribute_to_include(self, attribute):
-        WebDriverWait(self.driver, MAX_WAIT_TIME). \
-            until(EC.element_attribute_to_include(self.locator, attribute))
+        WebDriverWait(self.driver, MAX_WAIT_TIME).until(
+            EC.element_attribute_to_include(self.locator, attribute)
+        )
+        return None
+
+    def wait_till_text_to_be_not_present_in_element(self, text):
+        WebDriverWait(self.driver, MAX_WAIT_TIME).until_not(
+            EC.text_to_be_present_in_element(self.locator, text)
+        )
+        return None
+
+    def wait_till_text_to_be_not_present_in_value(self, text):
+        WebDriverWait(self.driver, MAX_WAIT_TIME).until_not(
+            EC.text_to_be_present_in_element_value(self.locator, text)
+        )
+        return None
+
+    def wait_till_text_to_be_not_present_in_attribute(self, attribute, text):
+        WebDriverWait(self.driver, MAX_WAIT_TIME).until_not(
+            EC.text_to_be_present_in_element_attribute(self.locator, attribute, text)
+        )
+        return None
 
     def wait_till_element_not_present(self):
-        WebDriverWait(self.driver, MAX_WAIT_TIME).\
-            until(EC.invisibility_of_element_located(self.locator))
+        WebDriverWait(self.driver, MAX_WAIT_TIME).until(
+            EC.invisibility_of_element_located(self.locator)
+        )
+        return None
 
-    def wait_till_staleness_of_element(self):
-        WebDriverWait(self.driver, MAX_WAIT_TIME).until(EC.staleness_of(self.web_element))
-
-    def wait_till_visibility_of_element(self):
-        WebDriverWait(self.driver, MAX_WAIT_TIME).until(EC.visibility_of(self.web_element))
+    # def wait_till_staleness_of_element(self):
+    #     WebDriverWait(self.driver, MAX_WAIT_TIME).until(EC.staleness_of(self.web_element))
+    #
+    # def wait_till_visibility_of_element(self):
+    #     WebDriverWait(self.driver, MAX_WAIT_TIME).until(EC.visibility_of(self.web_element))
 
     # methods for multiple elements returned
     def get_all_elements(self) -> list:
-        return WebDriverWait(self.driver, MAX_WAIT_TIME). \
-            until(EC.visibility_of_all_elements_located(self.locator))
+        return WebDriverWait(self.driver, MAX_WAIT_TIME).until(
+            EC.visibility_of_all_elements_located(self.locator)
+        )
 
     def get_all_elements_text(self) -> list:
         elm_list = self.get_all_elements()
@@ -188,6 +216,7 @@ class BaseElement:
                 elm.click()
         else:
             self.log.debug("No element found to click.")
+        return None
 
 
 class NestedElement:
