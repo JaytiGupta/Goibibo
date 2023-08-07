@@ -1,6 +1,5 @@
 import inspect
 import os
-
 import pandas
 import random
 import definitions
@@ -69,7 +68,7 @@ class CSVTestData:
         return data_file
 
     @staticmethod
-    def load(*test_case_numbers):
+    def load_testcase(*test_case_numbers):
         str_args = [str(tc) if isinstance(tc, int) else tc for tc in test_case_numbers]
         test_data = get_rows(CSVTestData._data_file(), "TestCase", *str_args)
         return test_data
@@ -82,5 +81,4 @@ class CSVTestData:
 
 
 if __name__ == "__main__":
-    file_path1 = definitions.ROOT_DIR + "/Data/data_policy_change_work_comp.csv"
-    file_path2 = definitions.ROOT_DIR + "/Data/VIN.csv"
+    pass

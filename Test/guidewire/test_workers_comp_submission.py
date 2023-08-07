@@ -6,8 +6,8 @@ from pytest import mark, fixture
 from Util.csv_data_converter import CSVTestData
 
 
-j_test_data = CSVTestData.load(11)  # , "12", "13", "14")
-s_test_data = CSVTestData.load("2")   # , "3", "4")
+j_test_data = CSVTestData.load_testcase(11)  # , "12", "13", "14")
+s_test_data = CSVTestData.load_testcase("2")   # , "3", "4")
 
 
 @fixture(params=s_test_data)

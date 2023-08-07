@@ -7,8 +7,8 @@ from Util.screenshot import Screenshot
 from Util.csv_data_converter import CSVTestData
 
 
-s_test_data = CSVTestData.load("1", "2")
-j_test_data = CSVTestData.load("14")
+s_test_data = CSVTestData.load_testcase("1", "2")
+j_test_data = CSVTestData.load_testcase("14")
 
 
 @fixture(params=s_test_data)
