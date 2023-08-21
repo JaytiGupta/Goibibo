@@ -3,13 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="82aaf498-e6c0-43b0-8f5f-8e928a4d18b3" name="Changes" comment="7 Aug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/data_driven_tests/data_new_account.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_driven_tests/data_new_account.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/data_driven_tests/data_workers_comp_submission.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_driven_tests/data_workers_comp_submission.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ResultFiles/Logs/logfile.log" beforeDir="false" afterPath="$PROJECT_DIR$/ResultFiles/Logs/logfile.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/conftest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/guidewire/test_commercial_auto_submission.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_commercial_auto_submission.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_desktop_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_desktop_search.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_new_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_new_account.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_workers_comp_cancel_reinstate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_workers_comp_cancel_reinstate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_workers_comp_policy_change.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_workers_comp_policy_change.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_workers_comp_submission.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_workers_comp_submission.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Util/csv_data_converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/Util/csv_data_converter.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,14 +39,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/shubham.singh/PycharmProjects/Automation_selenium_python/Data/fake_data&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/shubham.singh/PycharmProjects/Automation_selenium_python"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\shubham.singh\PycharmProjects\Automation_selenium_python\Data\fake_data" />
@@ -165,13 +163,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684927950670</updated>
-    </task>
-    <task id="LOCAL-00001" summary="new submission code">
-      <created>1684931410045</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1684931410045</updated>
     </task>
     <task id="LOCAL-00002" summary="new submission code1">
       <created>1685016885803</created>
@@ -509,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691392172583</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="7 Aug">
+      <created>1691404023854</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1691404023854</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="UnknownFeatures">
