@@ -2,4 +2,4 @@ venv/
 assets/
 .idea/
 ResultFiles/
-logfile.log
+ResultFiles/Logs/logfile.log
