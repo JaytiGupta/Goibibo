@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="82aaf498-e6c0-43b0-8f5f-8e928a4d18b3" name="Changes" comment="7 Aug">
+    <list default="true" id="82aaf498-e6c0-43b0-8f5f-8e928a4d18b3" name="Changes" comment="Aug 22">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/data_driven_tests/data_new_account.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_driven_tests/data_new_account.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/data_driven_tests/data_workers_comp_submission.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_driven_tests/data_workers_comp_submission.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ResultFiles/Logs/logfile.log" beforeDir="false" afterPath="$PROJECT_DIR$/ResultFiles/Logs/logfile.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_commercial_auto_submission.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_commercial_auto_submission.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_desktop_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_desktop_search.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Util/csv_data_converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/Util/csv_data_converter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Util/screenshot.py" beforeDir="false" afterPath="$PROJECT_DIR$/Util/screenshot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/definitions.py" beforeDir="false" afterPath="$PROJECT_DIR$/definitions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,14 +39,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/shubham.singh/PycharmProjects/Automation_selenium_python"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/shubham.singh/PycharmProjects/DSA&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\shubham.singh\PycharmProjects\Automation_selenium_python\Data\fake_data" />
@@ -54,7 +54,28 @@
       <recent name="C:\Users\shubham.singh\PycharmProjects\Automation_selenium_python\Data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.random_data">
+  <component name="RunManager" selected="Python.csv_data_converter">
+    <configuration name="csv_data_converter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Automation_selenium_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Util" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Util/csv_data_converter.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="random_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Automation_selenium_python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -97,22 +118,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest in sample.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="Automation_selenium_python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/Test/sample.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="pytest in test_desktop_search.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Automation_selenium_python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -147,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.csv_data_converter" />
+        <item itemvalue="Python tests.pytest in test_desktop_search.py" />
         <item itemvalue="Python.random_data" />
         <item itemvalue="Python tests.pytest in test_workers_comp_submission.py" />
         <item itemvalue="Python.sample" />
-        <item itemvalue="Python tests.pytest in sample.py" />
-        <item itemvalue="Python tests.pytest in test_desktop_search.py" />
       </list>
     </recent_temporary>
   </component>
@@ -163,20 +168,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684927950670</updated>
-    </task>
-    <task id="LOCAL-00002" summary="new submission code1">
-      <created>1685016885803</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1685016885803</updated>
-    </task>
-    <task id="LOCAL-00003" summary="work_comp till Supplemental">
-      <created>1685455143696</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1685455143696</updated>
     </task>
     <task id="LOCAL-00004" summary="work_comp till quote">
       <created>1686226805019</created>
@@ -507,7 +498,21 @@
       <option name="project" value="LOCAL" />
       <updated>1691404023854</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Aug 21">
+      <created>1692623825263</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1692623825263</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Aug 22">
+      <created>1692696284700</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1692696284700</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -526,8 +531,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="old files removed June 16th_jayti" />
-    <MESSAGE value="CA removed June 16th_jayti" />
     <MESSAGE value="minor updates June 16th_jayti" />
     <MESSAGE value="2 excel files June 19th_jayti" />
     <MESSAGE value="CA June 19th_jayti" />
@@ -551,6 +554,8 @@
     <MESSAGE value="2 Aug" />
     <MESSAGE value="3 Aug" />
     <MESSAGE value="7 Aug" />
-    <option name="LAST_COMMIT_MESSAGE" value="7 Aug" />
+    <MESSAGE value="Aug 21" />
+    <MESSAGE value="Aug 22" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aug 22" />
   </component>
 </project>
