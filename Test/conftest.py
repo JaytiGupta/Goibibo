@@ -1,10 +1,30 @@
+import allure
+from allure_commons.types import AttachmentType
 from selenium import webdriver
-from pytest import fixture
+from pytest import fixture, hookimpl
 import definitions
 from Util.logs import getLogger
 from Util.read_json import config_data
 from Page.guidewire_pc.login import Login
 from Page.guidewire_pc.policy_center_home import PolicyCenterHome
+from Util.screenshot import Screenshot
+
+
+@hookimpl(hookwrapper=True, tryfirst=True) # this is required for 'log_on_failure' fixture
+def pytest_runtest_makereport(item, call):
+    outcome = yield
+    rep = outcome.get_result()
+    setattr(item, "rep_" + rep.when, rep)
+    return rep
+
+
+@fixture(autouse=True)
+def log_on_failure(request, browser_pc, browser):
+    yield
+    item = request.node
+    if item.rep_call.failed:
+        screenshot = Screenshot.capture(browser)
+        allure.attach(screenshot, attachment_type=AttachmentType.PNG)
 
 
 @fixture(scope="session")

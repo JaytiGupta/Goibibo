@@ -21,6 +21,7 @@ class Screenshot:
 
             screenshot_filename = Screenshot._generate_unique_filename()
             driver.save_screenshot(screenshot_filename)
+            return open(screenshot_filename, 'rb').read()
         else:
             pass
 
