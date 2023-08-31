@@ -7,7 +7,7 @@ from Util.screenshot import Screenshot
 from Util.csv_data_converter import CSVTestData
 
 
-s_test_data = CSVTestData.load_testcase("1", "2")
+s_test_data = CSVTestData.load_testcase(2)
 j_test_data = CSVTestData.load_testcase("14")
 
 

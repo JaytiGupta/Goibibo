@@ -6,7 +6,7 @@ from re import sub
 from Base.basepage import BasePage
 from Base.baseelement import BaseElement
 from selenium.webdriver.common.by import By
-from Page.guidewire_pc.policies.LOBs import common
+from Page.guidewire_pc.policies.common.workspace import Workspace
 from Page.guidewire_pc.policies.common.elements import TableQuestionnaires
 from Page.guidewire_pc.policies.common.sidebar import Sidebar
 from Page.guidewire_pc.policies.common.titlebar import TitleToolbar
@@ -38,7 +38,7 @@ class CommercialAuto(BasePage):
         self.quote_screen = screens.Quote(self.driver)
         self.forms_screen = screens.Forms(self.driver)
         # self.payment_screen = Payment(self.driver)
-        self.workspace_screen = common.Workspace(self.driver)
+        self.workspace_screen = Workspace(self.driver)
         self.sidebar = Sidebar(self.driver)
 
 

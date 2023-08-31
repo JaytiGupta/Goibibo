@@ -13,7 +13,6 @@ class Reinstate(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
-        self.title_toolbar = TitleToolbar(self.driver)
         self.title_toolbar = ReinTitleToolbar(self.driver)
         self.start_reinstatement_screen = StartReinstatement(self.driver)
         self.risk_analysis_screen = screens.RiskAnalysis(self.driver)

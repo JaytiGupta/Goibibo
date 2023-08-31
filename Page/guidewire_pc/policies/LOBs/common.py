@@ -1,17 +1,20 @@
-import time
-from re import sub
+# Created separate folder for common - will delete this file after some time
 
-from selenium.common import WebDriverException
-from selenium.webdriver.common.by import By
-from Base.baseelement import BaseElement
-from Base.baseelement import NestedElement
-from Base.basepage import BasePage
-from Util.logs import getLogger
-from Page.guidewire_pc.policies.info_bar import InfoBar
-import random
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from Page.guidewire_pc.policies.common.workspace import Workspace
+
+# import time
+# from re import sub
+#
+# from selenium.common import WebDriverException
+# from selenium.webdriver.common.by import By
+# from Base.baseelement import BaseElement
+# from Base.baseelement import NestedElement
+# from Base.basepage import BasePage
+# from Util.logs import getLogger
+# from Page.guidewire_pc.policies.info_bar import InfoBar
+# import random
+# from selenium.webdriver.support.wait import WebDriverWait
+# from selenium.webdriver.support import expected_conditions as EC
+# from Page.guidewire_pc.policies.common.workspace import Workspace
 
 
 # class TableQuestionnaires:
@@ -396,41 +399,41 @@ from Page.guidewire_pc.policies.common.workspace import Workspace
 #         return None
 
 
-class RiskAnalysis(BasePage):
-    log = getLogger()
-
-    def __init__(self, driver):
-        super().__init__(driver=driver, url=None)
-        self.SCREEN_TITLE = "Risk Analysis"
-
-    @property
-    def _all_pending_approval_check_box(self):
-        locator = (By.XPATH, '//div[text()="Approve"]/ancestor::td[not(contains(@colspan,"1"))]'
-                             '/preceding-sibling::td[4]'
-                             '//input[@type="checkbox"]')
-        return BaseElement(self.driver, locator)
-
-    @property
-    def _header_approve_btn(self):
-        locator = (By.XPATH, '//div[@class="gw-ListView--UI-left"]//div[text()="Approve"]')
-        return BaseElement(self.driver, locator)
-
-    @property
-    def _risk_approval_details_screen_ok_button(self):
-        locator = (By.XPATH, '//div[@role="button"]//div[@aria-label="OK"]')
-        return BaseElement(self.driver, locator)
-
-    def approve_all_uw_issues(self):
-        self._all_pending_approval_check_box.click_all_elements()
-        self._header_approve_btn.click_element()
-        self._risk_approval_details_screen_ok_button.click_element()
-        self.accept_alert()
-
-        pending_check_boxes = self._all_pending_approval_check_box.is_element_present()
-        if pending_check_boxes:
-            self.log.debug("All UW Issues are not approved yet.")
-        else:
-            self.log.info("All UW Issues are approved.")
+# class RiskAnalysis(BasePage):
+#     log = getLogger()
+#
+#     def __init__(self, driver):
+#         super().__init__(driver=driver, url=None)
+#         self.SCREEN_TITLE = "Risk Analysis"
+#
+#     @property
+#     def _all_pending_approval_check_box(self):
+#         locator = (By.XPATH, '//div[text()="Approve"]/ancestor::td[not(contains(@colspan,"1"))]'
+#                              '/preceding-sibling::td[4]'
+#                              '//input[@type="checkbox"]')
+#         return BaseElement(self.driver, locator)
+#
+#     @property
+#     def _header_approve_btn(self):
+#         locator = (By.XPATH, '//div[@class="gw-ListView--UI-left"]//div[text()="Approve"]')
+#         return BaseElement(self.driver, locator)
+#
+#     @property
+#     def _risk_approval_details_screen_ok_button(self):
+#         locator = (By.XPATH, '//div[@role="button"]//div[@aria-label="OK"]')
+#         return BaseElement(self.driver, locator)
+#
+#     def approve_all_uw_issues(self):
+#         self._all_pending_approval_check_box.click_all_elements()
+#         self._header_approve_btn.click_element()
+#         self._risk_approval_details_screen_ok_button.click_element()
+#         self.accept_alert()
+#
+#         pending_check_boxes = self._all_pending_approval_check_box.is_element_present()
+#         if pending_check_boxes:
+#             self.log.debug("All UW Issues are not approved yet.")
+#         else:
+#             self.log.info("All UW Issues are approved.")
 
 
 # class PolicyReview(BasePage):
@@ -441,23 +444,23 @@ class RiskAnalysis(BasePage):
 #         self.SCREEN_TITLE = "Policy Review"
 
 
-class Quote(BasePage):
-    log = getLogger()
-
-    def __init__(self, driver):
-        super().__init__(driver=driver, url=None)
-        self.SCREEN_TITLE = "Quote"
-
-    @property
-    def _total_premium_amt(self):
-        locator = (By.XPATH, '//div[text()="Total Premium"]/following-sibling::div//div[contains(text(), "$")]')
-        return BaseElement(self.driver, locator)
-
-    def total_premium_amount(self):
-        premium_amount_text = self._total_premium_amt.get_text()
-        premium = float(sub(r'[^\d.]', '', premium_amount_text))
-        self.log.info(f"Total Premium is {premium_amount_text}")
-        return premium
+# class Quote(BasePage):
+#     log = getLogger()
+#
+#     def __init__(self, driver):
+#         super().__init__(driver=driver, url=None)
+#         self.SCREEN_TITLE = "Quote"
+#
+#     @property
+#     def _total_premium_amt(self):
+#         locator = (By.XPATH, '//div[text()="Total Premium"]/following-sibling::div//div[contains(text(), "$")]')
+#         return BaseElement(self.driver, locator)
+#
+#     def total_premium_amount(self):
+#         premium_amount_text = self._total_premium_amt.get_text()
+#         premium = float(sub(r'[^\d.]', '', premium_amount_text))
+#         self.log.info(f"Total Premium is {premium_amount_text}")
+#         return premium
 
 
 # class Location(BasePage):

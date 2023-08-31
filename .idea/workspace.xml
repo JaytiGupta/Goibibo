@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="82aaf498-e6c0-43b0-8f5f-8e928a4d18b3" name="Changes" comment="Aug 29">
+    <list default="true" id="82aaf498-e6c0-43b0-8f5f-8e928a4d18b3" name="Changes" comment="Added comments and small changes">
+      <change afterPath="$PROJECT_DIR$/Page/guidewire_pc/accounts/new_account2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/data_driven_tests/data_commercial_auto_submission.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_driven_tests/data_commercial_auto_submission.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/data_driven_tests/data_new_account.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_driven_tests/data_new_account.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/data_driven_tests/data_workers_comp_submission.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data_driven_tests/data_workers_comp_submission.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/accounts/new_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/accounts/new_account.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/commercial_auto.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/commercial_auto.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/common.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/work_comp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/LOBs/work_comp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/Trasactions/cancel.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/Trasactions/cancel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/Trasactions/reinstate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/Trasactions/reinstate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/new_submission_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/new_submission_screen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Page/guidewire_pc/policies/policy_summary.py" beforeDir="false" afterPath="$PROJECT_DIR$/Page/guidewire_pc/policies/policy_summary.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ResultFiles/Logs/logfile.log" beforeDir="false" afterPath="$PROJECT_DIR$/ResultFiles/Logs/logfile.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/conftest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/guidewire/test_desktop_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_desktop_search.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_new_account.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_new_account.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/guidewire/test_workers_comp_cancel_reinstate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/guidewire/test_workers_comp_cancel_reinstate.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +65,7 @@
       <recent name="C:\Users\shubham.singh\PycharmProjects\Automation_selenium_python\Data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.csv_data_converter">
+  <component name="RunManager" selected="Python tests.pytest in test_workers_comp_cancel_reinstate.py">
     <configuration name="csv_data_converter" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Automation_selenium_python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -71,46 +87,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="random_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest in test_commercial_auto_submission.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Automation_selenium_python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Util" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test/guidewire" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Util/random_data.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="sample" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Automation_selenium_python" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test/sample.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Test/guidewire/test_commercial_auto_submission.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="pytest in test_desktop_search.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
@@ -126,6 +116,22 @@
       <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;$PROJECT_DIR$/Test/guidewire/test_desktop_search.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in test_workers_comp_cancel_reinstate.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Automation_selenium_python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test/guidewire" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Test/guidewire/test_workers_comp_cancel_reinstate.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
@@ -147,11 +153,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest in test_workers_comp_cancel_reinstate.py" />
+        <item itemvalue="Python tests.pytest in test_commercial_auto_submission.py" />
+        <item itemvalue="Python tests.pytest in test_workers_comp_submission.py" />
         <item itemvalue="Python.csv_data_converter" />
         <item itemvalue="Python tests.pytest in test_desktop_search.py" />
-        <item itemvalue="Python.random_data" />
-        <item itemvalue="Python tests.pytest in test_workers_comp_submission.py" />
-        <item itemvalue="Python.sample" />
       </list>
     </recent_temporary>
   </component>
@@ -163,27 +169,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684927950670</updated>
-    </task>
-    <task id="LOCAL-00006" summary="comm auto June 14th_jayti">
-      <created>1686753346620</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1686753346620</updated>
-    </task>
-    <task id="LOCAL-00007" summary="old files removed June 16th_jayti">
-      <created>1686912066251</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1686912066251</updated>
-    </task>
-    <task id="LOCAL-00008" summary="CA removed June 16th_jayti">
-      <created>1686912100453</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1686912100453</updated>
     </task>
     <task id="LOCAL-00009" summary="minor updates June 16th_jayti">
       <created>1686918557266</created>
@@ -507,7 +492,28 @@
       <option name="project" value="LOCAL" />
       <updated>1693317309172</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Aug 29">
+      <created>1693317407065</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1693317407065</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Added comments and removed redundant steps">
+      <created>1693469496446</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1693469496446</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Added comments and small changes">
+      <created>1693480903571</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1693480903613</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -526,8 +532,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="2 excel files June 19th_jayti" />
-    <MESSAGE value="CA June 19th_jayti" />
     <MESSAGE value="CA June 21st_jayti" />
     <MESSAGE value="ca data file" />
     <MESSAGE value="latest change 21st June" />
@@ -551,6 +555,8 @@
     <MESSAGE value="Aug 21" />
     <MESSAGE value="Aug 22" />
     <MESSAGE value="Aug 29" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aug 29" />
+    <MESSAGE value="Added comments and removed redundant steps" />
+    <MESSAGE value="Added comments and small changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added comments and small changes" />
   </component>
 </project>

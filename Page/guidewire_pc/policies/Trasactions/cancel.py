@@ -6,6 +6,7 @@ from selenium.webdriver.common.by import By
 from Util.logs import getLogger
 from Page.guidewire_pc.policies.common.titlebar import TitleToolbar
 
+
 class Cancel(BasePage):
     log = getLogger()
 

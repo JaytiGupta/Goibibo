@@ -1,7 +1,4 @@
 import random
-
-from selenium.common import WebDriverException
-
 from Base.basepage import BasePage
 from Base.baseelement import BaseElement
 from selenium.webdriver.common.by import By
@@ -17,7 +14,7 @@ class NewAccount(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver=driver, url=None)
-        self.enter_account_information_screen = EnterAccountInformation(self.driver)
+        self.enter_account_information_screen = EnterAccountInformationPage(self.driver)
         self.create_account_screen = CreateAccountPage(self.driver)
 
         # random input data
@@ -67,7 +64,7 @@ class NewAccount(BasePage):
         self.create_account_screen.click_btn_update()
 
 
-class EnterAccountInformation(BasePage):
+class EnterAccountInformationPage(BasePage):
     log = getLogger()
 
     def __init__(self, driver):

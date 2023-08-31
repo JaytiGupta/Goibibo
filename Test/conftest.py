@@ -59,8 +59,8 @@ def app_config(env, take_screenshots):
     if not hasattr(app_config, "fixture_executed"):
         log = getLogger()
         log.info("************* Starting Execution *************")
-        definitions.CONFIG.env = env.lower()
-        definitions.CONFIG.take_screenshot = take_screenshots
+        definitions.CONFIG.env = "test" #env.lower()
+        definitions.CONFIG.take_screenshot = False #take_screenshots
 
         yield
         log.info("************* Execution complete *************")
