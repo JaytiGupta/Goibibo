@@ -46,7 +46,7 @@ class Workspace:
 
     def is_workspace_present(self) -> bool:
 
-        workspace_present_and_visible = self.workspace_area.attribute("aria-hidden") is None
+        workspace_present_and_visible = self.workspace_area.get_attribute("aria-hidden") is None
 
         if workspace_present_and_visible:
             self.log.info("Workspace area is present.")
